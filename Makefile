@@ -11,6 +11,12 @@ vim_session:
 
 ######################################################################
 
+## intro.draft.pdf: intro.txt intro.draft.tex
+## intro.final.pdf: intro.txt
+## intro.handouts.pdf: intro.txt
+## intro.complete.pdf: intro.txt
+## intro.handouts.docx: intro.handouts.tex
+
 ######################################################################
 
 ### Makestuff
@@ -31,7 +37,7 @@ makestuff:
 
 -include makestuff/os.mk
 
-## -include makestuff/pipeR.mk
+-include makestuff/newtalk.mk
 
 -include makestuff/git.mk
 -include makestuff/visual.mk
