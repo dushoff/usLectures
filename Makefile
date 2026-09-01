@@ -11,6 +11,8 @@ vim_session:
 
 ######################################################################
 
+## Lecture files
+
 Sources += $(wildcard *.txt)
 
 ## intro.draft.pdf: intro.txt intro.draft.tex
@@ -18,6 +20,22 @@ Sources += $(wildcard *.txt)
 ## intro.handouts.pdf: intro.txt
 ## intro.complete.pdf: intro.txt
 ## intro.handouts.docx: intro.handouts.tex
+
+######################################################################
+
+## Formatting
+## Script is talkdir/lect.pl
+## Current rules are in talkdir/txt.format _and_
+Sources += local.txt.format
+
+## Copyright notice
+Sources += copy.tex
+
+## Directory-specific latex commands
+## I am using the pop.tex that is here and which is suspiciously similar to 
+## makestuff/lect/pop.tex; unify or otherwise figure out
+## I think the lect/ version is in other 3SS directories
+## Sources += localcomm.tex
 
 ######################################################################
 
