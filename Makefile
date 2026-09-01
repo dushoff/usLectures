@@ -40,6 +40,8 @@ makestuff:
 -include makestuff/os.mk
 
 -include makestuff/newtalk.mk
+-include makestuff/texj.mk
+-include makestuff/webpix.mk
 
 -include makestuff/git.mk
 -include makestuff/visual.mk
