@@ -106,39 +106,20 @@ Dushoff
 
 PSLIDE Pythagorean triples
 
-HIGHFIG webpix/pythagoras.pdf
+HIGHFIG webLect/pythagoras.pdf
 
 ----------------------------------------------------------------------
 
 PSLIDE Disease research
 
-FIG my_images/macFeb21pre.png
+FIG imgLect/macFeb21pre.png
 
 ----------------------------------------------------------------------
 
 PSLIDE Disease research
 
-FIG my_images/macFeb21res.png
+FIG imgLect/macFeb21res.png
 
-----------------------------------------------------------------------
-
-EXTRA PSLIDE TAs
-
-FIG my_images/mysteryTAs.png
-
-----------------------------------------------------------------------
-
-PSLIDE TAs
-
-BCC
-
-CFIG webpix/tate.png
-
-NCC
-
-CFIG webpix/weeknd.jpg
-
-EC
 ----------------------------------------------------------------------
 
 PSLIDE Students
@@ -207,9 +188,9 @@ BC
 
 NC
 
-SIDEFIG webpix/touching.jpg
+SIDEFIG webLect/touching.jpg
 
-SIDEFIG webpix/ew_measles.png
+SIDEFIG webLect/ew_measles.png
 
 EC
 
@@ -241,9 +222,9 @@ BC
 
 NC
 
-SIDEFIG webpix/hockey.jpg
+SIDEFIG webLect/hockey.jpg
 
-SIDEFIG webpix/emc.png
+SIDEFIG webLect/emc.png
 
 EC
 
@@ -271,7 +252,7 @@ BC
 
 NC
 
-SIDEFIG webpix/us_malaria_1935.jpg
+SIDEFIG webLect/us_malaria_1935.jpg
 
 EC
 
@@ -293,9 +274,9 @@ BC
 
 NC
 
-SIDEFIG webpix/red_squirrel.jpg
+SIDEFIG webLect/red_squirrel.jpg
 
-SIDEFIG webpix/grey_squirrel.jpg
+SIDEFIG webLect/grey_squirrel.jpg
 
 EC
 
@@ -313,7 +294,7 @@ BC
 
 NC
 
-SIDEFIG webpix/cod.jpg
+SIDEFIG webLect/cod.jpg
 
 SIDEFIG ts/cod1678.simple.Rout-0.pdf
 
@@ -342,9 +323,9 @@ BC
 
 NC
 
-SIDEFIG webpix/dandy_field.jpg
+SIDEFIG webLect/dandy_field.jpg
 
-SIDEFIG webpix/dandy_flower.jpg
+SIDEFIG webLect/dandy_flower.jpg
 
 EC
 
@@ -373,7 +354,7 @@ BC
 
 NC
 
-SIDEFIG webpix/dandy_field.jpg
+SIDEFIG webLect/dandy_field.jpg
 
 EC
 
@@ -404,9 +385,9 @@ BC
 
 NC
 
-SIDEFIG webpix/gm_caterpillar.jpg
+SIDEFIG webLect/gm_caterpillar.jpg
 
-SIDEFIG webpix/gm_defoliation.jpg
+SIDEFIG webLect/gm_defoliation.jpg
 
 EC
 
@@ -552,7 +533,7 @@ TSS Bacteria
 
 PSLIDE Bacteria in a tank
 
-FIG webpix/chemostats.png
+FIG webLect/chemostats.png
 
 ----------------------------------------------------------------------
 
@@ -890,7 +871,7 @@ DOUBLEFIG exponential/canada.Rout-4.pdf exponential/canada.Rout-5.pdf
 
 CLASS CSLIDE Predation comparison
 
-CLASS FIG webpix/buffalo.jpg
+CLASS FIG webLect/buffalo.jpg
 
 ----------------------------------------------------------------------
 
@@ -908,11 +889,11 @@ BC
 
 NC
 
-CLASS HFIG 0.25 webpix/fox.jpg
+CLASS HFIG 0.25 webLect/fox.jpg
 
-CLASS HFIG 0.25 webpix/beaver.jpg
+CLASS HFIG 0.25 webLect/beaver.jpg
 
-CLASS HFIG 0.25 webpix/elk.jpg
+CLASS HFIG 0.25 webLect/elk.jpg
 
 EC
 
@@ -985,7 +966,7 @@ BC
 
 NC
 
-SIDEFIG webpix/tai3.jpg
+SIDEFIG webLect/tai3.jpg
 
 EC
 

@@ -36,6 +36,10 @@ Sources += copy.tex
 
 ######################################################################
 
+## lecturePix
+
+######################################################################
+
 ### Makestuff
 
 Sources += Makefile
@@ -56,7 +60,8 @@ makestuff:
 
 -include makestuff/newtalk.mk
 -include makestuff/texj.mk
--include makestuff/webpix.mk
+## -include makestuff/webpix.mk
+## -include makestuff/hotcold.mk
 
 -include makestuff/git.mk
 -include makestuff/visual.mk
