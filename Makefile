@@ -36,7 +36,22 @@ Sources += copy.tex
 
 ######################################################################
 
+## Cribbing
+
+webLect/%: | webLect
+	/bin/cp ../3Lectures/webpix/$* $@
+
+imgLect/%: | imgLect
+	/bin/cp ../3Lectures/webpix/$* $@
+
+webLect imgLect:
+	$(mkdir)
+
+######################################################################
+
 ## lecturePix
+
+lecturePix/%:
 
 ######################################################################
 
