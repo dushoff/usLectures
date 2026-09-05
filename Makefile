@@ -23,7 +23,7 @@ Sources += $(wildcard *.txt)
 
 ######################################################################
 
-## Formatting
+## Lecture formatting
 ## Script is talkdir/lect.pl
 ## Current rules are in talkdir/txt.format _and_
 Sources += local.txt.format
@@ -33,6 +33,14 @@ Sources += copy.tex
 
 ## Directory-specific latex commands
 ## Sources += localcomm.tex
+
+######################################################################
+
+## avenue quiz dev 2026 Sep 05 (Sat)
+
+Sources += $(wildcard *.quiz.csv)
+
+## template.quiz.csv
 
 ######################################################################
 
