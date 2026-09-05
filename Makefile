@@ -42,7 +42,9 @@ webLect/%: | webLect
 	/bin/cp ../3Lectures/webpix/$* $@
 
 imgLect/%: | imgLect
-	/bin/cp ../3Lectures/webpix/$* $@
+	/bin/cp ../3Lectures/my_images/$* $@
+
+## mv imgLect/*.* ../lecturePix/my_images
 
 Ignore += webLect imgLect
 webLect imgLect:
