@@ -36,19 +36,20 @@ Sources += copy.tex
 
 ######################################################################
 
-## Cribbing
+## lecturePix linking
 
 webLect/%: | webLect
-	/bin/cp ../3Lectures/webpix/$* $@
+	cd ../lecturePix/ && $(MAKE) webpix/$*
 
-imgLect/%: | imgLect
-	/bin/cp ../3Lectures/my_images/$* $@
-
-## mv imgLect/*.* ../lecturePix/my_images
+## Is there any need for a recipe here, probably not 2026 Sep 05 (Sat)
+imgLect/%: | imgLect ;
 
 Ignore += webLect imgLect
-webLect imgLect:
-	$(mkdir)
+webLect:
+	$(LNF) ../lecturePix/webpix/ $@
+
+imgLect:
+	$(LNF) ../lecturePix/my_images/ $@
 
 ######################################################################
 
