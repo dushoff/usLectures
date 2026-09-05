@@ -44,6 +44,7 @@ webLect/%: | webLect
 imgLect/%: | imgLect
 	/bin/cp ../3Lectures/webpix/$* $@
 
+Ignore += webLect imgLect
 webLect imgLect:
 	$(mkdir)
 
