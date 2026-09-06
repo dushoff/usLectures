@@ -3,63 +3,32 @@ use 5.10.0;
 
 $/ = "";
 
-my $comment = "";
 my $dq= '"';
 my $qn = 0;
 my $option;
 my $optmax=5;
 while (<>){
 	chomp;
+	## This is MC option scoring stuff
 	my $val=0;
 	$val = 100 if s/^[*]\s*//;
 
-	s/``/“/g;
-	s/''/”/g;
+	## Deleted a bunch of latex/dmu processing stuff from the covid era.
+	## Could restore it if this script migrates back to older courses
+	## Originally based on ../3Tests/mcave.pl
+	## Look there also for $comment if you want to rebuild online tests,
+	## hoping this will not be necessary
+	## Deleting a bunch of 3SS formatting stuff as well (see just above)
+	## s/\\blank\\*/________/g;
 
-	s/\\rmax/r_max/g;
-	s/\\yr/yr/g;
-	s/\\Ro/R_0/g;
-	s/\\R_0/R_0/g;
-	s/\\R/R/g;
-	s/\\ell/ℓ/g;
-	s/\\indiv/indiv/g;
-	s/\\lambda/λ/g;
-	s/\\alpha/α/g;
-	s/\\frac\{([^}]*)\}\{([^}]*)\}/$1\/$2/g;
-	s/\\geq/≥/g;
-	s/\\leq/≤/g;
-	s/\\blank\\*/________/g;
-	s/\.\~/. /g;
+	## Some hot changes for now 2026 Sep 06 (Sun)
+	s|_([A-Za-z-\s]+)_|<em>$1</em>|;
 
-	s/\\ / /g;
-
-	s/\{\\em */\\emph{/g;
-	s/\\textsl\{([^}]*)\}/_$1_/g;
-	s/\\emph\{([^}]*)\}/_$1_/g;
-	s/\\uname\{([^}]*)\}/$1/g;
-
-	s/\\\$/CDOL/g;
-	s/\$//g;
-	s/CDOL/\$/g;
-
-## Put WEB after comment in the input file to override the COMMENT
-	if (/^COMMENT/){
-		s/\w*\s*//;
-		$comment = "$_ ";
-	}
-	elsif (/^WEB/){
-		s/\w*\s*//;
-		$comment = "$_ ";
-	}
-	elsif (/^INTRO/){}
-	elsif (/^FIGHEAD/){}
-	elsif (/^HEAD/){}
-	elsif (/^KEY/){}
-	elsif (/FIG/){}
-	elsif (/RESOURCE/){}
-	elsif (/PDF/){}
-	elsif (/NOCOMMENT/){}
+	## Awkwardly chopped from longer comment-based chain
+	if (/^INTRO/){}
 	elsif (/^ANS/){}
+	## This part is tricky. Maybe merge somehow the MC and SA stuff?
+	elsif (/^MC/){}
 	elsif (/^SA/){
 		$qn++;
 		$option=0;
@@ -68,7 +37,6 @@ while (<>){
 		my $tit = $_;
 		$tit =~ s/[^\w\s]//g;
 		$tit = join("_", (split /\s/, $tit)[2..3]);
-		s/\w*\s*/$comment/;
 		say "";
 		say "NewQuestion,SA,";
 		say "ID,$id";
@@ -77,9 +45,6 @@ while (<>){
 		say "QuestionText,$dq$_$dq,";
 		say "Points,1,";
 		say "Difficulty,1,";
-	}
-	elsif (/^-----/){
-		$comment = "";
 	}
 	else{
 		$option ++;

@@ -41,8 +41,10 @@ Sources += copy.tex
 Sources += $(wildcard *.quiz)
 Ignore += $(wildcard *.quiz.csv)
 
-## ../../undergrad/avenueQuiz.csv
+## Template: ../../undergrad/avenueQuiz.csv
 
+## saquiz is a big, bloated mess, based on covid-era mcquiz
+## Neither one deals with things like images yet
 baseline.quiz.csv: baseline.quiz saquiz.pl
 	$(PUSH)
 
