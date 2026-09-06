@@ -42,6 +42,11 @@ Sources += $(wildcard *.quiz.csv)
 
 ## template.quiz.csv
 
+baseline.quiz.csv: baseline.quiz saquiz.pl
+	$(PUSH)
+
+future.quiz.csv: future.quiz
+
 ######################################################################
 
 ## lecturePix linking

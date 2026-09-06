@@ -1,0 +1,48 @@
+
+NewQuestion,SA,
+ID,2020F01
+Title,are_you
+Answer,100,.+,regexp
+QuestionText,"What are you hoping to learn from this course?",
+Points,1,
+Difficulty,1,
+
+NewQuestion,SA,
+ID,2020F02
+Title,you_currently
+Answer,100,.+,regexp
+QuestionText,"Are you currently involved in a research project? Describe it briefly.",
+Points,1,
+Difficulty,1,
+
+NewQuestion,SA,
+ID,2020F03
+Title,statistics_or
+Answer,100,.+,regexp
+QuestionText,"What statistics or probability courses have you taken as an undergraduate?",
+Points,1,
+Difficulty,1,
+
+NewQuestion,SA,
+ID,2020F04
+Title,would_you
+Answer,100,.+,regexp
+QuestionText,"How would you (personally) _define_ a P value?",
+Points,1,
+Difficulty,1,
+
+NewQuestion,SA,
+ID,2020F05
+Title,classmate_tests
+Answer,100,.+,regexp
+QuestionText,"A classmate tests how plants grow with and without potassium fertilizer. They find that the average growth is higher without fertilizer. How would you (briefly) explain why they should calculate a P value and how to interpret it?",
+Points,1,
+Difficulty,1,
+
+NewQuestion,SA,
+ID,2020F06
+Title,much_experience
+Answer,100,.+,regexp
+QuestionText,"How much experience do you have with the R statistics and programming environment?",
+Points,1,
+Difficulty,1,
