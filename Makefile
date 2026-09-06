@@ -38,7 +38,8 @@ Sources += copy.tex
 
 ## avenue quiz dev 2026 Sep 05 (Sat)
 
-Sources += $(wildcard *.quiz.csv)
+Sources += $(wildcard *.quiz)
+Ignore += $(wildcard *.quiz.csv)
 
 ## template.quiz.csv
 
