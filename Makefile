@@ -13,7 +13,7 @@ vim_session:
 
 ## Lecture files
 
-Sources += $(wildcard *.txt)
+Sources += $(wildcard *.txt *.md)
 
 ## intro.draft.pdf: intro.txt intro.draft.tex
 ## intro.final.pdf: intro.txt
