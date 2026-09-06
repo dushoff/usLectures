@@ -22,7 +22,8 @@ while (<>){
 	## s/\\blank\\*/________/g;
 
 	## Some hot changes for now 2026 Sep 06 (Sun)
-	s|_([A-Za-z-\s]+)_|<em>$1</em>|;
+	## NOT! See saquiz.md
+	## s|_([A-Za-z-\s]+)_|<em>$1</em>|;
 
 	## Awkwardly chopped from longer comment-based chain
 	if (/^INTRO/){}

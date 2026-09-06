@@ -45,8 +45,11 @@ Ignore += $(wildcard *.quiz.csv)
 
 ## saquiz is a big, bloated mess, based on covid-era mcquiz
 ## Neither one deals with things like images yet
-baseline.quiz.csv: baseline.quiz saquiz.pl
+
+%.quiz.csv: %.quiz saquiz.pl
 	$(PUSH)
+
+## baseline.quiz.csv: baseline.quiz saquiz.pl saquiz.md
 
 future.quiz.csv: future.quiz
 
