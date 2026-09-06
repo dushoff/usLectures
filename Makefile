@@ -41,7 +41,7 @@ Sources += copy.tex
 Sources += $(wildcard *.quiz)
 Ignore += $(wildcard *.quiz.csv)
 
-## template.quiz.csv
+## ../../undergrad/avenueQuiz.csv
 
 baseline.quiz.csv: baseline.quiz saquiz.pl
 	$(PUSH)
