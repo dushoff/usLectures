@@ -26,7 +26,15 @@ while (<>){
 	## s|_([A-Za-z-\s]+)_|<em>$1</em>|;
 
 	## Awkwardly chopped from longer comment-based chain
-	if (/^INTRO/){}
+	if (/^INTRO\s*/){
+		s/^INTRO\s*//;
+		## xclip forks a background daemon to hold the selection; that daemon
+		## inherits our stdout/stderr, so if those are a pipe (as under make)
+		## the reader hangs waiting for EOF unless we redirect xclip's away.
+		open(my $clip, "|-", "xclip -selection clipboard >/dev/null 2>&1") or die "Can't open xclip: $!";
+		print $clip $_;
+		close $clip;
+	}
 	elsif (/^ANS/){}
 	## This part is tricky. Maybe merge somehow the MC and SA stuff?
 	elsif (/^MC/){}

@@ -49,9 +49,9 @@ Ignore += $(wildcard *.quiz.csv)
 %.quiz.csv: %.quiz saquiz.pl
 	$(PUSH)
 
-## baseline.quiz.csv: baseline.quiz saquiz.pl saquiz.md
-
-future.quiz.csv: future.quiz
+## baseline.quiz.csv: baseline.quiz saquiz.pl
+## saquiz.md
+## future.quiz.csv: future.quiz
 
 ######################################################################
 
