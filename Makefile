@@ -55,6 +55,12 @@ Ignore += $(wildcard *.quiz.csv)
 
 ######################################################################
 
+## Assignments assignments.md
+
+## install.asn.md
+
+######################################################################
+
 ## lecturePix linking
 
 webLect/%: | webLect
