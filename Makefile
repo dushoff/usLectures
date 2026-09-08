@@ -23,6 +23,8 @@ Sources += $(wildcard *.txt *.md)
 
 pardirs += lecturePix
 
+Ignore += $(pardirs)
+
 ######################################################################
 
 ## Lecture formatting
