@@ -21,6 +21,8 @@ Sources += $(wildcard *.txt *.md)
 ## intro.complete.pdf: intro.txt
 ## intro.handouts.docx: intro.handouts.tex
 
+pardirs += lecturePix
+
 ######################################################################
 
 ## Lecture formatting
@@ -70,10 +72,10 @@ webLect/%: | webLect
 imgLect/%: | imgLect ;
 
 Ignore += webLect imgLect
-webLect:
+webLect: | lecturePix
 	$(LNF) ../lecturePix/webpix/ $@
 
-imgLect:
+imgLect: | lecturePix
 	$(LNF) ../lecturePix/my_images/ $@
 
 ######################################################################
@@ -81,6 +83,8 @@ imgLect:
 ## lecturePix
 
 lecturePix/%:
+
+intro.html: intro.step
 
 ######################################################################
 
@@ -104,7 +108,8 @@ makestuff:
 
 -include makestuff/newtalk.mk
 -include makestuff/texj.mk
-## -include makestuff/webpix.mk
+-include makestuff/webpix.mk
+-include makestuff/mirror.mk
 ## -include makestuff/hotcold.mk
 
 -include makestuff/git.mk
