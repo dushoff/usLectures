@@ -1,5 +1,9 @@
 ## This is usLectures (Biology 3SA)
 
+## https://avenue.cllmcmaster.ca/d2l/home/803075
+## Previous
+#### https://avenue.cllmcmaster.ca/d2l/home/758403
+
 current: target
 -include target.mk
 Ignore = target.mk
@@ -61,6 +65,8 @@ Ignore += $(wildcard *.quiz.csv)
 
 ## Assignments assignments.md
 
+## See https://claude.ai/chat/29b9bbd1-c8c7-4db7-ad19-364c6d00195e
+## for cool div stuff, but don't do it soon. Do consider adding extra indent for a.
 ## install.asn.md
 
 ######################################################################

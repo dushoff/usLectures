@@ -67,7 +67,24 @@ Taking notes
 
 What you need to know
 
-	I am still designing this course, based on what you-all know and what you want to learn
+	I am still designing this course, based on what you-all know and
+	what you want to learn
+
+	My basic goals are
+
+		Build computer and data-management skills
+
+		Convince you that you need a statistical philosophy to do science
+
+			Learn basic principles of this philosophy
+
+		Discuss principles of different tests
+
+			linear models, generalized linear models, permutation tests
+
+			random effects and mixed models
+
+			maybe other things
 
 ----------------------------------------------------------------------
 
@@ -103,167 +120,33 @@ FIG imgLect/macFeb21res.png
 
 ----------------------------------------------------------------------
 
+PSLIDE Statistical philosophy
+
+----------------------------------------------------------------------
+
 TSS TA
 
 FIG webpix/question.png
 
 ----------------------------------------------------------------------
 
-
-PSLIDE Students
-
-	POLL   What year are you in? First; Second; Third; Fourth; other
-
-	POLL   What kind of career are you aiming for?  Health care or medicine; Government or public health; Research; Teaching; Corporate; Entrepreneur or small business; Other
+SS Students
 
 ----------------------------------------------------------------------
 
-SEC Course content
+Learning goals
 
 ----------------------------------------------------------------------
 
-TSS Learning goals
-
-	Ecology and population ecology
-
-	Quantitative thinking
-
-	Dynamical modeling
+Questions
 
 ----------------------------------------------------------------------
 
-Ecology
+Evaluation
 
-	POLL   What is ecology?
-
-	My answer
-
-		ANS The study of how organisms interact with each other and with
-		the environment
-
-		ANS Studying ecology is not the same as protecting the environment
-
-			ANS But it can help if you want to protect the environment
+Peerwise?
 
 ----------------------------------------------------------------------
 
-Population ecology
+What is a P value?
 
-	POLL   What is population ecology?
-
-	My answer
-
-		ANS The study of how organisms interact with each other and with
-		the environment at the population scale
-
-		ANS Larger spatial scale, longer temporal scale
-
-		ADD Used to be here:  We use ...
-
-----------------------------------------------------------------------
-
-Dynamical modeling
-
-BC
-
-	We use \emph{dynamical models} to link from the individual level to the population level
-
-	Investigates the links between local, short-term processes, and
-	large-scale, long-term outcomes
-
-	Allows us to explore what assumptions we're making, and how
-	assumptions affect the link
-
-NC
-
-SIDEFIG webLect/touching.jpg
-
-SIDEFIG webLect/ew_measles.png
-
-EC
-
-----------------------------------------------------------------------
-
-Math
-
-	Population ecology uses math
-
-		Math is a critical tool for linking processes to outcomes
-
-		Math will play a central role in the course 
-
-	We will keep it {\em simple}
-
-		But we understand that simple does not always mean easy
-
-	MATREF math.handouts.pdf Review the math supplement
-
-----------------------------------------------------------------------
-
-Humans and abstract thought
-
-BC
-
-	People are evolved to be concrete thinkers, not conceptual thinkers
-
-	A goal of this course is to build conceptual thinking skills
-
-NC
-
-SIDEFIG webLect/hockey.jpg
-
-SIDEFIG webLect/emc.png
-
-EC
-
-----------------------------------------------------------------------
-
-SS Examples
-
-----------------------------------------------------------------------
-
-Malaria 
-
-BC
-
-	A nasty, mosquito-borne disease
-
-	In some places (e.g., the southeastern US), it has been eradicated
-	almost by accident
-
-		Mosquitoes are still present
-
-	In other places it persists at high levels despite concerted
-	efforts at elimination 
-
-	\emph{What factors determine when and where malaria spreads?}
-
-NC
-
-SIDEFIG webLect/us_malaria_1935.jpg
-
-EC
-
-----------------------------------------------------------------------
-
-Red squirrels
-
-BC
-
-	Red squirrels are rapidly disappearing from England
-
-		Loss of suitable habitat?
-
-		Competition from gray squirrels introduced from North America?
-
-		Diseases carried by gray squirrels?
-
-	NOTES HLINK http://en.wikipedia.org/wiki/Eastern_grey_squirrels_in_Europe
-
-NC
-
-SIDEFIG webLect/red_squirrel.jpg
-
-SIDEFIG webLect/grey_squirrel.jpg
-
-EC
