@@ -92,22 +92,6 @@ SS Prof
 
 ----------------------------------------------------------------------
 
-Dushoff
-
-	Loves math
-
-	Has lived in four countries
-
-	Studies evolution and spread of infectious diseases
-
-----------------------------------------------------------------------
-
-PSLIDE Pythagorean triples
-
-HIGHFIG webLect/pythagoras.pdf
-
-----------------------------------------------------------------------
-
 PSLIDE Disease research
 
 FIG imgLect/macFeb21pre.png
@@ -121,6 +105,14 @@ FIG imgLect/macFeb21res.png
 ----------------------------------------------------------------------
 
 PSLIDE Statistical philosophy
+
+FIG my_images/clarity.pdf
+
+----------------------------------------------------------------------
+
+PSLIDE Recreational math
+
+HIGHFIG webLect/pythagoras.pdf
 
 ----------------------------------------------------------------------
 
@@ -142,11 +134,24 @@ Questions
 
 ----------------------------------------------------------------------
 
-Evaluation
+Participation
 
-Peerwise?
+	Actually talking
+
+	Index cards
+
+	Peerwise
 
 ----------------------------------------------------------------------
 
-What is a P value?
+What is the definition of a P value?
+
+----------------------------------------------------------------------
+
+I measure plant growth in plots where I did and did not add K
+
+	What are some concerns before I even analyze the data?
+
+	What does it mean if P < 0.05?
+
 
