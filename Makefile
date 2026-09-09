@@ -15,6 +15,8 @@ vim_session:
 
 Sources += $(wildcard *.txt *.md)
 
+notes.txt:
+
 ## intro.draft.pdf: intro.txt intro.draft.tex
 ## intro.final.pdf: intro.txt
 ## intro.handouts.pdf: intro.txt

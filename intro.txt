@@ -170,9 +170,20 @@ SEC Philosophy
 
 What is the definition of a P value?
 
+	It is a probability
+
+		The probability that there is not actually an effect
+
+			This is a posterior! (advanced topic!!)
+
+		The probability of seeing a value as (or more) extreme as what
+		you got --  _if_ the null hypothesis is true
+
 ----------------------------------------------------------------------
 
 Why is this a good definition?
+
+	We will circle back to this one
 
 ----------------------------------------------------------------------
 
@@ -180,9 +191,17 @@ I measure plant growth in plots where I did and did not add K
 
 	What are some concerns before I even analyze the data?
 
+		What other factors could affect the outcome
+
+			E.g., what are pre-existing differences if any
+
 	What does it mean if P $< 0.05$?
 
+		Statistically significant
+
 	What does it mean if P $> 0.05$?
+
+		Not statistically significant
 
 ----------------------------------------------------------------------
 
