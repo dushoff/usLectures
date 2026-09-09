@@ -128,6 +128,12 @@ SS Students
 
 Learning goals
 
+	Statistical philosophy; where stats meets science
+
+	Practical computer skills
+
+	Practical stats skills (but how far can we get?)
+
 ----------------------------------------------------------------------
 
 Questions
@@ -148,10 +154,24 @@ What is the definition of a P value?
 
 ----------------------------------------------------------------------
 
+Why is this a good definition?
+
+----------------------------------------------------------------------
+
 I measure plant growth in plots where I did and did not add K
 
 	What are some concerns before I even analyze the data?
 
-	What does it mean if P < 0.05?
+	What does it mean if P $< 0.05$?
 
+	What does it mean if P $> 0.05$?
+
+
+----------------------------------------------------------------------
+
+Index card
+
+	Write your macid (mostly letters) on the blank side
+
+	Write one brief question and one brief comment on the lined side
 
