@@ -122,7 +122,13 @@ FIG webpix/question.png
 
 ----------------------------------------------------------------------
 
-SS Students
+TSEC Students
+
+	A broad range of background, interest and experience
+
+	Not everyone will be happy all the time
+
+	Not everyone did the quiz
 
 ----------------------------------------------------------------------
 
@@ -138,6 +144,8 @@ Learning goals
 
 Questions
 
+	ANS Winner
+
 ----------------------------------------------------------------------
 
 Participation
@@ -147,6 +155,16 @@ Participation
 	Index cards
 
 	Peerwise
+
+----------------------------------------------------------------------
+
+Midterm timing
+
+	Tue 20 Oct and 24 Nov
+
+----------------------------------------------------------------------
+
+SEC Philosophy
 
 ----------------------------------------------------------------------
 
@@ -166,6 +184,23 @@ I measure plant growth in plots where I did and did not add K
 
 	What does it mean if P $> 0.05$?
 
+----------------------------------------------------------------------
+
+Significance
+
+	Is statistical significance a statement about significance
+	(importance) or something else?
+
+	Is statistical significance a statement about the study system, or
+	about the data set?
+
+----------------------------------------------------------------------
+
+Statistics is not magic!
+
+	Scientists are sometimes intimidated
+
+	Scientists sometimes \emph{want} statistics to be magic
 
 ----------------------------------------------------------------------
 
@@ -174,4 +209,6 @@ Index card
 	Write your macid (mostly letters) on the blank side
 
 	Write one brief question and one brief comment on the lined side
+
+		Neatly, if you can
 
