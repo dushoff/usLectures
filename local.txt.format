@@ -1,6 +1,6 @@
 CLASS %!
 draft final: ^%%
 
-STUDENTS %%
-CONV %%
+STUDENTS {\rmfamily %%}
+CONV %% {\rmfamily\itshape %%}
 
