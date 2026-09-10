@@ -179,7 +179,7 @@ What is the definition of a P value?
 			CONV No. We will talk more about this
 
 		STUDENTS The probability of seeing a value as (or more) extreme as what
-		you got --  _if_ the null hypothesis is true
+		you got --  \emph{if} the null hypothesis is true
 
 ----------------------------------------------------------------------
 
