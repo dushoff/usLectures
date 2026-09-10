@@ -68,25 +68,24 @@ Ignore += $(wildcard *.quiz.csv)
 ######################################################################
 
 ## lecturePix linking
+## A bit of a sshow; done late at night I guess.
 
 webLect/%: | webLect
-	cd ../lecturePix/ && $(MAKE) webpix/$*
+	cd lecturePix/ && $(MAKE) webpix/$*
 
 ## Is there any need for a recipe here, probably not 2026 Sep 05 (Sat)
 imgLect/%: | imgLect ;
 
 Ignore += webLect imgLect
 webLect: | lecturePix
-	$(LNF) ../lecturePix/webpix/ $@
+	$(LNF) $|/webpix/ $@
 
 imgLect: | lecturePix
-	$(LNF) ../lecturePix/my_images/ $@
+	$(LNF) $|/my_images/ $@
 
 ######################################################################
 
-## lecturePix
-
-lecturePix/%:
+## webpix
 
 intro.html: intro.step
 
@@ -100,10 +99,14 @@ Ignore += makestuff
 msrepo = https://github.com/dushoff
 
 ## ln -s ../makestuff . ## Do this first if you want a linked makestuff
-Makefile: makestuff/00.stamp
+Makefile: makestuff/00.stamp lecturePix/01.stamp
 makestuff/%.stamp: | makestuff
 	- $(RM) makestuff/*.stamp
 	cd makestuff && $(MAKE) pull
+	touch $@
+lecturePix/%.stamp: | lecturePix
+	- $(RM) lecturePix/*.stamp
+	cd lecturePix && $(MAKE) pullup
 	touch $@
 makestuff:
 	git clone --depth 1 $(msrepo)/makestuff
