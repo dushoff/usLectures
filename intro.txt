@@ -20,7 +20,7 @@ Communication
 
 		Contact via forum on Avenue
 
-		CLASS What do you think?
+			CLASS What do you think of Avenue as a venue?
 
 ----------------------------------------------------------------------
 
@@ -170,20 +170,22 @@ SEC Philosophy
 
 What is the definition of a P value?
 
-	It is a probability
+	STUDENTS It is a probability
 
-		The probability that there is not actually an effect
+	What probability?
 
-			This is a posterior! (advanced topic!!)
+		STUDENTS The probability that there is not actually an effect?
 
-		The probability of seeing a value as (or more) extreme as what
+			CONV No. We will talk more about this
+
+		STUDENTS The probability of seeing a value as (or more) extreme as what
 		you got --  _if_ the null hypothesis is true
 
 ----------------------------------------------------------------------
 
 Why is this a good definition?
 
-	We will circle back to this one
+	CONV We ran out of time on this one, will come back
 
 ----------------------------------------------------------------------
 
@@ -191,17 +193,17 @@ I measure plant growth in plots where I did and did not add K
 
 	What are some concerns before I even analyze the data?
 
-		What other factors could affect the outcome
+		STUDENTS What other factors could affect the outcome
 
-			E.g., what are pre-existing differences if any
+			STUDENTS E.g., what are pre-existing differences if any
 
 	What does it mean if P $< 0.05$?
 
-		Statistically significant
+		STUDENTS Statistically significant
 
 	What does it mean if P $> 0.05$?
 
-		Not statistically significant
+		STUDENTS Not statistically significant
 
 ----------------------------------------------------------------------
 
@@ -210,8 +212,14 @@ Significance
 	Is statistical significance a statement about significance
 	(importance) or something else?
 
+		STUDENTS Something else (not sure what)
+
+		CONV Come back to this!
+
 	Is statistical significance a statement about the study system, or
 	about the data set?
+
+		STUDENTS Not about the study system, maybe about the data set
 
 ----------------------------------------------------------------------
 
