@@ -32,10 +32,11 @@ Presentation structure
 
 		ANS Prepared answer that I wanted you to think about first
 
-		CLASS A comment from class that I wanted to preserve (not
+		STUDENTS A comment from class that I wanted to preserve (not
 		necessarily correct, hopefully contextualize)
 
-			CONV Something that emerged from class conversation
+			CONV Something that emerged from class conversation (more
+			likely to be correct)
 
 ----------------------------------------------------------------------
 
@@ -133,7 +134,9 @@ HIGHFIG webLect/pythagoras.pdf
 
 TSS TA
 
-FIG webpix/question.png
+CLASS FIG webpix/question.png
+
+	NOTES More information forthcoming
 
 ----------------------------------------------------------------------
 
@@ -193,8 +196,8 @@ What is the definition of a P value?
 
 			CONV No. We will talk more about this
 
-		STUDENTS The probability of seeing a value as (or more) extreme as what
-		you got --  _if_ the null hypothesis is true
+		STUDENTS The probability of seeing a value as (or more) extreme
+		as what you got --  \emph{if} the null hypothesis is true
 
 ----------------------------------------------------------------------
 
