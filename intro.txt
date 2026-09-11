@@ -24,6 +24,21 @@ Communication
 
 ----------------------------------------------------------------------
 
+Presentation structure
+
+	Lecture outline information
+
+		More outline
+
+		ANS Prepared answer that I wanted you to think about first
+
+		CLASS A comment from class that I wanted to preserve (not
+		necessarily correct, hopefully contextualize)
+
+			CONV Something that emerged from class conversation
+
+----------------------------------------------------------------------
+
 Expectations of professor
 
 	Start and end on time
