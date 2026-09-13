@@ -30,6 +30,7 @@ notes.txt:
 ## introPlus.complete.pdf: introPlus.txt
 ## introPlus.handouts.docx: introPlus.handouts.tex
 
+## Working from dump.txt
 ## R.draft.pdf: R.txt R.draft.tex
 ## R.final.pdf: R.txt
 ## R.handouts.pdf: R.txt
