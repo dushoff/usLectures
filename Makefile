@@ -23,6 +23,19 @@ notes.txt:
 ## intro.complete.pdf: intro.txt
 ## intro.handouts.docx: intro.handouts.tex
 
+## Not done yet; something about following up the assignment and the question of what significance is about
+## introPlus.draft.pdf: introPlus.txt
+## introPlus.final.pdf: introPlus.txt
+## introPlus.handouts.pdf: introPlus.txt
+## introPlus.complete.pdf: introPlus.txt
+## introPlus.handouts.docx: introPlus.handouts.tex
+
+## R.draft.pdf: R.txt R.draft.tex
+## R.final.pdf: R.txt
+## R.handouts.pdf: R.txt
+## R.complete.pdf: R.txt
+## R.handouts.docx: R.handouts.tex
+
 pardirs += lecturePix
 
 Ignore += $(pardirs)

@@ -1,4 +1,6 @@
 CLASS %!
+HOLD %!
+
 draft final: ^%%
 
 STUDENTS {\sffamily %%}
