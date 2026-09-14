@@ -82,9 +82,21 @@ Reasons to understand scripts
 
 ----------------------------------------------------------------------
 
+Other approaches
+
+	What are other things you can and should do to evaluate your scripts?
+
+	ANS You can check, cross-check and validate your scripts
+
+
+
 SEC Basics of R
 
 ----------------------------------------------------------------------
+
+R is a programming language
+
+	Whether
 
 	You might not use R for programming,  but you should understand
 	roughly how it works inside

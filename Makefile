@@ -13,7 +13,7 @@ vim_session:
 
 ## Lecture files
 
-Sources += $(wildcard *.txt *.md)
+Sources += $(wildcard *.txt *.md *.R)
 
 notes.txt:
 
@@ -31,7 +31,7 @@ notes.txt:
 ## introPlus.handouts.docx: introPlus.handouts.tex
 
 ## Working from dump.txt
-## R.draft.pdf: R.txt R.draft.tex
+## R.draft.pdf: R.txt R.draft.tex R.md
 ## R.final.pdf: R.txt
 ## R.handouts.pdf: R.txt
 ## R.complete.pdf: R.txt
