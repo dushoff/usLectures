@@ -30,6 +30,9 @@ notes.txt:
 ## introPlus.complete.pdf: introPlus.txt
 ## introPlus.handouts.docx: introPlus.handouts.tex
 
+## https://claude.ai/chat/3279e1c1-5044-4cf1-95e7-f61923080713
+## prompts.draft.pdf: prompts.txt
+
 ## Working from dump.txt
 ## R.draft.pdf: R.txt R.draft.tex R.md
 ## R.final.pdf: R.txt
@@ -37,7 +40,22 @@ notes.txt:
 ## R.complete.pdf: R.txt
 ## R.handouts.docx: R.handouts.tex
 
-## R.Rout: R.R
+## R26.txt: R.txt
+%26.txt: Makefile | %.txt
+	cat $| | perl -00 -ne 'print unless /ANS/' | cat -s > $@
+
+autopipeR = defined
+R.Rout: R.R
+
+## https://figshare.com/articles/dataset/Portal_Project_Teaching_Database/1314459
+Ignore += data/
+data/rodentData.csv: rodentData.Rout ;
+rodentData.Rout: rodentData.R | data
+data:
+	$(mkdir)
+
+rodents.Rout: | data/rodentData.csv
+## rodents.Rout: rodents.R
 
 pardirs += lecturePix
 
@@ -133,7 +151,7 @@ makestuff:
 -include makestuff/texj.mk
 -include makestuff/webpix.mk
 -include makestuff/mirror.mk
-## -include makestuff/hotcold.mk
+-include makestuff/pipeR.mk
 
 -include makestuff/git.mk
 -include makestuff/visual.mk

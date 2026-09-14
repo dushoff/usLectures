@@ -55,9 +55,6 @@ You can also switch to the "Grid View" in the Environment tab in RStudio.
 
 ---------------------------------------------------------
 
-Values
-
-In addition to numbers, R has other kinds of values. The main ones we're interested in are `character`, `numeric` and `logical` (ie., `TRUE` or `FALSE`). `str()` (short for "structure") is one way to figure out what your R object is. 
 
 ```{r values}
 num <- 3
