@@ -1,0 +1,100 @@
+
+SEC Scientific practice and approaches
+
+---------------------------------------------------------
+
+What are some principles for analyzing scientific data?
+
+HOLD cache/psa.md
+
+	Reproducibility
+
+	Clarity
+
+	Flexibility
+
+----------------------------------------------------------------------
+
+What are some approaches?
+
+	Workbooks
+
+		Excel, google sheets
+
+	Scripting languages
+
+		R, python
+
+	Menu-driven statistical applications
+
+	AI!!
+
+----------------------------------------------------------------------
+
+Advantages of scripting
+
+	Everything I said
+
+		Transparent, reproducible, flexible
+
+----------------------------------------------------------------------
+
+Advantages of workbooks
+
+----------------------------------------------------------------------
+
+Advantages of menu-driven applications
+
+----------------------------------------------------------------------
+
+Advantages of AI
+
+----------------------------------------------------------------------
+
+AI questions
+
+	Should you let the AI do your analysis?
+
+		ANS No!
+
+	Should you let the AI write scripts to do your analysis
+
+		ANS Maybe!
+
+		ANS So what are we doing here?
+
+----------------------------------------------------------------------
+
+Reasons to understand scripts
+
+	What do pilots do?
+
+		ANS It would generally be OK if jetliner pilots didn't really
+		know how to fly, but it's better that they do
+
+	ANS You need a certain amount of knowledge to work effectively with
+	the AI
+
+		ANS And to understand what it's doing
+
+		ANS And to check that it's not just going along with what it
+		thinks you want
+
+----------------------------------------------------------------------
+
+SEC Basics of R
+
+----------------------------------------------------------------------
+
+	You might not use R for programming,  but you should understand
+	roughly how it works inside
+
+	A program is a collection of simple instructions (read, write, send,
+	manipulate, calculate) that should be executed in a logical order
+
+	A program's flow is controlled by *control structures* (instructions
+	about what instruction to do next)
+
+----------------------------------------------------------------------
+
+
