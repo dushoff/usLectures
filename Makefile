@@ -37,6 +37,8 @@ notes.txt:
 ## R.complete.pdf: R.txt
 ## R.handouts.docx: R.handouts.tex
 
+## R.Rout: R.R
+
 pardirs += lecturePix
 
 Ignore += $(pardirs)
