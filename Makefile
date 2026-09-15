@@ -53,9 +53,18 @@ data/rodentData.csv: rodentData.Rout ;
 rodentData.Rout: rodentData.R | data
 data:
 	$(mkdir)
-
 rodents.Rout: | data/rodentData.csv
 ## rodents.Rout: rodents.R
+
+## A smaller set of rodent data?? complete_old from ratdat
+
+######################################################################
+
+## Riparian data from Dudley lab
+data/riparianData.csv: riparianData.Rout | data ;
+riparianData.Rout: riparianData.R riparianData.csv
+
+######################################################################
 
 pardirs += lecturePix
 
@@ -98,6 +107,8 @@ Ignore += $(wildcard *.quiz.csv)
 ## Assignments assignments.md
 
 ## install.asn.md
+
+## data.asn.md
 
 ######################################################################
 

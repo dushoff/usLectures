@@ -8,18 +8,6 @@ SEC Scientific practice and approaches
 
 What are some principles for analyzing scientific data?
 
-	Look for outliers
-
-		A point that deviates from the normal trend
-
-		What is meant by trend?
-
-		More than 4 sd from the mean, maybe
-
-	Quality control, influence
-
-	Reproducibility, clarity, validity
-
 ----------------------------------------------------------------------
 
 What are some approaches?
@@ -46,37 +34,13 @@ Advantages of scripting
 
 Advantages of workbooks
 
-	Help visualizing things in a human way
-
-	Organizing large data sets
-
-	friendlier, interactive qc
-
-		people understand them including your less statsy collaborator
-
-	Data entry
-
 ----------------------------------------------------------------------
 
 Advantages of menu-driven applications
 
-	Convenient for building models
-
-	Modern ones can produce scripts which can be shared, checked, etc.
-
 ----------------------------------------------------------------------
 
 Advantages of AI
-
-	User friendly -- hard to pin down mistakes
-
-		Hallucinate
-
-	May decrease dependence on your own thinking
-
-	Might destroy the world
-
-	Try too hard to get you to like them
 
 ----------------------------------------------------------------------
 
@@ -84,17 +48,7 @@ AI questions
 
 	Should you let the AI do your analysis?
 
-		Maybe illegal! Or maybe you need to first guarantee it won't
-		share your data
-
-		There are things the AI doesn't understand
-
-		You don't what it's done, you don't know exactly how to replicate
-		it
-
 	Should you let the AI write scripts to do your analysis?
-
-		Better if you understand the script
 
 ----------------------------------------------------------------------
 
