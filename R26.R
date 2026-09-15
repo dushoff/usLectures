@@ -1,7 +1,7 @@
 
 ## Calculator (make sure you know the rules)
 7+3*9
-32/4*4
+(32/4)*4
 ## Why doesn't Dushoff like the second one?
 
 ## Assigning values to variables

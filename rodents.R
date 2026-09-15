@@ -1,6 +1,6 @@
 library(readr)
 
-dat <- read_csv("data/rodentData.csv")
+dat <- read_csv("data/rodentData.Rout.csv")
 
 str(dat)
 summary(dat)

@@ -1,2 +1,6 @@
 library(shellpipes)
-csvRead()
+library(janitor)
+
+csvSave(
+	csvRead() |> clean_names()
+)
