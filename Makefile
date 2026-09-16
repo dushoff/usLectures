@@ -8,6 +8,7 @@ vim_session:
 	bash -ic "vmt"
 
 ## -include makestuff/perl.def
+-include makestuff/python.def
 
 ######################################################################
 
@@ -40,12 +41,13 @@ notes.txt:
 ## R.complete.pdf: R.txt
 ## R.handouts.docx: R.handouts.tex
 
-## R26.txt: R.txt
 ## Make a merge script!!!!!!
-%26.txt: Makefile | %.txt
+%.students.txt: | %.txt
 	cat $| | perl -00 -ne 'print unless /ANS/' | cat -s > $@
 
-## git mv R26.txt R26a.txt ##
+## studMerge.md
+R.merged.txt: R.txt R.students.txt studMerge.py
+	$(PITH)
 
 autopipeR = defined
 R.Rout: R.R
