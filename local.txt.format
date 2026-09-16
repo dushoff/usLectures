@@ -7,3 +7,7 @@ STUDENTS {\sffamily %%}
 
 CONV {\sffamily\itshape %%}
 
+# Continue a slide with the same heading
+CONT %!
+draft final: ^DEFHEAD {\sl %%}
+

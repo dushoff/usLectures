@@ -45,6 +45,8 @@ notes.txt:
 %26.txt: Makefile | %.txt
 	cat $| | perl -00 -ne 'print unless /ANS/' | cat -s > $@
 
+## git mv R26.txt R26a.txt ##
+
 autopipeR = defined
 R.Rout: R.R
 
