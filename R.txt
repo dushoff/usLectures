@@ -185,9 +185,124 @@ Scripting should be structured
 
 	Try to avoid these tricks and shortcuts; they can lead to trouble
 
+	Be conscious of what belongs in your script (reproducible, key steps)
+
+		and what you can just type in the console
+
 ----------------------------------------------------------------------
 
-SEC Tidyverse
+SEC Working with data
+
+----------------------------------------------------------------------
+
+Structure of a data table
+
+	We are going to work with data using tables
+
+		We will call them data.frames or tibbles
+
+		We will mostly use tidyverse (see below)
+
+----------------------------------------------------------------------
+
+CONT Structure of a data table
+
+	A rectangle with a logical structure
+
+		Columns are variables; things you can measure
+
+			Everything a column should have the same units
+
+	See an example
+
+----------------------------------------------------------------------
+
+Importing data
+
+	Save a clean worksheet from your workbook (e.g., google or Excel)
+
+	Even better: save it as .tsv or .csv
+
+		Plain formats, guaranteed no surprises
+
+----------------------------------------------------------------------
+
+Checking
+
+	Do the variables have the names and formats you expect?
+
+	Is your import handling \emph{missing values} correctly?
+
+----------------------------------------------------------------------
+
+Missing values
+
+	What kind of values do you want to allow for each variable?
+
+	What codes are you using to indicate things are missing?
+
+	Is R picking them up correctly?
+
+		R uses NA (no quotes) to indicate a missing value
+
+----------------------------------------------------------------------
+
+Missing value logic
+
+	R thinks about missing values in careful ways
+
+		This can be confusing
+
+	What is the mean of 6kg, 5kg and NA?
+
+		NOANS
+
+	What should R do if you ask it for all mice with feet longer than
+	5cm?
+
+----------------------------------------------------------------------
+
+Outliers
+
+	Why do we look for outliers?
+
+		NOANS
+
+	What do we do when we find them?
+
+----------------------------------------------------------------------
+
+Finding outliers
+
+	If your point is an outlier, does that mean it's a mistake?
+
+		What standard should you use?
+
+	If it's almost an outlier, does that mean it's not a mistake?
+
+		ANS Statistics is not magic!
+
+	What happens if you make a standard boxplot of 10,000 points, and
+	your data are perfectly collected and perfectly normal?
+
+		ANS More than 50 of them will be “outliers”
+
+----------------------------------------------------------------------
+
+Quality control
+
+	Always keep original data-entry media
+
+		Take notes in a lab book, or in the margin, or on the spreadsheet
+
+	Double-check \emph{everything} you enter or transcribe
+
+		If copy-pasting, triple-check
+
+	Make notes of everything you change, and why
+
+	If you find a mistake only because it's an outlier, that means your
+	systems have failed
 
 ----------------------------------------------------------------------
 
@@ -213,7 +328,30 @@ Tidyverse
 
 		focuses on logical structure
 
+		We will try to keep things simple by staying “tidy”
+
+			This may still be a controversial choice
+
 ----------------------------------------------------------------------
 
-Structure of a data table
+Loading
 
+	If you say `library(tidyverse)` it will load a bunch of packages
+
+		But not all of the ones you installed with tidyverse
+
+	This is fine!
+
+	Some people prefer to just install what they're using
+
+		For clarity
+
+		Or because they are addicted to restarting R, like me
+
+----------------------------------------------------------------------
+
+readr
+
+	You will use will use this in this week's assignment
+
+	Not very different from the functions in “base” R

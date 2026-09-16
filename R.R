@@ -1,8 +1,12 @@
 
+## Use a pound key (#) to indicate a comment
+
 ## Calculator (make sure you know the rules)
 7+3*9
 32/4*4
+
 ## Why doesn't Dushoff like the second one?
+print((32/4)*4) 
 
 ## Assigning values to variables
 
@@ -17,6 +21,9 @@ print(x)
 y <- x + 17
 y 
 
+## Question from card
+print(x+17)
+
 ######################################################################
 
 ## Values in R
@@ -27,6 +34,7 @@ y
 num <- 3
 str(num) 
 
+## Quotes make something into a character value instead of an R name
 char <- "Hello, class?"
 str(char)
 
@@ -58,5 +66,10 @@ print(m_x)
 ## Functions
 ## We've already seen a bunch of functions
 
+## For example?
+
+## Learn about functions using rstudio help -- I am not an expert
+
 ## Pay attention to what the arguments are
 ## In general, pass arguments using "="
+

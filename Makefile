@@ -41,6 +41,7 @@ notes.txt:
 ## R.handouts.docx: R.handouts.tex
 
 ## R26.txt: R.txt
+## Make a merge script!!!!!!
 %26.txt: Makefile | %.txt
 	cat $| | perl -00 -ne 'print unless /ANS/' | cat -s > $@
 
