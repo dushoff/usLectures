@@ -46,7 +46,7 @@ notes.txt:
 	cat $| | perl -00 -ne 'print unless /ANS/' | cat -s > $@
 
 ## studMerge.md
-R.merged.txt: R.txt R.students.txt studMerge.py
+R.merged.txt: R.txt R26.students.txt studMerge.py
 	$(PITH)
 
 autopipeR = defined

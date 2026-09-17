@@ -30,6 +30,11 @@ def paragraphs(lines):
 	return [p for p in re.split(r'\n[ \t]*\n+', text) if p.strip()]
 
 
+def add_marker(paragraph):
+	indent = re.match(r'[ \t]*', paragraph).group()
+	return indent + 'ADDED: ' + paragraph[len(indent):]
+
+
 def merge_slide(paras1, paras2):
 	sm = difflib.SequenceMatcher(a=paras1, b=paras2, autojunk=False)
 	out = []
@@ -37,10 +42,10 @@ def merge_slide(paras1, paras2):
 		if tag in ('equal', 'delete'):
 			out.extend(paras1[i1:i2])
 		elif tag == 'insert':
-			out.extend('ADDED: ' + p for p in paras2[j1:j2])
+			out.extend(add_marker(p) for p in paras2[j1:j2])
 		elif tag == 'replace':
 			out.extend(paras1[i1:i2])
-			out.extend('ADDED: ' + p for p in paras2[j1:j2])
+			out.extend(add_marker(p) for p in paras2[j1:j2])
 	return out
 
 
