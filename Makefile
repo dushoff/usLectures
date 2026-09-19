@@ -34,20 +34,32 @@ notes.txt:
 ## https://claude.ai/chat/3279e1c1-5044-4cf1-95e7-f61923080713
 ## prompts.draft.pdf: prompts.txt
 
-## Working from dump.txt
 ## R.draft.pdf: R.txt R.draft.tex R.md
 ## R.final.pdf: R.txt
 ## R.handouts.pdf: R.txt
 ## R.complete.pdf: R.txt
 ## R.handouts.docx: R.handouts.tex
 
-## Make a merge script!!!!!!
+## R.merged: R.txt R26.students.txt 
+## cp R.merged R.merged.txt ##
+
+## R.merged.draft.pdf: R.merged.txt R.draft.tex R.md
+## R.merged.final.pdf: R.merged.txt
+## R.merged.handouts.pdf: R.merged.txt
+## R.merged.complete.pdf: R.merged.txt
+
+######################################################################
+
+## Prep an interactive slides file
 %.students.txt: | %.txt
 	cat $| | perl -00 -ne 'print unless /ANS/' | cat -s > $@
 
-## 
-## studMerge.md
-R.merged.txt: R.txt R26.students.txt studMerge.py
+## studMerge.md # Included claude prompt and notes.
+Ignore += $(wildcard *.merged)
+%.merged: %.txt %.students.txt studMerge.py
+	$(PITH)
+
+test.merged: R.txt R.students.txt studMerge.py
 	$(PITH)
 
 autopipeR = defined

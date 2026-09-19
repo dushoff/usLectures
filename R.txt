@@ -43,7 +43,7 @@ Advantages of scripting
 
 	Everything I said
 
-		ANS Transparent, reproducible, flexible
+		OLDANS Transparent, reproducible, flexible
 
 ----------------------------------------------------------------------
 
@@ -63,15 +63,15 @@ AI questions
 
 	Should you let the AI do your analysis?
 
-		ANS No!
+		OLDANS No!
 
-		ANS Depending on what you mean
+		OLDANS Depending on what you mean
 
 	Should you let the AI write scripts to do your analysis?
 
-		ANS Maybe!
+		OLDANS Maybe!
 
-		ANS So what are we doing here?
+		OLDANS So what are we doing here?
 
 ----------------------------------------------------------------------
 
@@ -79,15 +79,15 @@ Reasons to understand scripts
 
 	What do pilots do?
 
-		ANS It would generally be OK if jetliner pilots didn't really
+		OLDANS It would generally be OK if jetliner pilots didn't really
 		know how to fly, but it's better that they do
 
-	ANS You need a certain amount of knowledge to work effectively with
+	OLDANS You need a certain amount of knowledge to work effectively with
 	the AI
 
-		ANS And to understand what it's doing
+		OLDANS And to understand what it's doing
 
-		ANS And to check that it's not just going along with what it
+		OLDANS And to check that it's not just going along with what it
 		thinks you want
 
 ----------------------------------------------------------------------
@@ -96,11 +96,11 @@ Other approaches
 
 	What are other things you can and should do to evaluate your scripts?
 
-	ANS You can check, cross-check and validate your scripts
+	OLDANS You can check, cross-check and validate your scripts
 
-	ANS With help from AI
+	OLDANS With help from AI
 
-		ANS Or another AI
+		OLDANS Or another AI
 
 ----------------------------------------------------------------------
 
@@ -123,12 +123,12 @@ R is a programming language
 
 What is rstudio?
 
-	ANS An interface for working with R
+	OLDANS An interface for working with R
 
-	ANS Manage files, organize them into projects, develop and run
+	OLDANS Manage files, organize them into projects, develop and run
 	scripts
 
-		ANS Does not have to be complicated
+		OLDANS Does not have to be complicated
 
 ----------------------------------------------------------------------
 
@@ -138,10 +138,10 @@ Revision control
 
 	What is the difference?
 
-		ANS Git is a program for keeping track of the state of
+		OLDANS Git is a program for keeping track of the state of
 		\emph{human work} in a project
 
-		ANS Github is a site for managing and sharing git projects
+		OLDANS Github is a site for managing and sharing git projects
 
 	Should we try to get into git?
 
@@ -261,20 +261,24 @@ Missing value logic
 
 	What is the mean of 6kg, 5kg and NA?
 
-		NOANS
+		ANS If you're being careful, it is NA. So that is the default
 
-	What should R do if you ask it for all mice with feet longer than
+	What should R do if you ask it for all mice with footLength $>$ 
 	5cm?
 
-		ANS Winner
+		ANS If footLength is NA you don't know whether it's $>$ 5cm
 
-			ANS But it has to be a new winner
+			ANS To be careful, R should report those mice to you
 
 ----------------------------------------------------------------------
 
 Outliers
 
 	Why do we look for outliers?
+
+		NOANS
+
+		NOANS
 
 		NOANS
 
@@ -362,6 +366,6 @@ Loading
 
 readr
 
-	You will use will use this in this week's assignment
+	Used in this week's assignment
 
 	Not very different from the functions in “base” R
