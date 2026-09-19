@@ -1,7 +1,6 @@
 import sys
 import re
 import difflib
-from itertools import zip_longest
 
 hline_re = re.compile(r'^-+$')
 
@@ -30,12 +29,16 @@ def paragraphs(lines):
 	return [p for p in re.split(r'\n[ \t]*\n+', text) if p.strip()]
 
 
+def title(paras):
+	return paras[0].strip() if paras else None
+
+
 def add_marker(paragraph):
 	indent = re.match(r'[ \t]*', paragraph).group()
 	return indent + 'ADDED: ' + paragraph[len(indent):]
 
 
-def merge_slide(paras1, paras2):
+def merge_paragraphs(paras1, paras2):
 	sm = difflib.SequenceMatcher(a=paras1, b=paras2, autojunk=False)
 	out = []
 	for tag, i1, i2, j1, j2 in sm.get_opcodes():
@@ -49,15 +52,38 @@ def merge_slide(paras1, paras2):
 	return out
 
 
+def merge_slides(slides1, slides2):
+	paras1_list = [paragraphs(s) for s in slides1]
+	paras2_list = [paragraphs(s) for s in slides2]
+	titles1 = [title(p) for p in paras1_list]
+
+	j = 0
+	merged = []
+	for i, paras1 in enumerate(paras1_list):
+		if j < len(paras2_list) and titles1[i] == title(paras2_list[j]):
+			merged.append(merge_paragraphs(paras1, paras2_list[j]))
+			j += 1
+		else:
+			merged.append(paras1)
+
+	if j < len(paras2_list):
+		sys.exit(
+			'studMerge: slide titled %r (from second file) does not match '
+			'any remaining slide in the first file, in order'
+			% title(paras2_list[j])
+		)
+
+	return merged
+
+
 def main():
+	if len(sys.argv) != 3:
+		sys.exit('usage: studMerge.py file1 file2')
 	file1, file2 = sys.argv[1], sys.argv[2]
 	slides1, hlines1 = read_slides(file1)
 	slides2, _ = read_slides(file2)
 
-	merged = [
-		merge_slide(paragraphs(s1), paragraphs(s2))
-		for s1, s2 in zip_longest(slides1, slides2, fillvalue=[])
-	]
+	merged = merge_slides(slides1, slides2)
 
 	chunks = []
 	for i, paras in enumerate(merged):

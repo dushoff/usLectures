@@ -11,3 +11,10 @@ CONV {\sffamily\itshape %%}
 CONT %!
 draft final: ^DEFHEAD {\sl %%}
 
+OLDANS 
+handouts complete: {\bf\underline{Answer}: }%%
+final: * \uncover<+->{\color{blue} %%}
+draft: * {\color{blue} %%}
+slides: * {\color{blue} %%}
+outline: %!
+

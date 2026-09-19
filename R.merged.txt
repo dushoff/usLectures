@@ -1,3 +1,9 @@
+EXTRA New protocols
+
+OLDANS for something I should share in handouts but revert to an answer for next time
+
+----------------------------------------------------------------------
+
 UNIT 1: Introduction to R
 
 ----------------------------------------------------------------------
@@ -8,11 +14,11 @@ SEC Scientific practice and approaches
 
 What are some principles for analyzing scientific data?
 
-	ANS Reproducibility
+	OLDANS Reproducibility
 
-	ANS Clarity
+	OLDANS Clarity
 
-	ANS Flexibility
+	OLDANS Flexibility
 
 ----------------------------------------------------------------------
 
@@ -62,11 +68,25 @@ AI questions
 
 		ANS Depending on what you mean
 
+		ADDED: STUDENTS Hallucinates
+
+		ADDED: STUDENTS Does not lead to understanding
+
+		ADDED: ANS Too eager to please
+
+		ADDED: CONV No
+
 	Should you let the AI write scripts to do your analysis?
 
 		ANS Maybe!
 
 		ANS So what are we doing here?
+
+		ADDED: STUDENTS Can be dangerous
+
+		ADDED: ANS Maybe
+
+			ADDED: ANS But check and test the scripts if so
 
 ----------------------------------------------------------------------
 
@@ -125,6 +145,8 @@ What is rstudio?
 
 		ANS Does not have to be complicated
 
+	ADDED: ANS A user-friendly interface for working with R
+
 ----------------------------------------------------------------------
 
 Revision control
@@ -137,6 +159,10 @@ Revision control
 		\emph{human work} in a project
 
 		ANS Github is a site for managing and sharing git projects
+
+		ADDED: ANS git is a program for revision control
+
+		ADDED: ANS
 
 	Should we try to get into git?
 

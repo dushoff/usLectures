@@ -1,4 +1,10 @@
 
+EXTRA New protocols
+
+OLDANS for something I should share in handouts but revert to an answer for next time
+
+----------------------------------------------------------------------
+
 UNIT 1: Introduction to R
 
 ----------------------------------------------------------------------
@@ -9,11 +15,11 @@ SEC Scientific practice and approaches
 
 What are some principles for analyzing scientific data?
 
-	ANS Reproducibility
+	OLDANS Reproducibility
 
-	ANS Clarity
+	OLDANS Clarity
 
-	ANS Flexibility
+	OLDANS Flexibility
 
 ----------------------------------------------------------------------
 

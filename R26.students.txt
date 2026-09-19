@@ -51,7 +51,21 @@ AI questions
 
 	Should you let the AI do your analysis?
 
+		STUDENTS Hallucinates
+
+		STUDENTS Does not lead to understanding
+
+		ANS Too eager to please
+
+		CONV No
+
 	Should you let the AI write scripts to do your analysis?
+
+		STUDENTS Can be dangerous
+
+		ANS Maybe
+
+			ANS But check and test the scripts if so
 
 ----------------------------------------------------------------------
 
@@ -86,6 +100,8 @@ R is a programming language
 
 What is rstudio?
 
+	ANS A user-friendly interface for working with R
+
 ----------------------------------------------------------------------
 
 Revision control
@@ -93,6 +109,10 @@ Revision control
 	Who has worked with git or github?
 
 	What is the difference?
+
+		ANS git is a program for revision control
+
+		ANS
 
 	Should we try to get into git?
 
