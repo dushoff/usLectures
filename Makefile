@@ -164,6 +164,7 @@ makestuff:
 -include makestuff/newtalk.mk
 -include makestuff/texj.mk
 -include makestuff/webpix.mk
+-include makestuff/mirror.mk
 -include makestuff/pipeR.mk
 
 -include makestuff/git.mk
