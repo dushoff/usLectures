@@ -4,8 +4,10 @@ HOLD %!
 draft final: ^%%
 
 STUDENTS {\sffamily %%}
+handouts complete: {\bf\underline{Students}: }%%
 
 CONV {\sffamily\itshape %%}
+handouts complete: {\bf\underline{Discussion}: }%%
 
 # Continue a slide with the same heading
 CONT %!
@@ -19,4 +21,4 @@ slides: * {\color{blue} %%}
 outline: %!
 
 ADDED ADDED: %%
-handouts complete: \stop
+handouts complete: {\errmessage{ADDED}}

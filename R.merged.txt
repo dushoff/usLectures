@@ -79,13 +79,11 @@ AI questions
 
 		OLDANS Depending on what you mean
 
-		STUDENTS Hallucinates
+			STUDENTS Hallucinates
 
-		STUDENTS Does not lead to understanding
+			STUDENTS Does not lead to understanding
 
-		CONV Too eager to please
-
-		ANS No
+			CONV Too eager to please
 
 	Should you let the AI write scripts to do your analysis?
 
@@ -183,7 +181,7 @@ Principles and practice
 
 			Don't do `rm' instead
 
-				ANS Does not clear everything
+			OLDANS Does not clear everything
 
 		Shareable
 
@@ -289,17 +287,14 @@ Missing value logic
 
 	What is the mean of 6kg, 5kg and NA?
 
-		ANS If you're being careful, it is NA. So that is the default
+		OLDANS If you're being careful, it is NA. So that is the default
 
 	What should R do if you ask it for all mice with footLength $>$ 
 	5cm?
 
-		ANS If footLength is NA you don't know whether it's $>$ 5cm
+		OLDANS If footLength is NA you don't know whether it's $>$ 5cm
 
-			ANS To be careful, R should report those mice to you
-
-	ADDED: What should R do if you ask it for all mice with feet longer than
-	5cm?
+			OLDANS To be careful, R should report those mice to you
 
 ----------------------------------------------------------------------
 
@@ -399,6 +394,6 @@ readr
 
 	Used in this week's assignment
 
-	ADDED: You will use will use this in this week's assignment
+		COMMENT (Sorry I'm running late)
 
 	Not very different from the functions in “base” R

@@ -12,6 +12,8 @@ vim_session:
 
 ######################################################################
 
+## Announcements are in the us subdirectory of the space directory
+
 ## Lecture files
 
 Sources += $(wildcard *.txt *.md *.R)
@@ -43,7 +45,7 @@ notes.txt:
 ## R.merged: R.txt R26.students.txt 
 ## cp R.merged R.merged.txt ##
 
-## R.merged.draft.pdf: R.merged.txt R.draft.tex R.md
+## R.merged.draft.pdf: R.merged.txt R.merged.draft.tex
 ## R.merged.final.pdf: R.merged.txt
 ## R.merged.handouts.pdf: R.merged.txt
 ## R.merged.complete.pdf: R.merged.txt
