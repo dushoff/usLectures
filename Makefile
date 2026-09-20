@@ -36,6 +36,8 @@ notes.txt:
 ## https://claude.ai/chat/3279e1c1-5044-4cf1-95e7-f61923080713
 ## prompts.draft.pdf: prompts.txt
 
+######################################################################
+
 ## R.draft.pdf: R.txt R.draft.tex R.md
 ## R.final.pdf: R.txt
 ## R.handouts.pdf: R.txt
@@ -49,6 +51,22 @@ notes.txt:
 ## R.merged.final.pdf: R.merged.txt
 ## R.merged.handouts.pdf: R.merged.txt
 ## R.merged.complete.pdf: R.merged.txt
+
+######################################################################
+
+## data.draft.pdf: data.txt data.draft.tex data.md
+## data.final.pdf: data.txt
+## data.handouts.pdf: data.txt
+## data.complete.pdf: data.txt
+## data.handouts.docx: data.handouts.tex
+
+## data.merged: data.txt R26.students.txt 
+## cp data.merged data.merged.txt ##
+
+## data.merged.draft.pdf: data.merged.txt data.merged.draft.tex
+## data.merged.final.pdf: data.merged.txt
+## data.merged.handouts.pdf: data.merged.txt
+## data.merged.complete.pdf: data.merged.txt
 
 ######################################################################
 
