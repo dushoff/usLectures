@@ -44,7 +44,7 @@ notes.txt:
 ## R.complete.pdf: R.txt
 ## R.handouts.docx: R.handouts.tex
 
-## R.merged: R.txt R26.students.txt 
+## R.merged: R.txt R.students.txt 
 ## cp R.merged R.merged.txt ##
 
 ## R.merged.draft.pdf: R.merged.txt R.merged.draft.tex
@@ -60,7 +60,7 @@ notes.txt:
 ## data.complete.pdf: data.txt
 ## data.handouts.docx: data.handouts.tex
 
-## data.merged: data.txt R26.students.txt 
+## data.merged: data.txt data.students.txt 
 ## cp data.merged data.merged.txt ##
 
 ## data.merged.draft.pdf: data.merged.txt data.merged.draft.tex

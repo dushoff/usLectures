@@ -1,4 +1,8 @@
 
+UNIT 2: Managing data
+
+----------------------------------------------------------------------
+
 Types of data
 
 Nominal
@@ -22,3 +26,5 @@ groups
 facets
 
 Cleveland
+
+Symmetry (be careful!)
