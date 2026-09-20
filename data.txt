@@ -5,17 +5,79 @@ UNIT 2: Managing data
 
 Types of data
 
-Nominal
+	Nominal: names only, no order
 
-Ordinal
+		NOANS
 
-Interval
+	Ordinal: order, no differences
 
-Ratio
+		NOANS
 
-Warning: characters and factors
+	Interval: differences, no ratios
+
+		NOANS
+
+	Ratio
+
+		NOANS
+
+----------------------------------------------------------------------
+
+Numeric variables
+
+	Interval and ratio variables are usually numeric
+
+	These can be stored as continuous numbers or integers; it often
+	won't matter to us
+
+----------------------------------------------------------------------
+
+Non-numeric variables
+
+	Have two representations:
+
+		The name is a character
+
+		The list of legal names is a factor
+
+	R needs to convert characters to factors to analyze or plot
+
+----------------------------------------------------------------------
 
 dplyr verbs
+
+----------------------------------------------------------------------
+
+Pipes and combining functions
+
+	We can combine functions using parentheses
+
+		Like you learn in math
+
+	Or using pipes
+
+		More explicit about the order of steps
+
+	Live example
+
+----------------------------------------------------------------------
+
+Multi-line syntax
+
+	R is generally guessing when you are done telling it what to do
+
+		This is an example of leftover old-fashioned stuff
+
+	Most of the modern code uses continuation characters to prevent
+	early execution
+
+		ANS (R running something before you want it to)
+
+		This is fine – but I think it's ugly
+
+	Live example
+----------------------------------------------------------------------
+
 
 ggplot verbs
 geom_bar vs. geom_hist
