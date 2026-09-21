@@ -220,9 +220,27 @@ Missing value logic
 
 Outliers
 
+	What is an outlier?
+
+		A single values that is unlike other values of the same variable
+
+		A point that doesn't follow the trend (relating two or more variables)
+
 	Why do we look for outliers?
 
+		Outlier might be part of the wrong pattern?
+
+		Can skew the data
+
+			Might be wrong
+
+			Might have a very strong effect on our statistics
+
 	What do we do when we find them?
+
+		Ignore that point? Selection bias!
+
+		Investigate
 
 ----------------------------------------------------------------------
 
@@ -253,6 +271,8 @@ Quality control
 
 	If you find a mistake only because it's an outlier, that means your
 	systems have failed
+
+		You should have found it another way!
 
 ----------------------------------------------------------------------
 
