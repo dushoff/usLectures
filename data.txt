@@ -44,6 +44,16 @@ Non-numeric variables
 
 ----------------------------------------------------------------------
 
+TSEC Tidy code
+
+	We are going to keep our code simple
+
+	By relying on packages from the tidyverse
+
+	And by only doing simple things
+
+----------------------------------------------------------------------
+
 dplyr verbs
 
 ----------------------------------------------------------------------
@@ -76,8 +86,10 @@ Multi-line syntax
 		This is fine – but I think it's ugly
 
 	Live example
+
 ----------------------------------------------------------------------
 
+EXTRA
 
 ggplot verbs
 geom_bar vs. geom_hist

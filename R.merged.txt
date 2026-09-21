@@ -20,6 +20,10 @@ What are some principles for analyzing scientific data?
 
 	OLDANS Flexibility
 
+	STUDENTS Find outliers
+
+		CONV Is this a principle?
+
 ----------------------------------------------------------------------
 
 What are some approaches?
@@ -302,9 +306,11 @@ Outliers
 
 	Why do we look for outliers?
 
-		NOANS
+		ANS They might be wrong
 
-		NOANS
+		ANS They might have a big effect on our results
+
+		ANS They might mess up our statistical assumptions
 
 		NOANS
 
@@ -343,6 +349,42 @@ Quality control
 
 	If you find a mistake only because it's an outlier, that means your
 	systems have failed
+
+----------------------------------------------------------------------
+
+Programming
+
+	An R script is a program
+
+	Can be very simple
+
+	Does “what you tell it” -- one step at a time
+
+----------------------------------------------------------------------
+
+Principles
+
+	Respect the logic of your program
+
+		It's fine to play around with commands
+
+		But in the end you should have a program you can run from beginning to end in a clean session
+
+			Just using “rm” does not clean everything
+
+			Make sure not to use automatic environment
+
+----------------------------------------------------------------------
+
+Chunks
+
+	Do tasks in pieces
+
+	For future: 
+
+		have simple scripts that save their results
+
+		start other scripts from the beginning and have them read the results from these scripts
 
 ----------------------------------------------------------------------
 

@@ -20,18 +20,13 @@ Sources += $(wildcard *.txt *.md *.R)
 
 notes.txt:
 
+## No .merged paradigm yet! Additions in original. Maybe that should be the paradigm? Just edit the tags and keep going
+
 ## intro.draft.pdf: intro.txt intro.draft.tex
 ## intro.final.pdf: intro.txt
 ## intro.handouts.pdf: intro.txt
 ## intro.complete.pdf: intro.txt
 ## intro.handouts.docx: intro.handouts.tex
-
-## Not done yet; something about following up the assignment and the question of what significance is about
-## introPlus.draft.pdf: introPlus.txt
-## introPlus.final.pdf: introPlus.txt
-## introPlus.handouts.pdf: introPlus.txt
-## introPlus.complete.pdf: introPlus.txt
-## introPlus.handouts.docx: introPlus.handouts.tex
 
 ## https://claude.ai/chat/3279e1c1-5044-4cf1-95e7-f61923080713
 ## prompts.draft.pdf: prompts.txt
@@ -44,7 +39,7 @@ notes.txt:
 ## R.complete.pdf: R.txt
 ## R.handouts.docx: R.handouts.tex
 
-## R.merged: R.txt R.students.txt 
+## R.merged: R.txt R.students.txt
 ## cp R.merged R.merged.txt ##
 
 ## R.merged.draft.pdf: R.merged.txt R.merged.draft.tex
@@ -62,7 +57,7 @@ notes.txt:
 
 ## Make .students.txt when ready to present
 ## May need to deal with it manually ...
-## data.merged: data.txt data.students.txt 
+## data.merged: data.txt data.students.txt
 ## cp data.merged data.merged.txt ##
 
 ## data.merged.draft.pdf: data.merged.txt data.merged.draft.tex
@@ -77,6 +72,7 @@ notes.txt:
 	cat $| | perl -00 -ne 'print unless /ANS/' | cat -s > $@
 
 ## studMerge.md # Included claude prompt and notes.
+## Once the students file is merged, it shouldn't be needed anymore!
 Ignore += $(wildcard *.merged)
 %.merged: %.txt %.students.txt studMerge.py
 	$(PITH)
