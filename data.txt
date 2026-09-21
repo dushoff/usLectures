@@ -36,11 +36,13 @@ Non-numeric variables
 
 	Have two representations:
 
-		The name is a character
+		The name itself is a character variable
 
-		The list of legal names is a factor
+		A pointer to a list of legal names is a factor variable
 
 	R needs to convert characters to factors to analyze or plot
+
+	We will try to help you navigate this without worry
 
 ----------------------------------------------------------------------
 
@@ -54,7 +56,15 @@ TSEC Tidy code
 
 ----------------------------------------------------------------------
 
-dplyr verbs
+dplyr
+
+	dplyr was designed to 
+
+		Focus on tabular data (columns as variables, rows as observations)
+
+		Make simple tasks readable and understandable
+
+			uses verb-style functions
 
 ----------------------------------------------------------------------
 
@@ -68,7 +78,7 @@ Pipes and combining functions
 
 		More explicit about the order of steps
 
-	Live example
+	See R.final.R
 
 ----------------------------------------------------------------------
 
@@ -85,7 +95,73 @@ Multi-line syntax
 
 		This is fine – but I think it's ugly
 
-	Live example
+	See R.final.R
+
+----------------------------------------------------------------------
+
+dplyr verbs
+
+	filter() chooses rows based on column values
+
+	select() changes whether or not a column is included
+
+	mutate() changes the values of columns and creates new columns
+
+	summarise() collapses each group into a single row (by calculating something)
+
+		count() collapses each group into a single row (by just counting rows)
+
+	NOTES HREF https://dplyr.tidyverse.org/articles/dplyr.html Intro to dplyr
+
+	CLASS See intro to dplyr
+
+----------------------------------------------------------------------
+
+filter()
+
+	Select certain observations
+
+		Based on criteria about the variables
+
+	Syntax
+
+		$<$, $<=$, ...
+
+		$==$ for equals
+
+		$!=$ for does not equal
+
+	Example riparianData.final.R
+
+----------------------------------------------------------------------
+
+select()
+
+	Select certain variables
+
+	Rarely necessary, but often convenient
+
+		Focus on what you want to focus on 
+
+----------------------------------------------------------------------
+
+mutate()
+
+	Make or change columns
+
+	Calculate what you want
+
+	example provinces.final.R
+
+----------------------------------------------------------------------
+
+summarise()
+
+	Calculate statistics
+
+	Break things into groups (use .by=)
+
+		The dot is weird, sorry.
 
 ----------------------------------------------------------------------
 
