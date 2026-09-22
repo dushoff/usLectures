@@ -55,8 +55,6 @@ notes.txt:
 ## data.complete.pdf: data.txt
 ## data.handouts.docx: data.handouts.tex
 
-## Make .students.txt when ready to present
-## May need to deal with it manually ...
 ## data.merged: data.txt data.students.txt
 ## cp data.merged data.merged.txt ##
 
@@ -76,6 +74,7 @@ notes.txt:
 Ignore += $(wildcard *.merged)
 %.merged: %.txt %.students.txt studMerge.py
 	$(PITH)
+	$(RM) $(word 2, $^)
 
 test.merged: R.txt R.students.txt studMerge.py
 	$(PITH)

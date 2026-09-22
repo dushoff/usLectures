@@ -20,10 +20,6 @@ What are some principles for analyzing scientific data?
 
 	OLDANS Flexibility
 
-	STUDENTS Find outliers
-
-		CONV Is this a principle?
-
 ----------------------------------------------------------------------
 
 What are some approaches?
@@ -50,28 +46,15 @@ Advantages of scripting
 
 ----------------------------------------------------------------------
 
-Workbooks
-
-	Advantages
-
-		STUDENTS User-friendly
-
-		STUDENTS Familiar to us and to others
-
-	Disadvantages
-
-		CONV Less replicable
-
-		CONV Less transparent
+Advantages of workbooks
 
 ----------------------------------------------------------------------
 
-Menu-driven applications
+Advantages of menu-driven applications
 
-	E.g., SPSS
+----------------------------------------------------------------------
 
-	CONV These are not familiar to people, we can talk if you have a
-	particular interest
+Advantages of AI
 
 ----------------------------------------------------------------------
 
@@ -83,21 +66,11 @@ AI questions
 
 		OLDANS Depending on what you mean
 
-			STUDENTS Hallucinates
-
-			STUDENTS Does not lead to understanding
-
-			CONV Too eager to please
-
 	Should you let the AI write scripts to do your analysis?
 
 		OLDANS Maybe!
 
 		OLDANS So what are we doing here?
-
-		STUDENTS Can be dangerous
-
-			CONV But check and test the scripts if so
 
 ----------------------------------------------------------------------
 
@@ -108,8 +81,8 @@ Reasons to understand scripts
 		OLDANS It would generally be OK if jetliner pilots didn't really
 		know how to fly, but it's better that they do
 
-	OLDANS You need a certain amount of knowledge to work effectively
-	with the AI
+	OLDANS You need a certain amount of knowledge to work effectively with
+	the AI
 
 		OLDANS And to understand what it's doing
 
@@ -171,8 +144,6 @@ Revision control
 
 	Should we try to get into git?
 
-		STUDENTS Yes
-
 ----------------------------------------------------------------------
 
 Principles and practice
@@ -184,8 +155,6 @@ Principles and practice
 			Restart R and run everything again to test
 
 			Don't do `rm' instead
-
-			OLDANS Does not clear everything
 
 		Shareable
 
@@ -291,30 +260,43 @@ Missing value logic
 
 	What is the mean of 6kg, 5kg and NA?
 
-		OLDANS If you're being careful, it is NA. So that is the default
+		ANS If you're being careful, it is NA. So that is the default
 
 	What should R do if you ask it for all mice with footLength $>$ 
 	5cm?
 
-		OLDANS If footLength is NA you don't know whether it's $>$ 5cm
+		ANS If footLength is NA you don't know whether it's $>$ 5cm
 
-			OLDANS To be careful, R should report those mice to you
+			ANS To be careful, R should report those mice to you
 
 ----------------------------------------------------------------------
 
-Outliers
+What is an outlier?
 
-	Why do we look for outliers?
+	CONV A single values that is unlike other values of the same variable
 
-		ANS They might be wrong
+	CONV A point that doesn't follow the trend (relating two or more
+	variables)
 
-		ANS They might have a big effect on our results
+----------------------------------------------------------------------
 
-		ANS They might mess up our statistical assumptions
+Why do we look for outliers?
 
-		NOANS
+	STUDENTS Outlier might be part of the wrong pattern?
 
-	What do we do when we find them?
+	STUDENTS Can skew the data
+
+		CONV Might be wrong
+
+		CONV Might have a very strong effect on our statistics
+
+What do we do when we find them?
+
+	STUDENTS Ignore that point?
+
+		STUDENTS Selection bias!
+
+	STUDENTS Investigate
 
 ----------------------------------------------------------------------
 
@@ -350,41 +332,9 @@ Quality control
 	If you find a mistake only because it's an outlier, that means your
 	systems have failed
 
-----------------------------------------------------------------------
+		CONV You should have found it another way!
 
-Programming
-
-	An R script is a program
-
-	Can be very simple
-
-	Does “what you tell it” -- one step at a time
-
-----------------------------------------------------------------------
-
-Principles
-
-	Respect the logic of your program
-
-		It's fine to play around with commands
-
-		But in the end you should have a program you can run from beginning to end in a clean session
-
-			Just using “rm” does not clean everything
-
-			Make sure not to use automatic environment
-
-----------------------------------------------------------------------
-
-Chunks
-
-	Do tasks in pieces
-
-	For future: 
-
-		have simple scripts that save their results
-
-		start other scripts from the beginning and have them read the results from these scripts
+		CONV And you will be missing other mistakes, probably
 
 ----------------------------------------------------------------------
 
@@ -435,7 +385,5 @@ Loading
 readr
 
 	Used in this week's assignment
-
-		COMMENT (Sorry I'm running late)
 
 	Not very different from the functions in “base” R
