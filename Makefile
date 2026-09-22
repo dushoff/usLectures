@@ -74,7 +74,7 @@ notes.txt:
 Ignore += $(wildcard *.merged)
 %.merged: %.txt %.students.txt studMerge.py
 	$(PITH)
-	$(RM) $(word 2, $^)
+	git rm $(word 2, $^) || $(RM) $(word 2, $^)
 
 test.merged: R.txt R.students.txt studMerge.py
 	$(PITH)
