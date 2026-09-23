@@ -1,0 +1,319 @@
+UNIT 2: Managing data
+
+----------------------------------------------------------------------
+
+Types of data
+
+	Nominal: names only, no order
+
+		NOANS
+
+	Ordinal: order, no differences
+
+		NOANS
+
+	Interval: differences, no ratios
+
+		NOANS
+
+	Ratio
+
+		NOANS
+
+----------------------------------------------------------------------
+
+Numeric variables
+
+	Interval and ratio variables are usually numeric
+
+	These can be stored as continuous numbers or integers; it often
+	won't matter to us
+
+----------------------------------------------------------------------
+
+Non-numeric variables
+
+	Have two representations:
+
+		The name itself is a character variable
+
+		A pointer to a list of legal names is a factor variable
+
+	R needs to convert characters to factors to analyze or plot
+
+	We will try to help you navigate this without worry
+
+----------------------------------------------------------------------
+
+TSEC Tidy code
+
+	We are going to keep our code simple
+
+	By relying on packages from the tidyverse
+
+	And by only doing simple things
+
+----------------------------------------------------------------------
+
+dplyr
+
+	dplyr was designed to 
+
+		Focus on tabular data (columns as variables, rows as observations)
+
+		Make simple tasks readable and understandable
+
+			uses verb-style functions
+
+	NOTES HREF https://dplyr.tidyverse.org/ a dplyr intro
+
+----------------------------------------------------------------------
+
+Pipes and combining functions
+
+	We can combine functions using parentheses
+
+		Like you learn in math
+
+	Or using pipes
+
+		More explicit about the order of steps
+
+	See R.final.R
+
+----------------------------------------------------------------------
+
+Pipe logic
+
+	The pipe takes the output passed from its left and uses it as the
+	\emph{first argument} of the function to its right
+
+	What does this do?
+
+		CODE dat |> filter(x>7)
+
+		ANS Look at filter() help
+
+----------------------------------------------------------------------
+
+Multi-line syntax
+
+	R is generally guessing when you are done telling it what to do
+
+		This is an example of leftover old-fashioned stuff
+
+	Most of the modern code uses continuation characters to prevent
+	early execution
+
+		ANS (R running something before you want it to)
+
+		This is fine – but I think it's ugly
+
+	See R.final.R
+
+----------------------------------------------------------------------
+
+dplyr verbs
+
+	filter() chooses rows based on column values
+
+	select() changes whether or not a column is included
+
+	mutate() changes the values of columns and creates new columns
+
+	summarise() collapses each group into a single row (by calculating something)
+
+		count() collapses each group into a single row (by just counting rows)
+
+	NOTES HREF https://dplyr.tidyverse.org/articles/dplyr.html Intro to dplyr
+
+	CLASS See intro to dplyr
+
+----------------------------------------------------------------------
+
+filter()
+
+	Select certain observations
+
+		Based on criteria about the variables
+
+	Syntax
+
+		$<$, $<=$, ...
+
+		$==$ for equals
+
+		$!=$ for does not equal
+
+	Example riparianData.final.R
+
+----------------------------------------------------------------------
+
+select()
+
+	Select certain variables
+
+	Rarely necessary, but often convenient
+
+		Focus on what you want to focus on 
+
+----------------------------------------------------------------------
+
+mutate()
+
+	Make or change columns
+
+	Calculate what you want
+
+	example provinces.final.R
+
+----------------------------------------------------------------------
+
+summarise()
+
+	Calculate statistics
+
+	Break things into groups (use .by=)
+
+		The dot is weird, sorry.
+
+	How does summarise handle NA? Why?
+
+		ANS summary is for exploring; summarise is for working
+
+----------------------------------------------------------------------
+
+Handling NAs
+
+	R has a logical function is.na()
+
+		We can \emph{negate} logic with !
+
+		ANS !is.na() means “is not NA”
+
+----------------------------------------------------------------------
+
+TSEC Plotting
+
+----------------------------------------------------------------------
+
+ggplot
+
+	We will plot things using ggplot2
+
+		COMMENT This is the only ggplot for some reason
+
+		NOTES HREF https://ggplot2.tidyverse.org/articles/ggplot2.html A
+		nice ggplot intro
+
+	gg stands for “grammar of graphics”
+
+	Similar philosophy to dplyr of building readable, understandable
+	things, but maybe not so beautiful
+
+----------------------------------------------------------------------
+
+Constructing plots
+
+	To make a plot, you must describe
+
+		Data (your first argument, in the piping world)
+
+		aesthetic mappings
+
+		geometries
+
+	Examples
+
+----------------------------------------------------------------------
+
+More plots
+
+	You may also describe
+
+		Scales
+
+			ANS Log scales, color scales ...
+
+		Facets
+
+			Break your plot into many plots!
+
+		Themes
+
+			Look and feel (not directly data related)
+
+			This can include aesthetics that are not aesthetic mappings
+
+----------------------------------------------------------------------
+
+Data
+
+	Your data will have the shape we've talked about
+
+		ANS Rows for observations
+
+		ANS Columns for variables
+
+	There can be different ways to make the same data tidy
+
+		And these can go naturally with different ways of plotting
+
+		This is pivoting: we may or may not come back to this
+
+----------------------------------------------------------------------
+
+Aesthetics
+
+	What are some ways of mapping data to visual elements?
+
+		ANS x-axis, y-axis, color
+
+		ANS Shape, size, line type, transparency
+
+	You can construct good graphics by using what people have learned
+	about communication
+
+		CLASS HREF https://github.com/NTCoding/claude-skillz/blob/main/data-visualization/SKILL.md A random link someone literally sent me yesterday
+
+		NOTES HREF https://github.com/NTCoding/claude-skillz/blob/main/data-visualization/SKILL.md This project has a good overview of graphical principles (I don't know anything about the project itself)
+
+----------------------------------------------------------------------
+
+Geometries
+
+	Actual plotted objects
+
+		bar plot, histogram, boxplot
+
+		points, lines
+
+----------------------------------------------------------------------
+
+Scatter plot example
+
+----------------------------------------------------------------------
+
+Univariate examples
+
+----------------------------------------------------------------------
+
+Histograms vs.~bar plots
+
+	Bar plots are for straight counts
+
+		Not well designed for continuous values
+
+	Histograms are for counting things in bins
+
+		Not well designed for discrete values
+
+			ANS Unless there are a lot of them
+
+----------------------------------------------------------------------
+
+EXTRA
+
+I definitely meant something fun with this
+
+Symmetry (be careful!)

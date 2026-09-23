@@ -76,9 +76,6 @@ Ignore += $(wildcard *.merged)
 	$(PITH)
 	git rm $(word 2, $^) || $(RM) $(word 2, $^)
 
-test.merged: R.txt R.students.txt studMerge.py
-	$(PITH)
-
 autopipeR = defined
 R.Rout: R.R
 

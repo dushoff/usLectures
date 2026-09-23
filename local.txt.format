@@ -22,3 +22,8 @@ outline: %!
 
 ADDED ADDED: %%
 handouts complete: {\errmessage{ADDED}}
+
+## Rule of thumb: \texttt is fine for short inline snippets without % $ # _ & ~ ^ \ { }. 
+
+CODE \texttt{%%}
+
