@@ -57,6 +57,7 @@ notes.txt:
 
 ## Generally renew students by making merged; that should delete it
 ## data.merged: data.txt data.students.txt
+## diff data.merged data.txt
 
 #### Getting rid of .merged.txt!
 #### Check, commit, and merge back into main text!
