@@ -1,0 +1,390 @@
+UNIT 2: Managing data
+
+----------------------------------------------------------------------
+
+Types of data
+
+	Nominal: names only, no order
+
+		List of countries; classmates
+
+	Ordinal: order, no differences
+
+		Disease stages or grades; months??; qualitative rankings
+
+	Interval: differences, no ratios
+
+		Temperature C; position on a transect
+
+	Ratio
+
+		Temperature K; surface area
+
+	Binary variables don't really fit
+
+----------------------------------------------------------------------
+
+Numeric variables
+
+	Interval and ratio variables are usually numeric
+
+	These can be stored as continuous numbers or integers; it often
+	won't matter to us
+
+----------------------------------------------------------------------
+
+Non-numeric variables
+
+	Have two representations:
+
+		The name itself is a character variable
+
+		A pointer to a list of legal names is a factor variable
+
+	R needs to convert characters to factors to analyze or plot
+
+	We will try to help you navigate this without worry
+
+----------------------------------------------------------------------
+
+TSEC Tidy code
+
+	We are going to keep our code simple
+
+	By relying on packages from the tidyverse
+
+	And by only doing simple things
+
+----------------------------------------------------------------------
+
+dplyr
+
+	dplyr was designed to 
+
+		Focus on tabular data (columns as variables, rows as observations)
+
+		Make simple tasks readable and understandable
+
+			uses verb-style functions
+
+	NOTES HREF https://dplyr.tidyverse.org/ a dplyr intro
+
+----------------------------------------------------------------------
+
+Pipes and combining functions
+
+	We can combine functions using parentheses
+
+		Like you learn in math
+
+	Or using pipes
+
+		More explicit about the order of steps
+
+	See R.final.R
+
+----------------------------------------------------------------------
+
+Pipe logic
+
+	The pipe takes the output passed from its left and uses it as the
+	\emph{first argument} of the function to its right
+
+	What does this do?
+
+		CODE dat |> filter(x>7)
+
+----------------------------------------------------------------------
+
+Multi-line syntax
+
+	R is generally guessing when you are done telling it what to do
+
+		This is an example of leftover old-fashioned stuff
+
+	Most of the modern code uses continuation characters to prevent
+	early execution
+
+		This is fine – but I think it's ugly
+
+	See R.final.R
+
+----------------------------------------------------------------------
+
+dplyr verbs
+
+	filter() chooses rows based on column values
+
+	select() changes whether or not a column is included
+
+	mutate() changes the values of columns and creates new columns
+
+	summarise() collapses each group into a single row (by calculating something)
+
+		count() collapses each group into a single row (by just counting rows)
+
+	NOTES HREF https://dplyr.tidyverse.org/articles/dplyr.html Intro to dplyr
+
+	CLASS See intro to dplyr
+
+----------------------------------------------------------------------
+
+filter()
+
+	Select certain observations
+
+		Based on criteria about the variables
+
+	Syntax
+
+		$<$, $<=$, ...
+
+		$==$ for equals
+
+		$!=$ for does not equal
+
+	Example riparianData.final.R
+
+----------------------------------------------------------------------
+
+Handling NAs
+
+	R has a logical function is.na()
+
+		We can \emph{negate} logic with !
+
+----------------------------------------------------------------------
+
+filter and NAs
+
+	filter() keeps things that match and drops NAs
+
+	filter\_out() keeps things that don't match and keeps NAs
+
+	We don't need to use is.na() as much as we used to
+
+		COMMENT Learned all this last night!
+
+	Example R.final.R
+
+----------------------------------------------------------------------
+
+select()
+
+	Select certain variables
+
+	Rarely necessary, but often convenient
+
+		Focus on what you want to focus on 
+
+----------------------------------------------------------------------
+
+mutate()
+
+	Make or change columns
+
+	Calculate what you want
+
+	example provinces.final.R
+
+----------------------------------------------------------------------
+
+summarise()
+
+	Calculate statistics
+
+	Break things into groups (use .by=)
+
+		The dot is weird, sorry.
+
+	Why does summarise/mean give a different answer than summary/mean
+
+	Example riparianData.final.R
+
+----------------------------------------------------------------------
+
+TSEC Plotting
+
+----------------------------------------------------------------------
+
+ggplot
+
+	We will plot things using ggplot2
+
+		COMMENT This is the only ggplot for some reason
+
+		NOTES HREF https://ggplot2.tidyverse.org/articles/ggplot2.html A
+		nice ggplot intro
+
+	gg stands for “grammar of graphics”
+
+	Similar philosophy to dplyr of building readable, understandable
+	things, but maybe not so beautiful
+
+----------------------------------------------------------------------
+
+Constructing plots
+
+	To make a plot, you must describe
+
+		Data (always your first argument, in the piping world)
+
+		aesthetic mappings (aes)
+
+		geometries (geom\_)
+
+	Examples
+
+----------------------------------------------------------------------
+
+CONT Constructing plots
+
+	You may also describe
+
+		Scales
+
+		Facets
+
+			Break your plot into many plots!
+
+		Themes
+
+			Look and feel (not directly data related)
+
+			This can include aesthetics that are not aesthetic mappings
+
+----------------------------------------------------------------------
+
+Data
+
+	Your data will have the shape we've talked about
+
+	There can be different ways to make the same data tidy
+
+		And these can go naturally with different ways of plotting
+
+		This is pivoting: we may or may not come back to this
+
+----------------------------------------------------------------------
+
+Aesthetics
+
+	What are some ways of mapping data to visual elements?
+
+	You can construct good graphics by using what people have learned
+	about communication
+
+		CLASS HREF https://github.com/NTCoding/claude-skillz/blob/main/data-visualization/SKILL.md A random link someone literally sent me yesterday
+
+		NOTES HREF https://github.com/NTCoding/claude-skillz/blob/main/data-visualization/SKILL.md This project has a good overview of graphical principles (I don't know anything about the project itself)
+
+----------------------------------------------------------------------
+
+Geometries
+
+	Actual plotted objects
+
+		bar plot, histogram, boxplot
+
+		points, lines
+
+----------------------------------------------------------------------
+
+Histograms vs.~bar plots
+
+	Bar plots are for straight counts
+
+		Not well designed for continuous values
+
+	Histograms are for counting things in bins
+
+		Not well designed for discrete values
+
+		Not possible for categorical values
+
+----------------------------------------------------------------------
+
+Boxplots
+
+	Boxplots are not doing statistical tests
+
+		They're using statistical ideas for guidance
+
+		Use them for exploration
+
+----------------------------------------------------------------------
+
+Points and lines
+
+	There is also a “smooth” geom
+
+		Again, uses statistical ideas for guidance
+
+		Exploration
+
+----------------------------------------------------------------------
+
+Scales
+
+	If you have ratio data particularly, you should think carefully
+	about what scale is best
+
+	1 is to 4 as 5 is to ??
+
+	There are also natural alternative scales for probability data
+
+----------------------------------------------------------------------
+
+Facets
+
+	Break a single plot into many plots
+
+		Good for looking at a lot of information systematically
+
+		Also a good idea to do it pagewise (but not as easy as it should
+		be)
+
+	Hold off for now?
+
+----------------------------------------------------------------------
+
+Themes
+
+	The best way to control non-mapping aesthetics
+
+		How your plot looks, as opposed to how it maps data
+
+	There are about 30 built-in themes
+
+		JD likes less crowded ones like theme\_bw()
+
+	You can also control specific elements
+
+		base\_size() controls text size, and it's good to choose a bigger
+		one for presentations.
+
+----------------------------------------------------------------------
+
+Modularity
+
+	ggplot objects are built step-by-step
+
+	You can save them and then construct different versions
+
+		Different aesthetics
+
+		Different scales
+
+		Different groupings
+
+		Different data!
+
+----------------------------------------------------------------------
+
+EXTRA
+
+I definitely meant something fun with this
+
+	or at least interesting
+
+Symmetry (be careful!)
