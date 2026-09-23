@@ -237,9 +237,9 @@ Constructing plots
 
 		Data (always your first argument, in the piping world)
 
-		aesthetic mappings
+		aesthetic mappings (aes)
 
-		geometries
+		geometries (geom\_)
 
 	Examples
 
@@ -336,11 +336,52 @@ Boxplots
 
 Points and lines
 
-	There is also a “smooth” geometry
+	There is also a “smooth” geom
 
 		Again, uses statistical ideas for guidance
 
 		Exploration
+
+----------------------------------------------------------------------
+
+Scales
+
+	If you have ratio data particularly, you should think carefully
+	about what scale is best
+
+	1 is to 4 as 5 is to ??
+
+	There are also natural alternative scales for probability data
+
+----------------------------------------------------------------------
+
+Facets
+
+	Break a single plot into many plots
+
+		Good for looking at a lot of information systematically
+
+		Also a good idea to do it pagewise (but not as easy as it should
+		be)
+
+	Hold off for now?
+
+----------------------------------------------------------------------
+
+Themes
+
+	The best way to control non-mapping aesthetics
+
+		How your plot looks, as opposed to how it maps data
+
+	There are about 30 built-in themes
+
+		JD likes less crowded ones like theme\_bw()
+
+	You can also control specific elements
+
+		base\_size() controls text size, and it's good to choose a bigger
+		one for presentations.
 
 ----------------------------------------------------------------------
 

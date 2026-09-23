@@ -6,12 +6,11 @@ Index card
 
 	Put your macid (or just your surname) on the blank side
 
-	Share
+	\emph{On the other side,} share
 
 		one thing you learned today
 
 		one thing you didn't understand
-
 
 ----------------------------------------------------------------------
 

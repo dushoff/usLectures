@@ -31,6 +31,9 @@ notes.txt:
 ## https://claude.ai/chat/3279e1c1-5044-4cf1-95e7-f61923080713
 ## prompts.draft.pdf: prompts.txt
 
+lecprompt: prompts.draft.pdf
+	sleep 2700; $(MAKE) $<.go
+
 ######################################################################
 
 ## R.draft.pdf: R.txt R.draft.tex R.md
@@ -55,7 +58,7 @@ notes.txt:
 ## data.complete.pdf: data.txt
 ## data.handouts.docx: data.handouts.tex
 
-## Generally renew students by making merged; that should delete it
+## Generally renew (delete) .students by making merged
 ## data.merged: data.txt data.students.txt
 ## diff data.merged data.txt
 
@@ -73,6 +76,7 @@ notes.txt:
 ## Prep an interactive slides file
 %.students.txt: | %.txt
 	cat $| | perl -00 -ne 'print unless /ANS/' | cat -s > $@
+	$(RO)
 
 ## studMerge.md # Included claude prompt and notes.
 ## Once the students file is merged, it shouldn't be needed anymore!
