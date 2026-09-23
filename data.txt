@@ -1,4 +1,3 @@
-
 UNIT 2: Managing data
 
 ----------------------------------------------------------------------
@@ -66,6 +65,8 @@ dplyr
 
 			uses verb-style functions
 
+	NOTES HREF https://dplyr.tidyverse.org/ a dplyr intro
+
 ----------------------------------------------------------------------
 
 Pipes and combining functions
@@ -79,6 +80,19 @@ Pipes and combining functions
 		More explicit about the order of steps
 
 	See R.final.R
+
+----------------------------------------------------------------------
+
+Pipe logic
+
+	The pipe takes the output passed from its left and uses it as the
+	\emph{first argument} of the function to its right
+
+	What does this do?
+
+		CODE dat |> filter(x>7)
+
+		ANS Look at filter() help
 
 ----------------------------------------------------------------------
 
@@ -135,9 +149,29 @@ filter()
 
 ----------------------------------------------------------------------
 
-What about NAs
+Handling NAs
+
+	R has a logical function is.na()
+
+		We can \emph{negate} logic with !
+
+		ANS !is.na() means “is not NA”
+
+----------------------------------------------------------------------
+
+filter and NAs
+
+	filter() keeps things that match and drops NAs
+
+	filter\_out() keeps things that don't match and keeps NAs
+
+	We don't need to use is.na() as much as we used to
+
+		COMMENT Learned all this last night!
 
 	Example R.final.R
+
+----------------------------------------------------------------------
 
 select()
 
@@ -167,18 +201,169 @@ summarise()
 
 		The dot is weird, sorry.
 
+	Why does summarise/mean give a different answer than summary/mean
+
+		ANS summary is for exploring; summarise is for working
+
+		ANS summary is for convenient; summarise is for careful
+
+	Example riparianData.final.R
+
+----------------------------------------------------------------------
+
+TSEC Plotting
+
+----------------------------------------------------------------------
+
+ggplot
+
+	We will plot things using ggplot2
+
+		COMMENT This is the only ggplot for some reason
+
+		NOTES HREF https://ggplot2.tidyverse.org/articles/ggplot2.html A
+		nice ggplot intro
+
+	gg stands for “grammar of graphics”
+
+	Similar philosophy to dplyr of building readable, understandable
+	things, but maybe not so beautiful
+
+----------------------------------------------------------------------
+
+Constructing plots
+
+	To make a plot, you must describe
+
+		Data (always your first argument, in the piping world)
+
+		aesthetic mappings
+
+		geometries
+
+	Examples
+
+----------------------------------------------------------------------
+
+CONT Constructing plots
+
+	You may also describe
+
+		Scales
+
+			ANS Log scales, color scales ...
+
+		Facets
+
+			Break your plot into many plots!
+
+		Themes
+
+			Look and feel (not directly data related)
+
+			This can include aesthetics that are not aesthetic mappings
+
+----------------------------------------------------------------------
+
+Data
+
+	Your data will have the shape we've talked about
+
+		ANS Rows for observations
+
+		ANS Columns for variables
+
+	There can be different ways to make the same data tidy
+
+		And these can go naturally with different ways of plotting
+
+		This is pivoting: we may or may not come back to this
+
+----------------------------------------------------------------------
+
+Aesthetics
+
+	What are some ways of mapping data to visual elements?
+
+		ANS x-axis, y-axis, color
+
+		ANS Shape, size, line type, transparency
+
+	You can construct good graphics by using what people have learned
+	about communication
+
+		CLASS HREF https://github.com/NTCoding/claude-skillz/blob/main/data-visualization/SKILL.md A random link someone literally sent me yesterday
+
+		NOTES HREF https://github.com/NTCoding/claude-skillz/blob/main/data-visualization/SKILL.md This project has a good overview of graphical principles (I don't know anything about the project itself)
+
+----------------------------------------------------------------------
+
+Geometries
+
+	Actual plotted objects
+
+		bar plot, histogram, boxplot
+
+		points, lines
+
+----------------------------------------------------------------------
+
+Histograms vs.~bar plots
+
+	Bar plots are for straight counts
+
+		Not well designed for continuous values
+
+	Histograms are for counting things in bins
+
+		Not well designed for discrete values
+
+			ANS Unless there are a lot of them
+
+		Not possible for categorical values
+
+----------------------------------------------------------------------
+
+Boxplots
+
+	Boxplots are not doing statistical tests
+
+		They're using statistical ideas for guidance
+
+		Use them for exploration
+
+----------------------------------------------------------------------
+
+Points and lines
+
+	There is also a “smooth” geometry
+
+		Again, uses statistical ideas for guidance
+
+		Exploration
+
+----------------------------------------------------------------------
+
+Modularity
+
+	ggplot objects are built step-by-step
+
+	You can save them and then construct different versions
+
+		Different aesthetics
+
+		Different scales
+
+		Different groupings
+
+		Different data!
+
 ----------------------------------------------------------------------
 
 EXTRA
 
-ggplot verbs
-geom_bar vs. geom_hist
-boxplot
-lines
-points
-groups
-facets
+I definitely meant something fun with this
 
-Cleveland
+	or at least interesting
 
 Symmetry (be careful!)

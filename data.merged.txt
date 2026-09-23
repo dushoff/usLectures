@@ -163,7 +163,7 @@ filter and NAs
 
 	filter() keeps things that match and drops NAs
 
-	filter_out() keeps things that don't match and keeps NAs
+	filter\_out() keeps things that don't match and keeps NAs
 
 	We don't need to use is.na() as much as we used to
 

@@ -55,11 +55,12 @@ notes.txt:
 ## data.complete.pdf: data.txt
 ## data.handouts.docx: data.handouts.tex
 
+## Generally renew students by making merged; that should delete it
 ## data.merged: data.txt data.students.txt
 
 #### Getting rid of .merged.txt!
 #### Check, commit, and merge back into main text!
-## cp data.merged data.txt ##
+## cp data.merged.txt data.txt ##
 
 ## data.merged.draft.pdf: data.merged.txt data.merged.draft.tex
 ## data.merged.final.pdf: data.merged.txt
