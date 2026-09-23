@@ -1,5 +1,10 @@
 
-For this assignment, you may use AI, or get help from classmates or the teaching team. You do not need to report if you used such assistance. _But:_ write your scripts one line at a time, and make sure you understand every line. Use simple code with simple dplyr verbs and no operations that we haven't learned about: [], $, ...
+For this assignment, you may use AI, or get help from classmates or the teaching team. You do not need to report if you used such assistance. 
+
+_But:_
+
+* Write your scripts one line at a time, and make sure you understand every line. 
+* Use simple code with simple dplyr verbs and no operations that we haven't covered: [], $, ...
 
 Provide a brief answer to _each_ of the _lettered_ items.
 
@@ -11,7 +16,7 @@ Provide a brief answer to _each_ of the _lettered_ items.
 
 	a. Describe one thing you did to examine the data
 
-1. The file has 2591 observations of rodents that _do_ weigh _more than_ 100g.
+1. The file has 2591 observations of rodents that were _observed to_ weigh _more than_ 100g.
 
 	a. Write a piece of code for your current script to confirm this.
 
@@ -19,7 +24,7 @@ Provide a brief answer to _each_ of the _lettered_ items.
 
 	a. Write a piece of code for your current script to confirm this.
 
-1. Make a table that shows the mean weight, among measured weights, for each genus of rodent. You should: use filter to exclude NA values for weights; use summarise with .by to make your table.
+1. Make a table that shows the mean weight, among measured weights, for each genus of rodent. You should: use filter() to exclude NA values for weights; use summarise() with .by to make your table.
 
 	a. Paste the code you wrote
 
