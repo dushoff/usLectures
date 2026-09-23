@@ -191,6 +191,8 @@ Handling NAs
 
 		ANS !is.na() means “is not NA”
 
+	Use a non-rodent example, I guess
+
 ----------------------------------------------------------------------
 
 TSEC Plotting

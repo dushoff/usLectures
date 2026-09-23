@@ -125,6 +125,8 @@ Ignore += $(wildcard *.quiz.csv)
 
 ## data.asn.md
 
+## dplyr.asn.md
+
 ######################################################################
 
 ## lecturePix linking
