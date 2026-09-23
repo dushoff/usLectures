@@ -149,6 +149,30 @@ filter()
 
 ----------------------------------------------------------------------
 
+Handling NAs
+
+	R has a logical function is.na()
+
+		We can \emph{negate} logic with !
+
+		ANS !is.na() means “is not NA”
+
+----------------------------------------------------------------------
+
+filter and NAs
+
+	filter() keeps things that match and drops NAs
+
+	filter_out() keeps things that don't match and keeps NAs
+
+	We don't need to use is.na() as much as we used to
+
+		COMMENT Learned all this last night!
+
+	Example R.final.R
+
+----------------------------------------------------------------------
+
 select()
 
 	Select certain variables
@@ -177,21 +201,13 @@ summarise()
 
 		The dot is weird, sorry.
 
-	How does summarise handle NA? Why?
+	Why does summarise/mean give a different answer than summary/mean
 
 		ANS summary is for exploring; summarise is for working
 
-----------------------------------------------------------------------
+		ANS summary is for convenient; summarise is for careful
 
-Handling NAs
-
-	R has a logical function is.na()
-
-		We can \emph{negate} logic with !
-
-		ANS !is.na() means “is not NA”
-
-	Use a non-rodent example, I guess
+	Example riparianData.final.R
 
 ----------------------------------------------------------------------
 
@@ -219,7 +235,7 @@ Constructing plots
 
 	To make a plot, you must describe
 
-		Data (your first argument, in the piping world)
+		Data (always your first argument, in the piping world)
 
 		aesthetic mappings
 
@@ -229,7 +245,7 @@ Constructing plots
 
 ----------------------------------------------------------------------
 
-More plots
+CONT Constructing plots
 
 	You may also describe
 
@@ -292,14 +308,6 @@ Geometries
 
 ----------------------------------------------------------------------
 
-Scatter plot example
-
-----------------------------------------------------------------------
-
-Univariate examples
-
-----------------------------------------------------------------------
-
 Histograms vs.~bar plots
 
 	Bar plots are for straight counts
@@ -312,10 +320,50 @@ Histograms vs.~bar plots
 
 			ANS Unless there are a lot of them
 
+		Not possible for categorical values
+
+----------------------------------------------------------------------
+
+Boxplots
+
+	Boxplots are not doing statistical tests
+
+		They're using statistical ideas for guidance
+
+		Use them for exploration
+
+----------------------------------------------------------------------
+
+Points and lines
+
+	There is also a “smooth” geometry
+
+		Again, uses statistical ideas for guidance
+
+		Exploration
+
+----------------------------------------------------------------------
+
+Modularity
+
+	ggplot objects are built step-by-step
+
+	You can save them and then construct different versions
+
+		Different aesthetics
+
+		Different scales
+
+		Different groupings
+
+		Different data!
+
 ----------------------------------------------------------------------
 
 EXTRA
 
 I definitely meant something fun with this
+
+	or at least interesting
 
 Symmetry (be careful!)

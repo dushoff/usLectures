@@ -56,7 +56,10 @@ notes.txt:
 ## data.handouts.docx: data.handouts.tex
 
 ## data.merged: data.txt data.students.txt
-## cp data.merged data.merged.txt ##
+
+#### Getting rid of .merged.txt!
+#### Check, commit, and merge back into main text!
+## cp data.merged data.txt ##
 
 ## data.merged.draft.pdf: data.merged.txt data.merged.draft.tex
 ## data.merged.final.pdf: data.merged.txt
