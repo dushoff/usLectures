@@ -42,14 +42,6 @@ lecprompt: prompts.draft.pdf
 ## R.complete.pdf: R.txt
 ## R.handouts.docx: R.handouts.tex
 
-## R.merged: R.txt R.students.txt
-## cp R.merged R.merged.txt ##
-
-## R.merged.draft.pdf: R.merged.txt R.merged.draft.tex
-## R.merged.final.pdf: R.merged.txt
-## R.merged.handouts.pdf: R.merged.txt
-## R.merged.complete.pdf: R.merged.txt
-
 ######################################################################
 
 ## data.draft.pdf: data.txt data.draft.tex data.md
@@ -58,18 +50,13 @@ lecprompt: prompts.draft.pdf
 ## data.complete.pdf: data.txt
 ## data.handouts.docx: data.handouts.tex
 
-## Generally renew (delete) .students by making merged
+#### No intermediate files
+#### Check, commit, and merge back into main text!
+
 ## data.merged: data.txt data.students.txt
 ## diff data.merged data.txt
 
-#### Getting rid of .merged.txt!
-#### Check, commit, and merge back into main text!
-## cp data.merged.txt data.txt ##
-
-## data.merged.draft.pdf: data.merged.txt data.merged.draft.tex
-## data.merged.final.pdf: data.merged.txt
-## data.merged.handouts.pdf: data.merged.txt
-## data.merged.complete.pdf: data.merged.txt
+## cp data.merged data.txt ##
 
 ######################################################################
 

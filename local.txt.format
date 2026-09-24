@@ -13,13 +13,6 @@ handouts complete: {\bf\underline{Discussion}: }%%
 CONT %!
 draft final: ^DEFHEAD {\sl %%}
 
-OLDANS 
-handouts complete: {\bf\underline{Answer}: }%%
-final: * \uncover<+->{\color{blue} %%}
-draft: * {\color{blue} %%}
-slides: * {\color{blue} %%}
-outline: %!
-
 ADDED ADDED: %%
 handouts complete: {\errmessage{ADDED}}
 
@@ -27,3 +20,14 @@ handouts complete: {\errmessage{ADDED}}
 
 CODE \texttt{%%}
 
+######################################################################
+
+## Consider switching these things back
+NOANSWER %!
+
+OLDANS 
+handouts complete: {\bf\underline{Answer}: }%%
+final: * \uncover<+->{\color{blue} %%}
+draft: * {\color{blue} %%}
+slides: * {\color{blue} %%}
+outline: %!

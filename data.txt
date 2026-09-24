@@ -6,19 +6,29 @@ Types of data
 
 	Nominal: names only, no order
 
-		NOANS
+		NOANSWER
+
+		STUDENTS List of countries; classmates
 
 	Ordinal: order, no differences
 
-		NOANS
+		NOANSWER
+
+		STUDENTS Disease stages or grades; months??; qualitative rankings
 
 	Interval: differences, no ratios
 
-		NOANS
+		NOANSWER
+
+		STUDENTS Temperature C; position on a transect
 
 	Ratio
 
-		NOANS
+		NOANSWER
+
+		STUDENTS Temperature K; surface area
+
+	CONV Binary variables don't really fit
 
 ----------------------------------------------------------------------
 
