@@ -1,40 +1,30 @@
 
-
-----------------------------------------------------------------------
-
 Index card
 
 	Put your macid (or just your surname) on the blank side
 
 	\emph{On the other side,} share
 
+		One question
+
+		One comment
+
+----------------------------------------------------------------------
+
+EXTRA
+
+	Prompts
+
 		one thing you learned today
 
 		one thing you didn't understand
 
-----------------------------------------------------------------------
-
-Index card
-
-	Put your macid (or just your surname) \emph{on the blank side}
-
-	Share
 
 		one thing you like about the course so far
 
 		one thing you don't like about the course so far
 
-----------------------------------------------------------------------
-
-
-Index card
-
-	Put your macid (or just your surname) \emph{on the blank side}
-
-	Share
 
 		one thing you like about the course so far
 
 		another thing you like about the course so far
-
-			JK

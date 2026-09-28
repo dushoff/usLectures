@@ -6,25 +6,17 @@ Types of data
 
 	Nominal: names only, no order
 
-		NOANSWER
-
 		STUDENTS List of countries; classmates
 
 	Ordinal: order, no differences
-
-		NOANSWER
 
 		STUDENTS Disease stages or grades; months??; qualitative rankings
 
 	Interval: differences, no ratios
 
-		NOANSWER
-
 		STUDENTS Temperature C; position on a transect
 
 	Ratio
-
-		NOANSWER
 
 		STUDENTS Temperature K; surface area
 
@@ -102,8 +94,6 @@ Pipe logic
 
 		CODE dat |> filter(x>7)
 
-		ANS Look at filter() help
-
 ----------------------------------------------------------------------
 
 Multi-line syntax
@@ -114,8 +104,6 @@ Multi-line syntax
 
 	Most of the modern code uses continuation characters to prevent
 	early execution
-
-		ANS (R running something before you want it to)
 
 		This is fine – but I think it's ugly
 
@@ -165,8 +153,6 @@ Handling NAs
 
 		We can \emph{negate} logic with !
 
-		ANS !is.na() means “is not NA”
-
 ----------------------------------------------------------------------
 
 filter and NAs
@@ -213,10 +199,6 @@ summarise()
 
 	Why does summarise/mean give a different answer than summary/mean
 
-		ANS summary is for exploring; summarise is for working
-
-		ANS summary is for convenient; summarise is for careful
-
 	Example riparianData.final.R
 
 ----------------------------------------------------------------------
@@ -261,8 +243,6 @@ CONT Constructing plots
 
 		Scales
 
-			ANS Log scales, color scales ...
-
 		Facets
 
 			Break your plot into many plots!
@@ -279,10 +259,6 @@ Data
 
 	Your data will have the shape we've talked about
 
-		ANS Rows for observations
-
-		ANS Columns for variables
-
 	There can be different ways to make the same data tidy
 
 		And these can go naturally with different ways of plotting
@@ -294,10 +270,6 @@ Data
 Aesthetics
 
 	What are some ways of mapping data to visual elements?
-
-		ANS x-axis, y-axis, color
-
-		ANS Shape, size, line type, transparency
 
 	You can construct good graphics by using what people have learned
 	about communication
@@ -327,8 +299,6 @@ Histograms vs.~bar plots
 	Histograms are for counting things in bins
 
 		Not well designed for discrete values
-
-			ANS Unless there are a lot of them
 
 		Not possible for categorical values
 
