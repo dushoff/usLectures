@@ -122,6 +122,8 @@ Ignore += $(wildcard *.quiz.csv)
 
 ## dplyr.asn.md
 
+## plotting.asn.md
+
 ######################################################################
 
 ## lecturePix linking
