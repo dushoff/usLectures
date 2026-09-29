@@ -63,7 +63,6 @@ lecprompt: prompts.draft.pdf
 ## Prep an interactive slides file
 %.students.txt: | %.txt
 	cat $| | perl -00 -ne 'print unless /ANS/' | cat -s > $@
-	$(readonly)
 
 ## studMerge.md # Included claude prompt and notes.
 ## Once the students file is merged, it shouldn't be needed anymore!

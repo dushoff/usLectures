@@ -213,9 +213,12 @@ summarise()
 
 	Why does summarise/mean give a different answer than summary/mean
 
-		ANS summary is for exploring; summarise is for working
+		ANS summary is just meant to give a quick overview, or help
+		explore
 
-		ANS summary is for convenient; summarise is for careful
+		ANS summarise is meant to be part of your workflow
+
+			ANS summarise needs to be more careful
 
 	Example riparianData.final.R
 
