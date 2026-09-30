@@ -108,9 +108,21 @@ Ignore += $(wildcard *.quiz.csv)
 %.quiz.csv: %.quiz saquiz.pl
 	$(PUSH)
 
+
+######################################################################
+
+## New quiz framework
+
+## test.aq.csv: test.quiz avenueQuiz.py avenueQuiz.md
+## R.aq.csv: R.quiz avenueQuiz.py avenueQuiz.md
+%.aq.csv: %.quiz avenueQuiz.py
+	$(PITH)
+
+######################################################################
+
+## Deprecated for avenueQuiz
 ## saquiz.md
 ## baseline.quiz.csv: baseline.quiz saquiz.pl
-## future.quiz.csv: future.quiz
 
 ######################################################################
 

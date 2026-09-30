@@ -1,0 +1,61 @@
+INTRO The goal here is learning, not testing. Take your time and think about the questions. You can go through as many times as necessary to get the answers right. You can also test the code if you are not clear about the answers.
+
+
+SA Do you currently have access to data that you might want to analyze? Describe it briefly.
+
+SA Are you currently involved in conducting or designing an experiment? Describe it briefly.
+
+MC This code uses filter to select ________ and select to select ________
+```
+print(dat
+	|> filter(conductivity > 500)
+	|> select(transect_no, position, plant_species, conductivity)
+)
+
+```
+
+observations; observations
+
+* observations; variables
+
+variables; observations
+
+variables; variables
+
+MC How would you change the code below to include all observations where conductivity _might be_ > 500?
+```
+print(dat
+	|> filter(conductivity > 500)
+)
+```
+
+|> filter-out(conductivity < 500)
+
+|> filter-out(conductivity != 500)
+
+* |> filter-out(conductivity <= 500)
+
+|> filter-out(conductivity > 500)
+
+MC What picture would the following ggplot code produce (you can test this with riparianData if you want)?
+```
+print (ggplot(dat)
+	+ aes(x=wet, y=plant_species)
+)
+```
+
+Nothing
+
+Just a blank square
+
+* Axes showing wet and plant_species, but no data plotted
+
+A plot of the relationship between plant_species (on the y-axis) and wet (on the x-)
+
+SA What do you think would happen if we add color to our position histogram from the virtual lecture (see below). You are encouraged but not required to test it out.
+```
+print (ggplot(dat)
+	+ aes(position, color=plant_species)
+	+ geom_histogram()
+)
+```

@@ -1,0 +1,31 @@
+INTRO The goal here is learning, not testing. Take your time and think about the questions. You can go through as many times as necessary to get the answers right.
+
+MC Which of the following code blocks is good?
+
+```
+x <- (
+	3 |> 7()
+)
+```
+
+* ```
+y <- (
+	3 |> 7()
+)
+```
+
+MC What do you think about this code block?
+```
+x <- (
+	3 |> 7()
+)
+y <- (
+	3 |> 7()
+)
+```
+
+* Good
+
+Bad
+
+SA How would you (personally) _define_ a P value?

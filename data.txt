@@ -362,7 +362,17 @@ Scales
 	If you have ratio data particularly, you should think carefully
 	about what scale is best
 
-	1 is to 4 as 5 is to ??
+	5 is to 10 as 10 is to what?
+
+		ANS 15 (if we're thinking about intervals)
+
+			ANS Corresponds to linear scale
+
+		ANS 20 (if we're thinking about ratios)
+
+			ANS Corresponds to log scale
+
+			ANS The log scale is often your friend
 
 	There are also natural alternative scales for probability data
 
