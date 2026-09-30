@@ -115,6 +115,8 @@ Ignore += $(wildcard *.quiz.csv)
 
 ## test.aq.csv: test.quiz avenueQuiz.py avenueQuiz.md
 ## R.aq.csv: R.quiz avenueQuiz.py avenueQuiz.md
+
+Ignore += *.aq.csv
 %.aq.csv: %.quiz avenueQuiz.py
 	$(PITH)
 
