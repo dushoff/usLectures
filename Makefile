@@ -108,7 +108,6 @@ Ignore += $(wildcard *.quiz.csv)
 %.quiz.csv: %.quiz saquiz.pl
 	$(PUSH)
 
-
 ######################################################################
 
 ## New quiz framework
