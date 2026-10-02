@@ -1,0 +1,955 @@
+
+TSEC Statistical inference
+
+	We use statistics to confirm effects, estimate parameters, and
+	predict outcomes
+
+	It usually rains when I'm in Cape Town, but mostly on Sunday
+
+		\emph{Confirmation:} In Cape Town, it rains more on Sundays than
+		other days
+
+		\emph{Estimation:} In Cape Town, the \emph{odds} of rain on
+		Sunday are 1.6--2.2 times higher than on other days
+
+		\emph{Prediction:} I am confident that it will rain at least one
+		Sunday the next time I go
+
+----------------------------------------------------------------------
+
+Raining in Cape Town
+
+BC
+
+	How we interpret data like this necessarily depends on assumptions:
+
+		Is it likely our observations occurred by chance?
+
+		Is it likely they \emph{didn't}?
+
+NC
+
+PIC HFIG 0.8  my_images/eight.jpg
+
+PIC CREDIT Tessa Wessels, {\em Faces on a Train}
+
+EC
+
+----------------------------------------------------------------------
+
+Vitamin A \chinese{登革熱}
+
+	We compare health indicators of children treated or not treated with
+	vitamin A supplements 
+
+		\emph{Estimate:} how much taller (or shorter) are the treated
+		children on average?
+
+		\emph{Confirmation:} are we sure that the supplements are helping
+		(or hurting)?
+
+		\emph{Range of estimates:} how much do we think the supplement is
+		helping?
+
+----------------------------------------------------------------------
+
+TSS P values and confidence intervals
+
+	We use \emph{P values} to say how sure we are that we have seen a positive 
+	effect
+
+	We use \emph{confidence intervals} to say what we think is going on
+	(with a certain level of confidence)
+
+	P values are \emph{over-rated}
+
+	\emph{Never} use a high P value as (direct) evidence for anything, e.g.:
+	
+		that an effect is small
+
+		that two quantities are similar
+
+	What does a P value actually measure?
+
+----------------------------------------------------------------------
+
+Vitamin A example
+
+	We want to know if vitamin A supplements improve the health of
+	village children
+
+		Is height a good measure of general health?
+
+		How will we know height differences are due to our treatment?
+
+			ANS We want the two groups to start from the same point --
+			independent randomization of each individual
+
+			ANS We may measure \emph{changes} in height
+
+			ANS Or \emph{control for} height (and maybe other factors)
+
+----------------------------------------------------------------------
+
+What do we hope to learn?
+
+	Is vitamin A good for these children?
+
+	How sure are we?
+
+	How good do we think it is?
+
+	How sure are we about that?
+
+----------------------------------------------------------------------
+
+P values
+
+	Activity: What is a P value?
+
+	What does it mean if I find a “significant P value” for some effect
+	in this experiment?
+
+	ANS The difference is unlikely to be due to chance
+
+		ANS So what!  I already know vitamin A has strong effects on
+		metabolism
+
+	If I'm certain that the true answer isn't exactly zero, why do I
+	want the P value anyway?
+
+----------------------------------------------------------------------
+
+Confidence intervals
+
+BC
+
+CFIG vitamins.Rout-0.pdf
+
+NC
+
+	What do these results mean?
+
+	Which are significant?
+
+EC
+
+----------------------------------------------------------------------
+
+Confidence intervals and P values
+
+BC
+
+PRESENT CFIG vitamins.Rout-1.pdf
+
+NC
+
+	A high P value means we can't see the \emph{sign} of the effect clearly
+
+	A low P value means we can
+
+	What would happen if we could measure many more children?
+
+EC
+
+----------------------------------------------------------------------
+
+What do P values measure?
+
+PIC DBFIG 0.8 webpix/fog.jpg 1 webpix/clear.jpg
+
+	ANS Clarity!
+
+	ANS We should call it that
+
+		ANS Instead of significance
+
+----------------------------------------------------------------------
+
+
+Types of Error
+
+	Type I (\emph{False positive:}) concluding there is an effect when
+	there isn't one
+
+		This doesn't happen in biology.  There is always an effect.
+
+	Type II (\emph{False negative:}) concluding there is no effect when
+	there really is
+
+		This \emph{should} never happen, because we should never conclude
+		there is no effect
+
+----------------------------------------------------------------------
+
+RHEAD Types of Error
+
+	Type Zero is the error of using numerical codes for things that have perfectly good simple names
+
+	Just say ``false positive'' or ``false negative'' when possible
+
+----------------------------------------------------------------------
+
+Experimental design
+
+	\emph{False positive:} in the \emph{hypothetical} case that the
+	effect is exactly zero, what is the probability of falsely finding
+	an effect?
+
+		Should be less than or equal to my significance value
+
+	\emph{False negative:} what is the probability of failing
+	to find an effect that is there?
+
+		Requires you specify a hypothetical effect \emph{size}
+
+		This is a \emph{scientific} judgment
+
+	These are useful to analyze \textbf{power} and \textbf{validity} of a
+	statistical design
+	
+		You should do these analyses \emph{before} you collect data
+
+----------------------------------------------------------------------
+
+Doing Science
+
+	Once you collect data:
+
+	You should never make a false-negative error.
+
+		ANS Never accept the null
+
+	Or a false-positive error
+
+		ANS If you never believe the null is exactly true, the idea of a false
+		positive doesn't make sense
+
+	\emph{Sign \chinese{($\pm$)} error:}
+	if I think an effect is positive, when it's really
+	negative (or vice versa)
+
+	\emph{Magnitude \chinese{(大小)} error:} if I think an effect is small, when
+	it's really large (or vice versa)
+
+	Confidence intervals aid clear thinking
+
+----------------------------------------------------------------------
+
+Low P values
+
+BC
+
+	If I have a low P value I can see something clearly
+
+	But it's usually better to focus on what I see than the P value
+
+NC
+
+SIDEFIG webpix/clear.jpg
+
+EC
+
+
+----------------------------------------------------------------------
+
+High P values
+
+BC
+
+	If I have a high P value, there is something I \emph{don't} see
+	clearly
+
+	It \emph{may be} because this effect is small
+
+	High P values should \emph{not} be used to advance \emph{any}
+	scientific conclusion
+
+NC
+
+SIDEFIG webpix/fog.jpg
+
+EC
+
+----------------------------------------------------------------------
+
+What causes high P values?
+
+	Small differences
+
+	Less data
+
+	More noise
+
+	An inappropriate model
+
+	Less model resolution
+
+	A lower P value means that your evidence for difference is better
+
+	A higher P value means that your evidence for similarity is
+	better -- or worse!
+
+----------------------------------------------------------------------
+
+Annualized flu deaths \chinese{流感死亡率}
+
+BC
+
+CFIG flu.Rout-0.pdf
+
+NC
+
+	Look at deaths on an annual time scale \chinese{年度時間尺度}
+
+	Why is weather not causing deaths at this time scale?
+
+	ANS Maybe those people would have died anyway later in the same winter
+
+EC
+
+----------------------------------------------------------------------
+
+DEFHEAD ... with confidence intervals
+
+BC
+
+CFIG flu.Rout-1.pdf
+
+NC
+
+	\textbf{Never} say: A is significant and B isn't, so $A>B$
+
+	\textbf{Instead:} Construct a statistic for the hypothesis $A>B$
+
+		May be difficult
+
+EC
+
+----------------------------------------------------------------------
+
+NONCTS Misleading language
+
+	Null effects of boot camps
+
+		ANS Not really a thing.
+
+	Fat storage in vole populations is not correlated with elevation
+
+		ANS Yes, it is!
+
+	As expected, the placebo group did not differ significantly from the
+	control group
+
+		ANS Why would that be good?
+
+	B and B showed that there is no statistically significant difference
+	in sexual risk behaviour between men with and without clinic
+	access in Zambia
+
+		ANS No, they didn't
+
+		ANS Statistical significance is a property of the \emph{study}
+		(and the sample population), never of real groups (or the
+		idealized population)
+
+----------------------------------------------------------------------
+
+NONCTS Another way to talk
+
+	Unclear effects of boot camps
+
+		ANS They really want to say “small” effects, but that would require a
+		different test!
+
+	As expected, the sign of the difference between the placebo group and
+	controls was unclear
+
+		ANS Is this convincing? Will it remind people to check the size of
+		difference?
+
+	The direction of correlation between fat storage and elevation in
+	vole populations is unclear in this study
+
+	B and B showed that there is an unclear difference in sexual risk
+	behaviour between men with and without clinic access in Zambia
+
+		ANS Now obviously weird. So you have to say it better
+
+----------------------------------------------------------------------
+
+Confidence intervals
+
+FIG sandbox/oldsig.clarpix.Rout
+
+----------------------------------------------------------------------
+
+Confidence intervals
+
+FIG sandbox/clarity.clarpix.Rout
+
+----------------------------------------------------------------------
+
+Confidence intervals
+
+FIG sandbox/different.clarpix.Rout
+
+----------------------------------------------------------------------
+
+Cutoffs
+
+	How do I know what is a large effect?
+
+	This can't be done by statistics!
+
+		Must be scientific
+
+		It's often hard, and people avoid it
+
+		This leads to sloppy thinking
+
+----------------------------------------------------------------------
+
+
+SS Statistics and science
+
+----------------------------------------------------------------------
+
+Syllogisms
+
+BC
+
+	All men are mortal
+
+	Mohamed Salah is mortal
+
+	Therefore, Mohamed Salah is a man
+
+NC
+
+SIDEFIG webpix/salah.jpg
+
+EC
+
+----------------------------------------------------------------------
+
+Syllogisms
+
+BC
+
+	All men are mortal
+
+	Fanny the elephant is mortal
+
+	Therefore, Fanny the elephant is a man
+
+NC
+
+SIDEFIG webpix/fanny.jpg
+
+EC
+
+----------------------------------------------------------------------
+
+Bad logic
+
+	A lot of statistical practice works this way:
+
+		bad logic in service of conclusions that are (usually) correct
+
+	This sort of statistical practice leads in the aggregate to bad
+	science
+
+	The logic can be fixed:
+
+		Estimate a difference, or an interaction
+
+----------------------------------------------------------------------
+
+Small effects
+
+	We can't build statistical confidence that something is small by
+	failing to see it clearly
+
+	We must instead see clearly that it is small
+
+	This means we need a standard (our cutoff) for what we mean by small
+
+----------------------------------------------------------------------
+
+PSLIDE Flu masks 
+
+DBFIG 0.8 webpix/N95.jpg 0.7 webpix/surgical.jpg
+
+----------------------------------------------------------------------
+
+Flu mask example
+
+	People who work in respiratory clinics sometimes have to wear bulky,
+	uncomfortable, expensive masks
+
+	They would like to switch to simpler masks, if those will do the job
+
+	How can this be tested statistically?  We don't want the masks to be
+	“different”.
+
+		We need to decide what we mean by different in this case!
+
+		They're not the same, so how close is close enough?
+
+----------------------------------------------------------------------
+
+Traditional statistics
+
+FIG masks.Rout-2.pdf
+
+----------------------------------------------------------------------
+
+Non-inferiority approach
+
+BC
+
+PRESENT CFIG masks.Rout-0.pdf
+
+NC
+
+	Are we confident the new mask is ``good enough''?
+
+	There is no substitute for picking a cutoff
+
+	Can be controversial
+
+EC
+
+----------------------------------------------------------------------
+
+Non-inferiority approach
+
+BC
+
+CFIG masks.Rout-1.pdf
+
+NC
+
+	We can even attach a P value by basing it on the ``right” statistic.
+
+	The right statistic is the thing whose sign we want to know:
+
+		The difference between the observed effect and the standard we
+		chose
+
+EC
+
+----------------------------------------------------------------------
+
+SEC Paradigms for inference
+
+----------------------------------------------------------------------
+
+TSS Frequentist paradigm
+
+	Make a null model
+
+	Test whether the effect you see could be due to chance
+
+		What is the probability of seeing a difference of exactly 0.0048 in
+		proportional growth?
+
+			ANS Zero!
+
+	Test whether the effect you see {\em or a larger effect} could be
+	due to chance
+
+		This probability is the (frequentist) P value
+
+	JD: It's actually better to calculate a one-sided P value. You would then
+	usually double this to get a standard P value
+
+----------------------------------------------------------------------
+
+Height measurements
+
+FIG vitamins_plot.Rout-0.pdf
+
+----------------------------------------------------------------------
+
+Scrambled measurements
+
+FIG vitamins_plot.Rout-1.pdf
+
+----------------------------------------------------------------------
+
+PSLIDE Scrambled measurements
+
+FIG vitamins_plot.Rout-2.pdf
+
+----------------------------------------------------------------------
+
+PSLIDE Scrambled measurements
+
+FIG vitamins_plot.Rout-3.pdf
+
+----------------------------------------------------------------------
+
+PSLIDE Scrambled measurements
+
+FIG vitamins_plot.Rout-4.pdf
+
+----------------------------------------------------------------------
+
+The null distribution
+
+FIG vitamins_scramble.Rout.pdf
+
+----------------------------------------------------------------------
+
+TSS Bayesian paradigm
+
+BC
+
+	Make a complete model world
+
+	Use conditional probability to calculate the probability you want
+
+NC
+
+SIDEFIG webpix/shanghai.jpg
+
+EC
+
+----------------------------------------------------------------------
+
+A powerful framework
+
+BC
+
+	More assumptions $\implies$ more power
+
+	With great power comes great responsibility
+
+NC
+
+SIDEFIG webpix/spiderman.jpg
+
+EC
+
+----------------------------------------------------------------------
+
+Bayesian inference
+
+	We want to go from a \emph{statistical model} of how our data are
+	generated, to a probability model of parameter values
+
+		Requires \emph{prior} distributions:
+		
+			the assumed likelihood of parameters before these observations are
+			made
+
+		Use Bayes theorem to calculate \emph{posterior} distributions:
+
+			the inferred likelihood of parameters after taking the data into
+			account
+
+	Provides a strong framework for combining information from different sources
+	and for propagating uncertainty
+
+----------------------------------------------------------------------
+
+Bayesian P value
+
+	Once you make strong-enough assumptions, the Bayesian framework allows you
+	to calculate true probabilities
+
+		Meaning, they are really probabilities; they are only as “true” as your
+		assumptions
+
+	A natural approach to Bayesian P values is simply the probability that your
+	estimate has the wrong sign
+
+		Often better to double this value, to align with frequentist tradition
+
+----------------------------------------------------------------------
+
+Vitamin A study
+
+BC
+
+	A frequentist can do a clear analysis right away
+
+	A Bayesian needs a ton of assumptions -- will often try to make
+	``uninformative'' assumptions
+
+NC
+
+SIDEFIG vitamins_plot.Rout-0.pdf
+
+EC
+
+----------------------------------------------------------------------
+
+Cape Town weather
+
+BC
+
+	Frequentist: how unlikely is the observation, from a random
+	perspective?
+
+	Bayesian: what's my model world?  What is my prior belief about 
+	weather-weekday interactions?
+
+NC
+
+PIC HFIG 0.8  my_images/eight.jpg
+
+PRESENT CREDIT Tessa Wessels, {\em Faces on a Train}
+
+EC
+
+----------------------------------------------------------------------
+
+BAYESCALC Example: MMEV 
+
+	MMEV is a viral infection that can cause a serious disease
+	(called MMED)
+	
+	LIT MMED patients are unable to control their urge to fit models to data
+
+	The rapid MMEV test gives a positive result:
+
+		100% of the time for people with the virus
+		
+		5% of the time for people without the virus
+
+----------------------------------------------------------------------
+
+MMED MMEV questions
+
+	The rapid MMEV test gives a positive result:
+
+		100% of the time for people with the virus
+		
+		5% of the time for people without the virus
+
+	The population prevalence of MMEV is 1% 
+
+	You test a \emph{random} person from this population, and
+	the result is positive.
+
+		What is the probability that they have MMEV?
+
+	This calculation is the core of Bayes \emph{theorem}
+
+----------------------------------------------------------------------
+
+MMED MMEV questions
+
+	You learn that your friend has had a positive rapid test for MMEV
+
+		What do you tell them? 
+
+			ANS You don't tell them \emph{anything} until you ask them some
+			questions!
+
+	Bayesian inference:
+
+		Clear conclusions
+
+		based on clear (and often strong) assumptions
+
+		Need to be clear about the assumptions you are making
+
+	HREF https://www.youtube.com/watch?v=lG4VkPoG3ko Medical “paradox” video
+
+----------------------------------------------------------------------
+
+TSEC Philosophy of fitting
+
+	Principled statistical fitting is hard
+
+	A big advantage of having good computers is that you can \emph{test} fitting
+	approaches on simple and complicated model worlds before applying them to
+	real data
+
+----------------------------------------------------------------------
+
+Approximating probabilities
+
+	In both paradigms, we want to calculate true probabilities to reinforce our
+	conclusions
+
+	In most complicated situations (e.g., dynamical model fits), these
+	probabilities cannot be calculated directly
+
+	We approximate the probabilities we want using likelihoods 
+
+----------------------------------------------------------------------
+
+NEWLIKE Likelihoods
+
+	What we want to know is [frequentist or Bayesian] probabilities relating to our \emph{parameters} based on the data
+
+		Is $\Ro<2$; Is $\bar D < 6d$?
+
+	What we can easily calculate based on assumptions is the likelihood of our \emph{data} based on the parameters.
+
+		Proportional to probability of seeing the data
+
+		But probability of seeing these exact data is hard to define, and not
+		very interesting
+
+----------------------------------------------------------------------
+
+NEWLIKE Algorithms
+
+	If we can calculate likelihoods, we have good algorithms to estimate the probabilities that we want
+
+		For frequentist tests, we use maximum likelihood estimation
+
+		For Bayesian tests, we use MCMC
+
+----------------------------------------------------------------------
+
+NEWLIKE Normal likelihoods
+
+	Assume that the difference between the estimate $\hat y_i$ and the
+	data point $y_i$ is normally distributed.  What is the log
+	likelihood?
+
+	$$L = \prod_i{\frac{1}{\sigma\sqrt{2\pi}}\exp\left(\frac{-(
+	y_i-\hat y_i)^2}{2\sigma^2}\right)}$$
+
+	$$\ell = \sum_i{-\log(\sigma\sqrt{2\pi}) - \sum_i{\frac{(
+	y_i-\hat y_i)^2}{2\sigma^2}}}$$
+
+	\emph{We maximize the likelihood by minimizing the sum of squares}
+
+		and then solving for $\sigma$
+
+----------------------------------------------------------------------
+
+NEWLIKE Least squares $\to$ likelihood
+
+	Attaching your least squares fit to a likelihood means:
+
+		You can \emph{use it} for statistical inference (likelihood ratio test)
+
+		You can \emph{challenge} the assumptions
+
+----------------------------------------------------------------------
+
+NEWLIKE Other distributions
+
+	Maybe we want a lognormal distribution of titres
+
+		Dr.~Rong did that: least squares on the log scale!
+
+	Maybe we want a Poisson (or negative binomial) distribution for counts
+
+	Maybe we want a binomial (or beta binomial) distribution for samples
+
+	It's better to be explicit about what distribution you are assuming!
+
+----------------------------------------------------------------------
+
+SEC Conclusion
+
+----------------------------------------------------------------------
+
+Your philosophy
+
+	Statistics are not a magic machine that gives you the right answer
+
+	If you are to be a serious scientist in a noisy world, you should
+	have your own philosophy of statistics
+
+		Be pragmatic: your goal is to do science, not get caught by
+		theoretical considerations
+
+		Be honest: it's harder than it sounds.  
+
+----------------------------------------------------------------------
+
+Honesty
+
+	You can always keep analyzing until you find a ``significant''
+	result
+
+		If you do this you will make a lot of mistakes
+
+	You may also keep analyzing until you find a result that you already
+	believe is true. 
+
+		This is \emph{confirmation bias;} you're probably right, but your project
+		is not advancing science
+
+	Good practice
+
+		Make an analysis plan before you start
+
+		If flexibility is allowed in your context: 
+
+			keep an analysis journal as you go
+
+----------------------------------------------------------------------
+
+PSLIDE Summary
+
+FIG webpix/pipe.jpg
+
+----------------------------------------------------------------------
+
+Summary
+
+	P values are over-rated
+
+		and often misunderstand
+
+	High P values should not be used as evidence for anything ever.
+
+		They can provide indirect evidence. Wonderful. Find the direct
+		evidence and use that instead.
+
+	Effect sizes and confidence intervals are almost always better
+
+	Use the right P value (or confidence interval) for your question
+	
+		Non-inferiority tests, interactions
+
+----------------------------------------------------------------------
+
+RHEAD Summary
+
+	Frequentist statistics makes weak assumptions, and finds logically weak
+	formal conclusions:
+
+		These parameters are unlikely to produce a statistic this extreme by
+		chance
+
+	Bayesian statistics makes strong assumptions:
+	
+		prior distributions must be fully specified
+		
+	\ldots and finds logically strong 
+	formal conclusions:
+
+		The probability that the effect value is in this range is X
+
+		These strong conclusions can be used directly for prediction with
+		uncertainty
+
+----------------------------------------------------------------------
+
+RHEAD Summary
+
+	Statistics are a key component of data-based science
+
+		You should think about statistical analysis from the beginning of
+		your project
+
+	You need a basic understanding of statistical principles
+
+	You need your own statistical philosophy
+
+		If you're a theoretician, it should be ideological and honest
+
+		If you're a scientist, it should be pragmatic and honest

@@ -52,11 +52,26 @@ lecprompt: prompts.draft.pdf
 
 #### No intermediate files
 #### Check, commit, and merge back into main text!
+#### Use OLDANS to mark Answers we've gone past (then change back)
 
 ## data.merged: data.txt data.students.txt
 ## diff data.merged data.txt
 
 ## cp data.merged data.txt ##
+
+######################################################################
+
+## philosophy.draft.pdf: philosophy.txt philosophy.md
+## philosophy.draft.pdf: philosophy.txt philosophy.students.txt
+## philosophy.draft.pdf: philosophy.txt philosophy.draft.tex 
+## philosophy.final.pdf: philosophy.txt philosophy.students.txt
+## philosophy.handouts.pdf: philosophy.txt
+## philosophy.complete.pdf: philosophy.txt
+## philosophy.handouts.docx: philosophy.handouts.tex
+
+## philosophy.merged: philosophy.txt philosophy.students.txt
+
+## cp philosophy.merged philosophy.txt ##
 
 ######################################################################
 
