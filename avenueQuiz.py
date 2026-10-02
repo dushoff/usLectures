@@ -3,6 +3,8 @@
 
 ## Paragraphs (separated by blank lines) start with INTRO, MC or SA;
 ## any other paragraph is an option for the preceding MC question.
+## An ANS paragraph after a question (and its options) becomes its Feedback;
+## any further untagged paragraphs continue the answer
 ## Mark correct options with a leading * (followed by a space)
 ## Question statements and options are markdown, converted to html by pandoc;
 ## put code in ``` fences (blank lines inside fences don't split paragraphs)
@@ -11,7 +13,7 @@ import sys
 import re
 import subprocess
 
-tag_re = re.compile(r'^(INTRO|MC|SA)\b[ \t]*\n?')
+tag_re = re.compile(r'^(INTRO|MC|SA|ANS)\b[ \t]*\n?')
 correct_re = re.compile(r'^[*][ \t]+')
 fence_re = re.compile(r'^([*][ \t]+)?\s*(```|~~~)')
 para_re = re.compile(r'^<p>((?:(?!</?p>).)*)</p>$', re.S)
@@ -62,14 +64,19 @@ def clip(text):
 def warn(msg):
 	print(msg, file=sys.stderr)
 
+## Called when a question ends
+def finish(mc, ans):
+	if mc is not None and not mc[1]:
+		warn(f"Warning: no correct option (*) for MC question: {mc[0]}")
+	if ans:
+		text = html("\n\n".join(ans))
+		print(f"Feedback,{quote(text)},HTML")
+
 def main(paths):
 	qn = 0
 	qtype = None
 	mc = None  ## [statement, has_correct] for the current MC question
-
-	def check_mc():
-		if mc is not None and not mc[1]:
-			warn(f"Warning: no correct option (*) for MC question: {mc[0]}")
+	ans = None  ## answer paragraphs for the current question
 
 	for path in paths:
 		for para in read_paragraphs(path):
@@ -77,8 +84,15 @@ def main(paths):
 			if m:
 				tag = m.group(1)
 				body = para[m.end():]
-				check_mc()
+				if tag == "ANS":
+					if qtype not in ("MC", "SA"):
+						sys.exit(f"ANS without a question: {body}")
+					qtype = "ANS"
+					ans = [body]
+					continue
+				finish(mc, ans)
 				mc = None
+				ans = None
 				qtype = tag
 				if tag == "INTRO":
 					clip(body)
@@ -96,6 +110,8 @@ def main(paths):
 				print("Difficulty,1,")
 				if tag == "MC":
 					mc = [body, False]
+			elif qtype == "ANS":
+				ans.append(para)
 			else:
 				if qtype != "MC":
 					sys.exit(f"Option outside of MC question: {para}")
@@ -105,7 +121,7 @@ def main(paths):
 					val = 100
 					mc[1] = True
 				print(f"Option,{val},{quote(html(para))},HTML,")
-	check_mc()
+	finish(mc, ans)
 
 if __name__ == "__main__":
 	main([a for a in sys.argv[1:] if a.endswith(".quiz")])

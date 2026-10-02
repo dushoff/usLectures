@@ -28,4 +28,11 @@ y <- (
 
 Bad
 
+ANS The first block is missing a function call: `7()` is not a function.
+
 SA How would you (personally) _define_ a P value?
+
+ANS There's no single right answer, but a good definition mentions:
+
+* the probability of a result _at least as extreme_
+* computed assuming the null hypothesis $H_0$ is true
