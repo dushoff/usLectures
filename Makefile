@@ -110,18 +110,11 @@ Sources += copy.tex
 
 ######################################################################
 
-## avenue quiz dev 2026 Sep 05 (Sat)
-
-Sources += $(wildcard *.quiz)
-Ignore += $(wildcard *.quiz.csv)
-
 ## Template: ../../undergrad/avenueQuiz.csv
 
-## saquiz is a big, bloated mess, based on covid-era mcquiz
-## Neither one deals with things like images yet
-
-%.quiz.csv: %.quiz saquiz.pl
-	$(PUSH)
+## avenue quiz dev 2026 Sep 05 (Sat)
+## Deleting older saquiz now. 2026 Oct 02 (Fri)
+## saquiz was based on covid-era mcquiz from 3SS
 
 ######################################################################
 
