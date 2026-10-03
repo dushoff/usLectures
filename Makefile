@@ -120,18 +120,13 @@ Sources += copy.tex
 
 ## New quiz framework
 
+## baseline.aq.csv: baseline.quiz ## Ported, not used yet
 ## test.aq.csv: test.quiz avenueQuiz.py avenueQuiz.md
 ## R.aq.csv: R.quiz avenueQuiz.py avenueQuiz.md
 
 Ignore += *.aq.csv
 %.aq.csv: %.quiz avenueQuiz.py
 	$(PITH)
-
-######################################################################
-
-## Deprecated for avenueQuiz
-## saquiz.md
-## baseline.quiz.csv: baseline.quiz saquiz.pl
 
 ######################################################################
 
