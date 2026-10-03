@@ -91,7 +91,9 @@ R.Rout: R.R
 
 ######################################################################
 
-pardirs += lecturePix
+pardirs += lecturePix jdStats
+
+hotdirs += jdStats
 
 Ignore += $(pardirs)
 
@@ -139,6 +141,8 @@ Ignore += *.aq.csv
 ## dplyr.asn.md
 
 ## plotting.asn.md
+
+######################################################################
 
 ######################################################################
 
@@ -193,6 +197,7 @@ makestuff:
 -include makestuff/webpix.mk
 -include makestuff/mirror.mk
 -include makestuff/pipeR.mk
+-include makestuff/hotcold.mk
 
 -include makestuff/git.mk
 -include makestuff/visual.mk
