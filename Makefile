@@ -177,7 +177,7 @@ Sources += Makefile
 Ignore += makestuff
 msrepo = https://github.com/dushoff
 
-Ignore += %.stamp
+Ignore += *.stamp
 Makefile: makestuff01.stamp lecturePix01.stamp
 makestuff%.stamp: | makestuff
 	- $(RM) makestuff/*.stamp
