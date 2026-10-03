@@ -1,15 +1,5 @@
 
-Build from workshop lecture?
-* More discursive
-
-What goes here and what goes into “practice”?
-
-Lean on (and improve) vitamin example. Independence
-
-Our assumptions are never completely true
-* Make as few as possible
-
-----------------------------------------------------------------------
+Autism example
 
 Summary slide, stepping through why we test the null, how we test it, how we test it …
 
@@ -23,7 +13,7 @@ Definitely want to be talking about the confidence intervals as alternative null
 
 What do P values measure?
 
-PIC DBFIG 0.8 webpix/fog.jpg 1 webpix/clear.jpg
+PIC DBFIG 0.8 webLect/fog.jpg 1 webLect/clear.jpg
 
 	ANS Clarity!
 
@@ -112,7 +102,7 @@ BC
 
 NC
 
-SIDEFIG webpix/clear.jpg
+SIDEFIG webLect/clear.jpg
 
 EC
 
@@ -133,7 +123,7 @@ BC
 
 NC
 
-SIDEFIG webpix/fog.jpg
+SIDEFIG webLect/fog.jpg
 
 EC
 
@@ -293,7 +283,7 @@ BC
 
 NC
 
-SIDEFIG webpix/salah.jpg
+SIDEFIG webLect/salah.jpg
 
 EC
 
@@ -311,7 +301,7 @@ BC
 
 NC
 
-SIDEFIG webpix/fanny.jpg
+SIDEFIG webLect/fanny.jpg
 
 EC
 
@@ -345,7 +335,7 @@ Small effects
 
 PSLIDE Flu masks 
 
-DBFIG 0.8 webpix/N95.jpg 0.7 webpix/surgical.jpg
+DBFIG 0.8 webLect/N95.jpg 0.7 webLect/surgical.jpg
 
 ----------------------------------------------------------------------
 
@@ -479,7 +469,7 @@ BC
 
 NC
 
-SIDEFIG webpix/shanghai.jpg
+SIDEFIG webLect/shanghai.jpg
 
 EC
 
@@ -495,7 +485,7 @@ BC
 
 NC
 
-SIDEFIG webpix/spiderman.jpg
+SIDEFIG webLect/spiderman.jpg
 
 EC
 
@@ -565,7 +555,7 @@ BC
 
 NC
 
-PIC HFIG 0.8  my_images/eight.jpg
+PIC HFIG 0.8  imgLect/eight.jpg
 
 PRESENT CREDIT Tessa Wessels, {\em Faces on a Train}
 
@@ -760,7 +750,7 @@ Honesty
 
 PSLIDE Summary
 
-FIG webpix/pipe.jpg
+FIG webLect/pipe.jpg
 
 ----------------------------------------------------------------------
 

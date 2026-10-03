@@ -151,9 +151,98 @@ Frequentist paradigm
 
 Frequentist P-value logic
 
+	Hypothetically (or counter-factually) if the null is true, what will
+	my P value be?
+
+		ANS 5% of the time it will be $<5%$
+
+		ANS $\alpha$ of the time it will be $<\alpha$.
+
+		ANS This meets my frequentist requirement
+
+----------------------------------------------------------------------
+
+Comparing different tails
+
+	Let's say I have four outcomes and my null hypothesis is that they
+	are all equally likely.
+
+		If I observe 10% (instead of 25%) is that more or less “extreme”
+		than observing 35%?
+
+	I start with 10g of calcium in a mesocosm and expect that to say the
+	same?
+
+		What lower value is as extreme as 20g?
+
+		ANS 0g, or 5g, or something in between
+
+----------------------------------------------------------------------
+
+DEFHEAD $\alpha$ spending
+
+	JD: In simple situations it's usually either equivalent or better to
+	\emph{not} compare different directions
+
+		Just ask what's the probability of seeing something this extreme
+		or more in this direction ---
+
+			ANS But you don't want to double your probability of being
+			wrong
+ 
+		ANS You should divide your cutoff by 2 (spend half of your
+		$\alpha$ on each direction)
+
+		ANS It is more common (but less beautiful) to multiply the P
+		value by 2.
+
 ----------------------------------------------------------------------
 
 The most basic frequentist test
+
+	What would have happened if our treatment had no effect at all?
+
+	How does that compare to what we saw?
+
+	What's the simplest way to do this?
+
+		ANS Just relabel the children!
+
+----------------------------------------------------------------------
+
+Vitamin results
+
+FIG jdStats/vitamins_plot.Rout-0.pdf
+
+----------------------------------------------------------------------
+
+Scrambled measurements
+
+FIG jdStats/vitamins_plot.Rout-1.pdf
+
+----------------------------------------------------------------------
+
+PSLIDE Scrambled measurements
+
+FIG jdStats/vitamins_plot.Rout-2.pdf
+
+----------------------------------------------------------------------
+
+PSLIDE Scrambled measurements
+
+FIG jdStats/vitamins_plot.Rout-3.pdf
+
+----------------------------------------------------------------------
+
+PSLIDE Scrambled measurements
+
+FIG jdStats/vitamins_plot.Rout-4.pdf
+
+----------------------------------------------------------------------
+
+The null distribution
+
+FIG jdStats/vitamins_scramble.Rout.pdf
 
 ----------------------------------------------------------------------
 
@@ -184,6 +273,10 @@ Confidence interval logic
 
 ----------------------------------------------------------------------
 
+Summary
+
+----------------------------------------------------------------------
+
 P value rant
 
 ----------------------------------------------------------------------
@@ -191,6 +284,7 @@ P value rant
 Clarity suggestion
 
 ----------------------------------------------------------------------
+
 Big or small
 
 	What are some words to use here?
