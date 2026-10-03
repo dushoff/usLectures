@@ -11,6 +11,15 @@ Our assumptions are never completely true
 
 ----------------------------------------------------------------------
 
+Summary slide, stepping through why we test the null, how we test it, how we test it …
+
+Definitely want to be talking about the confidence intervals as alternative nulls and why they're not perfect. Tails and alpha spending. 
+
+----------------------------------------------------------------------
+
+## Fodder below
+
+----------------------------------------------------------------------
 
 What do P values measure?
 
@@ -23,7 +32,6 @@ PIC DBFIG 0.8 webpix/fog.jpg 1 webpix/clear.jpg
 		ANS Instead of significance
 
 ----------------------------------------------------------------------
-
 
 Types of Error
 
@@ -427,37 +435,37 @@ TSS Frequentist paradigm
 
 Height measurements
 
-FIG vitamins_plot.Rout-0.pdf
+FIG jdStats/vitamins_plot.Rout-0.pdf
 
 ----------------------------------------------------------------------
 
 Scrambled measurements
 
-FIG vitamins_plot.Rout-1.pdf
+FIG jdStats/vitamins_plot.Rout-1.pdf
 
 ----------------------------------------------------------------------
 
 PSLIDE Scrambled measurements
 
-FIG vitamins_plot.Rout-2.pdf
+FIG jdStats/vitamins_plot.Rout-2.pdf
 
 ----------------------------------------------------------------------
 
 PSLIDE Scrambled measurements
 
-FIG vitamins_plot.Rout-3.pdf
+FIG jdStats/vitamins_plot.Rout-3.pdf
 
 ----------------------------------------------------------------------
 
 PSLIDE Scrambled measurements
 
-FIG vitamins_plot.Rout-4.pdf
+FIG jdStats/vitamins_plot.Rout-4.pdf
 
 ----------------------------------------------------------------------
 
 The null distribution
 
-FIG vitamins_scramble.Rout.pdf
+FIG jdStats/vitamins_scramble.Rout.pdf
 
 ----------------------------------------------------------------------
 
@@ -539,7 +547,7 @@ BC
 
 NC
 
-SIDEFIG vitamins_plot.Rout-0.pdf
+SIDEFIG jdStats/vitamins_plot.Rout-0.pdf
 
 EC
 

@@ -177,13 +177,13 @@ Sources += Makefile
 Ignore += makestuff
 msrepo = https://github.com/dushoff
 
-## ln -s ../makestuff . ## Do this first if you want a linked makestuff
-Makefile: makestuff/01.stamp lecturePix/01.stamp
-makestuff/%.stamp: | makestuff
+Ignore += %.stamp
+Makefile: makestuff01.stamp lecturePix01.stamp
+makestuff%.stamp: | makestuff
 	- $(RM) makestuff/*.stamp
 	cd makestuff && $(MAKE) pull
 	touch $@
-lecturePix/%.stamp: | lecturePix
+lecturePix%.stamp: | lecturePix
 	- $(RM) lecturePix/*.stamp
 	cd lecturePix && $(MAKE) pullup
 	touch $@

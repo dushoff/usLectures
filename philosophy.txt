@@ -181,3 +181,16 @@ Thinking about populations
 Confidence interval logic
 
 	Same as null, but still requires more assumptions
+
+----------------------------------------------------------------------
+
+P value rant
+
+----------------------------------------------------------------------
+
+Clarity suggestion
+
+----------------------------------------------------------------------
+Big or small
+
+	What are some words to use here?
