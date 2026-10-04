@@ -75,6 +75,48 @@ lecprompt: prompts.draft.pdf
 
 ######################################################################
 
+## linear.draft.pdf: linear.txt linear.md
+## linear.draft.pdf: linear.txt linear.students.txt
+## linear.draft.pdf: linear.txt linear.draft.tex 
+## linear.final.pdf: linear.txt linear.students.txt
+## linear.handouts.pdf: linear.txt
+## linear.complete.pdf: linear.txt
+## linear.handouts.docx: linear.handouts.tex
+
+## linear.merged: linear.txt linear.students.txt
+
+## cp linear.merged linear.txt ##
+
+######################################################################
+
+## generalized.draft.pdf: generalized.txt generalized.md
+## generalized.draft.pdf: generalized.txt generalized.students.txt
+## generalized.draft.pdf: generalized.txt generalized.draft.tex 
+## generalized.final.pdf: generalized.txt generalized.students.txt
+## generalized.handouts.pdf: generalized.txt
+## generalized.complete.pdf: generalized.txt
+## generalized.handouts.docx: generalized.handouts.tex
+
+## generalized.merged: generalized.txt generalized.students.txt
+
+## cp generalized.merged generalized.txt ##
+
+######################################################################
+
+## practice.draft.pdf: practice.txt practice.md
+## practice.draft.pdf: practice.txt practice.students.txt
+## practice.draft.pdf: practice.txt practice.draft.tex 
+## practice.final.pdf: practice.txt practice.students.txt
+## practice.handouts.pdf: practice.txt
+## practice.complete.pdf: practice.txt
+## practice.handouts.docx: practice.handouts.tex
+
+## practice.merged: practice.txt practice.students.txt
+
+## cp practice.merged practice.txt ##
+
+######################################################################
+
 ## Prep an interactive slides file
 %.students.txt: | %.txt
 	cat $| | perl -00 -ne 'print unless /ANS/' | cat -s > $@

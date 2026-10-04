@@ -67,7 +67,7 @@ What do we hope to learn?
 
 P values
 
-	Activity: What is a P value?
+	What is a P value?
 
 		ANS The probability of finding a result at least this “extreme” under the null hypothesis
 
@@ -78,6 +78,8 @@ P values
 			ANS So what! I already know vitamin A has strong effects on metabolism
 
 	If I'm certain that the null hypothesis is false, why do I test it anyway?
+
+		NOANS
 
 ----------------------------------------------------------------------
 
@@ -115,11 +117,7 @@ EC
 
 ----------------------------------------------------------------------
 
-SS How do we calculate P values?
-
-----------------------------------------------------------------------
-
-Frequentist paradigm
+TSEC Frequentist paradigm
 
 	Choose an allowable mistake rate, $\alpha$
 
@@ -151,9 +149,11 @@ Frequentist P-value logic
 
 Comparing different tails
 
-	Let's say I have four outcomes and my null hypothesis is that they are all equally likely.
+	Let's say I have 5 outcomes and my null hypothesis is that they are all equally likely.
 
-		If I observe 10% (instead of 20%) is that more or less “extreme” than observing 35%?
+		I observe 10% (instead of 20%) of the key outcome
+
+		Is that more or less “extreme” than observing 35%?
 
 		ANS Not clear! 10% is getting close to the boundary of 0.
 
@@ -270,7 +270,21 @@ Practical frequentism
 
 			ANS ANOVA for non-normal observations
 
-	ADD There's supposed to be another slide here?
+----------------------------------------------------------------------
+
+Practical frequentism
+
+	The bedrock of frequentism is testing the null hypothesis
+
+		ANS In the hypothetical where there's nothing to detect, we want our method to detect it $\leq\alpha$ of the time
+
+	We also want our confidence intervals to be valid
+
+		ANS The parameter we're estimating should fall outside our confidence interval $\leq\alpha$ of the time
+
+	But this is harder
+
+		And people are less strict about it
 
 ----------------------------------------------------------------------
 
@@ -305,11 +319,48 @@ Thinking about populations
 
 Confidence interval logic
 
-	To reject the null hypothesis, we ask 
+	To reject the null hypothesis, we ask:
+
+		assuming the null is true, what is the probability under the null of getting a value at least as extreme as my observation?
+
+	To reject a value from our confidence interval, we ask:
+
+		assuming the value is true, what is the probability under the null of getting a value at least as extreme as my observation?
+
+	Result:
+
+		ANS We reject the (unknown) true value $\leq\alpha$ of the time
+
+		ANS If all of our assumptions are correct
 
 ----------------------------------------------------------------------
 
-Summary
+Confidence intervals vs.~P values
+
+	CIs are more useful
+
+	They also require more assumptions
+
+		If effects are absent, you don't need any assumptions about them
+
+		To assume that treated children grow better, we need assumptions about the relationship between distributions
+
+----------------------------------------------------------------------
+
+Paradigm summary
+
+	We want to “fail to reject” the null hypothesis at least $1-\alpha$ of the time, under the assumption that it's true
+
+		ANS We can do this by only rejecting outcomes that are unlikey under the null hypothesis
+
+		ANS Using our P value definition
+
+	We (usually) do this because we want to test confidence in the \emph{sign} of an effect or difference
+
+		ANS The probability of making a sign error will be less than the probability of a “false positive”
+
+		ANS If the true answer is negative, the probability of seeing our positive observation will be less than it would be under the null hypothesis
+
 
 ----------------------------------------------------------------------
 
@@ -317,10 +368,249 @@ P value rant
 
 ----------------------------------------------------------------------
 
-Clarity suggestion
+Low P values
+
+BC
+
+	If I have a low P value I can see something clearly
+
+	But it's usually better to focus on what I see than the P value
+
+NC
+
+SIDEFIG webLect/clear.jpg
+
+EC
+
 
 ----------------------------------------------------------------------
 
-Big or small
+High P values
 
-	What are some words to use here?
+BC
+
+	If I have a high P value, there is something I \emph{don't} see
+	clearly
+
+	It \emph{may be} because this effect is small
+
+	High P values should \emph{not} be used to advance \emph{any}
+	scientific conclusion
+
+NC
+
+SIDEFIG webLect/fog.jpg
+
+EC
+
+----------------------------------------------------------------------
+
+What causes high P values?
+
+	Small differences
+
+	Less data
+
+	More noise
+
+	An inappropriate model
+
+	Less model resolution
+
+	A lower P value means that your evidence for difference is better
+
+	A higher P value means that your evidence for similarity is
+	better -- or worse!
+
+----------------------------------------------------------------------
+
+Annualized flu deaths \chinese{流感死亡率}
+
+BC
+
+CFIG jdStats/flu.Rout-0.pdf
+
+NC
+
+	Look at deaths on an annual time scale \chinese{年度時間尺度}
+
+	Why is weather not causing deaths at this time scale?
+
+	ANS Maybe those people would have died anyway later in the same winter
+
+EC
+
+----------------------------------------------------------------------
+
+DEFHEAD ... with confidence intervals
+
+BC
+
+CFIG jdStats/flu.Rout-1.pdf
+
+NC
+
+	\textbf{Never} say: A is significant and B isn't, so $A>B$
+
+	\textbf{Instead:} Construct a statistic for the hypothesis $A>B$
+
+		May be difficult
+
+EC
+
+----------------------------------------------------------------------
+
+What do P values measure?
+
+PIC DBFIG 0.8 webLect/fog.jpg 1 webLect/clear.jpg
+
+	ANS Clarity!
+
+	ANS We should call it that
+
+		ANS Instead of significance
+
+----------------------------------------------------------------------
+
+SEC Types of error
+
+----------------------------------------------------------------------
+
+Example: vaccines
+
+	Is MMR vaccination associated with autism outcomes?
+
+		ANS Yes!
+
+	Is the association positive or negative?
+
+		ANS Nobody knows!
+
+	What does this tell us?
+
+		ANS Not to trust anyone who says they do know
+
+	What would be a better question?
+
+		ANS Is the correlation big or small?
+
+----------------------------------------------------------------------
+
+Statistical error types
+
+	Type I (\emph{False positive:}) concluding there is an effect when
+	there isn't one
+
+		This doesn't happen in biology.  There is always an effect.
+
+		But it is useful to think about as a counter-factual
+
+	Type II (\emph{False negative:}) concluding there is no effect when
+	there really is
+
+		This \emph{should} never happen, because we should never conclude
+		there is no effect
+
+		We should think about “failure to find” and “power to find”
+
+			Later in the term
+
+----------------------------------------------------------------------
+
+Doing Science
+
+	Once you collect data:
+
+	You should never make a false-negative error.
+
+		ANS Never accept the null
+
+	Or a false-positive error
+
+		ANS If you never believe the null is exactly true, the idea of a
+		false positive doesn't make sense
+
+	\emph{Sign \chinese{($\pm$)} error:}
+	if I think an effect is positive, when it's really
+	negative (or vice versa)
+
+	\emph{Magnitude \chinese{(大小)} error:} if I think an effect is small, when
+	it's really large (or vice versa)
+
+	Confidence intervals aid clear thinking
+
+----------------------------------------------------------------------
+
+Small effects
+
+	We should't build statistical confidence that something is small by
+	failing to see it clearly
+
+	We must instead see clearly that it is small
+
+	This means we need a standard (our cutoff) for what we mean by small
+
+----------------------------------------------------------------------
+
+PSLIDE Flu masks 
+
+DBFIG 0.8 webLect/N95.jpg 0.7 webLect/surgical.jpg
+
+----------------------------------------------------------------------
+
+Flu mask example
+
+	People who work in respiratory clinics sometimes have to wear bulky,
+	uncomfortable, expensive masks
+
+	They would like to switch to simpler masks, if those will do the job
+
+	How can this be tested statistically?  We don't want the masks to be
+	“different”.
+
+		We need to decide what we mean by different in this case!
+
+		They're not the same, so how close is close enough?
+
+----------------------------------------------------------------------
+
+Traditional statistics
+
+FIG jdStats/masks.Rout-2.pdf
+
+----------------------------------------------------------------------
+
+Non-inferiority approach
+
+BC
+
+PRESENT CFIG jdStats/masks.Rout-0.pdf
+
+NC
+
+	Are we confident the new mask is ``good enough''?
+
+	There is no substitute for picking a cutoff
+
+	Can be controversial
+
+EC
+
+----------------------------------------------------------------------
+
+Non-inferiority approach
+
+BC
+
+CFIG jdStats/masks.Rout-1.pdf
+
+NC
+
+	We can even attach a P value by basing it on the ``right” statistic.
+
+	The right statistic is the thing whose sign we want to know:
+
+		The difference between the observed effect and the standard we
+		chose
+
+EC
