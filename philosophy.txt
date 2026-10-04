@@ -1,7 +1,7 @@
 
 EXTRA New protocols
 
-OLDANS for something I should share in handouts but revert to an answer for next time
+OLDANS for something I should share in handouts but revert to an answer for next year
 
 ----------------------------------------------------------------------
 
@@ -11,51 +11,40 @@ UNIT 3: Statistical philosophy
 
 Overview
 
-	We use statistics to confirm effects, estimate parameters, and
-	predict outcomes
+	We use statistics to confirm effects, estimate parameters, and predict outcomes
 
 	I think smoking is bad for lung capacity in children
 
-		\emph{Confirmation:} Children who smoke have lower exhalation
-		volumes (ev)
+		\emph{Confirmation:} Children who smoke have lower exhalation volumes (ev)
 
-		\emph{Estimation:} The average non-smoker has an ev 1.1--1.3
-		times higher than a smoker
+		\emph{Estimation:} The average non-smoker has an ev 1.1--1.3 times higher than a smoker
 
-		\emph{Prediction:} A 14-year-old male smoker will smoker will
-		have an ev of 2.6--3.0 L/s
+		\emph{Prediction:} A 14-year-old male smoker will smoker will have an ev of 2.6--3.0 L/s
 
 ----------------------------------------------------------------------
 
 Example: Vitamin A
 
-	We compare health indicators of children treated or not treated with
-	vitamin A supplements 
+	We compare health indicators of children treated or not treated with vitamin A supplements
 
-		\emph{Estimate:} how much healthier (or less healty) are the
-		treated children on average?
+		\emph{Estimate:} how much healthier (or less healty) are the treated children on average?
 
-		\emph{Confirmation:} are we sure that the supplements are helping
-		(or hurting)?
+		\emph{Confirmation:} are we sure that the supplements are helping (or hurting)?
 
-		\emph{Range of estimates:} how much do we think the supplement is
-		helping?
+		\emph{Range of estimates:} how much do we think the supplement is helping?
 
 ----------------------------------------------------------------------
 
 P values and confidence intervals
 
-	We use \emph{P values} to say how sure we are that we have seen a
-	positive effect
+	We use \emph{P values} to say how sure we are that we have seen a positive effect
 
-	We use \emph{confidence intervals} to say what we think is going on
-	(with a certain level of confidence)
+	We use \emph{confidence intervals} to say what we think is going on (with a certain level of confidence)
 
 	P values are \emph{over-rated}
 
-	\emph{Never} use a high P value as (direct) evidence for anything,
-	e.g.:
-	
+	\emph{Never} use a high P value as (direct) evidence for anything, e.g.:
+
 		that an effect is small
 
 		that two quantities are similar
@@ -80,20 +69,15 @@ P values
 
 	Activity: What is a P value?
 
-		ANS The probability of finding a result at least this “extreme”
-		under the null hypothesis
+		ANS The probability of finding a result at least this “extreme” under the null hypothesis
 
-	What does it mean if I find a “significant P value” for some effect
-	in this experiment?
+	What does it mean if I find a “significant P value” for some effect in this experiment?
 
-		ANS A difference this big would be unlikely under the null
-		hypothesis
+		ANS A difference this big would be unlikely under the null hypothesis
 
-			ANS So what! I already know vitamin A has strong effects on
-			metabolism
+			ANS So what! I already know vitamin A has strong effects on metabolism
 
-	If I'm certain that the true answer isn't exactly zero, why do I
-	want the P value anyway?
+	If I'm certain that the null hypothesis is false, why do I test it anyway?
 
 ----------------------------------------------------------------------
 
@@ -121,8 +105,7 @@ PRESENT CFIG jdStats/vitamins.Rout-1.pdf
 
 NC
 
-	A high P value means we can't see the \emph{sign} of the effect
-	clearly
+	A high P value means we can't see the \emph{sign} of the effect clearly
 
 	A low P value means we can
 
@@ -144,19 +127,23 @@ Frequentist paradigm
 
 		COMMENT Because Fisher made that up as an example!
 
-	If we do a lot of studies, we don't want to be wrong more than
-	$\alpha$ of the time 
+	The paradigm is: our probability of being wrong should be $\leq\alpha$
+
+	If we do a lot of studies (correctly), we won't wrong more than $\alpha$ of the time
+
+	An approach that correctly limits the probability of being wrong is \textbf{valid}
 
 ----------------------------------------------------------------------
 
 Frequentist P-value logic
 
-	Hypothetically (or counter-factually) if the null is true, what will
-	my P value be?
+	I define a P value as the probability under the null of getting a value at least as extreme as my observation
 
-		ANS 5% of the time it will be $<5%$
+	Hypothetically (or counter-factually) if the null is true, what will my P value be?
 
-		ANS $\alpha$ of the time it will be $<\alpha$.
+		ANS 5% of the time it will be $\leq5%$
+
+		ANS $\alpha$ of the time it will be $\leq\alpha$.
 
 		ANS This meets my frequentist requirement
 
@@ -164,14 +151,13 @@ Frequentist P-value logic
 
 Comparing different tails
 
-	Let's say I have four outcomes and my null hypothesis is that they
-	are all equally likely.
+	Let's say I have four outcomes and my null hypothesis is that they are all equally likely.
 
-		If I observe 10% (instead of 25%) is that more or less “extreme”
-		than observing 35%?
+		If I observe 10% (instead of 20%) is that more or less “extreme” than observing 35%?
 
-	I start with 10g of calcium in a mesocosm and expect that to say the
-	same?
+		ANS Not clear! 10% is getting close to the boundary of 0.
+
+	I start with 10g of calcium in a mesocosm and expect that to say the same?
 
 		What lower value is as extreme as 20g?
 
@@ -181,20 +167,17 @@ Comparing different tails
 
 DEFHEAD $\alpha$ spending
 
-	JD: In simple situations it's usually either equivalent or better to
-	\emph{not} compare different directions
+	JD: In simple situations it's usually either equivalent or better to \emph{not} compare different directions
 
-		Just ask what's the probability of seeing something this extreme
-		or more in this direction ---
+		Just ask what's the probability of seeing something this extreme or more in this direction ---
 
-			ANS But you don't want to double your probability of being
-			wrong
- 
-		ANS You should divide your cutoff by 2 (spend half of your
-		$\alpha$ on each direction)
+			ANS But you don't want to double your probability of being wrong
 
-		ANS It is more common (but less beautiful) to multiply the P
-		value by 2.
+		ANS You should divide your cutoff by 2 (spend half of your $\alpha$ on each direction)
+
+			ANS “Spend” half of your $\alpha$ on each of the two directions
+
+		ANS It is more common (but less beautiful) to multiply the P value by 2.
 
 ----------------------------------------------------------------------
 
@@ -246,30 +229,83 @@ FIG jdStats/vitamins_scramble.Rout.pdf
 
 ----------------------------------------------------------------------
 
+Interpretation
+
+BC
+
+	10% of random trials had an effect as bigger or bigger than the observed one
+
+	Compare $P=0.10$ to $\alpha=0.05$
+
+		Or one-sided $P=0.05$ to $\alpha=0.025$
+
+	ANS We don't want to conclude the effect was positive
+
+		ANS Because then our chance of making a mistake would be too big
+
+		ANS We definitely don't want to conclude that it was not positive
+
+NC
+
+SIDEFIG jdStats/vitamins_scramble.Rout.pdf
+
+EC
+----------------------------------------------------------------------
+
 Practical frequentism
+
+	Making assumptions allows us to do much more \textbf{powerful} statistics
+
+		ANS More likely to find real effects when they exist
+
+	But assumptions are generally not exactly correct
+
+		Error rate could be higher or lower than you think
+
+	There's also a tradition of accepting tests that are \emph{asymptotically valid}
+
+		ANS Error rate is $\leq\alpha$ with the additional assumption that there is “enough” data
+
+			ANS Normal approximation to binomial tests
+
+			ANS ANOVA for non-normal observations
+
+	ADD There's supposed to be another slide here?
 
 ----------------------------------------------------------------------
 
 Permutation test assumptions
 
-	Identical populations
+BC
 
-	Independent sampling
+	What assumptions did we make for our permutation test?
 
+		ANS Identical populations
+
+			ANS Achieved by randomization
+
+		ANS Independent sampling
+
+			ANS What if we gave siblings the same treatment?
+
+NC
+
+	SIDEFIG jdStats/vitamins_scramble.Rout.pdf
+
+EC
 ----------------------------------------------------------------------
 
 Thinking about populations
 
 	All the children in the village?
 
-	A larger group of the kind of children you would hypothetically get
-	under these circumstances?
+	A larger group of the kind of children you would hypothetically get under these circumstances?
 
 ----------------------------------------------------------------------
 
 Confidence interval logic
 
-	Same as null, but still requires more assumptions
+	To reject the null hypothesis, we ask 
 
 ----------------------------------------------------------------------
 

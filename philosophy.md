@@ -1,9 +1,13 @@
 
+Don't ask if there is an effect, ask what we can learn about the effect
+
+----------------------------------------------------------------------
+
 Autism example
 
 Summary slide, stepping through why we test the null, how we test it, how we test it …
 
-Definitely want to be talking about the confidence intervals as alternative nulls and why they're not perfect. Tails and alpha spending. 
+The control group did not show a significant effect …
 
 ----------------------------------------------------------------------
 
