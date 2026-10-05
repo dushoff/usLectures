@@ -32,7 +32,7 @@ notes.txt:
 ## prompts.draft.pdf: prompts.txt
 
 lecprompt: prompts.draft.pdf
-	sleep 2400; $(MAKE) $<.go
+	sleep 2700; $(MAKE) $<.go
 
 ######################################################################
 

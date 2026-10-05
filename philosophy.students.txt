@@ -87,7 +87,11 @@ P values
 
 	What does it mean if I find a “significant P value” for some effect in this experiment?
 
+		It's unlikely this group of children is healthier just at random
+
 	If I'm certain that the null hypothesis is false, why do I test it anyway?
+
+		Because I want to know if I'm confident about the direction!
 
 ----------------------------------------------------------------------
 
