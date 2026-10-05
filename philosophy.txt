@@ -1,4 +1,3 @@
-
 EXTRA New protocols
 
 OLDANS for something I should share in handouts but revert to an answer for next year
@@ -96,9 +95,13 @@ P values
 
 			ANS So what! I already know vitamin A has strong effects on metabolism
 
+		STUDENTS It's unlikely this group of children is healthier just at random
+
 	If I'm certain that the null hypothesis is false, why do I test it anyway?
 
 		NOANS
+
+		CONV Because I want to know if I'm confident about the direction!
 
 ----------------------------------------------------------------------
 
@@ -269,6 +272,7 @@ NC
 SIDEFIG jdStats/vitamins_scramble.Rout.pdf
 
 EC
+
 ----------------------------------------------------------------------
 
 Practical frequentism
@@ -326,6 +330,7 @@ NC
 SIDEFIG jdStats/vitamins_scramble.Rout.pdf
 
 EC
+
 ----------------------------------------------------------------------
 
 Thinking about populations
@@ -380,7 +385,6 @@ Paradigm summary
 
 		ANS If the true answer is negative, the probability of seeing our positive observation will be less than it would be under the null hypothesis
 
-
 ----------------------------------------------------------------------
 
 SEC P value rant
@@ -400,7 +404,6 @@ NC
 SIDEFIG webLect/clear.jpg
 
 EC
-
 
 ----------------------------------------------------------------------
 
@@ -664,4 +667,3 @@ Summary
 		ANS The difference between “significant” and “not significant” is not necessarily significant!
 
 		ANS Influenza example
-
