@@ -23,6 +23,25 @@ Overview
 
 ----------------------------------------------------------------------
 
+Some definitions
+
+	a \textbf{variable} is something that we measure
+
+		flower species, rodent weight, provincial area
+
+	a \textbf{statistic} is something that we calculate from our
+	variables
+
+		mean weight, median area, correlation between weight and leg length
+
+	a \textbf{parameter} is something we estimate using a statistical model
+
+		the difference between soil wetness surrounding two different types of plants
+
+		parameters are estimated with uncertainty
+
+----------------------------------------------------------------------
+
 Example: Vitamin A
 
 	We compare health indicators of children treated or not treated with vitamin A supplements
@@ -304,7 +323,7 @@ BC
 
 NC
 
-	SIDEFIG jdStats/vitamins_scramble.Rout.pdf
+SIDEFIG jdStats/vitamins_scramble.Rout.pdf
 
 EC
 ----------------------------------------------------------------------
@@ -364,7 +383,7 @@ Paradigm summary
 
 ----------------------------------------------------------------------
 
-P value rant
+SEC P value rant
 
 ----------------------------------------------------------------------
 
@@ -472,6 +491,22 @@ PIC DBFIG 0.8 webLect/fog.jpg 1 webLect/clear.jpg
 
 ----------------------------------------------------------------------
 
+Rant summary
+
+	We don't accept the null hypothesis
+
+		Statistics isn't magic!
+
+	It is easy to make this mistake
+
+		and the word “significant” makes this problem worse
+
+	A lot of advice you will see is just wrong
+
+		e.g., drop non-significant terms
+
+----------------------------------------------------------------------
+
 SEC Types of error
 
 ----------------------------------------------------------------------
@@ -493,6 +528,10 @@ Example: vaccines
 	What would be a better question?
 
 		ANS Is the correlation big or small?
+
+		ANS There's evidence that it's very small
+
+		ANS And no good evidence why the link should exist
 
 ----------------------------------------------------------------------
 
@@ -598,19 +637,31 @@ EC
 
 ----------------------------------------------------------------------
 
-Non-inferiority approach
+Is your effect big?
 
-BC
+	Scientists in many fields resist picking effect sizes
 
-CFIG jdStats/masks.Rout-1.pdf
+	They want statistics to do it for them
 
-NC
+		... but statistics is not magic
 
-	We can even attach a P value by basing it on the ``right” statistic.
+		scientific judgment is required
 
-	The right statistic is the thing whose sign we want to know:
+	It would be great if we could use “significant” to mean “biologically important”
 
-		The difference between the observed effect and the standard we
-		chose
+		ANS Would probably create too much confusion
 
-EC
+----------------------------------------------------------------------
+
+Summary
+
+	Not seeing an effect clearly should not be used as evidence that the effect is small, or unimportant
+
+	Your confidence intervals are what tell you how confident you are that an effect is below a certain size
+
+	To say that something is bigger than something else, you have to compare them
+
+		ANS The difference between “significant” and “not significant” is not necessarily significant!
+
+		ANS Influenza example
+

@@ -61,9 +61,9 @@ lecprompt: prompts.draft.pdf
 
 ######################################################################
 
+## philosophy.draft.pdf: philosophy.txt philosophy.draft.tex 
 ## philosophy.draft.pdf: philosophy.txt philosophy.md
 ## philosophy.draft.pdf: philosophy.txt philosophy.students.txt
-## philosophy.draft.pdf: philosophy.txt philosophy.draft.tex 
 ## philosophy.final.pdf: philosophy.txt philosophy.students.txt
 ## philosophy.handouts.pdf: philosophy.txt
 ## philosophy.complete.pdf: philosophy.txt
