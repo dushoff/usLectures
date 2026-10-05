@@ -3,17 +3,27 @@ Index card
 
 	Put your macid (or just your surname) on the blank side
 
-	\emph{On the other side,} share
+	\emph{On the other side,} answer
 
-		One question
+		were you convinced of anything?
 
-		One comment
+		were you unconvinced by anything?
 
 ----------------------------------------------------------------------
 
 EXTRA
 
 	Prompts
+
+		One question
+
+		One comment
+
+
+		were you convinced of anything?
+
+		were you unconvinced by anything?
+
 
 		one thing you learned today
 
