@@ -8,14 +8,14 @@ accepts; 0.95
 
 fails to reject; 0.05
 
-fails to reject; 0.95
+* fails to reject; 0.95
 
 MC Which of these is the _best_ interpretation of a non-significant result in our vitamin A comparison between two groups of children, according to Dushoff?:
 ______ helping or hurting children (as measured by the metric we are studying)
 
 We have no evidence whether vitamin A is 
 
-We are not confident whether
+* We are not confident whether
 
 We have some evidence that vitamin A is _not_
 
@@ -25,8 +25,10 @@ MC Tests that are “asymptotically valid” conform to the frequentist perspect
 
 absolutely; cautiously
 
-only when sample size is large; cautiously
+* only when sample size is large; cautiously
 
-absolutely; preferentially
+absolutely; whenever possible
 
-only when sample size is large; cautiously
+only when sample size is large; whenever possible
+
+MC The best evidence that an effect is unimportant (if you don't have a confidence interval)  

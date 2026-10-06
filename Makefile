@@ -166,6 +166,8 @@ Sources += copy.tex
 ## baseline.aq.csv: baseline.quiz ## Ported, not used yet
 ## test.aq.csv: test.quiz avenueQuiz.py avenueQuiz.md
 ## R.aq.csv: R.quiz avenueQuiz.py avenueQuiz.md
+
+## For frequentism, more philosophy to come, maybe
 ## freq.aq.csv: freq.quiz avenueQuiz.md
 
 Sources += $(wildcard *.quiz)
