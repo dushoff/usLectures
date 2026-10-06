@@ -1,0 +1,32 @@
+INTRO The goal here is learning, not testing. Take your time and think about the questions. You can go through as many times as necessary to get the answers right, but you're not learning unless you're learning. 
+
+MC Assume α=0.05. A frequentist test is valid if – under the counter-factual that the null hypothesis is true – it ______ the null hypothesis at least _____ of the time.
+
+accepts; 0.05
+
+accepts; 0.95
+
+fails to reject; 0.05
+
+fails to reject; 0.95
+
+MC Which of these is the _best_ interpretation of a non-significant result in our vitamin A comparison between two groups of children, according to Dushoff?:
+______ helping or hurting children (as measured by the metric we are studying)
+
+We have no evidence whether vitamin A is 
+
+We are not confident whether
+
+We have some evidence that vitamin A is _not_
+
+We are confident that vitamin A is _not_
+
+MC Tests that are “asymptotically valid” conform to the frequentist perspective ______, and should be used ______.
+
+absolutely; cautiously
+
+only when sample size is large; cautiously
+
+absolutely; preferentially
+
+only when sample size is large; cautiously

@@ -168,7 +168,7 @@ Sources += copy.tex
 ## R.aq.csv: R.quiz avenueQuiz.py avenueQuiz.md
 ## freq.aq.csv: freq.quiz avenueQuiz.md
 
-
+Sources += $(wildcard *.quiz)
 Ignore += *.aq.csv
 %.aq.csv: %.quiz avenueQuiz.py
 	$(PITH)
