@@ -158,7 +158,6 @@ Sources += copy.tex
 
 ## avenue quiz dev 2026 Sep 05 (Sat)
 ## Deleting older saquiz now. 2026 Oct 02 (Fri)
-## saquiz was based on covid-era mcquiz from 3SS
 
 ######################################################################
 
@@ -167,6 +166,8 @@ Sources += copy.tex
 ## baseline.aq.csv: baseline.quiz ## Ported, not used yet
 ## test.aq.csv: test.quiz avenueQuiz.py avenueQuiz.md
 ## R.aq.csv: R.quiz avenueQuiz.py avenueQuiz.md
+## freq.aq.csv: freq.quiz avenueQuiz.md
+
 
 Ignore += *.aq.csv
 %.aq.csv: %.quiz avenueQuiz.py
