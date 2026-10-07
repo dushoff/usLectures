@@ -5,6 +5,9 @@
 ## any other paragraph is an option for the preceding MC question.
 ## An ANS paragraph after a question (and its options) becomes its Feedback;
 ## any further untagged paragraphs continue the answer
+## An FF paragraph (final feedback) in an MC question becomes feedback
+## on the correct option(s), shown after the correct answer;
+## further untagged paragraphs continue it, as for ANS
 ## Mark correct options with a leading * (followed by a space)
 ## Question statements and options are markdown, converted to html by pandoc;
 ## put code in ``` fences (blank lines inside fences don't split paragraphs)
@@ -13,7 +16,7 @@ import sys
 import re
 import subprocess
 
-tag_re = re.compile(r'^(INTRO|MC|SA|ANS)\b[ \t]*\n?')
+tag_re = re.compile(r'^(INTRO|MC|SA|ANS|FF)\b[ \t]*\n?')
 correct_re = re.compile(r'^[*][ \t]+')
 fence_re = re.compile(r'^([*][ \t]+)?\s*(```|~~~)')
 para_re = re.compile(r'^<p>((?:(?!</?p>).)*)</p>$', re.S)
@@ -65,9 +68,15 @@ def warn(msg):
 	print(msg, file=sys.stderr)
 
 ## Called when a question ends
-def finish(mc, ans):
-	if mc is not None and not mc[1]:
-		warn(f"Warning: no correct option (*) for MC question: {mc[0]}")
+def finish(mc, ans, ff):
+	if mc is not None:
+		if not mc[1]:
+			warn(f"Warning: no correct option (*) for MC question: {mc[0]}")
+		fb = ""
+		if ff:
+			fb = quote(html("\n\n".join(ff))) + ",HTML"
+		for val, text in mc[2]:
+			print(f"Option,{val},{text},HTML,{fb if val else ''}")
 	if ans:
 		text = html("\n\n".join(ans))
 		print(f"Feedback,{quote(text)},HTML")
@@ -75,8 +84,10 @@ def finish(mc, ans):
 def main(paths):
 	qn = 0
 	qtype = None
-	mc = None  ## [statement, has_correct] for the current MC question
+	mc = None  ## [statement, has_correct, options] for the current MC question
 	ans = None  ## answer paragraphs for the current question
+	ff = None  ## final-feedback paragraphs for the current MC question
+	extra = None  ## list that untagged paragraphs are appended to (ANS or FF)
 
 	for path in paths:
 		for para in read_paragraphs(path):
@@ -85,14 +96,23 @@ def main(paths):
 				tag = m.group(1)
 				body = para[m.end():]
 				if tag == "ANS":
-					if qtype not in ("MC", "SA"):
+					if qtype not in ("MC", "SA", "FF"):
 						sys.exit(f"ANS without a question: {body}")
 					qtype = "ANS"
 					ans = [body]
+					extra = ans
 					continue
-				finish(mc, ans)
+				if tag == "FF":
+					if mc is None:
+						sys.exit(f"FF outside of MC question: {body}")
+					qtype = "FF"
+					ff = [body]
+					extra = ff
+					continue
+				finish(mc, ans, ff)
 				mc = None
 				ans = None
+				ff = None
 				qtype = tag
 				if tag == "INTRO":
 					clip(body)
@@ -109,9 +129,9 @@ def main(paths):
 				print("Points,1,")
 				print("Difficulty,1,")
 				if tag == "MC":
-					mc = [body, False]
-			elif qtype == "ANS":
-				ans.append(para)
+					mc = [body, False, []]
+			elif qtype in ("ANS", "FF"):
+				extra.append(para)
 			else:
 				if qtype != "MC":
 					sys.exit(f"Option outside of MC question: {para}")
@@ -120,8 +140,8 @@ def main(paths):
 					para = correct_re.sub('', para, count=1)
 					val = 100
 					mc[1] = True
-				print(f"Option,{val},{quote(html(para))},HTML,")
-	finish(mc, ans)
+				mc[2].append((val, quote(html(para))))
+	finish(mc, ans, ff)
 
 if __name__ == "__main__":
 	main([a for a in sys.argv[1:] if a.endswith(".quiz")])

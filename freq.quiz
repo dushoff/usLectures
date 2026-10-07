@@ -8,25 +8,43 @@ accepts; 0.95
 
 fails to reject; 0.05
 
-fails to reject; 0.95
+* fails to reject; 0.95
+
+FF The baseline is: if there's nothing to see, we will hallucinate (reject the null) less than α of the time.
 
 MC Which of these is the _best_ interpretation of a non-significant result in our vitamin A comparison between two groups of children, according to Dushoff?:
 ______ helping or hurting children (as measured by the metric we are studying)
 
 We have no evidence whether vitamin A is 
 
-We are not confident whether
+* We are not confident whether
 
 We have some evidence that vitamin A is _not_
 
 We are confident that vitamin A is _not_
 
+FF Non-significant results in simple tests mean we're not clear about the sign (in this case the positive or negative effect of the treatment on the outcome)
+
 MC Tests that are “asymptotically valid” conform to the frequentist perspective ______, and should be used ______.
 
 absolutely; cautiously
 
-only when sample size is large; cautiously
+* only when sample size is large; cautiously
 
-absolutely; preferentially
+absolutely; whenever possible
 
-only when sample size is large; cautiously
+only when sample size is large; whenever possible
+
+FF Just a definition from the notes, plus common sense (it's not always valid, so be cautious)
+
+MC The best evidence that an effect is unimportant (if you don't have a confidence interval) would be ______ estimate of effect size and ______ P value
+
+any; a low 
+
+any; a high 
+
+* a small; a low 
+
+a small; a high 
+
+FF It's hard without CIs, but the point here is that -- for a given effect size -- a smaller P value means a smaller CI, so things will stay closer to zero.

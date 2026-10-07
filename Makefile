@@ -10,16 +10,21 @@ vim_session:
 ## -include makestuff/perl.def
 -include makestuff/python.def
 
+Sources += Makefile
+
 ######################################################################
 
 ## Announcements are in the us subdirectory of the space directory
 
 ## Lecture files
 
-Sources += $(wildcard *.txt *.md *.R)
+Sources += $(wildcard *.txt *.md)
 
 notes.txt:
 
+## No .merged paradigm yet! Additions in original. Maybe that should be the paradigm? Just edit the tags and keep going
+
+## Nothing here seems testable 🙁
 ## intro.draft.pdf: intro.txt intro.draft.tex
 ## intro.final.pdf: intro.txt
 ## intro.handouts.pdf: intro.txt
@@ -127,9 +132,6 @@ Ignore += $(wildcard *.merged)
 	$(PITH)
 	git rm $(word 2, $^) || $(RM) $(word 2, $^)
 
-autopipeR = defined
-R.Rout: R.R
-
 ######################################################################
 
 pardirs += lecturePix jdStats
@@ -165,6 +167,8 @@ Sources += copy.tex
 ## baseline.aq.csv: baseline.quiz ## Ported, not used yet
 ## test.aq.csv: test.quiz avenueQuiz.py avenueQuiz.md
 ## R.aq.csv: R.quiz avenueQuiz.py avenueQuiz.md
+
+## For frequentism, more philosophy to come, maybe
 ## freq.aq.csv: freq.quiz avenueQuiz.md
 
 Sources += $(wildcard *.quiz)
@@ -214,8 +218,6 @@ intro.html: intro.step
 
 ### Makestuff
 
-Sources += Makefile
-
 Ignore += makestuff
 msrepo = https://github.com/dushoff
 
@@ -238,7 +240,7 @@ makestuff:
 -include makestuff/texj.mk
 -include makestuff/webpix.mk
 -include makestuff/mirror.mk
--include makestuff/pipeR.mk
+## -include makestuff/pipeR.mk
 -include makestuff/hotcold.mk
 
 -include makestuff/git.mk
