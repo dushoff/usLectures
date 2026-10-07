@@ -20,8 +20,6 @@ Sources += $(wildcard *.txt *.md *.R)
 
 notes.txt:
 
-## No .merged paradigm yet! Additions in original. Maybe that should be the paradigm? Just edit the tags and keep going
-
 ## intro.draft.pdf: intro.txt intro.draft.tex
 ## intro.final.pdf: intro.txt
 ## intro.handouts.pdf: intro.txt
@@ -31,8 +29,9 @@ notes.txt:
 ## https://claude.ai/chat/3279e1c1-5044-4cf1-95e7-f61923080713
 ## prompts.draft.pdf: prompts.txt
 
-lecprompt: prompts.draft.pdf
-	sleep 2700; $(MAKE) $<.go
+%.lecprompt: prompts.draft.pdf
+	$(MAKE) $<
+	sleep $*; $(MAKE) $<.go
 
 ######################################################################
 

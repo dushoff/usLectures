@@ -667,3 +667,35 @@ Summary
 		ANS The difference between “significant” and “not significant” is not necessarily significant!
 
 		ANS Influenza example
+Confidence intervals
+
+FIG jdStats/oldsig.clarpix.Rout
+
+----------------------------------------------------------------------
+
+Confidence intervals
+
+FIG jdStats/clarity.clarpix.Rout
+
+----------------------------------------------------------------------
+
+Confidence intervals
+
+FIG jdStats/different.clarpix.Rout
+
+----------------------------------------------------------------------
+
+Cutoffs
+
+	How do I know what is a large effect?
+
+	This can't be done by statistics
+
+		ANS Not magic!
+
+	Must be scientific
+
+		It's often hard, and people avoid it
+
+		This leads to sloppy thinking
+
