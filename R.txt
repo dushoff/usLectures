@@ -1,4 +1,3 @@
-
 EXTRA New protocols
 
 OLDANS for something I should share in handouts but revert to an answer for next time
@@ -272,17 +271,32 @@ Missing value logic
 
 ----------------------------------------------------------------------
 
-Outliers
+What is an outlier?
 
-	Why do we look for outliers?
+	CONV A single values that is unlike other values of the same variable
 
-		NOANS
+	CONV A point that doesn't follow the trend (relating two or more
+	variables)
 
-		NOANS
+----------------------------------------------------------------------
 
-		NOANS
+Why do we look for outliers?
 
-	What do we do when we find them?
+	STUDENTS Outlier might be part of the wrong pattern?
+
+	STUDENTS Can skew the data
+
+		CONV Might be wrong
+
+		CONV Might have a very strong effect on our statistics
+
+What do we do when we find them?
+
+	STUDENTS Ignore that point?
+
+		STUDENTS Selection bias!
+
+	STUDENTS Investigate
 
 ----------------------------------------------------------------------
 
@@ -317,6 +331,10 @@ Quality control
 
 	If you find a mistake only because it's an outlier, that means your
 	systems have failed
+
+		CONV You should have found it another way!
+
+		CONV And you will be missing other mistakes, probably
 
 ----------------------------------------------------------------------
 

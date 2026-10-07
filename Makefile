@@ -16,12 +16,13 @@ vim_session:
 
 ## Lecture files
 
-Sources += $(wildcard *.txt *.md *.R)
+Sources += $(wildcard *.txt *.md)
 
 notes.txt:
 
 ## No .merged paradigm yet! Additions in original. Maybe that should be the paradigm? Just edit the tags and keep going
 
+## Nothing here seems testable
 ## intro.draft.pdf: intro.txt intro.draft.tex
 ## intro.final.pdf: intro.txt
 ## intro.handouts.pdf: intro.txt
@@ -127,9 +128,6 @@ Ignore += $(wildcard *.merged)
 %.merged: %.txt %.students.txt studMerge.py
 	$(PITH)
 	git rm $(word 2, $^) || $(RM) $(word 2, $^)
-
-autopipeR = defined
-R.Rout: R.R
 
 ######################################################################
 
@@ -241,7 +239,7 @@ makestuff:
 -include makestuff/texj.mk
 -include makestuff/webpix.mk
 -include makestuff/mirror.mk
--include makestuff/pipeR.mk
+## -include makestuff/pipeR.mk
 -include makestuff/hotcold.mk
 
 -include makestuff/git.mk
