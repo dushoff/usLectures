@@ -1,0 +1,597 @@
+EXTRA New protocols
+
+----------------------------------------------------------------------
+
+UNIT 3: Statistical philosophy
+
+----------------------------------------------------------------------
+
+Overview
+
+	We use statistics to confirm effects, estimate parameters, and predict outcomes
+
+	I think smoking is bad for lung capacity in children
+
+		\emph{Confirmation:} Children who smoke have lower exhalation volumes (ev)
+
+		\emph{Estimation:} The average non-smoker has an ev 1.1--1.3 times higher than a smoker
+
+		\emph{Prediction:} A 14-year-old male smoker will smoker will have an ev of 2.6--3.0 L/s
+
+----------------------------------------------------------------------
+
+Some definitions
+
+	a \textbf{variable} is something that we measure
+
+		flower species, rodent weight, provincial area
+
+	a \textbf{statistic} is something that we calculate from our
+	variables
+
+		mean weight, median area, correlation between weight and leg length
+
+	a \textbf{parameter} is something we estimate using a statistical model
+
+		the difference between soil wetness surrounding two different types of plants
+
+		parameters are estimated with uncertainty
+
+----------------------------------------------------------------------
+
+Example: Vitamin A
+
+	We compare health indicators of children treated or not treated with vitamin A supplements
+
+		\emph{Estimate:} how much healthier (or less healty) are the treated children on average?
+
+		\emph{Confirmation:} are we sure that the supplements are helping (or hurting)?
+
+		\emph{Range of estimates:} how much do we think the supplement is helping?
+
+----------------------------------------------------------------------
+
+P values and confidence intervals
+
+	We use \emph{P values} to say how sure we are that we have seen a positive effect
+
+	We use \emph{confidence intervals} to say what we think is going on (with a certain level of confidence)
+
+	P values are \emph{over-rated}
+
+	\emph{Never} use a high P value as (direct) evidence for anything, e.g.:
+
+		that an effect is small
+
+		that two quantities are similar
+
+	What does a P value actually measure?
+
+----------------------------------------------------------------------
+
+What do we hope to learn?
+
+	Is vitamin A good for these children?
+
+	How sure are we?
+
+	How good do we think it is?
+
+	How sure are we about that?
+
+----------------------------------------------------------------------
+
+P values
+
+	What is a P value?
+
+	What does it mean if I find a “significant P value” for some effect in this experiment?
+
+		STUDENTS It's unlikely this group of children is healthier just at random
+
+	If I'm certain that the null hypothesis is false, why do I test it anyway?
+
+		CONV Because I want to know if I'm confident about the direction!
+
+----------------------------------------------------------------------
+
+Confidence intervals
+
+BC
+
+CFIG jdStats/vitamins.Rout-0.pdf
+
+NC
+
+	What do these results mean?
+
+	Which are significant?
+
+EC
+
+----------------------------------------------------------------------
+
+Confidence intervals and P values
+
+BC
+
+PRESENT CFIG jdStats/vitamins.Rout-1.pdf
+
+NC
+
+	A high P value means we can't see the \emph{sign} of the effect clearly
+
+	A low P value means we can
+
+	What would happen if we could measure many more children?
+
+EC
+
+----------------------------------------------------------------------
+
+TSEC Frequentist paradigm
+
+	Choose an allowable mistake rate, $\alpha$
+
+		COMMENT Because Fisher made that up as an example!
+
+	The paradigm is: our probability of being wrong should be $\leq\alpha$
+
+	If we do a lot of studies (correctly), we won't wrong more than $\alpha$ of the time
+
+	An approach that correctly limits the probability of being wrong is \textbf{valid}
+
+----------------------------------------------------------------------
+
+Frequentist P-value logic
+
+	I define a P value as the probability under the null of getting a value at least as extreme as my observation
+
+	Hypothetically (or counter-factually) if the null is true, what will my P value be?
+
+----------------------------------------------------------------------
+
+Comparing different tails
+
+	Let's say I have 5 outcomes and my null hypothesis is that they are all equally likely.
+
+		I observe 10% (instead of 20%) of the key outcome
+
+		Is that more or less “extreme” than observing 35%?
+
+	I start with 10g of calcium in a mesocosm and expect that to say the same?
+
+		What lower value is as extreme as 20g?
+
+----------------------------------------------------------------------
+
+DEFHEAD $\alpha$ spending
+
+	JD: In simple situations it's usually either equivalent or better to \emph{not} compare different directions
+
+		Just ask what's the probability of seeing something this extreme or more in this direction ---
+
+----------------------------------------------------------------------
+
+The most basic frequentist test
+
+	What would have happened if our treatment had no effect at all?
+
+	How does that compare to what we saw?
+
+	What's the simplest way to do this?
+
+----------------------------------------------------------------------
+
+Vitamin results
+
+FIG jdStats/vitamins_plot.Rout-0.pdf
+
+----------------------------------------------------------------------
+
+Scrambled measurements
+
+FIG jdStats/vitamins_plot.Rout-1.pdf
+
+----------------------------------------------------------------------
+
+PSLIDE Scrambled measurements
+
+FIG jdStats/vitamins_plot.Rout-2.pdf
+
+----------------------------------------------------------------------
+
+PSLIDE Scrambled measurements
+
+FIG jdStats/vitamins_plot.Rout-3.pdf
+
+----------------------------------------------------------------------
+
+PSLIDE Scrambled measurements
+
+FIG jdStats/vitamins_plot.Rout-4.pdf
+
+----------------------------------------------------------------------
+
+The null distribution
+
+FIG jdStats/vitamins_scramble.Rout.pdf
+
+----------------------------------------------------------------------
+
+Interpretation
+
+BC
+
+	10% of random trials had an effect as bigger or bigger than the observed one
+
+	Compare $P=0.10$ to $\alpha=0.05$
+
+		Or one-sided $P=0.05$ to $\alpha=0.025$
+
+NC
+
+SIDEFIG jdStats/vitamins_scramble.Rout.pdf
+
+EC
+
+----------------------------------------------------------------------
+
+Practical frequentism
+
+	Making assumptions allows us to do much more \textbf{powerful} statistics
+
+	But assumptions are generally not exactly correct
+
+		Error rate could be higher or lower than you think
+
+	There's also a tradition of accepting tests that are \emph{asymptotically valid}
+
+----------------------------------------------------------------------
+
+Practical frequentism
+
+	The bedrock of frequentism is testing the null hypothesis
+
+	We also want our confidence intervals to be valid
+
+	But this is harder
+
+		And people are less strict about it
+
+----------------------------------------------------------------------
+
+Permutation test assumptions
+
+BC
+
+	What assumptions did we make for our permutation test?
+
+NC
+
+SIDEFIG jdStats/vitamins_scramble.Rout.pdf
+
+EC
+
+----------------------------------------------------------------------
+
+Thinking about populations
+
+	All the children in the village?
+
+	A larger group of the kind of children you would hypothetically get under these circumstances?
+
+----------------------------------------------------------------------
+
+Confidence interval logic
+
+	To reject the null hypothesis, we ask:
+
+		assuming the null is true, what is the probability under the null of getting a value at least as extreme as my observation?
+
+	To reject a value from our confidence interval, we ask:
+
+		assuming the value is true, what is the probability under the null of getting a value at least as extreme as my observation?
+
+	Result:
+
+----------------------------------------------------------------------
+
+Confidence intervals vs.~P values
+
+	CIs are more useful
+
+	They also require more assumptions
+
+		If effects are absent, you don't need any assumptions about them
+
+		To assume that treated children grow better, we need assumptions about the relationship between distributions
+
+----------------------------------------------------------------------
+
+Paradigm summary
+
+	We want to “fail to reject” the null hypothesis at least $1-\alpha$ of the time, under the assumption that it's true
+
+	We (usually) do this because we want to test confidence in the \emph{sign} of an effect or difference
+
+----------------------------------------------------------------------
+
+SEC P value rant
+
+----------------------------------------------------------------------
+
+Low P values
+
+BC
+
+	If I have a low P value I can see something clearly
+
+	But it's usually better to focus on what I see than the P value
+
+NC
+
+SIDEFIG webLect/clear.jpg
+
+EC
+
+----------------------------------------------------------------------
+
+High P values
+
+BC
+
+	If I have a high P value, there is something I \emph{don't} see
+	clearly
+
+	It \emph{may be} because this effect is small
+
+	High P values should \emph{not} be used to advance \emph{any}
+	scientific conclusion
+
+NC
+
+SIDEFIG webLect/fog.jpg
+
+EC
+
+----------------------------------------------------------------------
+
+What causes high P values?
+
+	Small differences
+
+	Less data
+
+	More noise
+
+	An inappropriate model
+
+	Less model resolution
+
+	A lower P value means that your evidence for difference is better
+
+	A higher P value means that your evidence for similarity is
+	better -- or worse!
+
+----------------------------------------------------------------------
+
+Annualized flu deaths \chinese{流感死亡率}
+
+BC
+
+CFIG jdStats/flu.Rout-0.pdf
+
+NC
+
+	Look at deaths on an annual time scale \chinese{年度時間尺度}
+
+	Why is weather not causing deaths at this time scale?
+
+EC
+
+----------------------------------------------------------------------
+
+DEFHEAD ... with confidence intervals
+
+BC
+
+CFIG jdStats/flu.Rout-1.pdf
+
+NC
+
+	\textbf{Never} say: A is significant and B isn't, so $A>B$
+
+	\textbf{Instead:} Construct a statistic for the hypothesis $A>B$
+
+		May be difficult
+
+EC
+
+----------------------------------------------------------------------
+
+What do P values measure?
+
+PIC DBFIG 0.8 webLect/fog.jpg 1 webLect/clear.jpg
+
+----------------------------------------------------------------------
+
+Rant summary
+
+	We don't accept the null hypothesis
+
+		Statistics isn't magic!
+
+	It is easy to make this mistake
+
+		and the word “significant” makes this problem worse
+
+	A lot of advice you will see is just wrong
+
+		e.g., drop non-significant terms
+
+----------------------------------------------------------------------
+
+SEC Types of error
+
+----------------------------------------------------------------------
+
+Example: vaccines
+
+	Is MMR vaccination associated with autism outcomes?
+
+	Is the association positive or negative?
+
+	What does this tell us?
+
+	What would be a better question?
+
+----------------------------------------------------------------------
+
+Statistical error types
+
+	Type I (\emph{False positive:}) concluding there is an effect when
+	there isn't one
+
+		This doesn't happen in biology.  There is always an effect.
+
+		But it is useful to think about as a counter-factual
+
+	Type II (\emph{False negative:}) concluding there is no effect when
+	there really is
+
+		This \emph{should} never happen, because we should never conclude
+		there is no effect
+
+		We should think about “failure to find” and “power to find”
+
+			Later in the term
+
+----------------------------------------------------------------------
+
+Doing Science
+
+	Once you collect data:
+
+	You should never make a false-negative error.
+
+	Or a false-positive error
+
+	\emph{Sign \chinese{($\pm$)} error:}
+	if I think an effect is positive, when it's really
+	negative (or vice versa)
+
+	\emph{Magnitude \chinese{(大小)} error:} if I think an effect is small, when
+	it's really large (or vice versa)
+
+	Confidence intervals aid clear thinking
+
+----------------------------------------------------------------------
+
+Small effects
+
+	We should't build statistical confidence that something is small by
+	failing to see it clearly
+
+	We must instead see clearly that it is small
+
+	This means we need a standard (our cutoff) for what we mean by small
+
+----------------------------------------------------------------------
+
+PSLIDE Flu masks 
+
+DBFIG 0.8 webLect/N95.jpg 0.7 webLect/surgical.jpg
+
+----------------------------------------------------------------------
+
+Flu mask example
+
+	People who work in respiratory clinics sometimes have to wear bulky,
+	uncomfortable, expensive masks
+
+	They would like to switch to simpler masks, if those will do the job
+
+	How can this be tested statistically?  We don't want the masks to be
+	“different”.
+
+		We need to decide what we mean by different in this case!
+
+		They're not the same, so how close is close enough?
+
+----------------------------------------------------------------------
+
+Traditional statistics
+
+FIG jdStats/masks.Rout-2.pdf
+
+----------------------------------------------------------------------
+
+Non-inferiority approach
+
+BC
+
+PRESENT CFIG jdStats/masks.Rout-0.pdf
+
+NC
+
+	Are we confident the new mask is ``good enough''?
+
+	There is no substitute for picking a cutoff
+
+	Can be controversial
+
+EC
+
+----------------------------------------------------------------------
+
+Is your effect big?
+
+	Scientists in many fields resist picking effect sizes
+
+	They want statistics to do it for them
+
+		... but statistics is not magic
+
+		scientific judgment is required
+
+	It would be great if we could use “significant” to mean “biologically important”
+
+----------------------------------------------------------------------
+
+Summary
+
+	Not seeing an effect clearly should not be used as evidence that the effect is small, or unimportant
+
+	Your confidence intervals are what tell you how confident you are that an effect is below a certain size
+
+	To say that something is bigger than something else, you have to compare them
+
+FIG jdStats/oldsig.clarpix.Rout
+
+----------------------------------------------------------------------
+
+Confidence intervals
+
+FIG jdStats/clarity.clarpix.Rout
+
+----------------------------------------------------------------------
+
+Confidence intervals
+
+FIG jdStats/different.clarpix.Rout
+
+----------------------------------------------------------------------
+
+Cutoffs
+
+	How do I know what is a large effect?
+
+	This can't be done by statistics
+
+	Must be scientific
+
+		It's often hard, and people avoid it
+
+		This leads to sloppy thinking
+
