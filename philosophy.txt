@@ -87,13 +87,13 @@ P values
 
 	What is a P value?
 
-		ANS The probability of finding a result at least this “extreme” under the null hypothesis
+		OLDANS The probability of finding a result at least this “extreme” under the null hypothesis
 
 	What does it mean if I find a “significant P value” for some effect in this experiment?
 
-		ANS A difference this big would be unlikely under the null hypothesis
+		OLDANS A difference this big would be unlikely under the null hypothesis
 
-			ANS So what! I already know vitamin A has strong effects on metabolism
+			OLDANS So what! I already know vitamin A has strong effects on metabolism
 
 		STUDENTS It's unlikely this group of children is healthier just at random
 
@@ -143,7 +143,7 @@ TSEC Frequentist paradigm
 
 	Choose an allowable mistake rate, $\alpha$
 
-		ANS Almost always 0.05
+		OLDANS Almost always 0.05
 
 		COMMENT Because Fisher made that up as an example!
 
@@ -161,11 +161,11 @@ Frequentist P-value logic
 
 	Hypothetically (or counter-factually) if the null is true, what will my P value be?
 
-		ANS 5% of the time it will be $\leq5%$
+		OLDANS 5% of the time it will be $\leq5%$
 
-		ANS $\alpha$ of the time it will be $\leq\alpha$.
+		OLDANS $\alpha$ of the time it will be $\leq\alpha$.
 
-		ANS This meets my frequentist requirement
+		OLDANS This meets my frequentist requirement
 
 ----------------------------------------------------------------------
 
@@ -177,13 +177,13 @@ Comparing different tails
 
 		Is that more or less “extreme” than observing 35%?
 
-		ANS Not clear! 10% is getting close to the boundary of 0.
+		OLDANS Not clear! 10% is getting close to the boundary of 0.
 
 	I start with 10g of calcium in a mesocosm and expect that to say the same?
 
 		What lower value is as extreme as 20g?
 
-		ANS 0g, or 5g, or something in between
+		OLDANS 0g, or 5g, or something in between
 
 ----------------------------------------------------------------------
 
@@ -193,13 +193,13 @@ DEFHEAD $\alpha$ spending
 
 		Just ask what's the probability of seeing something this extreme or more in this direction ---
 
-			ANS But you don't want to double your probability of being wrong
+			OLDANS But you don't want to double your probability of being wrong
 
-		ANS You should divide your cutoff by 2 (spend half of your $\alpha$ on each direction)
+		OLDANS You should divide your cutoff by 2 (spend half of your $\alpha$ on each direction)
 
-			ANS “Spend” half of your $\alpha$ on each of the two directions
+			OLDANS “Spend” half of your $\alpha$ on each of the two directions
 
-		ANS It is more common (but less beautiful) to multiply the P value by 2.
+		OLDANS It is more common (but less beautiful) to multiply the P value by 2.
 
 ----------------------------------------------------------------------
 
@@ -211,7 +211,7 @@ The most basic frequentist test
 
 	What's the simplest way to do this?
 
-		ANS Just relabel the children!
+		OLDANS Just relabel the children!
 
 ----------------------------------------------------------------------
 
@@ -257,15 +257,19 @@ BC
 
 	10% of random trials had an effect as bigger or bigger than the observed one
 
-	Compare $P=0.10$ to $\alpha=0.05$
+	CONV I could double this to account for extreme \emph{negative} effects
 
-		Or one-sided $P=0.05$ to $\alpha=0.025$
+		Compare $P=0.20$ to $\alpha=0.05$
 
-	ANS We don't want to conclude the effect was positive
+	CONV Or only spend half of my $\alpha$
 
-		ANS Because then our chance of making a mistake would be too big
+		Compare one-sided $P=0.10$ to $\alpha=0.025$
 
-		ANS We definitely don't want to conclude that it was not positive
+	OLDANS We don't want to conclude the effect was positive
+
+		OLDANS Because then our chance of making a mistake would be too big
+
+		OLDANS We definitely don't want to conclude that it was not positive
 
 NC
 
@@ -279,7 +283,7 @@ Practical frequentism
 
 	Making assumptions allows us to do much more \textbf{powerful} statistics
 
-		ANS More likely to find real effects when they exist
+		OLDANS More likely to find real effects when they exist
 
 	But assumptions are generally not exactly correct
 
@@ -287,11 +291,11 @@ Practical frequentism
 
 	There's also a tradition of accepting tests that are \emph{asymptotically valid}
 
-		ANS Error rate is $\leq\alpha$ with the additional assumption that there is “enough” data
+		OLDANS Error rate is $\leq\alpha$ with the additional assumption that there is “enough” data
 
-			ANS Normal approximation to binomial tests
+			OLDANS Normal approximation to binomial tests
 
-			ANS ANOVA for non-normal observations
+			OLDANS ANOVA for non-normal observations
 
 ----------------------------------------------------------------------
 
@@ -299,11 +303,11 @@ Practical frequentism
 
 	The bedrock of frequentism is testing the null hypothesis
 
-		ANS In the hypothetical where there's nothing to detect, we want our method to detect it $\leq\alpha$ of the time
+		OLDANS In the hypothetical where there's nothing to detect, we want our method to detect it $\leq\alpha$ of the time
 
 	We also want our confidence intervals to be valid
 
-		ANS The parameter we're estimating should fall outside our confidence interval $\leq\alpha$ of the time
+		OLDANS The parameter we're estimating should fall outside our confidence interval $\leq\alpha$ of the time
 
 	But this is harder
 
@@ -317,13 +321,21 @@ BC
 
 	What assumptions did we make for our permutation test?
 
-		ANS Identical populations
+		OLDANS Identical populations
 
-			ANS Achieved by randomization
+			CONV Except for focal treatment
 
-		ANS Independent sampling
+			OLDANS Achieved by randomization
 
-			ANS What if we gave siblings the same treatment?
+			CONV Additionally: need to ensure that nothing besides the treatment differs
+
+			CONV Researchers ideally shouldn't even know who is in which group
+
+		OLDANS Independent sampling
+
+			OLDANS What if we gave siblings the same treatment?
+
+			CONV The individual-level permutation would be invalid; fix with a household-level permutation
 
 NC
 
@@ -353,9 +365,9 @@ Confidence interval logic
 
 	Result:
 
-		ANS We reject the (unknown) true value $\leq\alpha$ of the time
+		OLDANS We reject the (unknown) true value $\leq\alpha$ of the time
 
-		ANS If all of our assumptions are correct
+		OLDANS If all of our assumptions are correct
 
 ----------------------------------------------------------------------
 
@@ -375,15 +387,15 @@ Paradigm summary
 
 	We want to “fail to reject” the null hypothesis at least $1-\alpha$ of the time, under the assumption that it's true
 
-		ANS We can do this by only rejecting outcomes that are unlikey under the null hypothesis
+		OLDANS We can do this by only rejecting outcomes that are unlikey under the null hypothesis
 
-		ANS Using our P value definition
+		OLDANS Using our P value definition
 
 	We (usually) do this because we want to test confidence in the \emph{sign} of an effect or difference
 
-		ANS The probability of making a sign error will be less than the probability of a “false positive”
+		OLDANS The probability of making a sign error will be less than the probability of a “false positive”
 
-		ANS If the true answer is negative, the probability of seeing our positive observation will be less than it would be under the null hypothesis
+		OLDANS If the true answer is negative, the probability of seeing our positive observation will be less than it would be under the null hypothesis
 
 ----------------------------------------------------------------------
 
@@ -518,23 +530,23 @@ Example: vaccines
 
 	Is MMR vaccination associated with autism outcomes?
 
-		ANS Yes!
+		OLDANS Yes!
 
 	Is the association positive or negative?
 
-		ANS Nobody knows!
+		OLDANS Nobody knows!
 
 	What does this tell us?
 
-		ANS Not to trust anyone who says they do know
+		OLDANS Not to trust anyone who says they do know
 
 	What would be a better question?
 
-		ANS Is the correlation big or small?
+		OLDANS Is the correlation big or small?
 
-		ANS There's evidence that it's very small
+		OLDANS There's evidence that it's very small
 
-		ANS And no good evidence why the link should exist
+		OLDANS And no good evidence why the link should exist
 
 ----------------------------------------------------------------------
 
@@ -570,7 +582,7 @@ Doing Science
 	Or a false-positive error
 
 		ANS If you never believe the null is exactly true, the idea of a
-		false positive doesn't make sense
+		false positive doesn't quite make sense
 
 	\emph{Sign \chinese{($\pm$)} error:}
 	if I think an effect is positive, when it's really
@@ -667,6 +679,9 @@ Summary
 		ANS The difference between “significant” and “not significant” is not necessarily significant!
 
 		ANS Influenza example
+
+----------------------------------------------------------------------
+
 Confidence intervals
 
 FIG jdStats/oldsig.clarpix.Rout
@@ -698,4 +713,3 @@ Cutoffs
 		It's often hard, and people avoid it
 
 		This leads to sloppy thinking
-

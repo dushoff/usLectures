@@ -22,8 +22,6 @@ Sources += $(wildcard *.txt *.md)
 
 notes.txt:
 
-## No .merged paradigm yet! Additions in original. Maybe that should be the paradigm? Just edit the tags and keep going
-
 ## Nothing here seems testable 🙁
 ## intro.draft.pdf: intro.txt intro.draft.tex
 ## intro.final.pdf: intro.txt
@@ -73,8 +71,9 @@ notes.txt:
 ## philosophy.complete.pdf: philosophy.txt
 ## philosophy.handouts.docx: philosophy.handouts.tex
 
+## Need to do merging in one step; merged is ignored
+## Could probably use merged.txt
 ## philosophy.merged: philosophy.txt philosophy.students.txt
-
 ## cp philosophy.merged philosophy.txt ##
 
 ######################################################################
