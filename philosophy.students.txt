@@ -267,6 +267,10 @@ BC
 
 	What assumptions did we make for our permutation test?
 
+	We're not doing anything else
+
+	Also: remember to fix th .199 thing!!
+
 NC
 
 SIDEFIG jdStats/vitamins_scramble.Rout.pdf
