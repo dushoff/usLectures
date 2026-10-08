@@ -48,3 +48,32 @@ any; a high
 a small; a high 
 
 FF It's hard without CIs, but the point here is that -- for a given effect size -- a smaller P value means a smaller CI, so things will stay closer to zero.
+
+MC What does the following code print? You should guess first, then check if you need to.
+```
+print(1:5)
+```
+
+[1] 1:5
+
+[1] 1 5
+
+* [1] 1 2 3 4 5
+
+(Just an error)
+
+SA What do you think that [1] is about? Can you figure out by experiment?
+
+MC If you have a point that seems like an outlier, you should delete if you can also:
+
+* Find evidence that it's an error
+
+Validate statistically that it's an outlier
+
+Either of the above is a reason to delete
+
+Only delete if you can do both of the above
+
+FF Statistics is not magic! Validating statistically that something is an error would have lots of assumptions and no guarantees.
+
+SA What _else_ should you do if you find an outlier that should be deleted?
