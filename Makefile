@@ -44,6 +44,8 @@ notes.txt:
 ## R.complete.pdf: R.txt
 ## R.handouts.docx: R.handouts.tex
 
+## mv R.merged R.txt ##
+
 ######################################################################
 
 ## data.draft.pdf: data.txt data.draft.tex data.md
