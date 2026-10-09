@@ -149,7 +149,7 @@ TSEC Frequentist paradigm
 
 	The paradigm is: our probability of being wrong should be $\leq\alpha$
 
-	If we do a lot of studies (correctly), we won't wrong more than $\alpha$ of the time
+	If we do a lot of studies (correctly), we won't be wrong more than $\alpha$ of the time
 
 	An approach that correctly limits the probability of being wrong is \textbf{valid}
 
@@ -597,7 +597,7 @@ Doing Science
 
 Small effects
 
-	We should't build statistical confidence that something is small by
+	We shouldn't build statistical confidence that something is small by
 	failing to see it clearly
 
 	We must instead see clearly that it is small
