@@ -223,7 +223,7 @@ Ignore += makestuff
 msrepo = https://github.com/dushoff
 
 Ignore += *.stamp
-Makefile: makestuff01.stamp lecturePix01.stamp
+Makefile: makestuff02.stamp lecturePix02.stamp
 makestuff%.stamp: | makestuff
 	- $(RM) makestuff/*.stamp
 	cd makestuff && $(MAKE) pull

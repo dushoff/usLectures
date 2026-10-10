@@ -77,6 +77,8 @@ Menu-driven applications
 
 Advantages of AI
 
+	CONV Not really covered, but you can think about it (or we can get back to it)
+
 ----------------------------------------------------------------------
 
 AI questions
