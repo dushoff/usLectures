@@ -137,7 +137,7 @@ dplyr verbs
 
 	NOTES HREF https://dplyr.tidyverse.org/articles/dplyr.html Intro to dplyr
 
-	CLASS See intro to dplyr
+	PRESENT See intro to dplyr
 
 ----------------------------------------------------------------------
 
@@ -305,9 +305,11 @@ Aesthetics
 	You can construct good graphics by using what people have learned
 	about communication
 
-		CLASS HREF https://github.com/NTCoding/claude-skillz/blob/main/data-visualization/SKILL.md A random link someone literally sent me yesterday
+		PRESENT HREF https://github.com/NTCoding/claude-skillz/blob/main/data-visualization/SKILL.md A random link someone literally sent me yesterday
 
 		NOTES HREF https://github.com/NTCoding/claude-skillz/blob/main/data-visualization/SKILL.md This project has a good overview of graphical principles (I don't know anything about the project itself)
+
+	ADD Move some of this to lecture slides!!
 
 ----------------------------------------------------------------------
 
