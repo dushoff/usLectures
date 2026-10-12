@@ -303,7 +303,8 @@ Practical frequentism
 
 	The bedrock of frequentism is testing the null hypothesis
 
-		OLDANS In the hypothetical where there's nothing to detect, we want our method to detect it $\leq\alpha$ of the time
+		OLDANS In the hypothetical where there's nothing to detect, we want our
+		method to (falsely) detect something $\leq\alpha$ of the time
 
 	We also want our confidence intervals to be valid
 
