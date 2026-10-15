@@ -5,7 +5,7 @@ current: target
 Ignore = target.mk
 
 vim_session:
-	bash -ic "vmt"
+	bash -ic "vmt txt.format"
 
 ## -include makestuff/perl.def
 -include makestuff/python.def
