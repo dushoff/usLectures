@@ -3,9 +3,222 @@ UNIT 4: Linear models
 
 ----------------------------------------------------------------------
 
-Overview
+Some statistical tests
 
 ----------------------------------------------------------------------
 
-PRESLIDE
+Linear models of observations
+
+	ANS t test
+
+		ANS including paired t, one-sample t
+
+	ANS regression
+
+		ANS including Pearson correlation
+
+	ANS anova
+
+	ANS ancova
+
+----------------------------------------------------------------------
+
+EXTRA Linear models of \emph{ranks}
+
+	See list from 708 lecture 
+
+	Very tangential, and not very SOTA
+
+----------------------------------------------------------------------
+
+SEC Approach and assumptions
+
+----------------------------------------------------------------------
+
+What is a linear model?
+
+	A \emph{fit} to a \textbf{response variable} based on assumptions about its relationship to one or more \textbf{predictor variables}
+
+	\emph{Inferences} about parameters based on assumptions about the \emph{conditional} distribution of the response variable
+
+		ANS How it is distributed for given values of the predictor variables
+
+	A linear model gives the response variable as a linear combination of the \emph{parameters} it is estimating
+
+		ANS It is not necessarily linear with respect to predictor variables!
+
+----------------------------------------------------------------------
+
+Power
+
+	Linear models are very efficient
+
+		They find the best “least-squares” fit with simple linear algebra
+
+	They can be very powerful at detecting effects
+
+		They can also be over-sensitive to outliers
+
+		COMMENT Spiderman: with great power comes great responsibility
+
+----------------------------------------------------------------------
+
+Assumptions
+
+	Linear-model \emph{fits} are basically always correct, but can be hard to interpret
+
+	Linear-model \emph{inferences} (parameter estimates P-values, CIs) depend on assumptions about \emph{residuals}
+
+	A residual is $y-\hat y$: the difference between an observed value $y$ and a model prediction $\hat y$
+
+	lm inference assumes that residuals are independent and normally distributed, with constant variance
+
+		The mean of the residuals is always 0
+
+		ANS Otherwise the machine would find a better linear model
+
+----------------------------------------------------------------------
+
+Linear model?
+
+$y$ is response, $x$ is predictor
+
+	$y = a + b x$
+
+	$y = a + b x + c x^2 + d x^3$
+
+	$y = \frac{a}{b+x}$
+
+	$y = a x^b$
+
+	$\log(y) = a + b \log(x)$
+
+	ANS 1, 2 and 5 are lms
+
+	ANS 4 and 5 are the same equation, but imply a different \emph{distribution} for $y$
+
+----------------------------------------------------------------------
+
+EXTRA Parameters, variables, lm variables
+
+	$y = a + b x + c x^2 + d x^3$ is a linear model
+
+	It has one predictor variable, but there are three parameters associated with it
+
+		b, c and d
+
+	There are also 3 lm parameters associated ...
+
+----------------------------------------------------------------------
+
+SEC Examples
+
+----------------------------------------------------------------------
+
+No predictor
+
+	e.g., what is the mean weight of an African elephant?
+
+	One-sample t-test
+
+	Assumption: population is normally distributed
+
+----------------------------------------------------------------------
+
+Binary predictor
+
+	Two-group test
+
+		Binary predictor, could be continuous or categorical
+
+	Assumptions
+
+		ANS Each group is normally distributed
+
+		ANS Same variance 
+
+----------------------------------------------------------------------
+
+Parameterizing
+
+	Different two-group models have the same fit
+
+		predicted mean for each individual
+
+	but different parameterizations
+
+		mean and difference
+
+		baseline and difference
+
+		intercept and slope
+
+	lm does not work with too many parameters
+
+		ANS You would need to choose two in this case
+
+----------------------------------------------------------------------
+
+Paired t-test
+
+	ANS this is a one-sample test on the \emph{differences}!
+
+	Talk about independence
+
+----------------------------------------------------------------------
+
+Categorical predictor
+
+	Anova test
+
+	We typically \emph{add} $n-1$ new parameters for a variable with $n$ categories
+
+		We also add $n-1$ “lm variables” to the calculation
+
+		These are often called “dummy variables” 
+
+		They code which category each observation is in, using 0s and 1s
+
+----------------------------------------------------------------------
+
+
+Continuous predictor
+
+	Regression analysis
+
+	Typically focus on the slope
+
+	Pay attention to baseline as well as intercept
+
+----------------------------------------------------------------------
+
+What if you don't think response is a straight line?
+
+	Transform the predictor
+
+	Transform the response
+
+	Fit a curve
+
+----------------------------------------------------------------------
+
+Variables and parameters
+
+	To fit a quadratic, we need two parameters for the response
+
+	This also means we need two lm variables for the 
+
+----------------------------------------------------------------------
+
+Look at diagnostics first!!
+
+----------------------------------------------------------------------
+
+EXTRA
+
+Correlation, turning sideways, type II??
+
+Rabbit example (use interaction to say one group is changing more than another_)
+
+
 
