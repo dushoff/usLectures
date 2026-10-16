@@ -123,19 +123,59 @@ No predictor
 
 	Assumption: population is normally distributed
 
+	Example: fev.final.R
+
+----------------------------------------------------------------------
+
+Check the assumption
+
+	ANS Is the sample normally distributed?
+
+		ANS No! Nothing in biology is perfect
+
+	ANS Does it look close to normal?
+
+		ANS Should you consider another test, or another question?
+
+			ANS Permutation test of the mean
+
+			ANS Test the median instead
+
+			ANS Test the mean on a transformed scale
+
 ----------------------------------------------------------------------
 
 Binary predictor
 
 	Two-group test
 
-		Binary predictor, could be continuous or categorical
+		Predictor with two values (could be continuous or categorical)
+
+		Can men hold their breath longer than women?
+
+		Are mice more active at 10 degrees or 20 degrees C?
 
 	Assumptions
 
 		ANS Each group is normally distributed
 
 		ANS Same variance 
+
+----------------------------------------------------------------------
+
+Testing assumptions
+
+	ANS Residuals should look approximately normal
+
+	ANS and approximately the same across the two groups
+
+	Same answers as above
+
+		ANS Permutation test
+
+		ANS Different scale
+
+		ANS Medians
 
 ----------------------------------------------------------------------
 
@@ -157,13 +197,21 @@ Parameterizing
 
 		ANS You would need to choose two in this case
 
+		ANS Because we're interested in a mean for each group
+
 ----------------------------------------------------------------------
 
 Paired t-test
 
-	ANS this is a one-sample test on the \emph{differences}!
+	Example: do people have more joint erosion on their dominant hand?
 
-	Talk about independence
+		ANS Can't treat my left hand and right hand as independent!
+
+	How to do it?
+
+		ANS The paired t-test is equivalent to a one-sample test on the \emph{differences}!
+
+		ANS Procedure is the same, but now we're particularly interested in the \emph{sign} of the estimate
 
 ----------------------------------------------------------------------
 
@@ -171,7 +219,7 @@ Categorical predictor
 
 	Anova test
 
-	We typically \emph{add} $n-1$ new parameters for a variable with $n$ categories
+	We \emph{add} $n-1$ new parameters for a variable with $n$ categories
 
 		We also add $n-1$ “lm variables” to the calculation
 
@@ -180,7 +228,6 @@ Categorical predictor
 		They code which category each observation is in, using 0s and 1s
 
 ----------------------------------------------------------------------
-
 
 Continuous predictor
 
