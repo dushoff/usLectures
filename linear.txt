@@ -43,6 +43,8 @@ What is a linear model?
 
 		ANS How it is distributed for given values of the predictor variables
 
+		ANS This means the response variable is continuous
+
 	A linear model gives the response variable as a linear combination of the \emph{parameters} it is estimating
 
 		ANS It is not necessarily linear with respect to predictor variables!
@@ -155,6 +157,16 @@ Binary predictor
 
 		Are mice more active at 10 degrees or 20 degrees C?
 
+		Generally interest in:
+
+			ANS The sign of the difference
+
+			ANS Also the magnitude (size)
+
+	Example mouseActivity
+
+----------------------------------------------------------------------
+
 	Assumptions
 
 		ANS Each group is normally distributed
@@ -215,20 +227,6 @@ Paired t-test
 
 ----------------------------------------------------------------------
 
-Categorical predictor
-
-	Anova test
-
-	We \emph{add} $n-1$ new parameters for a variable with $n$ categories
-
-		We also add $n-1$ “lm variables” to the calculation
-
-		These are often called “dummy variables” 
-
-		They code which category each observation is in, using 0s and 1s
-
-----------------------------------------------------------------------
-
 Continuous predictor
 
 	Regression analysis
@@ -248,6 +246,21 @@ What if you don't think response is a straight line?
 	Fit a curve
 
 ----------------------------------------------------------------------
+
+Categorical predictor
+
+	Anova test
+
+	We \emph{add} $n-1$ new parameters for a variable with $n$ categories
+
+		We also add $n-1$ “lm variables” to the calculation
+
+		These are often called “dummy variables” 
+
+		They code which category each observation is in, using 0s and 1s
+
+----------------------------------------------------------------------
+
 
 Variables and parameters
 
