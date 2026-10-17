@@ -119,9 +119,9 @@ SEC Examples
 
 No predictor
 
-	e.g., what is the mean weight of an African elephant?
+	\textbf{One-sample t-test}
 
-	One-sample t-test
+		e.g., what is the mean weight of an African elephant?
 
 	Assumption: population is normally distributed
 
@@ -147,6 +147,32 @@ Check the assumption
 
 ----------------------------------------------------------------------
 
+Interpreting diagnostics
+
+	Your linear model assumptions are not met exactly
+
+		You can't use failure to reject the null hypothesis as evidence that your assumptions are OK
+
+	There is no universally excepted way to decide whether you are close enough!
+
+		When sample size gets larger, your ability to reject the null hypothesis get stronger
+
+		But concerns often get smaller
+
+			Particularly normality concerns
+
+			ANS central limit theorem!
+
+----------------------------------------------------------------------
+
+Interpreting results
+
+	Generally, avoid R's summary table!
+
+		ANS It relies on 
+
+----------------------------------------------------------------------
+
 Binary predictor
 
 	Two-group test
@@ -167,21 +193,13 @@ Binary predictor
 
 ----------------------------------------------------------------------
 
-	Assumptions
-
-		ANS Each group is normally distributed
-
-		ANS Same variance 
-
-----------------------------------------------------------------------
-
 Testing assumptions
 
 	ANS Residuals should look approximately normal
 
 	ANS and approximately the same across the two groups
 
-	Same answers as above
+	Otherwise? Same answers as above
 
 		ANS Permutation test
 
