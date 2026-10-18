@@ -313,6 +313,10 @@ Paired t-test
 
 		ANS Procedure is the same, but now we're particularly interested in the \emph{sign} of the estimate
 
+	CLASS See notes for finger-length example
+
+	NOTES HREF 
+
 ----------------------------------------------------------------------
 
 Continuous predictor
