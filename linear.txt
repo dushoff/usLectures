@@ -41,43 +41,13 @@ What is a linear model?
 
 	\emph{Inferences} about parameters based on assumptions about the \emph{conditional} distribution of the response variable
 
-		ANS How it is distributed for given values of the predictor variables
+		Assume the response variable has “true” distribution for any value of the predictor variables
 
-		ANS This means the response variable is continuous
+			ANS An example
 
 	A linear model gives the response variable as a linear combination of the \emph{parameters} it is estimating
 
 		ANS It is not necessarily linear with respect to predictor variables!
-
-----------------------------------------------------------------------
-
-Power
-
-	Linear models are very efficient
-
-		They find the best “least-squares” fit with simple linear algebra
-
-	They can be very powerful at detecting effects
-
-		They can also be over-sensitive to outliers
-
-		COMMENT Spiderman: with great power comes great responsibility
-
-----------------------------------------------------------------------
-
-Assumptions
-
-	Linear-model \emph{fits} are basically always correct, but can be hard to interpret
-
-	Linear-model \emph{inferences} (parameter estimates P-values, CIs) depend on assumptions about \emph{residuals}
-
-	A residual is $y-\hat y$: the difference between an observed value $y$ and a model prediction $\hat y$
-
-	lm inference assumes that residuals are independent and normally distributed, with constant variance
-
-		The mean of the residuals is always 0
-
-		ANS Otherwise the machine would find a better linear model
 
 ----------------------------------------------------------------------
 
@@ -97,7 +67,79 @@ $y$ is response, $x$ is predictor
 
 	ANS 1, 2 and 5 are lms
 
+		ANS Linear in a, b, ...
+
 	ANS 4 and 5 are the same equation, but imply a different \emph{distribution} for $y$
+
+----------------------------------------------------------------------
+
+Linear model?
+
+	What if $x$ is a categorical variable?
+
+		ANS \emph{Any} response to a categorical variable can be encoded as a linear model!
+
+----------------------------------------------------------------------
+
+Power
+
+BC
+
+	Linear models are very efficient
+
+		They find the best “least-squares” fit with simple linear algebra
+
+	They can be very powerful at detecting effects
+
+		They can also be over-sensitive to outliers
+
+		COMMENT Spiderman: with great power comes great responsibility
+
+NC
+
+ADD Spiderman picture
+
+EC
+
+----------------------------------------------------------------------
+
+Assumptions
+
+	Linear-model \emph{fits} are basically always correct, but can be hard to interpret
+
+		You can find the “best” parameters
+
+		But you need assumptions to know what that means
+
+	Linear-model \emph{inferences} (parameter estimates P-values, CIs) depend on assumptions about \emph{residuals}
+
+	A residual is $y-\hat y$: the difference between an observed value $y$ and a model prediction $\hat y$
+
+	lm inference assumes that residuals are independent and normally distributed, with constant variance
+
+		The mean of the residuals is always 0
+
+		ANS Otherwise the machine would find a better linear model
+
+----------------------------------------------------------------------
+
+Variables
+
+	What kind of variables can we use?
+
+	Response
+
+		ANS We assume the response variable is normally distributed (conditional on the predictor variables)
+
+		ANS Therefore it must be continuous
+
+	Predictors
+
+		ANS The linear model framework gives us a lot of flexibility to construct a model
+
+		ANS Predictor variables can be of any type
+
+		ANS e.g., Continuous, integer, ordinal, nominal
 
 ----------------------------------------------------------------------
 
@@ -182,6 +224,8 @@ Effect sizes and units
 	What are the units of our parameter in this example?
 
 	How should we know if they are large or not?
+
+----------------------------------------------------------------------
 
 Binary predictor
 
