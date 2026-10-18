@@ -169,9 +169,19 @@ Interpreting results
 
 	Generally, avoid R's summary table!
 
-		ANS It relies on 
+		ANS It shows P values but not CIs
+
+	Focus on estimates and confidence intervals
+
+		But how to interpret these?
 
 ----------------------------------------------------------------------
+
+Effect sizes and units
+
+	What are the units of our parameter in this example?
+
+	How should we know if they are large or not?
 
 Binary predictor
 
