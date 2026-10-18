@@ -205,6 +205,8 @@ Interpreting diagnostics
 
 			ANS central limit theorem!
 
+	We may circle back to this for projects
+
 ----------------------------------------------------------------------
 
 Interpreting results
@@ -215,15 +217,11 @@ Interpreting results
 
 	Focus on estimates and confidence intervals
 
-		But how to interpret these?
+	But how to interpret these?
 
-----------------------------------------------------------------------
+		ANS Pay attention to units
 
-Effect sizes and units
-
-	What are the units of our parameter in this example?
-
-	How should we know if they are large or not?
+		ANS You need an outside reference
 
 ----------------------------------------------------------------------
 
@@ -260,6 +258,24 @@ Testing assumptions
 		ANS Different scale
 
 		ANS Medians
+
+----------------------------------------------------------------------
+
+Effect sizes
+
+	What are the units of our parameter in this example?
+
+		ANS ml CO2/h for the mouse activity
+
+		ANS inches for the height …
+
+	How should we know if they are large or not?
+
+		ANS Compare to population statistics, not inferential statistics
+
+		ANS We want to know if it's large compared to something real, not compared to our own uncertainty!
+
+		ANS e.g., proportion of total, difference between sexes, difference between species …
 
 ----------------------------------------------------------------------
 
