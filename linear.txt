@@ -177,6 +177,8 @@ Fitting in R
 
 		ANS lm($y \sim 0+ x + c$) to suppress it
 
+		ANS lm($y \sim 0+ x + c$) to suppress it
+
 ----------------------------------------------------------------------
 
 SEC Examples
