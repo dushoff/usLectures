@@ -223,6 +223,8 @@ Interpreting results
 
 		ANS You need an outside reference
 
+		ANS Statistics is not magic
+
 ----------------------------------------------------------------------
 
 Binary predictor
