@@ -5,6 +5,12 @@ UNIT 4: Linear models
 
 Some statistical tests
 
+	NOANS
+
+	NOANS
+
+	NOANS
+
 ----------------------------------------------------------------------
 
 Linear models of observations
@@ -97,7 +103,7 @@ BC
 
 NC
 
-ADD Spiderman picture
+SIDEFIG webLect/spiderman.jpg
 
 EC
 
@@ -155,6 +161,24 @@ EXTRA Parameters, variables, lm variables
 
 ----------------------------------------------------------------------
 
+Fitting in R
+
+	lm($y \sim 1 + x + c$)
+
+		Use y as a response variable, x and c as predictors
+
+		1 refers to the \emph{intercept}, which is a constant term
+
+	lm($y \sim x + c$)
+
+		ANS \emph{Also} has an intercept
+
+		ANS intercepts are usually good
+
+		ANS lm($y \sim 0+ x + c$) to suppress it
+
+----------------------------------------------------------------------
+
 SEC Examples
 
 ----------------------------------------------------------------------
@@ -195,7 +219,7 @@ Interpreting diagnostics
 
 		You can't use failure to reject the null hypothesis as evidence that your assumptions are OK
 
-	There is no universally excepted way to decide whether you are close enough!
+	There is no universally accepted way to decide whether you are close enough!
 
 		When sample size gets larger, your ability to reject the null hypothesis get stronger
 
@@ -279,21 +303,71 @@ Effect sizes
 
 		ANS e.g., proportion of total, difference between sexes, difference between species …
 
+		ANS Use a log scale!
+
+----------------------------------------------------------------------
+
+Measures of size
+
+	We can examine size of a parameter in two ways
+
+	Certainty
+
+		ANS t value, P value
+
+		ANS This is usually our certainty about the sign of something -- but what?
+
+	Effect
+
+		ANS Unit-ed value, ratio of value to something with same units
+
+		ANS or a log ratio
+
+----------------------------------------------------------------------
+
+Measures of spread
+
+	Standard deviation
+
+		ANS How much variation we see in the population
+
+		ANS Compare this to understand the effect estimate
+
+	Standard error (or confidence interval)
+
+		ANS How much variation we would expect to see if estimated the parameter again
+
+		ANS Compare this to understand the certainty of something
+
+----------------------------------------------------------------------
+
+Small sample
+
+WIDEFIG jdStats/tailSpread.Rout-0.pdf
+
+---------------------------------------------------------------------
+
+Large sample
+
+WIDEFIG jdStats/tailSpread.Rout-1.pdf
+
 ----------------------------------------------------------------------
 
 Parameterizing
 
 	Different two-group models have the same fit
 
-		predicted mean for each individual
+		ANS predicted mean for each observation
+
+		ANS estimated standard deviation
 
 	but different parameterizations
 
+		baseline and difference (default for categorical variables)
+
+		intercept and slope (default for continuous variables)
+
 		mean and difference
-
-		baseline and difference
-
-		intercept and slope
 
 	lm does not work with too many parameters
 
@@ -317,7 +391,7 @@ Paired t-test
 
 	CLASS See notes for finger-length example
 
-	NOTES HREF 
+	NOTES HREF https://data.mendeley.com/datasets/v396kvjf6y/3 Finger-length data
 
 ----------------------------------------------------------------------
 
@@ -329,13 +403,15 @@ Continuous predictor
 
 	Pay attention to baseline as well as intercept
 
+	Example: fev.final.R
+
 ----------------------------------------------------------------------
 
 What if you don't think response is a straight line?
 
-	Transform the predictor
-
 	Transform the response
+
+	Transform the predictor
 
 	Fit a curve
 
@@ -355,16 +431,15 @@ Categorical predictor
 
 ----------------------------------------------------------------------
 
-
 Variables and parameters
 
 	To fit a quadratic, we need two parameters for the response
 
-	This also means we need two lm variables for the 
+	This also means we need two “lm variables” for the model
 
-----------------------------------------------------------------------
+		ANS $x$ and $x^2$
 
-Look at diagnostics first!!
+	We might want to fit other 
 
 ----------------------------------------------------------------------
 
