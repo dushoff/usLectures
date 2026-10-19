@@ -1,0 +1,360 @@
+UNIT 4: Linear models
+
+----------------------------------------------------------------------
+
+Some statistical tests
+
+----------------------------------------------------------------------
+
+Linear models of observations
+
+----------------------------------------------------------------------
+
+EXTRA Linear models of \emph{ranks}
+
+	See list from 708 lecture 
+
+	Very tangential, and not very SOTA
+
+----------------------------------------------------------------------
+
+SEC Approach and assumptions
+
+----------------------------------------------------------------------
+
+What is a linear model?
+
+	A \emph{fit} to a \textbf{response variable} based on assumptions about its relationship to one or more \textbf{predictor variables}
+
+	\emph{Inferences} about parameters based on assumptions about the \emph{conditional} distribution of the response variable
+
+		Assume the response variable has “true” distribution for any value of the predictor variables
+
+	A linear model gives the response variable as a linear combination of the \emph{parameters} it is estimating
+
+----------------------------------------------------------------------
+
+Linear model?
+
+$y$ is response, $x$ is predictor
+
+	$y = a + b x$
+
+	$y = a + b x + c x^2 + d x^3$
+
+	$y = \frac{a}{b+x}$
+
+	$y = a x^b$
+
+	$\log(y) = a + b \log(x)$
+
+----------------------------------------------------------------------
+
+Linear model?
+
+	What if $x$ is a categorical variable?
+
+----------------------------------------------------------------------
+
+Power
+
+BC
+
+	Linear models are very efficient
+
+		They find the best “least-squares” fit with simple linear algebra
+
+	They can be very powerful at detecting effects
+
+		They can also be over-sensitive to outliers
+
+		COMMENT Spiderman: with great power comes great responsibility
+
+NC
+
+SIDEFIG webLect/spiderman.jpg
+
+EC
+
+----------------------------------------------------------------------
+
+Assumptions
+
+	Linear-model \emph{fits} are basically always correct, but can be hard to interpret
+
+		You can find the “best” parameters
+
+		But you need assumptions to know what that means
+
+	Linear-model \emph{inferences} (parameter estimates P-values, CIs) depend on assumptions about \emph{residuals}
+
+	A residual is $y-\hat y$: the difference between an observed value $y$ and a model prediction $\hat y$
+
+	lm inference assumes that residuals are independent and normally distributed, with constant variance
+
+		The mean of the residuals is always 0
+
+----------------------------------------------------------------------
+
+Variables
+
+	What kind of variables can we use?
+
+	Response
+
+	Predictors
+
+----------------------------------------------------------------------
+
+EXTRA Parameters, variables, lm variables
+
+	$y = a + b x + c x^2 + d x^3$ is a linear model
+
+	It has one predictor variable, but there are three parameters associated with it
+
+		b, c and d
+
+	There are also 3 lm parameters associated ...
+
+----------------------------------------------------------------------
+
+Fitting in R
+
+	lm($y \sim 1 + x + c$)
+
+		Use y as a response variable, x and c as predictors
+
+		1 refers to the \emph{intercept}, which is a constant term
+
+	lm($y \sim x + c$)
+
+----------------------------------------------------------------------
+
+SEC Examples
+
+----------------------------------------------------------------------
+
+No predictor
+
+	\textbf{One-sample t-test}
+
+		e.g., what is the mean weight of an African elephant?
+
+	Assumption: population is normally distributed
+
+	Example: fev
+
+----------------------------------------------------------------------
+
+Check the assumption
+
+----------------------------------------------------------------------
+
+Interpreting diagnostics
+
+	Your linear model assumptions are not met exactly
+
+		You can't use failure to reject the null hypothesis as evidence that your assumptions are OK
+
+	There is no universally accepted way to decide whether you are close enough!
+
+		When sample size gets larger, your ability to reject the null hypothesis get stronger
+
+		But concerns often get smaller
+
+			Particularly normality concerns
+
+	We may circle back to this for projects
+
+----------------------------------------------------------------------
+
+Interpreting results
+
+	Generally, avoid R's summary table!
+
+	Focus on estimates and confidence intervals
+
+	But how to interpret these?
+
+----------------------------------------------------------------------
+
+Binary predictor
+
+	Two-group test
+
+		Predictor with two values (could be continuous or categorical)
+
+		Can men hold their breath longer than women?
+
+		Are mice more active at 10 degrees or 20 degrees C?
+
+		Generally interest in:
+
+	Example mouseActivity
+
+----------------------------------------------------------------------
+
+Testing assumptions
+
+	Otherwise? Same answers as above
+
+----------------------------------------------------------------------
+
+R model parameters
+
+	Intercept (constant) is the estimated value at:
+
+		zero for continuous predictors
+
+		“baseline” for categorical predictors
+
+	Other parameters
+
+		slopes for continuous predictors
+
+		differences for categorical predictors
+
+----------------------------------------------------------------------
+
+Effect sizes
+
+	What are the units of our parameter in this example?
+
+	How should we know if they are large or not?
+
+----------------------------------------------------------------------
+
+Measures of size
+
+	We can examine size of a parameter in two ways
+
+	Certainty
+
+	Effect
+
+----------------------------------------------------------------------
+
+Measures of spread
+
+	Standard deviation
+
+	Standard error (or confidence interval)
+
+----------------------------------------------------------------------
+
+Small sample
+
+WIDEFIG jdStats/tailSpread.Rout-0.pdf
+
+---------------------------------------------------------------------
+
+Large sample
+
+WIDEFIG jdStats/tailSpread.Rout-1.pdf
+
+----------------------------------------------------------------------
+
+Parameterizing
+
+	Different two-group models have the same fit
+
+	but different parameterizations
+
+		baseline and difference (default for categorical variables)
+
+		intercept and slope (default for continuous variables)
+
+		mean and difference
+
+	lm does not work with too many parameters
+
+----------------------------------------------------------------------
+
+Paired t-test
+
+	Example: do people have more joint erosion on their dominant hand?
+
+	How to do it?
+
+	CLASS See notes for finger-length example
+
+	NOTES HREF https://data.mendeley.com/datasets/v396kvjf6y/3 Finger-length data
+
+----------------------------------------------------------------------
+
+Continuous predictor
+
+	Regression analysis
+
+	Typically focus on the slope
+
+	Pay attention to baseline as well as intercept
+
+	Example: fev.final.R
+
+----------------------------------------------------------------------
+
+Diagnostics
+
+----------------------------------------------------------------------
+
+Interpretation
+
+----------------------------------------------------------------------
+
+SEC Complications
+
+----------------------------------------------------------------------
+
+SS Multi-parameter variables
+
+----------------------------------------------------------------------
+
+What if you don't think response is a straight line?
+
+	Transform the response
+
+	Transform the predictor
+
+	Fit a curve
+
+----------------------------------------------------------------------
+
+Categorical predictor
+
+	Anova test
+
+	We \emph{add} $n-1$ new parameters for a variable with $n$ categories
+
+		We also add $n-1$ “lm variables” to the calculation
+
+		These are often called “dummy variables” 
+
+		They code which category each observation is in, using 0s and 1s
+
+----------------------------------------------------------------------
+
+Variables and parameters
+
+	To fit a quadratic, we need two parameters for the response
+
+	This also means we need two “lm variables” for the model
+
+	We might want to fit other sorts of curves (typically a spline)
+
+----------------------------------------------------------------------
+
+SS Multiple predictor variables
+
+----------------------------------------------------------------------
+
+SS Interactions
+
+----------------------------------------------------------------------
+
+EXTRA
+
+Correlation, turning sideways, type II??
+
+Rabbit example (use interaction to say one group is changing more than another_)
+

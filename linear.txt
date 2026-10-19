@@ -191,7 +191,7 @@ No predictor
 
 	Assumption: population is normally distributed
 
-	Example: fev.final.R
+	Example: fev
 
 ----------------------------------------------------------------------
 
@@ -287,11 +287,29 @@ Testing assumptions
 
 ----------------------------------------------------------------------
 
+R model parameters
+
+	Intercept (constant) is the estimated value at:
+
+		zero for continuous predictors
+
+		“baseline” for categorical predictors
+
+	Other parameters
+
+		slopes for continuous predictors
+
+		differences for categorical predictors
+
+----------------------------------------------------------------------
+
 Effect sizes
 
 	What are the units of our parameter in this example?
 
 		ANS ml CO2/h for the mouse activity
+
+			ANS Or: (ml CO2/h)/degC!
 
 		ANS inches for the height …
 
@@ -299,9 +317,9 @@ Effect sizes
 
 		ANS Compare to population statistics, not inferential statistics
 
-		ANS We want to know if it's large compared to something real, not compared to our own uncertainty!
+		ANS We want to know if the value is large compared to something real, not compared to our own uncertainty!
 
-		ANS e.g., proportion of total, difference between sexes, difference between species …
+		ANS e.g., total value, variation in population, difference between sexes, difference between species …
 
 		ANS Use a log scale!
 
@@ -407,6 +425,23 @@ Continuous predictor
 
 ----------------------------------------------------------------------
 
+Diagnostics
+
+----------------------------------------------------------------------
+
+Interpretation
+
+----------------------------------------------------------------------
+
+SEC Complications
+
+----------------------------------------------------------------------
+
+SS Multi-parameter variables
+
+----------------------------------------------------------------------
+
+
 What if you don't think response is a straight line?
 
 	Transform the response
@@ -439,9 +474,18 @@ Variables and parameters
 
 		ANS $x$ and $x^2$
 
-	We might want to fit other 
+	We might want to fit other sorts of curves (typically a spline)
 
 ----------------------------------------------------------------------
+
+SS Multiple predictor variables
+
+----------------------------------------------------------------------
+
+SS Interactions
+
+----------------------------------------------------------------------
+
 
 EXTRA
 

@@ -5,9 +5,9 @@ Index card
 
 	\emph{On the other side,} answer
 
-		were you convinced of anything?
+		one thing you learned today
 
-		were you unconvinced by anything?
+		one thing you would like to review, or learn more about 
 
 ----------------------------------------------------------------------
 
@@ -25,16 +25,8 @@ EXTRA
 		were you unconvinced by anything?
 
 
-		one thing you learned today
-
-		one thing you didn't understand
-
 
 		one thing you like about the course so far
 
 		one thing you don't like about the course so far
 
-
-		one thing you like about the course so far
-
-		another thing you like about the course so far
