@@ -4,6 +4,16 @@ UNIT 4: Linear models
 
 Some statistical tests
 
+	anova
+
+	t-test
+
+	Linear regression
+
+	chi square, F test
+
+	p test for validity? Too deep
+
 ----------------------------------------------------------------------
 
 Linear models of observations
@@ -30,11 +40,15 @@ What is a linear model?
 
 		Assume the response variable has “true” distribution for any value of the predictor variables
 
+			Use temperature to predict deaths	
+
 	A linear model gives the response variable as a linear combination of the \emph{parameters} it is estimating
 
 ----------------------------------------------------------------------
 
 Linear model?
+
+Fix intercept 0 typo
 
 $y$ is response, $x$ is predictor
 
@@ -47,6 +61,10 @@ $y$ is response, $x$ is predictor
 	$y = a x^b$
 
 	$\log(y) = a + b \log(x)$
+
+	Fjx a typas
+
+	Say “the response variable”
 
 ----------------------------------------------------------------------
 
