@@ -1,31 +1,34 @@
-
 UNIT 4: Linear models
 
 ----------------------------------------------------------------------
 
 Some statistical tests
 
-	NOANS
+	NOANSWER
 
-	NOANS
+	NOANSWER
 
-	NOANS
+	NOANSWER
+
+	STUDENTS anova, t-test, Linear regression
+
+	STUDENTS chi square, F test
 
 ----------------------------------------------------------------------
 
 Linear models of observations
 
-	ANS t test
+	OLDANS t test
 
-		ANS including paired t, one-sample t
+		OLDANS including paired t, one-sample t
 
-	ANS regression
+	OLDANS regression
 
-		ANS including Pearson correlation
+		OLDANS including Pearson correlation
 
-	ANS anova
+	OLDANS anova
 
-	ANS ancova
+	OLDANS ancova
 
 ----------------------------------------------------------------------
 
@@ -49,11 +52,13 @@ What is a linear model?
 
 		Assume the response variable has “true” distribution for any value of the predictor variables
 
-			ANS An example
+			PREANS An example
+
+			STUDENTS Use temperature to predict deaths	
 
 	A linear model gives the response variable as a linear combination of the \emph{parameters} it is estimating
 
-		ANS It is not necessarily linear with respect to predictor variables!
+		OLDANS It is not necessarily linear with respect to predictor variables!
 
 ----------------------------------------------------------------------
 
@@ -69,13 +74,15 @@ $y$ is response, $x$ is predictor
 
 	$y = a x^b$
 
-	$\log(y) = a + b \log(x)$
+	$\log(y) = \log a + b \log(x)$
 
-	ANS 1, 2 and 5 are lms
+	OLDANS 1, 2 and 5 are lms
 
-		ANS Linear in a, b, ...
+		OLDANS Linear in a, b, ...
 
-	ANS 4 and 5 are the same equation, but imply a different \emph{distribution} for $y$
+	OLDANS 4 and 5 are the same equation, but imply a different \emph{distribution} for $y$
+
+	ADD Say “the response variable”
 
 ----------------------------------------------------------------------
 
@@ -83,7 +90,7 @@ Linear model?
 
 	What if $x$ is a categorical variable?
 
-		ANS \emph{Any} response to a categorical variable can be encoded as a linear model!
+		OLDANS \emph{Any} response to a categorical variable can be encoded as a linear model!
 
 ----------------------------------------------------------------------
 
@@ -125,7 +132,7 @@ Assumptions
 
 		The mean of the residuals is always 0
 
-		ANS Otherwise the machine would find a better linear model
+		OLDANS Otherwise the machine would find a better linear model
 
 ----------------------------------------------------------------------
 
@@ -135,17 +142,17 @@ Variables
 
 	Response
 
-		ANS We assume the response variable is normally distributed (conditional on the predictor variables)
+		OLDANS We assume the response variable is normally distributed (conditional on the predictor variables)
 
-		ANS Therefore it must be continuous
+		OLDANS Therefore it must be continuous
 
 	Predictors
 
-		ANS The linear model framework gives us a lot of flexibility to construct a model
+		OLDANS The linear model framework gives us a lot of flexibility to construct a model
 
-		ANS Predictor variables can be of any type
+		OLDANS Predictor variables can be of any type
 
-		ANS e.g., Continuous, integer, ordinal, nominal
+		OLDANS e.g., Continuous, integer, ordinal, nominal
 
 ----------------------------------------------------------------------
 
@@ -171,13 +178,13 @@ Fitting in R
 
 	lm($y \sim x + c$)
 
-		ANS \emph{Also} has an intercept
+		OLDANS \emph{Also} has an intercept
 
-		ANS intercepts are usually good
+		OLDANS intercepts are usually good
 
-		ANS lm($y \sim 0+ x + c$) to suppress it
+		OLDANS lm($y \sim 0+ x + c$) to suppress it
 
-		ANS lm($y \sim 0+ x + c$) to suppress it
+			OLDANS \emph{or} lm($y \sim x + c - 1$) to suppress it
 
 ----------------------------------------------------------------------
 
@@ -199,19 +206,19 @@ No predictor
 
 Check the assumption
 
-	ANS Is the sample normally distributed?
+	OLDANS Is the sample normally distributed?
 
-		ANS No! Nothing in biology is perfect
+		OLDANS No! Nothing in biology is perfect
 
-	ANS Does it look close to normal?
+	OLDANS Does it look close to normal?
 
-		ANS Should you consider another test, or another question?
+		OLDANS Should you consider another test, or another question?
 
-			ANS Permutation test of the mean
+			OLDANS Permutation test of the mean
 
-			ANS Test the median instead
+			OLDANS Test the median instead
 
-			ANS Test the mean on a transformed scale
+			OLDANS Test the mean on a transformed scale
 
 ----------------------------------------------------------------------
 
@@ -229,7 +236,7 @@ Interpreting diagnostics
 
 			Particularly normality concerns
 
-			ANS central limit theorem!
+			OLDANS central limit theorem!
 
 	We may circle back to this for projects
 
@@ -239,17 +246,17 @@ Interpreting results
 
 	Generally, avoid R's summary table!
 
-		ANS It shows P values but not CIs
+		OLDANS It shows P values but not CIs
 
 	Focus on estimates and confidence intervals
 
 	But how to interpret these?
 
-		ANS Pay attention to units
+		OLDANS Pay attention to units
 
-		ANS You need an outside reference
+		OLDANS You need an outside reference
 
-		ANS Statistics is not magic
+		OLDANS Statistics is not magic
 
 ----------------------------------------------------------------------
 
@@ -443,7 +450,6 @@ SS Multi-parameter variables
 
 ----------------------------------------------------------------------
 
-
 What if you don't think response is a straight line?
 
 	Transform the response
@@ -488,12 +494,8 @@ SS Interactions
 
 ----------------------------------------------------------------------
 
-
 EXTRA
 
 Correlation, turning sideways, type II??
 
 Rabbit example (use interaction to say one group is changing more than another_)
-
-
-
