@@ -2,7 +2,7 @@ EXTRA New protocols
 
 OLDANS for something I should share in handouts but revert to an answer for next year
 
-Talk more about ties; this is good, clear logic
+ADD Talk more about ties when counting P values; this is good, clear logic
 
 ----------------------------------------------------------------------
 
