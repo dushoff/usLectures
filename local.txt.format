@@ -24,7 +24,10 @@ CODE \texttt{%%}
 ######################################################################
 
 ## Consider switching these things back
+## PRE is for things that have been superseded by students
+## Can also use PREVANS for previous-year answers that you might want to see
 NOANSWER %!
+PREANS %!
 
 OLDANS 
 handouts complete: {\bf\underline{Answer}: }%%
@@ -32,3 +35,4 @@ final: * \uncover<+->{\color{blue} %%}
 draft: * {\color{blue} %%}
 slides: * {\color{blue} %%}
 outline: %!
+

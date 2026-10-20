@@ -90,7 +90,6 @@ notes.txt:
 
 ## linear.merged: linear.txt linear.students.txt
 
-## cp linear.merged linear.txt ##
 
 ######################################################################
 
