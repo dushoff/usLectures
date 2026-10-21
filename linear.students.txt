@@ -64,6 +64,10 @@ Linear model?
 
 	NEW What do we mean by linear in the parameters?
 
+		Consists of “terms” that are added together
+
+		Each term is multiplied by a single parameter, one time
+
 ----------------------------------------------------------------------
 
 Power
@@ -199,6 +203,14 @@ Binary predictor
 		Are mice more active at 10 degrees or 20 degrees C?
 
 		Generally interested in:
+
+			Can we clearly see the sign of the difference?
+
+				P value
+
+			How big might the difference be
+
+				Confidence interval
 
 	Example mouseActivity
 

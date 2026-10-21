@@ -32,10 +32,6 @@ notes.txt:
 ## https://claude.ai/chat/3279e1c1-5044-4cf1-95e7-f61923080713
 ## prompts.draft.pdf: prompts.txt
 
-%.lecprompt: prompts.draft.pdf
-	$(MAKE) $<
-	sleep $*; $(MAKE) $<.go
-
 ######################################################################
 
 ## R.draft.pdf: R.txt R.draft.tex R.md
