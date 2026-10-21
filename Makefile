@@ -76,7 +76,7 @@ notes.txt:
 ## Need to do merging in one step; merged is ignored
 ## Could probably use merged.txt
 ## philosophy.merged: philosophy.txt philosophy.students.txt
-## cp philosophy.merged philosophy.txt ##
+## mv -f philosophy.merged philosophy.txt ##
 
 ######################################################################
 
@@ -89,6 +89,8 @@ notes.txt:
 ## linear.handouts.docx: linear.handouts.tex
 
 ## linear.merged: linear.txt linear.students.txt
+
+## mv -f philosophy.merged philosophy.txt ##
 
 
 ######################################################################
@@ -103,7 +105,7 @@ notes.txt:
 
 ## generalized.merged: generalized.txt generalized.students.txt
 
-## cp generalized.merged generalized.txt ##
+## mv -f generalized.merged generalized.txt ##
 
 ######################################################################
 
@@ -117,7 +119,7 @@ notes.txt:
 
 ## practice.merged: practice.txt practice.students.txt
 
-## cp practice.merged practice.txt ##
+## mv -f practice.merged practice.txt ##
 
 ######################################################################
 
@@ -187,6 +189,8 @@ Ignore += *.aq.csv
 ## dplyr.asn.md
 
 ## plotting.asn.md
+
+## projectIdeas.asn.md
 
 ######################################################################
 

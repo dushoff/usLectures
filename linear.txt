@@ -92,6 +92,8 @@ Linear model?
 
 		OLDANS \emph{Any} response to a categorical variable can be encoded as a linear model!
 
+	NEW What exactly is linear about it?
+
 ----------------------------------------------------------------------
 
 Power
@@ -270,7 +272,7 @@ Binary predictor
 
 		Are mice more active at 10 degrees or 20 degrees C?
 
-		Generally interest in:
+		Generally interested in:
 
 			ANS The sign of the difference
 
@@ -380,6 +382,28 @@ WIDEFIG jdStats/tailSpread.Rout-1.pdf
 
 ----------------------------------------------------------------------
 
+More on effect size
+
+	Scientifically, are you more interested in knowing:
+
+		How big an effect is, or how certain you are about its sign?
+
+		ANS Usually how big the effect is
+
+	Why is there so much emphasis on …
+
+		ANS P values?
+
+		ANS Some people are afraid of statistics and think it's magic
+
+		ANS Some people want statistics to be magic
+
+			ANS e.g., so that they don't have to make decisions about effect sizes
+
+			ANS So they can say things “don't matter”
+
+----------------------------------------------------------------------
+
 Parameterizing
 
 	Different two-group models have the same fit
@@ -430,19 +454,135 @@ Continuous predictor
 
 	Pay attention to baseline as well as intercept
 
-	Example: fev.final.R
+	Example: fev.R
 
 ----------------------------------------------------------------------
 
-Diagnostics
+SS Assumption checking
 
 ----------------------------------------------------------------------
 
-Interpretation
+Independence
+
+	The most important assumption. Can't really be checked statistically
+
+	Good study design, good model construction
+
+	Observations should not share anything with other observations that's not included in the model
+
+		They should be conditionally independent
+
+	What might you worry about in the lung example?
 
 ----------------------------------------------------------------------
 
-SEC Complications
+Study design
+
+	Randomized studies, if done correctly, can address most independence concerns
+
+	But not all studies can be randomized
+
+----------------------------------------------------------------------
+
+Linearity
+
+	Kind of hard to state:
+
+		Is a model that is linear in these particular parameters a good fit to the data?
+
+	If not:
+
+		Consider whether you should transform
+
+		Or add curvy terms (polynomial or splien)
+
+		Or if you need interactions
+		
+----------------------------------------------------------------------
+
+Homogeneity of variance
+
+	ANS Opposite is heterogeneity of variance
+
+	COMMENT also called homo- and heteroscedasticiy
+
+	When would you expect to see this?
+
+		ANS If you have a large range of positive predictions
+
+	Consider a data transformation
+
+----------------------------------------------------------------------
+
+Normality
+
+	Least important consideration
+
+		And the one that is most helped by the Central Limit Theorem
+
+	Can often be addressed (if necessary) by modifying the linear model
+
+		robust lm inference
+
+		permutation-based lm inference
+
+----------------------------------------------------------------------
+
+The Central Limit Theorem
+
+	Most distributions converge to a normal distribution if you add up independent random variables and take the mean
+
+		Variables that result from additive processes will tend to be normal
+
+		COMMENT Variables that result from multiplicative processes will tend to be lognormal
+
+		Tests based on normality assumptions will be less sensitive to that assumption when there is more data
+
+			There is adding and averaging going on inside the test
+
+----------------------------------------------------------------------
+
+SS Other considerations
+
+----------------------------------------------------------------------
+
+Testing the regression assumptions
+
+	Be careful about testing with P values
+
+		ANS Assumptions are never exactly true
+
+		ANS We will rarely reject when sample size is small, and often reject when sample size is large. How does that help?
+
+----------------------------------------------------------------------
+
+Predictive check
+
+	General feeling about all the assumptions
+
+	Simulates what your distribution would look like if the assumptions were true
+
+	Compares to actual data
+
+----------------------------------------------------------------------
+
+Outliers
+
+	Is there a single point with a very large influence on your whole conclusion?
+
+	How do you feel about that?
+
+	Sensitivity analysis
+
+		ANS Try the analysis without some combination of outliers just to see
+
+	Try to rely less on normal assumption
+
+		ANS robust or permutation-based inference
+
+----------------------------------------------------------------------
+
+SEC More complicated models
 
 ----------------------------------------------------------------------
 
@@ -457,6 +597,14 @@ What if you don't think response is a straight line?
 	Transform the predictor
 
 	Fit a curve
+
+	These can also mean: changing your scientific question to some extent
+
+		What is the slope on the linear scale?
+
+		What is the slope on the log scale?
+
+		What is the average slope ...
 
 ----------------------------------------------------------------------
 
