@@ -1,5 +1,9 @@
 UNIT 4: Linear models
 
+Not all of the data has been uploaded
+
+mouseActivity and something
+
 ----------------------------------------------------------------------
 
 Some statistical tests
@@ -244,6 +248,10 @@ Effect sizes
 
 	How should we know if they are large or not?
 
+		Compare to something with the same units
+
+		Specific scientific knowledge needed
+
 ----------------------------------------------------------------------
 
 Measures of size
@@ -253,6 +261,8 @@ Measures of size
 	Certainty
 
 	Effect
+
+	Ratios are also good even though jd has a log bias
 
 ----------------------------------------------------------------------
 
@@ -282,6 +292,8 @@ More on effect size
 
 		How big an effect is, or how certain you are about its sign?
 
+			Not clear!
+
 	Why is there so much emphasis on …
 
 ----------------------------------------------------------------------
@@ -289,6 +301,8 @@ More on effect size
 Parameterizing
 
 	Different two-group models have the same fit
+
+		Check second bullet!@!!!
 
 	but different parameterizations
 
