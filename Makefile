@@ -85,9 +85,7 @@ notes.txt:
 ## linear.handouts.docx: linear.handouts.tex
 
 ## linear.merged: linear.txt linear.students.txt
-
-## mv -f philosophy.merged philosophy.txt ##
-
+## mv -f linear.merged linear.txt ##
 
 ######################################################################
 

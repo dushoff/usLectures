@@ -3,17 +3,11 @@ Index card
 
 	Put your macid (or just your surname) on the blank side
 
-	\emph{On the other side,} answer
+	\emph{On the other side,} write
 
-	Please write large and legible
+		One question
 
-		A statistical question that interests you
-
-		A scientific question that interests you
-
-		(Can be the same, if that makes sense)
-
-		You will have a chance to follow this up in your assignment
+		One comment
 
 ----------------------------------------------------------------------
 
@@ -24,6 +18,7 @@ EXTRA
 		One question
 
 		One comment
+
 
 		were you convinced of anything?
 
@@ -39,6 +34,17 @@ EXTRA
 
 		one thing you don't like about the course so far
 
+
+		A statistical question that interests you
+
+		A scientific question that interests you
+
+		(Can be the same, if that makes sense)
+
+		You will have a chance to follow this up in your assignment
+
+
+	Please write large and legible
 
 		A statistical question that interests you
 

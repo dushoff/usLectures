@@ -64,9 +64,9 @@ Linear model?
 
 	NEW What do we mean by linear in the parameters?
 
-		Consists of “terms” that are added together
+		CONV Consists of “terms” that are added together
 
-		Each term is multiplied by a single parameter, one time
+		CONV Each term is multiplied by a single parameter, one time
 
 ----------------------------------------------------------------------
 
@@ -204,13 +204,13 @@ Binary predictor
 
 		Generally interested in:
 
-			Can we clearly see the sign of the difference?
+			CONV Can we clearly see the sign of the difference?
 
-				P value
+				STUDENTS P value
 
-			How big might the difference be
+			CONV How big might the difference be
 
-				Confidence interval
+				STUDENTS Confidence interval
 
 	Example mouseActivity
 
@@ -366,6 +366,7 @@ Linearity
 
 		Or if you need interactions
 		
+
 ----------------------------------------------------------------------
 
 Homogeneity of variance
@@ -413,6 +414,8 @@ SS Other considerations
 Testing the regression assumptions
 
 	Be careful about testing with P values
+
+	Look for patterns in your diagnostic plots, and think about options
 
 ----------------------------------------------------------------------
 

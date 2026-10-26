@@ -92,7 +92,11 @@ Linear model?
 
 		OLDANS \emph{Any} response to a categorical variable can be encoded as a linear model!
 
-	NEW What exactly is linear about it?
+	NEW What do we mean by linear in the parameters?
+
+		CONV Consists of “terms” that are added together
+
+		CONV Each term is multiplied by a single parameter, one time
 
 ----------------------------------------------------------------------
 
@@ -274,9 +278,17 @@ Binary predictor
 
 		Generally interested in:
 
-			ANS The sign of the difference
+			OLDANS The sign of the difference
 
-			ANS Also the magnitude (size)
+			OLDANS Also the magnitude (size)
+
+		CONV Can we clearly see the sign of the difference?
+
+			STUDENTS P value
+
+		CONV How big might the difference be
+
+			STUDENTS Confidence interval
 
 	Example mouseActivity
 
@@ -322,7 +334,7 @@ Effect sizes
 
 			ANS Or: (ml CO2/h)/degC!
 
-		ANS inches for the height …
+		ANS inches for the height; L for the volume.
 
 	How should we know if they are large or not?
 
@@ -482,6 +494,8 @@ Study design
 
 	But not all studies can be randomized
 
+		NOANS
+
 ----------------------------------------------------------------------
 
 Linearity
@@ -498,6 +512,7 @@ Linearity
 
 		Or if you need interactions
 		
+
 ----------------------------------------------------------------------
 
 Homogeneity of variance
@@ -553,6 +568,8 @@ Testing the regression assumptions
 		ANS Assumptions are never exactly true
 
 		ANS We will rarely reject when sample size is small, and often reject when sample size is large. How does that help?
+
+	Look for patterns in your diagnostic plots, and think about options
 
 ----------------------------------------------------------------------
 
