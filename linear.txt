@@ -290,6 +290,14 @@ Binary predictor
 
 			STUDENTS Confidence interval
 
+			CONV Can we clearly see the sign of the difference?
+
+				STUDENTS P value
+
+			CONV How big might the difference be?
+
+				STUDENTS Confidence interval
+
 	Example mouseActivity
 
 ----------------------------------------------------------------------
@@ -346,6 +354,10 @@ Effect sizes
 
 		ANS Use a log scale!
 
+		STUDENTS Specific scientific knowledge may be needed
+
+		STUDENTS Compare to something with the same units
+
 ----------------------------------------------------------------------
 
 Measures of size
@@ -363,6 +375,8 @@ Measures of size
 		ANS Unit-ed value, ratio of value to something with same units
 
 		ANS or a log ratio
+
+	CONV Ratios are also good (even though JD has a log bias)
 
 ----------------------------------------------------------------------
 
@@ -402,6 +416,8 @@ More on effect size
 
 		ANS Usually how big the effect is
 
+			CONV Certainty is important, but we don't usually focus on measuring \emph{how} certain we are
+
 	Why is there so much emphasis on …
 
 		ANS P values?
@@ -422,7 +438,9 @@ Parameterizing
 
 		ANS predicted mean for each observation
 
-		ANS estimated standard deviation
+		ANS estimated standard deviation for each observation
+
+		CONV P value for the sign of the difference
 
 	but different parameterizations
 

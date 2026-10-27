@@ -35,7 +35,7 @@ def title(paras):
 
 def add_marker(paragraph):
 	indent = re.match(r'[ \t]*', paragraph).group()
-	return indent + 'ADDED: ' + paragraph[len(indent):]
+	return indent + 'PENDING ' + paragraph[len(indent):]
 
 
 def merge_paragraphs(paras1, paras2):
