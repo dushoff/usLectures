@@ -186,6 +186,8 @@ Ignore += *.aq.csv
 
 ## projectIdeas.asn.md
 
+## lm.asn.md
+
 ######################################################################
 
 ## lecturePix linking
