@@ -328,6 +328,8 @@ Standard error
 
 		Same units as the parameter
 
+		Same units as the RV, if predictor is categorical
+
 	Estimate divided by standard error is a measure of certainty
 
 		Directly related to P value
