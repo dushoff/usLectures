@@ -90,7 +90,7 @@ Linear model?
 
 		OLDANS \emph{Any} response to a categorical variable can be encoded as a linear model!
 
-	NEW What do we mean by linear in the parameters?
+	CONV What do we mean by linear in the parameters?
 
 		CONV Consists of “terms” that are added together
 
@@ -464,6 +464,8 @@ Standard error
 
 		ANS The same as the variable for a categorical predictor
 
+		PENDING Same units as the RV, if predictor is categorical
+
 	Estimate divided by standard error is a measure of certainty
 
 		Directly related to P value
@@ -547,7 +549,6 @@ Independence
 	Observations should not share anything with other observations that's not included in the model
 
 		They should be conditionally independent
-
 
 ----------------------------------------------------------------------
 

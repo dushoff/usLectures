@@ -87,6 +87,8 @@ notes.txt:
 ## linear.merged: linear.txt linear.students.txt
 ## mv -f linear.merged linear.txt ##
 
+pardirs += statsTalks
+
 ######################################################################
 
 ## generalized.draft.pdf: generalized.txt generalized.md
