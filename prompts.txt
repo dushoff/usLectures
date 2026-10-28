@@ -5,9 +5,11 @@ Index card
 
 	\emph{On the other side,} write
 
-		One question
+		A linear model you would like me to review
 
-		One comment
+		A linear model you would like me to try (based on course data, or not)
+
+	Your text should be \emph{large} and \emph{legible}
 
 ----------------------------------------------------------------------
 
@@ -18,6 +20,11 @@ EXTRA
 		One question
 
 		One comment
+
+
+		A linear model you would like me to review
+
+		A linear model you would like me to try (based on course data, or not)
 
 
 		were you convinced of anything?
@@ -42,9 +49,6 @@ EXTRA
 		(Can be the same, if that makes sense)
 
 		You will have a chance to follow this up in your assignment
-
-
-	Please write large and legible
 
 		A statistical question that interests you
 

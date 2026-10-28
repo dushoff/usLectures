@@ -80,9 +80,7 @@ $y$ is response, $x$ is predictor
 
 		OLDANS Linear in a, b, ...
 
-	OLDANS 4 and 5 are the same equation, but imply a different \emph{distribution} for $y$
-
-	ADD Say “the response variable”
+	OLDANS 4 and 5 are the same equation, but imply a different \emph{distribution} for the response variable $y$
 
 ----------------------------------------------------------------------
 
@@ -290,13 +288,9 @@ Binary predictor
 
 			STUDENTS Confidence interval
 
-			CONV Can we clearly see the sign of the difference?
+		CONV Can we clearly see the sign of the difference?
 
-				STUDENTS P value
-
-			CONV How big might the difference be?
-
-				STUDENTS Confidence interval
+			STUDENTS P value
 
 	Example mouseActivity
 
@@ -304,17 +298,17 @@ Binary predictor
 
 Testing assumptions
 
-	ANS Residuals should look approximately normal
+	OLDANS Residuals should look approximately normal
 
-	ANS and approximately the same across the two groups
+	OLDANS and approximately the same across the two groups
 
 	Otherwise? Same answers as above
 
-		ANS Permutation test
+		OLDANS Permutation test
 
-		ANS Different scale
+		OLDANS Different scale
 
-		ANS Medians
+		OLDANS Medians
 
 ----------------------------------------------------------------------
 
@@ -338,21 +332,21 @@ Effect sizes
 
 	What are the units of our parameter in this example?
 
-		ANS ml CO2/h for the mouse activity
+		OLDANS ml CO2/h for the mouse activity
 
-			ANS Or: (ml CO2/h)/degC!
+			OLDANS Or: (ml CO2/h)/degC!
 
-		ANS inches for the height; L for the volume.
+		OLDANS inches for the height; L for the volume.
 
 	How should we know if they are large or not?
 
-		ANS Compare to population statistics, not inferential statistics
+		OLDANS Compare to population statistics, not inferential statistics
 
-		ANS We want to know if the value is large compared to something real, not compared to our own uncertainty!
+		OLDANS We want to know if the value is large compared to something real, not compared to our own uncertainty!
 
-		ANS e.g., total value, variation in population, difference between sexes, difference between species …
+		OLDANS e.g., total value, variation in population, difference between sexes, difference between species …
 
-		ANS Use a log scale!
+		OLDANS Use a log scale!
 
 		STUDENTS Specific scientific knowledge may be needed
 
@@ -366,15 +360,15 @@ Measures of size
 
 	Certainty
 
-		ANS t value, P value
+		OLDANS t value, P value
 
-		ANS This is usually our certainty about the sign of something -- but what?
+		OLDANS This is usually our certainty about the sign of something -- but what?
 
 	Effect
 
-		ANS Unit-ed value, ratio of value to something with same units
+		OLDANS Unit-ed value, ratio of value to something with same units
 
-		ANS or a log ratio
+		OLDANS or a log ratio
 
 	CONV Ratios are also good (even though JD has a log bias)
 
@@ -384,15 +378,15 @@ Measures of spread
 
 	Standard deviation
 
-		ANS How much variation we see in the population
+		OLDANS How much variation we see in the population
 
-		ANS Compare this to understand the effect estimate
+		OLDANS Compare this to understand the effect estimate
 
 	Standard error (or confidence interval)
 
-		ANS How much variation we would expect to see if estimated the parameter again
+		OLDANS How much variation we would expect to see if estimated the parameter again
 
-		ANS Compare this to understand the certainty of something
+		OLDANS Compare this to understand the certainty of something
 
 ----------------------------------------------------------------------
 
@@ -414,21 +408,71 @@ More on effect size
 
 		How big an effect is, or how certain you are about its sign?
 
-		ANS Usually how big the effect is
+		OLDANS Usually how big the effect is
 
 			CONV Certainty is important, but we don't usually focus on measuring \emph{how} certain we are
 
 	Why is there so much emphasis on …
 
-		ANS P values?
+		OLDANS P values?
 
-		ANS Some people are afraid of statistics and think it's magic
+		OLDANS Some people are afraid of statistics and think it's magic
 
-		ANS Some people want statistics to be magic
+		OLDANS Some people want statistics to be magic
 
-			ANS e.g., so that they don't have to make decisions about effect sizes
+			OLDANS e.g., so that they don't have to make decisions about effect sizes
 
-			ANS So they can say things “don't matter”
+			OLDANS So they can say things “don't matter”
+
+----------------------------------------------------------------------
+
+lm Questions
+
+	t-test vs.~anova vs.~regression
+
+		make sure your predictor variables are coded correctly, and then don't worry about it
+
+	different-sized groups
+
+		don't worry about it
+
+	COMMENT lm is kind-of magic
+
+----------------------------------------------------------------------
+
+Standard deviation
+
+	Measures variability of a \emph{variable}
+
+		Same units as the variable
+
+		ANS Variance is the square; mathematically awesome, biologically confusing
+
+	Estimate divided by within-group standard deviation can help understand biological importance
+
+		ANS E.g., the effect of the temperature treatment is 1.2× the amount of natural variability
+
+		Often called $d$ or $g$: fields have cutoff numbers for this, but JD thinks it's better to use scientific judgment usually
+
+----------------------------------------------------------------------
+
+Standard error
+
+	Measures uncertainty of a \emph{parameter}
+
+		Same units as the parameter
+
+		ANS The same as the variable for a categorical predictor
+
+	Estimate divided by standard error is a measure of certainty
+
+		Directly related to P value
+
+		Often reported (in R's summary as the t statistic)
+
+			We won't use it here
+
+			ADD https://xkcd.com/1378/
 
 ----------------------------------------------------------------------
 
@@ -436,9 +480,9 @@ Parameterizing
 
 	Different two-group models have the same fit
 
-		ANS predicted mean for each observation
+		OLDANS predicted mean for each observation
 
-		ANS estimated standard deviation for each observation
+		OLDANS estimated standard deviation for each observation
 
 		CONV P value for the sign of the difference
 
@@ -452,9 +496,9 @@ Parameterizing
 
 	lm does not work with too many parameters
 
-		ANS You would need to choose two in this case
+		OLDANS You would need to choose two in this case
 
-		ANS Because we're interested in a mean for each group
+		OLDANS Because we're interested in a mean for each group
 
 ----------------------------------------------------------------------
 
@@ -470,7 +514,9 @@ Paired t-test
 
 		ANS Procedure is the same, but now we're particularly interested in the \emph{sign} of the estimate
 
-	CLASS See notes for finger-length example
+	Example bengaliDigits
+
+	CLASS See notes for data link
 
 	NOTES HREF https://data.mendeley.com/datasets/v396kvjf6y/3 Finger-length data
 
@@ -502,7 +548,26 @@ Independence
 
 		They should be conditionally independent
 
-	What might you worry about in the lung example?
+
+----------------------------------------------------------------------
+
+Independence example
+
+	What should we worry about in the lung example?
+
+		ANS is the same child measured twice?
+
+		ANS are some groups of children related?
+
+		ANS Are older children taken from different schools?
+
+	Does it depend on our scientific question?
+
+		ANS Do we want to know if height is \emph{driving} lung capacity?
+
+			NOANS
+
+		ANS Or just if is \emph{associated}?
 
 ----------------------------------------------------------------------
 
@@ -526,10 +591,9 @@ Linearity
 
 		Consider whether you should transform
 
-		Or add curvy terms (polynomial or splien)
+		Or add curvy terms (polynomial or spline)
 
 		Or if you need interactions
-		
 
 ----------------------------------------------------------------------
 
@@ -639,13 +703,13 @@ What if you don't think response is a straight line?
 
 		What is the slope on the log scale?
 
-		What is the average slope ...
+		What is the average slope across a curved response?
 
 ----------------------------------------------------------------------
 
 Categorical predictor
 
-	Anova test
+	Classically called an anova
 
 	We \emph{add} $n-1$ new parameters for a variable with $n$ categories
 
@@ -654,6 +718,24 @@ Categorical predictor
 		These are often called “dummy variables” 
 
 		They code which category each observation is in, using 0s and 1s
+
+	Example chickWeights
+
+----------------------------------------------------------------------
+
+What paradigm to use?
+
+	Even assuming we are frequentist
+
+	We need to fit $n-1$ parameters; how do we control $\alpha$?
+
+		ANS The \emph{counterfactual} probability of seeing something when there is nothing there
+
+	How do we decide what parameters to use?
+
+		Pick a baseline, compare to averages, ...
+
+	ADD counting parameters (or put it under multiple predictors below?)
 
 ----------------------------------------------------------------------
 
@@ -666,6 +748,10 @@ Variables and parameters
 		ANS $x$ and $x^2$
 
 	We might want to fit other sorts of curves (typically a spline)
+
+	Like feed (in the chicks) this is a “multi-parameter variable”
+
+	Example fev
 
 ----------------------------------------------------------------------
 
