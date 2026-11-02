@@ -5,11 +5,11 @@ Index card
 
 	\emph{On the other side,} write
 
-		A linear model you would like me to review
-
-		A linear model you would like me to try (based on course data, or not)
-
 	Your text should be \emph{large} and \emph{legible}
+
+		Something you hope to do for the projects
+
+		Something you hope to avoid for the projects
 
 ----------------------------------------------------------------------
 
@@ -50,10 +50,8 @@ EXTRA
 
 		You will have a chance to follow this up in your assignment
 
-		A statistical question that interests you
 
-		A scientific question that interests you
+		Something you hope to do for the projects
 
-		(Can be the same, if that makes sense)
+		Something you hope to avoid for the projects
 
-		You will have a chance to follow this up in your assignment

@@ -536,7 +536,19 @@ Continuous predictor
 
 ----------------------------------------------------------------------
 
-SS Assumption checking
+TSS Assumption checking
+
+	We want to think about:
+
+		Independence
+
+		Linearity
+
+		Homogeneity of variance
+
+		Normality
+
+	Roughly in that order
 
 ----------------------------------------------------------------------
 
@@ -658,6 +670,8 @@ Testing the regression assumptions
 
 Predictive check
 
+	Use \texttt{check\_model} from the performance package
+
 	General feeling about all the assumptions
 
 	Simulates what your distribution would look like if the assumptions were true
@@ -728,15 +742,45 @@ What paradigm to use?
 
 	Even assuming we are frequentist
 
-	We need to fit $n-1$ parameters; how do we control $\alpha$?
+	We need to fit $n-1$ parameters; how do we deal with $\alpha$?
 
 		ANS The \emph{counterfactual} probability of seeing something when there is nothing there
 
-	How do we decide what parameters to use?
+	At what \emph{level} should we control $\alpha$?
 
-		Pick a baseline, compare to averages, ...
+		ANS Experiment
 
-	ADD counting parameters (or put it under multiple predictors below?)
+		ANS Variable
+
+		ANS Parameter
+
+----------------------------------------------------------------------
+
+Hypothesis-based analysis
+
+	Best is to focus on a small set of specific questions
+
+	Associate them with a small number of parameters you can measure
+
+		You can use contrasts or interactions to construct the test you are most interested in
+
+----------------------------------------------------------------------
+
+Exploratory analysis
+
+	Look at a large number of effects
+
+	Which ones seem interesting?
+
+	Should you believe them?
+
+		ANS No
+
+		ANS Maybe make some hypotheses and construct a hypothesis-based analysis
+
+	False discovery rates and P value corrections should be used sparingly
+
+	Can also look at confidence intervals
 
 ----------------------------------------------------------------------
 
@@ -756,7 +800,59 @@ Variables and parameters
 
 ----------------------------------------------------------------------
 
-SS Multiple predictor variables
+TSS Multiple predictor variables
+
+	Linear models can easily handle multiple predictor variables
+
+	Example: fev
+
+	Depending on our scientific question, more variables can take us closer or farther from the answer we want
+
+----------------------------------------------------------------------
+
+Scientific question
+
+	Height can mediate the relationship between age and lung capacity
+
+		ANS People might be taller because they're older
+
+		ANS We might want to exclude it to see the effects of age
+
+	Age cannot be caused by height
+
+		ANS We should include it to see the effect of height
+
+----------------------------------------------------------------------
+
+Controlling
+
+	Adding a second variable when our primary interest is the first is called “controlling”
+
+		ANS We control for age when we study the effects of smoking on lung capacity
+
+		ANS Also the effect of sex
+
+	When you control for a variable, you don't necessarily need to interpret the parameters of that variable at all!
+
+----------------------------------------------------------------------
+
+Conflation
+
+	Why do children who smoke have higher lung capacity?
+
+		ANS Because they're older
+
+		ANS Age causes both of these things, separately from any effect they have on each other
+
+	This is called conflation, or confounding
+
+----------------------------------------------------------------------
+
+Accounting for variation
+
+----------------------------------------------------------------------
+
+How many parameters?
 
 ----------------------------------------------------------------------
 
