@@ -448,9 +448,13 @@ Linearity
 
 Homogeneity of variance
 
+	Variance does not change with the predictor variables
+
 	COMMENT also called homo- and heteroscedasticiy
 
-	When would you expect to see this?
+	When would you expect to see heteroscedasticiy?
+
+		If variation is proportional to size, log transformations can help ...
 
 	Consider a data transformation
 
