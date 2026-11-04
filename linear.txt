@@ -446,11 +446,11 @@ Standard deviation
 
 		Same units as the variable
 
-		ANS Variance is the square; mathematically awesome, biologically confusing
+		OLDANS Variance is the square; mathematically awesome, biologically confusing
 
 	Estimate divided by within-group standard deviation can help understand biological importance
 
-		ANS E.g., the effect of the temperature treatment is 1.2× the amount of natural variability
+		OLDANS E.g., the effect of the temperature treatment is 1.2× the amount of natural variability
 
 		Often called $d$ or $g$: fields have cutoff numbers for this, but JD thinks it's better to use scientific judgment usually
 
@@ -462,9 +462,9 @@ Standard error
 
 		Same units as the parameter
 
-		ANS The same as the variable for a categorical predictor
+		OLDANS The same as the variable for a categorical predictor
 
-		PENDING Same units as the RV, if predictor is categorical
+		CONV Units of reponse per units of predictor for a continuous predictor
 
 	Estimate divided by standard error is a measure of certainty
 
@@ -508,13 +508,13 @@ Paired t-test
 
 	Example: do people have more joint erosion on their dominant hand?
 
-		ANS Can't treat my left hand and right hand as independent!
+		OLDANS Can't treat my left hand and right hand as independent!
 
 	How to do it?
 
-		ANS The paired t-test is equivalent to a one-sample test on the \emph{differences}!
+		OLDANS The paired t-test is equivalent to a one-sample test on the \emph{differences}!
 
-		ANS Procedure is the same, but now we're particularly interested in the \emph{sign} of the estimate
+		OLDANS Procedure is the same, but now we're particularly interested in the \emph{sign} of the estimate
 
 	Example bengaliDigits
 
@@ -568,19 +568,19 @@ Independence example
 
 	What should we worry about in the lung example?
 
-		ANS is the same child measured twice?
+		OLDANS is the same child measured twice?
 
-		ANS are some groups of children related?
+		OLDANS are some groups of children related?
 
-		ANS Are older children taken from different schools?
+		OLDANS Are older children taken from different schools?
 
 	Does it depend on our scientific question?
 
-		ANS Do we want to know if height is \emph{driving} lung capacity?
+		OLDANS Do we want to know if height is \emph{driving} lung capacity?
 
 			NOANS
 
-		ANS Or just if is \emph{associated}?
+		OLDANS Or just if is \emph{associated}?
 
 ----------------------------------------------------------------------
 
@@ -612,13 +612,17 @@ Linearity
 
 Homogeneity of variance
 
-	ANS Opposite is heterogeneity of variance
+	OLDANS Opposite is heterogeneity of variance
 
-	COMMENT also called homo- and heteroscedasticiy
+	CONV lm inference assumes that variance does not change with the predictor variables
 
-	When would you expect to see this?
+	CONV also called homo- and heteroscedasticiy
 
-		ANS If you have a large range of positive predictions
+	When would you expect to see heteroscedasticiy?
+
+		OLDANS If you have a large range of positive predictions
+
+		CONV If variation is proportional to size, log transformations can help ...
 
 	Consider a data transformation
 
@@ -850,9 +854,57 @@ Conflation
 
 Accounting for variation
 
+	Even when we don't have conflation, controlling for relevant predictors can make our predictions more accurate
+
+	Example, randomized controlled trial of a blood-pressure drug
+
+		ANS No conflation -- the only thing that effects our main predictor is the coin!
+
+		ANS Still want to control for things
+
 ----------------------------------------------------------------------
 
 How many parameters?
+
+	Statistics isn't magic
+
+		The linear model will find patterns even in noise
+
+	Controlling for too many factors will make our predictions less \emph{precise}
+
+		ANS Add variation, uncertaint
+
+	Rule of thumb:
+
+		5--10 solid, continuous data points per parameter
+
+		When data points are small counts, or yes/no, we need even fewer parameters
+
+----------------------------------------------------------------------
+
+Which parameters?
+
+	It's very common to choose predictors based on preliminary analyses
+
+	Or to throw out interaction or curvature terms based on significance
+
+	This is accepting the null hypothesis (concluding these things don't matter)
+
+	It's also introducing confirmation bias
+
+		If we choose our final test based on the data, we will be bad frequentists
+
+		ANS wrong more than 5% of the time
+
+----------------------------------------------------------------------
+
+CONT Which parameters?
+
+	Decide how many parameters you can afford based on the data
+
+	Decide which parameters to use based on scientific judgment
+
+		Can be based on other data, but not based on data from your study
 
 ----------------------------------------------------------------------
 
@@ -860,8 +912,157 @@ SS Interactions
 
 ----------------------------------------------------------------------
 
-EXTRA
+What is an interaction?
 
-Correlation, turning sideways, type II??
+	So far, each predictor has its own effect, and the effects add up
 
-Rabbit example (use interaction to say one group is changing more than another_)
+		The effect of age on lung capacity is assumed to be the same for boys and girls
+
+	An \textbf{interaction} means that the effect of one predictor depends on the value of another
+
+		Does lung capacity increase faster with age for boys than for girls?
+
+	Interactions are symmetric
+
+		ANS If the effect of age depends on sex, then the effect of sex depends on age
+
+		ANS We can choose whichever way of saying it matches our question
+
+----------------------------------------------------------------------
+
+Interactions in R
+
+	lm($y \sim x + z$)
+
+		Additive model: no interaction
+
+	lm($y \sim x * z$)
+
+		Short for lm($y \sim x + z + x:z$)
+
+		The new “lm variable” is made by multiplying $x$ and $z$
+
+	Is this still a linear model?
+
+		ANS Yes! It's linear in the \emph{parameters}
+
+	How many parameters does an interaction add?
+
+		ANS Multiply the parameters of the two variables
+
+		ANS Continuous and two categories: 1
+
+		ANS Three categories and four categories: $2 \times 3 = 6$
+
+	Example fev
+
+----------------------------------------------------------------------
+
+Interpreting parameters
+
+	$y = a + b x + c z + d xz$, where $z$ is 0 for baseline, and 1 for the other group
+
+		Baseline group: intercept is $a$, slope is $b$
+
+		ANS Other group: intercept is $a+c$, slope is $b+d$
+
+	What does $d$ mean?
+
+		ANS The \emph{difference} between the slopes
+
+	What does $c$ mean now?
+
+		ANS The difference between the groups when $x$ is zero
+
+		ANS This may not be interesting, or even make sense (age zero?)
+
+		ANS Centering $x$ can make it mean something
+
+	Parameters for the other variables are no longer overall effects
+
+----------------------------------------------------------------------
+
+Main effects
+
+	Your model is now estimating many different possible effects for one predictor
+
+		ANS effect is different when other predictors change
+
+	Depending on your scientific question, you can:
+
+		Ignore these
+
+		Average over them (may return to that)
+
+	This confusion is often used as an excuse to throw out non-significant interactions
+
+		ANS Do not do that!
+
+----------------------------------------------------------------------
+
+
+Is one group changing more than another?
+
+	Treatment group changes significantly; control group does not
+
+		Can we say that treatment group changed more?
+
+		ANS No! Significant and not significant are not significantly different
+
+		ANS Failing to reject for the control group doesn't mean it didn't change
+
+	The interaction tests the question directly
+
+		ANS Group $\times$ time: how different are the changes?
+
+		ANS The estimate and CI are for the difference we actually care about
+
+----------------------------------------------------------------------
+
+Interactions and scale
+
+	If effects combine by multiplying, they look like an interaction on the linear scale
+
+		ANS A treatment that increases growth by 10% adds more grams to big animals
+
+		ANS On the log scale, there may be no interaction
+
+	Whether there's an interaction can depend on the scale you choose
+
+		ANS Decide what scale makes scientific sense before interpreting
+
+		ANS This is why transformations and interactions both came up under linearity
+
+----------------------------------------------------------------------
+
+Which interactions?
+
+	A non-significant interaction doesn't mean that there is no interaction
+
+		ANS Throwing it out is accepting the null hypothesis
+
+	Same answer as for other parameters:
+
+		ANS Decide how many you can afford, and choose based on scientific judgment
+
+	It's often good to boil things down to a one-parameter interaction
+
+	Beyond that, things can get complicated.
+
+----------------------------------------------------------------------
+
+Example: comparing to the control group
+
+	We test reflex times in two groups of rabbits
+
+		One exposed to radiation, and one not
+
+		ANS usually the non-radiation group is a sham, where you pretend to expose them to radiation
+
+	Standard method: show that the sham group doesn't change, and the radiation group does
+
+	ANS Better method: show that the sham group changes \emph{differently} (hypothesis is that they will be \emph{relatively} slower
+
+	Typically done with interactions
+
+		Although sometimes it could be done more simply with differences

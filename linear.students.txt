@@ -328,7 +328,7 @@ Standard error
 
 		Same units as the parameter
 
-		PENDING Same units as the RV, if predictor is categorical
+		CONV Units of reponse per units of predictor for a continuous predictor
 
 	Estimate divided by standard error is a measure of certainty
 
@@ -448,13 +448,13 @@ Linearity
 
 Homogeneity of variance
 
-	Variance does not change with the predictor variables
+	CONV lm inference assumes that variance does not change with the predictor variables
 
-	COMMENT also called homo- and heteroscedasticiy
+	CONV also called homo- and heteroscedasticiy
 
 	When would you expect to see heteroscedasticiy?
 
-		If variation is proportional to size, log transformations can help ...
+		CONV If variation is proportional to size, log transformations can help ...
 
 	Consider a data transformation
 
@@ -650,9 +650,49 @@ Conflation
 
 Accounting for variation
 
+	Even when we don't have conflation, controlling for relevant predictors can make our predictions more accurate
+
+	Example, randomized controlled trial of a blood-pressure drug
+
 ----------------------------------------------------------------------
 
 How many parameters?
+
+	Statistics isn't magic
+
+		The linear model will find patterns even in noise
+
+	Controlling for too many factors will make our predictions less \emph{precise}
+
+	Rule of thumb:
+
+		5--10 solid, continuous data points per parameter
+
+		When data points are small counts, or yes/no, we need even fewer parameters
+
+----------------------------------------------------------------------
+
+Which parameters?
+
+	It's very common to choose predictors based on preliminary analyses
+
+	Or to throw out interaction or curvature terms based on significance
+
+	This is accepting the null hypothesis (concluding these things don't matter)
+
+	It's also introducing confirmation bias
+
+		If we choose our final test based on the data, we will be bad frequentists
+
+----------------------------------------------------------------------
+
+CONT Which parameters?
+
+	Decide how many parameters you can afford based on the data
+
+	Decide which parameters to use based on scientific judgment
+
+		Can be based on other data, but not based on data from your study
 
 ----------------------------------------------------------------------
 
@@ -660,8 +700,92 @@ SS Interactions
 
 ----------------------------------------------------------------------
 
-EXTRA
+What is an interaction?
 
-Correlation, turning sideways, type II??
+	So far, each predictor has its own effect, and the effects add up
 
-Rabbit example (use interaction to say one group is changing more than another_)
+		The effect of age on lung capacity is assumed to be the same for boys and girls
+
+	An \textbf{interaction} means that the effect of one predictor depends on the value of another
+
+		Does lung capacity increase faster with age for boys than for girls?
+
+	Interactions are symmetric
+
+----------------------------------------------------------------------
+
+Interactions in R
+
+	lm($y \sim x + z$)
+
+		Additive model: no interaction
+
+	lm($y \sim x * z$)
+
+		Short for lm($y \sim x + z + x:z$)
+
+		The new “lm variable” is made by multiplying $x$ and $z$
+
+	Is this still a linear model?
+
+	How many parameters does an interaction add?
+
+	Example fev
+
+----------------------------------------------------------------------
+
+Interpreting parameters
+
+	$y = a + b x + c z + d xz$, where $z$ is 0 for baseline, and 1 for the other group
+
+		Baseline group: intercept is $a$, slope is $b$
+
+	What does $d$ mean?
+
+	What does $c$ mean now?
+
+	Parameters for the other variables are no longer overall effects
+
+----------------------------------------------------------------------
+
+Is one group changing more than another?
+
+	Treatment group changes significantly; control group does not
+
+		Can we say that treatment group changed more?
+
+	The interaction tests the question directly
+
+----------------------------------------------------------------------
+
+Interactions and scale
+
+	If effects combine by multiplying, they look like an interaction on the linear scale
+
+	Whether there's an interaction can depend on the scale you choose
+
+----------------------------------------------------------------------
+
+Which interactions?
+
+	A non-significant interaction doesn't mean that there is no interaction
+
+	Same answer as for other parameters:
+
+	It's often good to boil things down to a one-parameter interaction
+
+	Beyond that, things can get complicated.
+
+----------------------------------------------------------------------
+
+Example: comparing to the control group
+
+	We test reflex times in two groups of rabbits
+
+		One exposed to radiation, and one not
+
+	Standard method: show that the sham group doesn't change, and the radiation group does
+
+	Typically done with interactions
+
+		Although sometimes it could be done more simply with differences

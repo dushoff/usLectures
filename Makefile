@@ -7,10 +7,9 @@ Ignore = target.mk
 vim_session:
 	bash -ic "vmt txt.format"
 
+Sources += Makefile
 ## -include makestuff/perl.def
 -include makestuff/python.def
-
-Sources += Makefile
 
 ######################################################################
 
