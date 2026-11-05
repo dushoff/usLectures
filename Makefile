@@ -189,6 +189,8 @@ Ignore += *.aq.csv
 
 ## lm.asn.md
 
+## groups.asn.md
+
 ######################################################################
 
 ## lecturePix linking
