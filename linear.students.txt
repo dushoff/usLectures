@@ -594,9 +594,13 @@ Exploratory analysis
 
 	Should you believe them?
 
+		Do a new experiment
+
 	False discovery rates and P value corrections should be used sparingly
 
 	Can also look at confidence intervals
+
+		Be aware that some proportion do not contain the answer
 
 ----------------------------------------------------------------------
 
