@@ -24,15 +24,15 @@ FF A linear model has to be linear in the _parameters_, not in the predictors: i
 
 MC The linear-model framework requires the response variable to be ______ and the predictor variables to be ______.
 
-continuous; continuous
+quantitative; quantitative
 
-* continuous; any type of variable
+* quantitative; any type of variable
 
-any type of variable; continuous
+any type of variable; quantitative
 
 any type of variable; any type of variable
 
-FF We assume that the response is normal (conditional on the predictors), so it must be continuous. Predictors can be continuous, integer, ordinal or nominal.
+FF We assume that the response is normal (conditional on the predictors), so it must be quantitative.
 
 MC Possibly the most important linear model assumption is the one that can't be checked statistically:
 
