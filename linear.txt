@@ -782,9 +782,13 @@ Exploratory analysis
 
 		ANS Maybe make some hypotheses and construct a hypothesis-based analysis
 
+		PENDING Do a new experiment
+
 	False discovery rates and P value corrections should be used sparingly
 
 	Can also look at confidence intervals
+
+		PENDING Be aware that some proportion do not contain the answer
 
 ----------------------------------------------------------------------
 
@@ -999,7 +1003,6 @@ Main effects
 		ANS Do not do that!
 
 ----------------------------------------------------------------------
-
 
 Is one group changing more than another?
 
