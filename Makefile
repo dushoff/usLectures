@@ -166,7 +166,10 @@ Sources += copy.tex
 ## R.aq.csv: R.quiz avenueQuiz.py avenueQuiz.md
 
 ## For frequentism, more philosophy to come, maybe
-## freq.aq.csv: freq.quiz avenueQuiz.md
+## freq.aq.csv: freq.quiz
+
+## linear.aq.csv: linear.quiz
+## newlin.aq.csv: newlin.quiz
 
 Sources += $(wildcard *.quiz)
 Ignore += *.aq.csv

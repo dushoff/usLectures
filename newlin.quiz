@@ -1,0 +1,169 @@
+MC Which of these models does _not_ include an intercept?
+
+`lm(y ~ 1 + x)`
+
+`lm(y ~ x)`
+
+* `lm(y ~ 0 + x)`
+
+`lm(y ~ x + 1)`
+
+FF R includes an intercept unless you tell it not to, and intercepts are usually good.
+
+MC In the mouse-activity example, the response is measured in ml CO2/h. If we treat temperature as a _continuous_ predictor, measured in °C, the units of the temperature parameter are:
+
+ml CO2/h
+
+°C
+
+* (ml CO2/h)/°C
+
+None; parameters don't have units
+
+FF The slope tells us how much the response changes per unit of the predictor. If we treated temperature as categorical, the parameter would be a difference between groups, and the units would be ml CO2/h.
+
+MC To understand how _large_ an effect is, we might compare the estimate to the ______. To understand how _certain_ we are about it, we would compare the estimate to the ______.
+
+standard deviation; standard deviation
+
+* standard deviation; standard error
+
+standard error; standard deviation
+
+standard error; standard error
+
+FF The standard deviation tells us about variation in the population, which is something real. The standard error tells us about our own uncertainty. We don't want to know if an effect is large compared to our own uncertainty!
+
+MC A huge study finds that a drug lowers blood pressure by 0.2 mmHg (95% CI 0.1 to 0.3 mmHg). The standard deviation of blood pressure in the population is about 15 mmHg. We can be ______ about the sign of this effect, and the effect seems to be ______.
+
+confident; large
+
+* confident; small
+
+not confident; large
+
+not confident; small
+
+FF The CI doesn't include zero, so we can see the sign clearly. But the effect is around 1% of the natural variation in the population. Certainty and effect size are different questions, and a very small P value doesn't mean that something is important.
+
+MC You measure joint erosion on both hands of 30 people, and calculate `diff`, the erosion on the dominant hand minus the erosion on the other hand. Which model is the best way to ask whether people have more erosion on their dominant hand?
+
+`lm(erosion ~ 1)`
+
+`lm(erosion ~ hand)`
+
+* `lm(diff ~ 1)`
+
+`lm(diff ~ hand)`
+
+FF My left hand and right hand are not independent! The paired t-test is equivalent to a one-sample test on the differences, and in lm a one-sample test is a model with no predictors: just an intercept.
+
+SA You find that a single point has a very large influence on the conclusion of your analysis. What are some things you could do?
+
+ANS There's no single right answer, but good things to mention include:
+
+* Think about whether there is evidence of an error (statistics won't tell you this)
+* A sensitivity analysis: try the analysis without the point, just to see
+* Rely less on the normality assumption, with robust or permutation-based inference
+
+MC To study the effect of _height_ on lung capacity in children, we should probably ______ age. To study the effect of _age_ on lung capacity, we might want to ______ height.
+
+control for; control for
+
+* control for; leave out
+
+leave out; control for
+
+leave out; leave out
+
+FF Age can't be caused by height, so we should control for it. But people might be taller because they're older, so height can be part of how age has its effect. Which variables take us closer to our answer depends on our scientific question.
+
+MC What is the best reason to control for age in a randomized controlled trial of a blood-pressure drug?
+
+To remove conflation between age and treatment
+
+* To account for variation, and get a more accurate estimate of the treatment effect
+
+To estimate the effect of age on blood pressure
+
+There is no good reason; randomization means we don't need to
+
+FF There's no conflation here: the only thing that affects treatment is the coin! But controlling for relevant predictors can still make our estimates better. And when you control for a variable, you don't necessarily need to interpret its parameters at all.
+
+MC You have 60 solid, continuous data points. Roughly how many parameters can you afford in your linear model?
+
+1 or 2
+
+* 6 to 12
+
+30 to 60
+
+As many as turn out to be significant
+
+FF The rule of thumb is 5--10 data points per parameter. The linear model will find patterns even in noise, so too many parameters will make our predictions less precise. If the data points are small counts or yes/no, we can afford even fewer.
+
+MC You fit a model with an interaction term. The interaction is not significant, so you remove it and report the simpler model. What is the main problem with this?
+
+Nothing; simpler models are always better
+
+Nothing, as long as P is much larger than 0.05
+
+The significance threshold for interactions should be higher
+
+* You are accepting the null hypothesis, and choosing your test based on the data
+
+FF A non-significant interaction doesn't mean that there is no interaction. And if we choose our final test based on the data, we will be bad frequentists (we will be wrong more than 5% of the time). Decide how many parameters you can afford based on the data, and which ones to use based on scientific judgment.
+
+MC Consider the model `y = a + b*x + c*z + d*x*z`, where x is continuous and z is 0 for the baseline group and 1 for the other group. What does c mean?
+
+The difference between the slopes of the two groups
+
+The overall effect of being in the other group
+
+The average difference between the groups, across the observed values of x
+
+* The difference between the groups when x is zero
+
+FF The baseline group has intercept a and slope b; the other group has intercept a+c and slope b+d. So c is a difference between _intercepts_. This may not be interesting, or even make sense (age zero?); centering x can make it mean something.
+
+MC How many parameters will this code print? You should guess first, then check if you need to. wt is treated as continuous, and factor(cyl) has three categories.
+```
+m <- lm(mpg ~ wt * factor(cyl), data=mtcars)
+print(coef(m))
+```
+
+3
+
+4
+
+5
+
+* 6
+
+FF One intercept, one parameter for wt, two for factor(cyl) (three categories, minus one), and 1 × 2 = 2 for the interaction.
+
+MC Blood pressure drops significantly in the treatment group (P=0.01), but not in the control group (P=0.3). Can we say that it dropped more in the treatment group?
+
+Yes; the P values show a clear difference between the two groups
+
+Yes, as long as the control group has a reasonable sample size
+
+* Not yet; we should estimate the difference in changes directly, using an interaction
+
+No; the control group result shows that nothing happened there
+
+FF Significant and not significant are not significantly different! And failing to reject for the control group doesn't mean it didn't change. The group × time interaction gives us an estimate and a CI for the difference we actually care about.
+
+MC A treatment increases growth by 10% for both large and small animals. We would expect to see ______ on the linear scale and ______ on the log scale.
+
+an interaction; an interaction
+
+* an interaction; no interaction
+
+no interaction; an interaction
+
+no interaction; no interaction
+
+FF A 10% increase adds more grams to big animals, which looks like an interaction on the linear scale. Multiplying on the linear scale is adding on the log scale. Whether there's an interaction can depend on the scale you choose, so think about what scale makes scientific sense before interpreting.
+
+SA Describe a linear model you would like to fit, using data from your own research or a study you are interested in. What is the response variable? What is your main predictor? What would you control for, and why?
