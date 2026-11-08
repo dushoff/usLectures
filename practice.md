@@ -7,3 +7,873 @@ more about clarity language
 power and sample size
 
 forking paths
+
+----------------------------------------------------------------------
+
+UNIT ?: Statistical practice
+
+----------------------------------------------------------------------
+
+TSEC Overview
+
+	So far: what a statistical test means if you do one planned test, on a good study, and report it whatever happens
+
+	Real science: many possible tests, limited data, choices made along the way, and only some results get seen
+
+	This unit: how to plan a study, how to read a result, and how to avoid fooling yourself
+
+		Statistics still isn't magic
+
+	Running question: what should I believe after I see this result?
+
+----------------------------------------------------------------------
+
+TSEC Study design
+
+	The most important statistical decisions are made before there are any data
+
+		Analysis can't fix a study that can't answer the question
+
+	Start with the question: what quantity do I want to estimate, and for what population?
+
+	What would I conclude from each possible result?
+
+	What would a “too small to matter” effect be?
+
+		Callback: cutoffs must be scientific
+
+----------------------------------------------------------------------
+
+TSS Experiments
+
+	Randomization breaks the link between treatment and everything else
+
+		Callback: the permutation test, and the coin in the blood-pressure trial
+
+	Controls and shams: compare to what, exactly?
+
+		Callback: the rabbits
+
+	Blinding: nothing besides the treatment should differ
+
+		Includes the people measuring the outcome
+
+----------------------------------------------------------------------
+
+TSS Units and replication
+
+	What did the randomizing act on? That is the experimental unit
+
+	Pseudoreplication: 10 fish in each of 2 tanks is 2 units, not 20
+
+		Callback: siblings and the household-level permutation
+
+	More measurements of the same unit are not more units
+
+	Independence can't be checked afterwards, so it has to be designed in
+
+----------------------------------------------------------------------
+
+TSS Blocking and covariates
+
+	Compare like with like: pairing and blocking remove known variation
+
+		Callback: paired t-test
+
+	Measure the things that predict the response, and plan to control for them
+
+		Even when randomization means there is no conflation
+
+	Spend your parameters in advance
+
+		Callback: 5--10 data points per parameter
+
+----------------------------------------------------------------------
+
+TSS Observational studies
+
+	Often the only option: we can't randomize smoking, elevation or climate
+
+	Conflation is the central problem
+
+		Callback: children who smoke have higher lung capacity
+
+	We can only control for what we thought of, and measured well
+
+	Association can be a perfectly good goal, as long as we say so
+
+	Natural experiments: something close to a coin flip that we didn't flip
+
+----------------------------------------------------------------------
+
+TSS What to control for
+
+	More control is not always better; the answer depends on causal structure
+
+	\emph{Confounder:} causes both predictor and response
+
+		ANS Control for it (age, for smoking)
+
+	\emph{Mediator:} lies on the path from predictor to response
+
+		ANS Depends on the question (height, for age)
+
+	\emph{Collider:} caused by both predictor and response
+
+		ANS Don't control for it: this creates an association
+
+	Draw the arrows before you look at the data
+
+----------------------------------------------------------------------
+
+TSS Who is in your data?
+
+	Callback: thinking about populations
+
+	Selection: volunteers, survivors, animals that were easy to catch, sites with good access
+
+	Missing data is rarely missing at random
+
+	Selection can act like a collider
+
+		Example to pick: hospitalized patients, or surviving plants
+
+----------------------------------------------------------------------
+
+TSEC Simulation
+
+	We rarely know the truth about real data
+
+	If we make up data, we know the truth, and we can see how our method does
+
+	A few lines of R can replace a lot of formulas
+
+	It also forces us to say what we think our study looks like
+
+	We will use this as our laboratory for the rest of the unit
+
+----------------------------------------------------------------------
+
+TSS Simulating a study
+
+	Choose a truth: effect size, noise, sample size, study structure
+
+	Generate a fake data set
+
+	Analyze it exactly the way you plan to analyze the real data
+
+	Save the estimate, CI and P value
+
+	Repeat many times, and count
+
+----------------------------------------------------------------------
+
+TSS Testing validity
+
+	Set the effect to zero: does the method reject $\leq\alpha$ of the time?
+
+		ANS This is the frequentist definition of validity, tested directly
+
+	P values under the null should look uniform
+
+	Set the effect to something else: do the CIs contain the truth $1-\alpha$ of the time?
+
+		This is called \textbf{coverage}
+
+	Example: analyze the fish tanks as if each fish were independent
+
+		ANS We reject far too often
+
+----------------------------------------------------------------------
+
+TSS Testing power
+
+	Set the effect to the smallest value you care about
+
+	Count how often you get a clear answer
+
+	Change the sample size, and repeat
+
+	Works for designs that have no formula
+
+		Blocks, clusters, unequal groups, missing data
+
+----------------------------------------------------------------------
+
+TSS Limits of simulation
+
+	You only learn about the world you simulated
+
+		ANS Statistics isn't magic, and neither is fake data
+
+	Break your assumptions on purpose: skewed noise, unequal variance, outliers, clusters
+
+	How much does each one matter for the inference?
+
+		Callback: normality matters least; independence matters most
+
+	Fake data is also good for debugging an analysis before the real data arrive
+
+----------------------------------------------------------------------
+
+TSEC Power and precision
+
+	Back to “power to find”, as promised in the philosophy unit
+
+	\textbf{Power:} the probability of seeing the sign of an effect clearly, if the effect has a given size
+
+		Power belongs to a study \emph{and} a hypothetical effect
+
+	Low power doesn't just waste resources; it also misleads
+
+		Coming up: the significance filter
+
+	A common target is 80%
+
+		COMMENT Like $\alpha=0.05$, this is mostly a habit
+
+----------------------------------------------------------------------
+
+TSS What determines power?
+
+	Effect size, noise, sample size, $\alpha$
+
+	Standard error goes down with $\sqrt{n}$
+
+		ANS Twice the precision takes four times the data
+
+	Design can do as much as sample size
+
+		Better measurements, blocking, covariates
+
+	Interactions need much more data than main effects
+
+		Callback: comparing changes between groups
+
+----------------------------------------------------------------------
+
+TSS What effect size?
+
+	Power analysis needs an effect size, and statistics can't choose it
+
+		Callback: the cutoff problem
+
+	Best choice: the smallest effect that would matter
+
+	Bad choice: the effect you need to justify the sample size you already have
+
+	Bad choice: a published or pilot estimate
+
+		ANS These tend to be too big (see the significance filter)
+
+	Field “small, medium, large” benchmarks avoid the scientific question
+
+----------------------------------------------------------------------
+
+TSS Planning for precision
+
+	Better question: how wide will my confidence interval be?
+
+	Would that interval tell me something useful?
+
+		Could it separate “small” from “large”?
+
+	Showing an effect is small needs precision, not power to reject zero
+
+		Callback: flu masks and non-inferiority
+
+----------------------------------------------------------------------
+
+TSS Power after the fact
+
+	“Observed power” calculated from your own estimate is just your P value in disguise
+
+		ANS It adds no information
+
+	It can't rescue a high P value
+
+		Callback: high P values are not evidence for anything
+
+	After the study, the CI tells you what the study could and couldn't see
+
+----------------------------------------------------------------------
+
+TSEC Base rates
+
+	A P value tells us about the data, given a hypothetical
+
+	We want to know about the world, given the data
+
+	These aren't the same thing, and you need more information to get from one to the other
+
+	Key extra information: how plausible was this before we looked?
+
+----------------------------------------------------------------------
+
+TSS Screening example
+
+	A disease affects 1% of people; the test catches 90% of cases, and wrongly flags 5% of healthy people
+
+	You test positive. How worried should you be?
+
+		ANS Of 1000 people: 10 sick, 9 flagged; 990 healthy, about 50 flagged
+
+		ANS Only about 15% of positives are sick
+
+	Most people guess much higher
+
+	Counting people works better than using formulas
+
+----------------------------------------------------------------------
+
+TSS Simple Bayesian logic
+
+	What you should believe depends on what you believed, and on how strongly the evidence discriminates
+
+	Posterior odds = prior odds $\times$ likelihood ratio
+
+		Optional: the table of counts may be enough
+
+	Strong evidence can't always overcome a very low prior
+
+	We aren't becoming Bayesians here; we are borrowing a way of thinking
+
+	ADD https://xkcd.com/1132/
+
+----------------------------------------------------------------------
+
+TSS Science as a screening test
+
+	Treat a study as a test applied to a hypothesis
+
+	$\alpha$ is the false-alarm rate, power is the sensitivity, and the proportion of true hypotheses is the prevalence
+
+	1000 hypotheses, 10% true, $\alpha=0.05$
+
+		ANS Power 0.8: 80 true hits and 45 false alarms
+
+		ANS Power 0.2: 20 true hits and 45 false alarms
+
+	So: a “significant” result in a low-power study of an unlikely idea is weak evidence
+
+	ADD Ioannidis 2005
+
+----------------------------------------------------------------------
+
+TSS But the null is never true!
+
+	Callback: “There is always an effect”
+
+	So what is the base rate of?
+
+		ANS Effects large enough to matter, or to see
+
+	Better picture: a prior distribution of effect sizes, most of them small
+
+	Then the mistakes to worry about are sign and magnitude errors
+
+		This leads directly to the significance filter
+
+	Discussion point: how to tell this story without contradicting the philosophy unit
+
+----------------------------------------------------------------------
+
+TSS Plausibility in practice
+
+	Surprising results are more likely to be wrong
+
+		They are also more likely to be published and publicized
+
+	Ask what is already known about the mechanism
+
+		Callback: MMR and autism
+
+	Prior knowledge is a legitimate part of scientific judgment, even if it isn't part of your P value
+
+----------------------------------------------------------------------
+
+TSEC The significance filter
+
+	We tend to pay attention to results only when they are “significant”
+
+	To be significant, an estimate has to be big compared to its standard error
+
+	If the study is noisy, only overestimates can get through the filter
+
+	So the estimates we see are biased, even if each study was done correctly
+
+----------------------------------------------------------------------
+
+TSS Sign and magnitude errors
+
+	Callback: sign and magnitude error from the philosophy unit
+
+	\emph{Type M:} how much does a significant estimate exaggerate the truth?
+
+		Ballpark: about 1.1 times at 80% power, and about 1.4 times at 50% power
+
+		Gets much worse as power falls
+
+	\emph{Type S:} how often does a significant estimate have the wrong sign?
+
+		Rare unless power is very low; then it can be alarming
+
+	Example: simulate a small true effect in a small study, and plot the “significant” estimates
+
+	ADD Gelman and Carlin 2014
+
+----------------------------------------------------------------------
+
+TSS The winner's curse
+
+	The same thing happens whenever you pick the best-looking result
+
+		The strongest of many effects, the top gene, the best predictor
+
+	First reports tend to be the biggest
+
+	Later estimates shrink, without anything having changed
+
+		Regression to the mean
+
+	Your pilot study has this problem too
+
+----------------------------------------------------------------------
+
+TSS Publication bias
+
+	The same filter operates at the level of the literature
+
+		Authors, reviewers and journals all prefer clear results
+
+	The file drawer: unclear results disappear
+
+	Meta-analysis inherits the problem
+
+		Funnel plots can sometimes show it
+
+	Replication projects tend to find smaller effects
+
+	ADD Open Science Collaboration 2015
+
+----------------------------------------------------------------------
+
+TSEC Multiple comparisons
+
+	If I test 20 things that have no effect at $\alpha=0.05$, the chance of at least one “finding” is 64%
+
+	Every individual test was valid. What went wrong?
+
+	Callback: at what level should we control $\alpha$?
+
+	ADD https://xkcd.com/882/
+
+----------------------------------------------------------------------
+
+TSS Scale of error
+
+	What counts as being wrong?
+
+		ANS A single parameter, a variable, an experiment, a paper, a career?
+
+	The answer depends on what you are going to do with the result
+
+		And on what a mistake costs
+
+	There is no single correct scale, so this is a scientific decision
+
+	Discussion: why doesn't my $\alpha$ depend on what I tested last year?
+
+----------------------------------------------------------------------
+
+TSS Controlling the chance of any error
+
+	\textbf{Family-wise error rate:} the probability of \emph{any} false positive in a family of tests
+
+	Bonferroni: use $\alpha/m$ for $m$ tests
+
+		Callback: $\alpha$ spending, again
+
+		Simple, valid, and conservative
+
+	Variable-level tests: one test for a multi-parameter variable
+
+		Then ask about particular contrasts
+
+	Tukey-style methods for pairwise comparisons
+
+	Cost: less power for everything
+
+----------------------------------------------------------------------
+
+TSS False discovery rate
+
+	\textbf{FDR:} what proportion of the things I am calling discoveries are false?
+
+		Note the link to the base-rate calculation
+
+	Benjamini--Hochberg procedure, in brief
+
+	Good for screens with many tests: genes, metabolites, species
+
+		You are choosing what to follow up, not drawing a final conclusion
+
+	Depends on the idea that some nulls are true; see the discussion above
+
+	ADD Dead salmon example
+
+----------------------------------------------------------------------
+
+TSS Fewer questions
+
+	The best correction is to not need one
+
+	Focus on a small set of questions, each with a small number of parameters
+
+		Callback: hypothesis-based analysis
+
+	Exploratory analysis is fine if it is called exploratory
+
+		Results are ideas for a new study
+
+	Corrections should be used sparingly
+
+		Callback: exploratory analysis slide
+
+	Corrections don't fix the significance filter
+
+		The survivors of a stricter filter are even more exaggerated
+
+----------------------------------------------------------------------
+
+TSEC P-hacking and forking paths
+
+	Corrections work if you know how many tests you did
+
+	In practice, the real number of possible analyses is much larger, and often hidden
+
+	This is the multiple-comparison problem without the bookkeeping
+
+	Callback: “wrong more than 5% of the time”
+
+----------------------------------------------------------------------
+
+TSS P-hacking
+
+	Trying analyses until something crosses the line
+
+	The usual tools
+
+		Extra outcomes, extra covariates, subgroups, outlier removal, transformations
+
+	A few of these together can push false-positive rates to around 60%
+
+	ADD Simmons, Nelson and Simonsohn 2011
+
+	P values just below 0.05 are a warning sign
+
+----------------------------------------------------------------------
+
+TSS Forking paths
+
+	You don't need to try many analyses, or to do anything dishonest
+
+	You only need to have chosen your one analysis in a way that depends on the data
+
+		ANS With different data, you would have made different reasonable choices
+
+	The frequentist guarantee is about what you \emph{would} have done
+
+		Callback: the counterfactual
+
+	ADD Gelman and Loken 2013
+
+----------------------------------------------------------------------
+
+TSS Optional stopping
+
+	“Let's collect a few more and check again”
+
+	Each peek is another chance to cross the line
+
+	Example: simulate a null study, test after every 10 observations, and stop at $P<0.05$
+
+		ANS Error rate climbs well above $\alpha$
+
+	Stopping rules can be valid, but they need to be planned
+
+		Clinical trials do this with $\alpha$ spending
+
+----------------------------------------------------------------------
+
+TSS Hypothesizing after the results
+
+	HARKing: presenting an exploratory finding as if it had been predicted
+
+	The story always seems obvious afterwards
+
+	Subgroups are a classic source
+
+		“The effect was especially strong in ...”
+
+	You can't test a hypothesis on the data that suggested it
+
+----------------------------------------------------------------------
+
+TSS Forks in your project
+
+	In-class exercise: list every decision between the raw data and your final figure
+
+		Exclusions, variable definitions, scales, model terms, comparisons
+
+	Which of these did you make after looking?
+
+	Which ones could change your conclusion?
+
+----------------------------------------------------------------------
+
+TSEC Model choice
+
+	Choosing a model after seeing the data is one of the commonest forks
+
+	Callback: decide how many parameters you can afford, and choose them with scientific judgment
+
+	A lot of standard advice points the wrong way
+
+----------------------------------------------------------------------
+
+TSS Dropping terms
+
+	Stepwise selection and dropping “non-significant” terms
+
+		ANS Accepts the null hypothesis, and then pretends it never happened
+
+	What's left gets CIs that are too narrow and estimates that are too large
+
+		ANS The significance filter, inside your own analysis
+
+	Example: stepwise regression on pure noise
+
+	AIC-based selection is not a way around this for inference
+
+		It has a different goal: prediction
+
+----------------------------------------------------------------------
+
+TSS Collinearity
+
+	Predictors in observational data are often correlated
+
+		Age and height; temperature and elevation
+
+	A model asks: what is the effect of one, holding the other fixed?
+
+	If they rarely vary separately, the data say little about that
+
+	Parameter CIs get wide
+
+	That is the correct answer!
+
+		ANS The model is telling you what you can't see
+
+----------------------------------------------------------------------
+
+TSS Variance inflation factors
+
+	$\mathrm{VIF}_j = 1/(1-R_j^2)$, where $R_j^2$ comes from regressing predictor $j$ on the other predictors
+
+	How much bigger is the variance of this parameter than it would be with uncorrelated predictors?
+
+	Standard advice: if VIF is more than 5 (or 10), drop a predictor
+
+	What do you think of this advice?
+
+		ANS It's a bad idea
+
+----------------------------------------------------------------------
+
+TSS The trouble with VIF rules
+
+	Cutoffs are arbitrary, and don't depend on your question
+
+	Your CI already includes the inflation
+
+		ANS The VIF isn't telling you about an error in your inference
+
+	Dropping a confounder doesn't remove the problem, it hides it
+
+		ANS CI gets narrower around a biased estimate, with the credit given to the survivor
+
+	It's another data-driven fork
+
+	Example: simulate two correlated predictors, drop one, check coverage
+
+	COMMENT Goldberger's “micronumerosity”: collinearity is just a fancy name for not having enough information
+
+	ADD Morrissey and Ruxton 2018
+
+----------------------------------------------------------------------
+
+TSS What to do instead
+
+	Ask what question you actually want answered
+
+	Report the wide CI honestly, and say what the data can't separate
+
+	If you want the combined effect, ask about that
+
+		A joint test of both parameters; a composite variable chosen on scientific grounds
+
+	Controls that are correlated with each other are no problem for the focal parameter
+
+		Callback: you don't have to interpret the control parameters
+
+	Get better data: more of it, or a design that separates the predictors
+
+	VIF has legitimate uses: planning, and understanding why a CI is wide
+
+----------------------------------------------------------------------
+
+TSEC Good practice
+
+	None of this means that analysis has to be joyless
+
+	The goal is to know which of your results you can lean on, and to tell your readers
+
+	Plan what you can, be open about the rest, and report what you see
+
+----------------------------------------------------------------------
+
+TSS Analysis plans
+
+	Write down your question, model and main comparisons before you look
+
+		Simulated data lets you write the code in advance
+
+	Preregistration: making this plan public and time-stamped
+
+	A plan isn't a prison
+
+		Deviations are fine, if they are reported
+
+	This course: plan for the projects
+
+----------------------------------------------------------------------
+
+TSS Confirmatory and exploratory
+
+	Both are valuable; the problem is mixing them up
+
+	Label each result in your write-up
+
+	Report exploratory results as descriptions, and as ideas
+
+	Split your data, or get new data, if you can afford it
+
+----------------------------------------------------------------------
+
+TSS Sensitivity analysis
+
+	Would a different reasonable choice change the conclusion?
+
+	Report the alternatives, not just the favourite
+
+	Callback: outliers
+
+	Multiverse analysis: run all the reasonable forks at once
+
+	If the answer depends on a fork, then that's part of the answer
+
+----------------------------------------------------------------------
+
+TSS Reporting results
+
+	Estimates and CIs first, with units
+
+		Compare them to something real
+
+	Report everything you did, including the unclear results
+
+	Show the data
+
+	Don't throw away information with thresholds: $P=0.049$ and $P=0.051$ are the same result
+
+----------------------------------------------------------------------
+
+TSS Clarity language
+
+	More practice with the language from the philosophy unit
+
+	Rewrite sentences from real papers
+
+		“There was no effect of ...”
+
+		“X did not differ between groups, therefore ...”
+
+		“Marginally significant”, “trending towards significance”
+
+	Say what you saw clearly, and what you didn't
+
+	Claim “small” only when you can clearly see that it is small
+
+	ADD Dushoff, Kain and Bolker 2019
+
+----------------------------------------------------------------------
+
+TSS Significant and not significant
+
+	Still the commonest error in the literature
+
+		The difference between “significant” and “not significant” is not necessarily significant
+
+	Callback: flu deaths, and the rabbits
+
+	To compare two effects, estimate the difference
+
+	Exercise: find an example in a recent paper in your field
+
+----------------------------------------------------------------------
+
+TSS Reproducible work
+
+	Scripts, not clicks
+
+	Keep the raw data unchanged
+
+	Someone else (or you, next year) should be able to rerun everything
+
+	This also gives you a record of your forks
+
+----------------------------------------------------------------------
+
+TSS Reading a paper
+
+	A checklist that pulls the unit together
+
+		What was the unit, and how many were there?
+
+		Was the analysis planned? How many forks and tests were there?
+
+		What power did it have for an effect that matters?
+
+		How plausible was this before the study?
+
+		Is the estimate likely to be exaggerated?
+
+		What do the CIs say?
+
+----------------------------------------------------------------------
+
+TSS Summary
+
+	Design beats analysis
+
+	Simulate before you collect
+
+	Low power misleads, as well as missing things
+
+	A result depends on what came before it, and on what was filtered out
+
+	Choose your questions and models for scientific reasons
+
+	Report what you see clearly, what you don't, and how you got there
