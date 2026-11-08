@@ -1,0 +1,70 @@
+INTRO The goal here is learning, not testing. Take your time and think about the questions. You can go through as many times as necessary to get the answers right, but you're not learning unless you're learning. 
+
+MC The linear models we learned about have _____ predictor variable(s) and _____ response variable(s)
+
+1; 1
+
+1; zero or more
+
+* zero or more; 1
+
+zero or more; zero or more
+
+MC Which of these is _not_ a linear model? (y is the response, x is the predictor, and a, b and c are parameters to be estimated)
+
+`y = a + b*x + c*x^2`
+
+`y = a + b*sin(x)`
+
+`log(y) = a + b*log(x)`
+
+* `y = a/(b + x)`
+
+FF A linear model has to be linear in the _parameters_, not in the predictors: it consists of terms added together, and each term is multiplied by a single parameter, one time.
+
+MC The linear-model framework requires the response variable to be ______ and the predictor variables to be ______.
+
+quantitative; quantitative
+
+* quantitative; any type of variable
+
+any type of variable; quantitative
+
+any type of variable; any type of variable
+
+FF We assume that the response is normal (conditional on the predictors), so it must be quantitative.
+
+MC Possibly the most important linear model assumption is the one that can't be checked statistically:
+
+Homogeneity of variance
+
+* Independence
+
+Linearity
+
+Normality
+
+MC A histogram of the response variable from your two-group study shows two clear peaks. What does this tell you about the normality assumption of your linear model?
+
+The assumption has failed, so you should not use a linear model
+
+The assumption has failed, but this is OK if your sample is large
+
+* Not much; you should look at the residuals instead
+
+Not much; the assumption is about the predictor variables
+
+FF The assumption is about the _conditional_ distribution of the response. If the two groups are far apart, two peaks is exactly what we would expect, even with perfectly normal residuals.
+
+MC As sample size gets larger, a statistical test of normality becomes ______ likely to reject the null hypothesis, and departures from normality become ______ of a concern.
+
+more; more
+
+* more; less
+
+less; more
+
+less; less
+
+FF Assumptions are never exactly true. So we will rarely reject when sample size is small (when we might be worried) and often reject when sample size is large (when the Central Limit Theorem is helping us). How does that help?
+
