@@ -176,6 +176,14 @@ Ignore += *.aq.csv
 %.aq.csv: %.quiz avenueQuiz.py
 	$(PITH)
 
+## Local rendered version, for proofreading (correct options and feedback shown)
+## linear.quiz.html: linear.quiz
+## newlin.quiz.html: newlin.quiz
+Sources += quizHtml.py
+Ignore += *.quiz.html
+%.quiz.html: %.quiz quizHtml.py avenueQuiz.py
+	python3 quizHtml.py $< > $@
+
 ######################################################################
 
 ## Assignments assignments.md

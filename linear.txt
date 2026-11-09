@@ -664,9 +664,9 @@ Testing the regression assumptions
 
 	Be careful about testing with P values
 
-		ANS Assumptions are never exactly true
+		OLDANS Assumptions are never exactly true
 
-		ANS We will rarely reject when sample size is small, and often reject when sample size is large. How does that help?
+		OLDANS We will rarely reject when sample size is small, and often reject when sample size is large. How does that help?
 
 	Look for patterns in your diagnostic plots, and think about options
 
@@ -692,11 +692,11 @@ Outliers
 
 	Sensitivity analysis
 
-		ANS Try the analysis without some combination of outliers just to see
+		OLDANS Try the analysis without some combination of outliers just to see
 
 	Try to rely less on normal assumption
 
-		ANS robust or permutation-based inference
+		OLDANS robust or permutation-based inference
 
 ----------------------------------------------------------------------
 
@@ -748,15 +748,15 @@ What paradigm to use?
 
 	We need to fit $n-1$ parameters; how do we deal with $\alpha$?
 
-		ANS The \emph{counterfactual} probability of seeing something when there is nothing there
+		OLDANS The \emph{counterfactual} probability of seeing something when there is nothing there
 
 	At what \emph{level} should we control $\alpha$?
 
-		ANS Experiment
+		OLDANS Experiment
 
-		ANS Variable
+		OLDANS Variable
 
-		ANS Parameter
+		OLDANS Parameter
 
 ----------------------------------------------------------------------
 
@@ -778,17 +778,17 @@ Exploratory analysis
 
 	Should you believe them?
 
-		ANS No
+		OLDANS No
 
-		ANS Maybe make some hypotheses and construct a hypothesis-based analysis
+		OLDANS Maybe make some hypotheses and construct a hypothesis-based analysis
 
-		PENDING Do a new experiment
+		CONV Then: do a new experiment
 
 	False discovery rates and P value corrections should be used sparingly
 
 	Can also look at confidence intervals
 
-		PENDING Be aware that some proportion do not contain the answer
+		CONV Be aware that some proportion do not contain the answer
 
 ----------------------------------------------------------------------
 
@@ -804,7 +804,27 @@ Variables and parameters
 
 	Like feed (in the chicks) this is a “multi-parameter variable”
 
+		ANS Specify your frequentist standard before testing
+
+----------------------------------------------------------------------
+
+Fitting a quadratic
+
 	Example fev
+
+	Do we have a specific scientific question?
+
+		Does it curve up or down?
+
+			ANS Test the quadratic term
+
+		Can we be confident about the average trend, in the presence of curvature?
+
+			ANS Look at CIs for the linear term
+
+	Use R function poly (see example)
+
+		Beware of overfitting
 
 ----------------------------------------------------------------------
 
@@ -826,9 +846,11 @@ Scientific question
 
 		ANS We might want to exclude it to see the effects of age
 
+		ANS Or include it to see total effects
+
 	Age cannot be caused by height
 
-		ANS We should include it to see the effect of height
+		ANS We should (usually) include it to see the effect of height
 
 ----------------------------------------------------------------------
 
@@ -882,7 +904,7 @@ How many parameters?
 
 		5--10 solid, continuous data points per parameter
 
-		When data points are small counts, or yes/no, we need even fewer parameters
+		When data points are small counts, or yes/no, we need to reduce parameters further
 
 ----------------------------------------------------------------------
 
@@ -958,7 +980,7 @@ Interactions in R
 
 		ANS Three categories and four categories: $2 \times 3 = 6$
 
-	Example fev
+	Example classPenguins (based on lmAsn)
 
 ----------------------------------------------------------------------
 
@@ -978,7 +1000,7 @@ Interpreting parameters
 
 		ANS The difference between the groups when $x$ is zero
 
-		ANS This may not be interesting, or even make sense (age zero?)
+		ANS This may not be interesting, or even make sense (height zero?)
 
 		ANS Centering $x$ can make it mean something
 
@@ -1010,7 +1032,7 @@ Is one group changing more than another?
 
 		Can we say that treatment group changed more?
 
-		ANS No! Significant and not significant are not significantly different
+		ANS No! Significant and not significant are not (necessarily) significantly different
 
 		ANS Failing to reject for the control group doesn't mean it didn't change
 
@@ -1060,11 +1082,11 @@ Example: comparing to the control group
 
 		One exposed to radiation, and one not
 
-		ANS usually the non-radiation group is a sham, where you pretend to expose them to radiation
+			ANS usually the non-radiation group is a sham, where you pretend to expose them to radiation
 
-	Standard method: show that the sham group doesn't change, and the radiation group does
+	Naive method: show that the sham group doesn't change, and the radiation group does
 
-	ANS Better method: show that the sham group changes \emph{differently} (hypothesis is that they will be \emph{relatively} slower
+		ANS Better method: show that the sham group changes \emph{differently} (hypothesis is that they will be \emph{relatively} slower)
 
 	Typically done with interactions
 
