@@ -202,6 +202,8 @@ Ignore += *.quiz.html
 
 ## groups.asn.md
 
+## project.asn.md
+
 ######################################################################
 
 ## lecturePix linking
