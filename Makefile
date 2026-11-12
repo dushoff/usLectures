@@ -201,8 +201,8 @@ Ignore += *.quiz.html
 ## lm.asn.md
 
 ## groups.asn.md
-
 ## project.asn.md
+## topic.asn.md
 
 ######################################################################
 
