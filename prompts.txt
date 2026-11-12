@@ -3,15 +3,23 @@
 
 Index card
 
-	Put your macid (or just your surname) on the blank side
-
-	\emph{On the other side,} write
-
 	Your text should be \emph{large} and \emph{legible}
 
-		One question
+	Put your macid (or just your surname) on the blank side
 
-		One comment
+	\emph{On the other side,} answer
+
+		If you've heard about the Monty Hall problem:
+
+			How would you phrase the question?
+
+			What is your answer?
+
+		Otherwise
+
+			What is a mathematical or philosophical paradox that you like?
+
+			Do you have an answer?
 
 ----------------------------------------------------------------------
 
