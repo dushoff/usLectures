@@ -160,6 +160,7 @@ Sources += copy.tex
 ######################################################################
 
 ## New quiz framework
+Sources += $(wildcard *.quiz)
 
 ## baseline.aq.csv: baseline.quiz ## Ported, not used yet
 ## test.aq.csv: test.quiz avenueQuiz.py avenueQuiz.md
@@ -169,20 +170,22 @@ Sources += copy.tex
 ## freq.aq.csv: freq.quiz
 
 ## linear.aq.csv: linear.quiz
-## newlin.aq.csv: newlin.quiz
+## linear.quiz.html: linear.quiz
 
-Sources += $(wildcard *.quiz)
+## fitting.aq.csv: fitting.quiz ## another linear quiz
+## fitting.quiz.html: fitting.quiz
+
+## newlin.aq.csv: newlin.quiz  ## Not used yet
+## newlin.quiz.html: newlin.quiz
+
+## Code
+Sources += $(wildcard *.py)
+Ignore += *.quiz.html
+%.quiz.html: %.quiz quizHtml.py
+	$(PITH)
 Ignore += *.aq.csv
 %.aq.csv: %.quiz avenueQuiz.py
 	$(PITH)
-
-## Local rendered version, for proofreading (correct options and feedback shown)
-## linear.quiz.html: linear.quiz
-## newlin.quiz.html: newlin.quiz
-Sources += quizHtml.py
-Ignore += *.quiz.html
-%.quiz.html: %.quiz quizHtml.py avenueQuiz.py
-	python3 quizHtml.py $< > $@
 
 ######################################################################
 

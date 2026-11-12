@@ -1,0 +1,70 @@
+INTRO The goal here is learning, not testing. Take your time and think about the questions. You can go through as many times as necessary to get the answers right, but you're not learning unless you're learning. 
+
+MC In the mouse-activity example, the response is measured in ml CO2/h. If we treat temperature as a _continuous_ predictor, measured in °C, the units of the temperature parameter are:
+
+ml CO2/h
+
+°C
+
+* (ml CO2/h)/°C
+
+None; parameters don't have units
+
+FF The slope tells us how much the response changes per unit of the predictor. If we treated temperature as categorical, the parameter would be a difference between groups, and the units would be ml CO2/h.
+
+MC A huge study finds that a drug lowers blood pressure by 0.2 mmHg (95% CI 0.1 to 0.3 mmHg). The standard deviation of blood pressure in the population is about 15 mmHg. We can be ______ about the sign of this effect, and the effect seems to be ______.
+
+confident; large
+
+* confident; small
+
+not confident; large
+
+not confident; small
+
+FF The CI doesn't include zero, so we can see the sign clearly. But the effect is around 1% of the natural variation in the population. Certainty and effect size are different questions, and a very small P value doesn't mean that something is important.
+
+MC You measure joint erosion on both hands of 30 people, and calculate `diff`, the erosion on the dominant hand minus the erosion on the other hand. Which model is the best way to ask whether people have more erosion on their dominant hand?
+
+`lm(erosion ~ 1)`
+
+`lm(erosion ~ hand)`
+
+* `lm(diff ~ 1)`
+
+`lm(diff ~ hand)`
+
+FF Your left hand and right hand are not independent! The paired t-test is equivalent to a one-sample test on the differences, and in lm a one-sample test is a model with no predictors: just an intercept.
+
+SA You find that a single point has a very large influence on the conclusion of your analysis. What are some things you could do?
+
+ANS There's no single right answer, but good things to mention include:
+
+* Think about whether there is evidence of an error (statistics won't tell you this)
+* A sensitivity analysis: try the analysis without the point, just to see
+* Rely less on the normality assumption, with robust or permutation-based inference
+
+MC What is the best reason to control for age in a randomized controlled trial of a blood-pressure drug?
+
+To remove conflation between age and treatment
+
+* To account for variation, and get a more accurate estimate of the treatment effect
+
+To estimate the effect of age on blood pressure
+
+There is no good reason; randomization means we don't need to
+
+FF There's no conflation here: the only thing that affects treatment is the coin! But controlling for relevant predictors can still make our estimates better. And when you control for a variable, you don't necessarily need to interpret its parameters at all.
+
+MC You fit a model with an interaction term. The interaction is not significant, so you remove it and report the simpler model. What is the main problem with this?
+
+Nothing; simpler models are always better
+
+Nothing, as long as P is much larger than 0.05
+
+The significance threshold for interactions should be higher
+
+* You are accepting the null hypothesis, and choosing your test based on the data
+
+FF A non-significant interaction doesn't mean that there is no interaction. And if we choose our final test based on the data, we will be bad frequentists (we will be wrong more than 5% of the time). Decide how many parameters you can afford based on the data, and which ones to use based on scientific judgment.
+
