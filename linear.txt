@@ -848,6 +848,8 @@ Scientific question
 
 		ANS Or include it to see total effects
 
+		PENDING exclude/include are backwards!!
+
 	Age cannot be caused by height
 
 		ANS We should (usually) include it to see the effect of height
@@ -861,6 +863,8 @@ Controlling
 		ANS We control for age when we study the effects of smoking on lung capacity
 
 		ANS Also the effect of sex, height, ..., maybe
+
+		PENDING Relevant medical conditions if available
 
 	When you control for a variable, you don't necessarily need to interpret the parameters of that variable at all!
 
