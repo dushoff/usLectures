@@ -908,6 +908,8 @@ How many parameters?
 
 		5--10 solid, continuous data points per parameter
 
+			Independent observations of the response variable
+
 		When data points are small counts, or yes/no, we need to reduce parameters further
 
 ----------------------------------------------------------------------
@@ -975,6 +977,8 @@ Interactions in R
 	Is this still a linear model?
 
 		ANS Yes! It's linear in the \emph{parameters}
+
+CONT Interactions
 
 	How many parameters does an interaction add?
 
