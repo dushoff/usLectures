@@ -992,6 +992,21 @@ CONT Interactions
 
 ----------------------------------------------------------------------
 
+Counting parameters
+
+	CONV Example: 3 species of penguin × 4 islands = 12 combinations
+
+		intercept 1
+
+		penguins 2
+
+		islands 3
+
+		interactions 2×3 = 6
+
+	Total: 12 parameters for 12 combinations
+
+
 Interpreting parameters
 
 	$y = a + b x + c z + d xz$, where $z$ is 0 for baseline, and 1 for the other group
