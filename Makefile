@@ -90,6 +90,20 @@ pardirs += statsTalks
 
 ######################################################################
 
+## practice.draft.pdf: practice.txt practice.md
+## practice.draft.pdf: practice.txt practice.students.txt
+## practice.draft.pdf: practice.txt practice.draft.tex 
+## practice.final.pdf: practice.txt practice.students.txt
+## practice.handouts.pdf: practice.txt
+## practice.complete.pdf: practice.txt
+## practice.handouts.docx: practice.handouts.tex
+
+## practice.merged: practice.txt practice.students.txt
+
+## mv -f practice.merged practice.txt ##
+
+######################################################################
+
 ## generalized.draft.pdf: generalized.txt generalized.md
 ## generalized.draft.pdf: generalized.txt generalized.students.txt
 ## generalized.draft.pdf: generalized.txt generalized.draft.tex 
@@ -104,19 +118,6 @@ pardirs += statsTalks
 
 ######################################################################
 
-## practice.draft.pdf: practice.txt practice.md
-## practice.draft.pdf: practice.txt practice.students.txt
-## practice.draft.pdf: practice.txt practice.draft.tex 
-## practice.final.pdf: practice.txt practice.students.txt
-## practice.handouts.pdf: practice.txt
-## practice.complete.pdf: practice.txt
-## practice.handouts.docx: practice.handouts.tex
-
-## practice.merged: practice.txt practice.students.txt
-
-## mv -f practice.merged practice.txt ##
-
-######################################################################
 
 ## Prep an interactive slides file
 %.students.txt: | %.txt
