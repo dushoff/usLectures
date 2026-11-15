@@ -1,5 +1,7 @@
-UNIT ?: Statistical practice
+UNIT 5: Statistical practice
+
 ----------------------------------------------------------------------
+
 Overview
 
 	So far: what a statistical test means if you do one planned test, on a good study, and report it whatever happens
@@ -11,7 +13,9 @@ Overview
 		Statistics still isn't magic
 
 	Running question: what should I believe after I see this result?
+
 ----------------------------------------------------------------------
+
 TSEC Study design
 
 	The most important statistical decisions are made before there are any data
@@ -25,21 +29,55 @@ TSEC Study design
 	What would a “too small to matter” effect be?
 
 		Callback: cutoffs must be scientific
+
 ----------------------------------------------------------------------
-Experiments
 
-	Randomization breaks the link between treatment and everything else
+TSS Experiments
 
-		Callback: the permutation test, and the coin in the blood-pressure trial
+	The gold standard for scientific inference
 
-	Controls and shams: compare to what, exactly?
+	Control
 
-		Callback: the rabbits
+		Compare different treatments
 
-	Blinding: nothing besides the treatment should differ
+	Replicate
 
-		Includes the people measuring the outcome
+		More than one independent unit in each treatment group
+
+	Randomize
+
+		breaks the link between treatment and everything else
+
 ----------------------------------------------------------------------
+
+Controlled experiments
+
+	A controlled experiment compares different treatment groups
+
+		You don't need a “control” group (e.g., radioactive rabbits)
+
+	Groups should be as similar as possible, except for the thing that we want to compare
+
+		ANS We don't keep the two groups of rabbits separate; we only separate them for the trip to the radiocative room
+
+		ANS If we are giving village children vitamin A, we give the control group a similar pill without vitamin A
+
+----------------------------------------------------------------------
+
+Blinding or masking
+
+	Human subjects should not know what group they're in
+
+	Ideally, researchers should know as little as possible about who is in whose group
+
+		Especially important for researchers making measurements, especially qualitative measurements
+
+		Also important for statisticians who need to make decisions during the study!
+
+			ANS We can also try to make all of the decisions before the study
+
+----------------------------------------------------------------------
+
 Units and replication
 
 	What did the randomizing act on? That is the experimental unit
@@ -51,7 +89,9 @@ Units and replication
 	More measurements of the same unit are not more units
 
 	Independence can't be checked afterwards, so it has to be designed in
+
 ----------------------------------------------------------------------
+
 Blocking and covariates
 
 	Compare like with like: pairing and blocking remove known variation
@@ -65,7 +105,9 @@ Blocking and covariates
 	Spend your parameters in advance
 
 		Callback: 5--10 data points per parameter
+
 ----------------------------------------------------------------------
+
 Observational studies
 
 	Often the only option: we can't randomize smoking, elevation or climate
@@ -79,7 +121,9 @@ Observational studies
 	Association can be a perfectly good goal, as long as we say so
 
 	Natural experiments: something close to a coin flip that we didn't flip
+
 ----------------------------------------------------------------------
+
 What to control for
 
 	More control is not always better; the answer depends on causal structure
@@ -97,7 +141,9 @@ What to control for
 		ANS Don't control for it: this creates an association
 
 	Draw the arrows before you look at the data
+
 ----------------------------------------------------------------------
+
 Who is in your data?
 
 	Callback: thinking about populations
@@ -109,7 +155,9 @@ Who is in your data?
 	Selection can act like a collider
 
 		Example to pick: hospitalized patients, or surviving plants
+
 ----------------------------------------------------------------------
+
 TSEC Simulation
 
 	We rarely know the truth about real data
@@ -121,7 +169,9 @@ TSEC Simulation
 	It also forces us to say what we think our study looks like
 
 	We will use this as our laboratory for the rest of the unit
+
 ----------------------------------------------------------------------
+
 Simulating a study
 
 	Choose a truth: effect size, noise, sample size, study structure
@@ -133,7 +183,9 @@ Simulating a study
 	Save the estimate, CI and P value
 
 	Repeat many times, and count
+
 ----------------------------------------------------------------------
+
 Testing validity
 
 	Set the effect to zero: does the method reject $\leq\alpha$ of the time?
@@ -149,7 +201,9 @@ Testing validity
 	Example: analyze the fish tanks as if each fish were independent
 
 		ANS We reject far too often
+
 ----------------------------------------------------------------------
+
 Testing power
 
 	Set the effect to the smallest value you care about
@@ -161,7 +215,9 @@ Testing power
 	Works for designs that have no formula
 
 		Blocks, clusters, unequal groups, missing data
+
 ----------------------------------------------------------------------
+
 Limits of simulation
 
 	You only learn about the world you simulated
@@ -175,7 +231,9 @@ Limits of simulation
 		Callback: normality matters least; independence matters most
 
 	Fake data is also good for debugging an analysis before the real data arrive
+
 ----------------------------------------------------------------------
+
 TSEC Power and precision
 
 	Back to “power to find”, as promised in the philosophy unit
@@ -191,7 +249,9 @@ TSEC Power and precision
 	A common target is 80%
 
 		COMMENT Like $\alpha=0.05$, this is mostly a habit
+
 ----------------------------------------------------------------------
+
 What determines power?
 
 	Effect size, noise, sample size, $\alpha$
@@ -207,7 +267,9 @@ What determines power?
 	Interactions need much more data than main effects
 
 		Callback: comparing changes between groups
+
 ----------------------------------------------------------------------
+
 What effect size?
 
 	Power analysis needs an effect size, and statistics can't choose it
@@ -223,7 +285,9 @@ What effect size?
 		ANS These tend to be too big (see the significance filter)
 
 	Field “small, medium, large” benchmarks avoid the scientific question
+
 ----------------------------------------------------------------------
+
 Planning for precision
 
 	Better question: how wide will my confidence interval be?
@@ -235,7 +299,9 @@ Planning for precision
 	Showing an effect is small needs precision, not power to reject zero
 
 		Callback: flu masks and non-inferiority
+
 ----------------------------------------------------------------------
+
 Power after the fact
 
 	“Observed power” calculated from your own estimate is just your P value in disguise
@@ -247,7 +313,9 @@ Power after the fact
 		Callback: high P values are not evidence for anything
 
 	After the study, the CI tells you what the study could and couldn't see
+
 ----------------------------------------------------------------------
+
 TSS The significance filter
 
 	We tend to pay attention to results only when they are “significant”
@@ -257,7 +325,9 @@ TSS The significance filter
 	If the study is noisy, only overestimates can get through the filter
 
 	So the estimates we see are biased, even if each study was done correctly
+
 ----------------------------------------------------------------------
+
 Sign and magnitude errors
 
 	Callback: sign and magnitude error from the philosophy unit
@@ -275,7 +345,9 @@ Sign and magnitude errors
 	Example: simulate a small true effect in a small study, and plot the “significant” estimates
 
 	ADD Gelman and Carlin 2014
+
 ----------------------------------------------------------------------
+
 The winner's curse
 
 	The same thing happens whenever you pick the best-looking result
@@ -289,7 +361,9 @@ The winner's curse
 		Regression to the mean
 
 	Your pilot study has this problem too
+
 ----------------------------------------------------------------------
+
 Shrinkage
 
 	Estimates that got through a filter should be pulled back towards what we expected
@@ -303,7 +377,9 @@ Shrinkage
 	The same idea comes up again in model fitting (penalized regression)
 
 	ADD Shrinkage example
+
 ----------------------------------------------------------------------
+
 Publication bias
 
 	The same filter operates at the level of the literature
@@ -319,7 +395,9 @@ Publication bias
 	Replication projects tend to find smaller effects
 
 	ADD Open Science Collaboration 2015
+
 ----------------------------------------------------------------------
+
 TSEC Base rates and false discoveries
 
 	A P value tells us about the data, given a hypothetical
@@ -329,7 +407,9 @@ TSEC Base rates and false discoveries
 	These aren't the same thing, and you need more information to get from one to the other
 
 	Key extra information: how plausible was this before we looked?
+
 ----------------------------------------------------------------------
+
 Screening example
 
 	A disease affects 1% of people; the test catches 90% of cases, and wrongly flags 5% of healthy people
@@ -343,7 +423,9 @@ Screening example
 	Most people guess much higher
 
 	Counting people works better than using formulas
+
 ----------------------------------------------------------------------
+
 Simple Bayesian logic
 
 	What you should believe depends on what you believed, and on how strongly the evidence discriminates
@@ -357,7 +439,9 @@ Simple Bayesian logic
 	We aren't becoming Bayesians here; we are borrowing a way of thinking
 
 	ADD https://xkcd.com/1132/
+
 ----------------------------------------------------------------------
+
 Science as a screening test
 
 	Treat a study as a test applied to a hypothesis
@@ -373,7 +457,9 @@ Science as a screening test
 	So: a “significant” result in a low-power study of an unlikely idea is weak evidence
 
 	ADD Ioannidis 2005
+
 ----------------------------------------------------------------------
+
 But the null is never true!
 
 	Callback: “There is always an effect”
@@ -391,7 +477,9 @@ But the null is never true!
 	Then the mistakes to worry about are sign and magnitude errors
 
 		Callback: the significance filter
+
 ----------------------------------------------------------------------
+
 Plausibility in practice
 
 	Surprising results are more likely to be wrong
@@ -403,7 +491,9 @@ Plausibility in practice
 		Callback: MMR and autism
 
 	Prior knowledge is a legitimate part of scientific judgment, even if it isn't part of your P value
+
 ----------------------------------------------------------------------
+
 TSS Multiple comparisons
 
 	If I test 20 things that have no effect at $\alpha=0.05$, the chance of at least one “finding” is 64%
@@ -413,7 +503,9 @@ TSS Multiple comparisons
 	Callback: at what level should we control $\alpha$?
 
 	ADD https://xkcd.com/882/
+
 ----------------------------------------------------------------------
+
 Scale of error
 
 	What counts as being wrong?
@@ -427,7 +519,9 @@ Scale of error
 	There is no single correct scale, so this is a scientific decision
 
 	Discussion: why doesn't my $\alpha$ depend on what I tested last year?
+
 ----------------------------------------------------------------------
+
 Controlling the chance of any error
 
 	\textbf{Family-wise error rate:} the probability of \emph{any} false positive in a family of tests
@@ -445,7 +539,9 @@ Controlling the chance of any error
 	Tukey-style methods for pairwise comparisons
 
 	Cost: less power for everything
+
 ----------------------------------------------------------------------
+
 False discovery rate
 
 	\textbf{FDR:} what proportion of the things I am calling discoveries are false?
@@ -461,7 +557,9 @@ False discovery rate
 	Counts nulls as if they were true: read this as the counterfactual ceiling on sign errors, as above
 
 	ADD Dead salmon example
+
 ----------------------------------------------------------------------
+
 Fewer questions
 
 	The best correction is to not need one
@@ -481,7 +579,9 @@ Fewer questions
 	Corrections don't fix the significance filter
 
 		The survivors of a stricter filter are even more exaggerated
+
 ----------------------------------------------------------------------
+
 TSEC P-hacking and forking paths
 
 	Corrections work if you know how many tests you did
@@ -491,7 +591,9 @@ TSEC P-hacking and forking paths
 	This is the multiple-comparison problem without the bookkeeping
 
 	Callback: “wrong more than 5% of the time”
+
 ----------------------------------------------------------------------
+
 P-hacking
 
 	Trying analyses until something crosses the line
@@ -505,7 +607,9 @@ P-hacking
 	ADD Simmons, Nelson and Simonsohn 2011
 
 	P values just below 0.05 are a warning sign
+
 ----------------------------------------------------------------------
+
 Forking paths
 
 	You don't need to try many analyses, or to do anything dishonest
@@ -519,7 +623,9 @@ Forking paths
 		Callback: the counterfactual
 
 	ADD Gelman and Loken 2013
+
 ----------------------------------------------------------------------
+
 Optional stopping
 
 	“Let's collect a few more and check again”
@@ -533,7 +639,9 @@ Optional stopping
 	Stopping rules can be valid, but they need to be planned
 
 		Clinical trials do this with $\alpha$ spending
+
 ----------------------------------------------------------------------
+
 Hypothesizing after the results
 
 	HARKing: presenting an exploratory finding as if it had been predicted
@@ -545,7 +653,9 @@ Hypothesizing after the results
 		“The effect was especially strong in ...”
 
 	You can't test a hypothesis on the data that suggested it
+
 ----------------------------------------------------------------------
+
 Forks in your project
 
 	In-class exercise: list every decision between the raw data and your final figure
@@ -555,7 +665,9 @@ Forks in your project
 	Which of these did you make after looking?
 
 	Which ones could change your conclusion?
+
 ----------------------------------------------------------------------
+
 TSS Model choice
 
 	Choosing a model after seeing the data is one of the commonest forks
@@ -563,7 +675,9 @@ TSS Model choice
 	Callback: decide how many parameters you can afford, and choose them with scientific judgment
 
 	A lot of standard advice points the wrong way
+
 ----------------------------------------------------------------------
+
 Dropping terms
 
 	Stepwise selection and dropping “non-significant” terms
@@ -579,7 +693,9 @@ Dropping terms
 	AIC-based selection is not a way around this for inference
 
 		It has a different goal: prediction
+
 ----------------------------------------------------------------------
+
 Collinearity
 
 	Predictors in observational data are often correlated
@@ -595,7 +711,9 @@ Collinearity
 	That is the correct answer!
 
 		ANS The model is telling you what you can't see
+
 ----------------------------------------------------------------------
+
 Variance inflation factors
 
 	$\mathrm{VIF}_j = 1/(1-R_j^2)$, where $R_j^2$ comes from regressing predictor $j$ on the other predictors
@@ -607,7 +725,9 @@ Variance inflation factors
 	What do you think of this advice?
 
 		ANS It's a bad idea
+
 ----------------------------------------------------------------------
+
 The trouble with VIF rules
 
 	Cutoffs are arbitrary, and don't depend on your question
@@ -627,7 +747,9 @@ The trouble with VIF rules
 	COMMENT Goldberger's “micronumerosity”: collinearity is just a fancy name for not having enough information
 
 	ADD Morrissey and Ruxton 2018
+
 ----------------------------------------------------------------------
+
 What to do instead
 
 	Ask what question you actually want answered
@@ -645,7 +767,9 @@ What to do instead
 	Get better data: more of it, or a design that separates the predictors
 
 	VIF has legitimate uses: planning, and understanding why a CI is wide
+
 ----------------------------------------------------------------------
+
 TSEC Good practice
 
 	None of this means that analysis has to be joyless
@@ -653,7 +777,9 @@ TSEC Good practice
 	The goal is to know which of your results you can lean on, and to tell your readers
 
 	Plan what you can, be open about the rest, and report what you see
+
 ----------------------------------------------------------------------
+
 Analysis plans
 
 	Write down your question, model and main comparisons before you look
@@ -667,7 +793,9 @@ Analysis plans
 		Deviations are fine, if they are reported
 
 	This course: plan for the projects
+
 ----------------------------------------------------------------------
+
 Confirmatory and exploratory
 
 	Both are valuable; the problem is mixing them up
@@ -677,7 +805,9 @@ Confirmatory and exploratory
 	Report exploratory results as descriptions, and as ideas
 
 	Split your data, or get new data, if you can afford it
+
 ----------------------------------------------------------------------
+
 Sensitivity analysis
 
 	Would a different reasonable choice change the conclusion?
@@ -689,7 +819,9 @@ Sensitivity analysis
 	Multiverse analysis: run all the reasonable forks at once
 
 	If the answer depends on a fork, then that's part of the answer
+
 ----------------------------------------------------------------------
+
 Reporting results
 
 	Estimates and CIs first, with units
@@ -701,7 +833,9 @@ Reporting results
 	Show the data
 
 	Don't throw away information with thresholds: $P=0.049$ and $P=0.051$ are the same result
+
 ----------------------------------------------------------------------
+
 Clarity language
 
 	More practice with the language from the philosophy unit
@@ -719,7 +853,9 @@ Clarity language
 	Claim “small” only when you can clearly see that it is small
 
 	ADD Dushoff, Kain and Bolker 2019
+
 ----------------------------------------------------------------------
+
 Significant and not significant
 
 	Still the commonest error in the literature
@@ -731,7 +867,9 @@ Significant and not significant
 	To compare two effects, estimate the difference
 
 	Exercise: find an example in a recent paper in your field
+
 ----------------------------------------------------------------------
+
 Reproducible work
 
 	Scripts, not clicks
@@ -741,7 +879,9 @@ Reproducible work
 	Someone else (or you, next year) should be able to rerun everything
 
 	This also gives you a record of your forks
+
 ----------------------------------------------------------------------
+
 Reading a paper
 
 	A checklist that pulls the unit together
@@ -757,7 +897,9 @@ Reading a paper
 		Is the estimate likely to be exaggerated?
 
 		What do the CIs say?
+
 ----------------------------------------------------------------------
+
 Summary
 
 	Design beats analysis
