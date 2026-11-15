@@ -134,7 +134,7 @@ Covariates
 
 		ANS Power: how clearly can I see? e.g., how small are the CIs?
 
-	Deal with covariates by blocking or modeling
+	Deal with covariates by blocking or statistical modeling
 
 ----------------------------------------------------------------------
 
@@ -148,33 +148,65 @@ Blocking
 
 		ANS Paired t-tests are an example of blocking (study different fingers from the same children!)
 
-	Compare like with like: pairing and blocking remove known variation
+----------------------------------------------------------------------
 
-		Callback: paired t-test
+Statistical modeling
 
-	Measure the things that predict the response, and plan to control for them
+	Adding covariates can help make your estimate more precise
 
-		Even when randomization means there is no conflation
+		Older people are more likely to have heart disease
 
-	Spend your parameters in advance
+		Taller children are likely to gain more weight
 
-		Callback: 5--10 data points per parameter
+	Remember: 5--10 data points per parameter
 
 ----------------------------------------------------------------------
 
-Observational studies
+TSS Observational studies
 
-	Often the only option: we can't randomize smoking, elevation or climate
+	Why are controlled experiments (as opposed to statistical control) the gold standard?
 
-	Conflation is the central problem
+		ANS Statistical control can never control for everything
 
-		Callback: children who smoke have higher lung capacity
+	Why do we do observational studies anyway?
 
-	We can only control for what we thought of, and measured well
+		ANS Practicality – controlled studies may be difficult or impossible
 
-	Association can be a perfectly good goal, as long as we say so
+		ANS We can't randomize children to smoke or not
 
-	Natural experiments: something close to a coin flip that we didn't flip
+	In some fields, conclusions can only be based on experiments
+
+		ANS Observational studies can still be useful for exploration
+
+----------------------------------------------------------------------
+
+Example: HIV control
+
+	Observational studies suggested that male circumcision reduced HIV transmission
+
+		ANS People who are circumcised have different cultural contexts
+
+		ANS Being circumcised as a child may affect behaviour
+
+	Only later did people attempt large, randomized experiments
+
+----------------------------------------------------------------------
+
+Example: exercise
+
+	People who are more active have better health outcomes
+
+	Is that because:
+
+		ANS Exercise improves health?
+
+		ANS People with fewer medical conditions exercise more and have better outcomes?
+
+	ANS This is an example of conflation or confounding
+
+	How might you test?
+
+		ANS Institute education programs for half of the patients in a group
 
 ----------------------------------------------------------------------
 
@@ -209,6 +241,10 @@ Who is in your data?
 	Selection can act like a collider
 
 		Example to pick: hospitalized patients, or surviving plants
+
+----------------------------------------------------------------------
+
+Natural experiments
 
 ----------------------------------------------------------------------
 

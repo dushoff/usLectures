@@ -255,6 +255,7 @@ makestuff:
 -include makestuff/os.mk
 
 -include makestuff/newtalk.mk
+-include makestuff/graphviz.mk
 -include makestuff/texj.mk
 -include makestuff/webpix.mk
 -include makestuff/mirror.mk
