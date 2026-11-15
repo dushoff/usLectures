@@ -56,11 +56,15 @@ Controlled experiments
 
 		You don't need a “control” group (e.g., radioactive rabbits)
 
+			ANS Chicken feed example, flu mask example
+
 	Groups should be as similar as possible, except for the thing that we want to compare
 
 		ANS We don't keep the two groups of rabbits separate; we only separate them for the trip to the radiocative room
 
 		ANS If we are giving village children vitamin A, we give the control group a similar pill without vitamin A
+
+		ANS We (usually) don't do one treatment in one neighborhood and another treatment in another neighborhood
 
 ----------------------------------------------------------------------
 
@@ -74,25 +78,75 @@ Blinding or masking
 
 		Also important for statisticians who need to make decisions during the study!
 
-			ANS We can also try to make all of the decisions before the study
+			ANS We can also try to make all of the statistical decisions before the study
 
 ----------------------------------------------------------------------
 
-Units and replication
+Replication
 
-	What did the randomizing act on? That is the experimental unit
+	Units of replication under the same treatment (\textbf{replicates}) are independent
 
-	Pseudoreplication: 10 fish in each of 2 tanks is 2 units, not 20
+		Nothing in common except the treatment itself
 
-		Callback: siblings and the household-level permutation
+		Must be randomized independently
 
-	More measurements of the same unit are not more units
-
-	Independence can't be checked afterwards, so it has to be designed in
+		Avoid treating them together, or assessing them together
 
 ----------------------------------------------------------------------
 
-Blocking and covariates
+Pseudoreplication
+
+	I have one radioactive rabbit and one non-radioactive rabbit
+
+		I measure each of them 12 times and do a linear model
+
+	This is a valid test of \blank\, but an invalid test of \blank.
+
+		ANS the difference between these two rabbits; the effects of radioactivity
+
+	OR I have two radioactive rabbits and two non-radioactive rabbits
+
+		I measure each of them 12 times and do a linear model
+
+		ANS: invalid
+
+	Mixing levels like this is called \textbf{pseudo-replication}
+
+----------------------------------------------------------------------
+
+Randomization
+
+	People are very bad at randomizing, and very good at unconscious bias
+
+	Randomize with a coin or computer
+
+	Make as many choices as you can \emph{before} randomizing
+
+		ANS Divide your mice randomly into groups before deciding which group gets which treatment 
+
+----------------------------------------------------------------------
+
+Covariates
+
+	In a randomized experiment, covariates don't make your experiment \emph{less valid}, but they can make it \emph{less powerful}
+
+		ANS Validity: what is the probability that the CIs will include the true value?
+
+		ANS Power: how clearly can I see? e.g., how small are the CIs?
+
+	Deal with covariates by blocking or modeling
+
+----------------------------------------------------------------------
+
+Blocking
+
+	Structure the experiment to reduce effects of covariates
+
+		ANS Randomize boys and girls separately
+
+		ANS Randomize inside each school
+
+		ANS Paired t-tests are an example of blocking (study different fingers from the same children!)
 
 	Compare like with like: pairing and blocking remove known variation
 
@@ -675,6 +729,28 @@ TSS Model choice
 	Callback: decide how many parameters you can afford, and choose them with scientific judgment
 
 	A lot of standard advice points the wrong way
+
+----------------------------------------------------------------------
+
+Prediction vs.~inference
+
+	Callback: we use statistics to confirm, estimate and predict
+
+	\emph{Prediction:} will the model give good answers for new observations?
+
+		Parameters only matter as a means to that end
+
+	\emph{Inference:} what can we say about a particular effect, and how sure are we?
+
+		Estimates and CIs need to be honest
+
+	A lot of model-choice advice is built for prediction
+
+		ANS Stepwise and AIC selection, the lasso, dropping collinear predictors
+
+		ANS Often fine for prediction; misleading for inference
+
+	Decide which one you're doing before choosing a model
 
 ----------------------------------------------------------------------
 
