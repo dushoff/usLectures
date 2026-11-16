@@ -90,20 +90,6 @@ pardirs += statsTalks
 
 ######################################################################
 
-## generalized.draft.pdf: generalized.txt generalized.md
-## generalized.draft.pdf: generalized.txt generalized.students.txt
-## generalized.draft.pdf: generalized.txt generalized.draft.tex 
-## generalized.final.pdf: generalized.txt generalized.students.txt
-## generalized.handouts.pdf: generalized.txt
-## generalized.complete.pdf: generalized.txt
-## generalized.handouts.docx: generalized.handouts.tex
-
-## generalized.merged: generalized.txt generalized.students.txt
-
-## mv -f generalized.merged generalized.txt ##
-
-######################################################################
-
 ## practice.draft.pdf: practice.txt practice.md
 ## practice.draft.pdf: practice.txt practice.students.txt
 ## practice.draft.pdf: practice.txt practice.draft.tex 
@@ -115,6 +101,20 @@ pardirs += statsTalks
 ## practice.merged: practice.txt practice.students.txt
 
 ## mv -f practice.merged practice.txt ##
+
+######################################################################
+
+## generalized.draft.pdf: generalized.txt generalized.md
+## generalized.draft.pdf: generalized.txt generalized.students.txt
+## generalized.draft.pdf: generalized.txt generalized.draft.tex 
+## generalized.final.pdf: generalized.txt generalized.students.txt
+## generalized.handouts.pdf: generalized.txt
+## generalized.complete.pdf: generalized.txt
+## generalized.handouts.docx: generalized.handouts.tex
+
+## generalized.merged: generalized.txt generalized.students.txt
+
+## mv -f generalized.merged generalized.txt ##
 
 ######################################################################
 
@@ -189,6 +189,10 @@ Ignore += *.aq.csv
 
 ######################################################################
 
+Sources += $(wildcard *.gv)
+
+## lungCapacity.gv.pdf: lungCapacity.gv
+
 ## Assignments assignments.md
 
 ## install.asn.md
@@ -208,6 +212,10 @@ Ignore += *.aq.csv
 ## project.asn.md
 ## topic.asn.md
 ## analysis.asn.md
+
+######################################################################
+
+## Graphviz
 
 ######################################################################
 
@@ -256,6 +264,7 @@ makestuff:
 -include makestuff/os.mk
 
 -include makestuff/newtalk.mk
+-include makestuff/graphviz.mk
 -include makestuff/texj.mk
 -include makestuff/webpix.mk
 -include makestuff/mirror.mk

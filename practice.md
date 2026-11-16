@@ -1,3 +1,22 @@
+
+Callback!
+
+Scale of inference
+
+	Statistical vs.~scientific
+
+
+----------------------------------------------------------------------
+
+Subsections for study design. Get rid of the callbacks. permutation example doesn't really work. The whole thing seems very outline-ish. Okay. What are some good examples of natural experiments? What's a good example of a collider? Okay. Okay. Okay.  Okay.    Okay.  Okay. talk specifically about which estimate not to use for retrospective power.  . Okay.  .  Don't do shrinkage here, I think. Okay. Okay. Add something more like Muesenberg fever. differentiate between Bayesian logic and Bayesian paradigm.
+
+Probably at Monty Hall. Okay. figure out how false discovery rates work for the last time, I hope. So, I am going to do this. Okay.  Ask Claude what it's thinking about the scales of error discussion.  Get rid of Tukey at home.  Sparingly seems unnecessary. Okay. Use the chronological age example.  Bye. Okay. Okay. Statistical journal.  Ask Claude about prediction versus inference.    What is going on with Joyless? Okay.      .
+
+go back to lung capacity both for various inflation and for planning out a full study and controlling for something in detail, blah blah. 
+
+
+----------------------------------------------------------------------
+
 Notes for the practice unit (slides are in practice.txt)
 
 ----------------------------------------------------------------------

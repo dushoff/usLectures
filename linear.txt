@@ -908,6 +908,8 @@ How many parameters?
 
 		5--10 solid, continuous data points per parameter
 
+			Independent observations of the response variable
+
 		When data points are small counts, or yes/no, we need to reduce parameters further
 
 ----------------------------------------------------------------------
@@ -976,6 +978,8 @@ Interactions in R
 
 		ANS Yes! It's linear in the \emph{parameters}
 
+CONT Interactions
+
 	How many parameters does an interaction add?
 
 		ANS Multiply the parameters of the two variables
@@ -987,6 +991,21 @@ Interactions in R
 	Example classPenguins (based on lmAsn)
 
 ----------------------------------------------------------------------
+
+Counting parameters
+
+	CONV Example: 3 species of penguin × 4 islands = 12 combinations
+
+		intercept 1
+
+		penguins 2
+
+		islands 3
+
+		interactions 2×3 = 6
+
+	Total: 12 parameters for 12 combinations
+
 
 Interpreting parameters
 
