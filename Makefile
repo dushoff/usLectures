@@ -203,9 +203,11 @@ Ignore += *.aq.csv
 
 ## lm.asn.md
 
+#### Project assignments
 ## groups.asn.md
 ## project.asn.md
 ## topic.asn.md
+## analysis.asn.md
 
 ######################################################################
 
