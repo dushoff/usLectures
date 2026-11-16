@@ -48,11 +48,15 @@ TSEC Study design
 
 		Analysis can't fix a study that's not designed to answer the research question
 
+	Also: scientific question
+
 	Start with the question: what quantity do I want to estimate, and for what population?
 
 	How small an effect can I afford to miss?
 
 ----------------------------------------------------------------------
+
+Correlation vs causation
 
 TSS Experiments
 
@@ -86,6 +90,8 @@ Blinding or masking
 
 	Human subjects should not know what group they're in
 
+		Not always practical
+
 	Ideally, researchers should know as little as possible about who is in whose group
 
 		Especially important for researchers making measurements, especially qualitative measurements
@@ -98,6 +104,7 @@ Replication
 
 	Units of replication under the same treatment (\textbf{replicates}) are independent
 
+		Different units:
 		Nothing in common except the treatment itself
 
 		Must be randomized independently
@@ -110,7 +117,7 @@ Pseudoreplication
 
 	I have one radioactive rabbit and one non-radioactive rabbit
 
-		I measure each of them 12 times and do a linear model
+		I measure each of them 12 times and do a linear model on the combined data from each treatment:
 
 	This is a valid test of \blank\, but an invalid test of \blank.
 
