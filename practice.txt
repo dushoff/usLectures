@@ -38,9 +38,13 @@ Prediction vs.~inference
 
 Example
 
-	If we want to use a small data set to figure out how to estimate lung capacity without measuring it, we might drop age or height from our prediction.
+	If we want to use a small data set to figure out how to estimate lung capacity without measuring it, we might drop age or height 
+
+		ANS Prediction
 
 	If we want to understand the effect of height, we can't drop age.
+
+		ANS Inference
 
 ----------------------------------------------------------------------
 
@@ -54,7 +58,9 @@ TSEC Study design
 
 	How small an effect can I afford to miss?
 
-		ANS Such cutoffs are based on scientific understanding, not the study data
+		ANS How big an effect is “important”?
+
+		ANS Based on scientific understanding, not the study data
 
 ----------------------------------------------------------------------
 
@@ -86,11 +92,13 @@ Controlled experiments
 
 	Groups should be as similar as possible, except for the thing that we want to compare
 
-		ANS We don't keep the two groups of rabbits separate; we only separate them for the trip to the radiocative room
+		ANS We don't keep the two groups of rabbits separate; we only separate them for the trip to the radioactive room
 
 		ANS If we are giving village children vitamin A, we give the control group a similar pill without vitamin A
 
 		ANS We (usually) don't do one treatment in one neighborhood and another treatment in another neighborhood
+
+			ANS If we do, we need a statistical model that doesn't treat children in the same neighborhood as independent
 
 ----------------------------------------------------------------------
 
@@ -105,6 +113,8 @@ Blinding or masking
 		Also important for statisticians who need to make decisions during the study!
 
 			ANS We can also try to make all of the statistical decisions before the study
+
+			ANS And \emph{journal} any decisions we need to make during the study
 
 ----------------------------------------------------------------------
 
@@ -134,7 +144,7 @@ Pseudoreplication
 
 		I measure each of them 12 times and do a linear model
 
-		ANS: invalid
+		ANS invalid
 
 	Mixing levels like this is called \textbf{pseudo-replication}
 
@@ -150,6 +160,12 @@ Randomization
 
 		ANS Divide your mice randomly into groups before deciding which group gets which treatment 
 
+	Trying to pick randomly using your brain is called \emph{haphazard} sampling
+
+		catching animals and tagging them for a particular treatment group
+
+		ANS Don't do this
+
 ----------------------------------------------------------------------
 
 Covariates
@@ -161,6 +177,8 @@ Covariates
 		ANS Power: how clearly can I see? e.g., how small are the CIs?
 
 	Deal with covariates by blocking or statistical modeling
+
+		ANS If you think they're important
 
 ----------------------------------------------------------------------
 
@@ -228,7 +246,7 @@ Example: exercise
 
 		ANS People with fewer medical conditions exercise more and have better outcomes?
 
-	ANS This is an example of conflation or confounding
+	ANS This is an example of confounding
 
 	How might you test?
 
@@ -256,21 +274,35 @@ What to control for
 
 ----------------------------------------------------------------------
 
-Who is in your data?
+Natural experiments
 
-	Callback: thinking about populations
+	A strong kind of observational study
 
-	Selection: volunteers, survivors, animals that were easy to catch, sites with good access
+	Two similar, nearby communities are in different states
 
-	Missing data is rarely missing at random
+	One state has high alcohol taxes, and the corresponding community drinks less alcohol
 
-	Selection can act like a collider
+		ANS Only one replicate per treatment
 
-		Example to pick: hospitalized patients, or surviving plants
+		ANS Still potentially useful for exploration
+
+	What if you have dozens of states with different alcohol taxes?
+
+		ANS This is a replicated experiment
+
+		ANS But you still can't control for everything
 
 ----------------------------------------------------------------------
 
-Natural experiments
+More natural experiments
+
+	Streams in areas that have been logged vs.~those that haven't.
+
+		Or upstream and downstream of a development
+
+	Villages where a health intervention has been implemented vs.~those where it is still scheduled for implementation
+
+		ANS Better if this could actually be randomized!
 
 ----------------------------------------------------------------------
 
@@ -328,10 +360,6 @@ Testing power
 
 	Change the sample size, and repeat
 
-	Works for designs that have no formula
-
-		Blocks, clusters, unequal groups, missing data
-
 ----------------------------------------------------------------------
 
 Limits of simulation
@@ -344,15 +372,13 @@ Limits of simulation
 
 	How much does each one matter for the inference?
 
-		Callback: normality matters least; independence matters most
+		Recall: normality matters least; independence matters most
 
 	Fake data is also good for debugging an analysis before the real data arrive
 
 ----------------------------------------------------------------------
 
 TSEC Power and precision
-
-	Back to “power to find”, as promised in the philosophy unit
 
 	\textbf{Power:} the probability of seeing the sign of an effect clearly, if the effect has a given size
 
@@ -382,25 +408,23 @@ What determines power?
 
 	Interactions need much more data than main effects
 
-		Callback: comparing changes between groups
-
 ----------------------------------------------------------------------
 
 What effect size?
 
 	Power analysis needs an effect size, and statistics can't choose it
 
-		Callback: the cutoff problem
-
 	Best choice: the smallest effect that would matter
 
 	Bad choice: the effect you need to justify the sample size you already have
 
-	Bad choice: a published or pilot estimate
+	Questionable choice: a published or pilot estimate
 
-		ANS These tend to be too big (see the significance filter)
+		ANS These tend to be too big
 
-	Field “small, medium, large” benchmarks avoid the scientific question
+	Good choice: scientific information at a different level
+
+		ANS Would this much growth improve the health outcome/
 
 ----------------------------------------------------------------------
 
@@ -414,7 +438,7 @@ Planning for precision
 
 	Showing an effect is small needs precision, not power to reject zero
 
-		Callback: flu masks and non-inferiority
+		Example: flu masks and non-inferiority
 
 ----------------------------------------------------------------------
 
@@ -425,8 +449,6 @@ Power after the fact
 		ANS It adds no information
 
 	It can't rescue a high P value
-
-		Callback: high P values are not evidence for anything
 
 	After the study, the CI tells you what the study could and couldn't see
 
@@ -446,21 +468,13 @@ TSS The significance filter
 
 Sign and magnitude errors
 
-	Callback: sign and magnitude error from the philosophy unit
+	We can use simulation to investigate the results of under-powered studies
 
-	\emph{Type M:} how much does a significant estimate exaggerate the truth?
+	Magnitude: how much does a significant estimate exaggerate the truth?
 
-		Ballpark: about 1.1 times at 80% power, and about 1.4 times at 50% power
+	Sign: how often does a significant estimate have the wrong sign?
 
-		Gets much worse as power falls
-
-	\emph{Type S:} how often does a significant estimate have the wrong sign?
-
-		Rare unless power is very low; then it can be alarming
-
-	Example: simulate a small true effect in a small study, and plot the “significant” estimates
-
-	ADD Gelman and Carlin 2014
+	Example: lowPower.R
 
 ----------------------------------------------------------------------
 
@@ -476,24 +490,6 @@ The winner's curse
 
 		Regression to the mean
 
-	Your pilot study has this problem too
-
-----------------------------------------------------------------------
-
-Shrinkage
-
-	Estimates that got through a filter should be pulled back towards what we expected
-
-		Towards the typical effect in this field, or the average across related estimates
-
-	Mixed models and Bayesian priors do this systematically
-
-		“Borrowing strength” across groups
-
-	The same idea comes up again in model fitting (penalized regression)
-
-	ADD Shrinkage example
-
 ----------------------------------------------------------------------
 
 Publication bias
@@ -504,13 +500,7 @@ Publication bias
 
 	The file drawer: unclear results disappear
 
-	Meta-analysis inherits the problem
-
-		Funnel plots can sometimes show it
-
 	Replication projects tend to find smaller effects
-
-	ADD Open Science Collaboration 2015
 
 ----------------------------------------------------------------------
 
@@ -578,21 +568,13 @@ Science as a screening test
 
 But the null is never true!
 
-	Callback: “There is always an effect”
-
 	The null is a \emph{counterfactual}: what would we see if there were nothing to see?
 
 	It puts a ceiling on sign errors
 
-		Callback: the probability of a sign error is less than the probability of a “false positive”
+		The probability of your observation if the truth is going the other direction …
 
-	So the table still works: count the false alarms as a ceiling on wrong-sign conclusions
-
-		ANS A real effect can only be clearly seen with the wrong sign less often than a null effect would give a false alarm
-
-	Then the mistakes to worry about are sign and magnitude errors
-
-		Callback: the significance filter
+		ANS Is less than if the truth is zero
 
 ----------------------------------------------------------------------
 
@@ -604,8 +586,6 @@ Plausibility in practice
 
 	Ask what is already known about the mechanism
 
-		Callback: MMR and autism
-
 	Prior knowledge is a legitimate part of scientific judgment, even if it isn't part of your P value
 
 ----------------------------------------------------------------------
@@ -616,9 +596,7 @@ TSS Multiple comparisons
 
 	Every individual test was valid. What went wrong?
 
-	Callback: at what level should we control $\alpha$?
-
-	ADD https://xkcd.com/882/
+	At what level should we control $\alpha$?
 
 ----------------------------------------------------------------------
 
@@ -634,8 +612,6 @@ Scale of error
 
 	There is no single correct scale, so this is a scientific decision
 
-	Discussion: why doesn't my $\alpha$ depend on what I tested last year?
-
 ----------------------------------------------------------------------
 
 Controlling the chance of any error
@@ -644,7 +620,7 @@ Controlling the chance of any error
 
 	Bonferroni: use $\alpha/m$ for $m$ tests
 
-		Callback: $\alpha$ spending, again
+		$\alpha$ spending, again
 
 		Simple, valid, and conservative
 
@@ -652,27 +628,21 @@ Controlling the chance of any error
 
 		Then ask about particular contrasts
 
-	Tukey-style methods for pairwise comparisons
-
-	Cost: less power for everything
-
 ----------------------------------------------------------------------
 
 False discovery rate
 
 	\textbf{FDR:} what proportion of the things I am calling discoveries are false?
 
-		Note the link to the base-rate calculation
+		Also based on a null counter-factual
 
-	Benjamini--Hochberg procedure, in brief
+		And a weird paradigm:
 
-	Good for screens with many tests: genes, metabolites, species
+			my expected FDR over a number of hypothetical experiments is what is controlled
+
+	Often used for screens with many things to test: genes, species
 
 		You are choosing what to follow up, not drawing a final conclusion
-
-	Counts nulls as if they were true: read this as the counterfactual ceiling on sign errors, as above
-
-	ADD Dead salmon example
 
 ----------------------------------------------------------------------
 
@@ -682,15 +652,11 @@ Fewer questions
 
 	Focus on a small set of questions, each with a small number of parameters
 
-		Callback: hypothesis-based analysis
-
 	Exploratory analysis is fine if it is called exploratory
 
 		Results are ideas for a new study
 
 	Corrections should be used sparingly
-
-		Callback: exploratory analysis slide
 
 	Corrections don't fix the significance filter
 
@@ -706,7 +672,10 @@ TSEC P-hacking and forking paths
 
 	This is the multiple-comparison problem without the bookkeeping
 
-	Callback: “wrong more than 5% of the time”
+	PRESENT Example: Listening to children's music makes you younger
+
+	NOTES HREF https://pubmed.ncbi.nlm.nih.gov/22006061/ 
+	Example: Listening to children's music makes you younger
 
 ----------------------------------------------------------------------
 
@@ -720,10 +689,6 @@ P-hacking
 
 	A few of these together can push false-positive rates to around 60%
 
-	ADD Simmons, Nelson and Simonsohn 2011
-
-	P values just below 0.05 are a warning sign
-
 ----------------------------------------------------------------------
 
 Forking paths
@@ -734,11 +699,10 @@ Forking paths
 
 		ANS With different data, you would have made different reasonable choices
 
-	The frequentist guarantee is about what you \emph{would} have done
+	PRESENT The Garden of Forking paths
 
-		Callback: the counterfactual
-
-	ADD Gelman and Loken 2013
+	NOTES HREF https://sites.stat.columbia.edu/gelman/research/unpublished/p\_hacking.pdf
+	The Garden of Forking paths
 
 ----------------------------------------------------------------------
 
@@ -748,47 +712,18 @@ Optional stopping
 
 	Each peek is another chance to cross the line
 
-	Example: simulate a null study, test after every 10 observations, and stop at $P<0.05$
-
-		ANS Error rate climbs well above $\alpha$
-
 	Stopping rules can be valid, but they need to be planned
 
 		Clinical trials do this with $\alpha$ spending
 
 ----------------------------------------------------------------------
 
-Hypothesizing after the results
-
-	HARKing: presenting an exploratory finding as if it had been predicted
-
-	The story always seems obvious afterwards
-
-	Subgroups are a classic source
-
-		“The effect was especially strong in ...”
-
-	You can't test a hypothesis on the data that suggested it
-
-----------------------------------------------------------------------
-
-Forks in your project
-
-	In-class exercise: list every decision between the raw data and your final figure
-
-		Exclusions, variable definitions, scales, model terms, comparisons
-
-	Which of these did you make after looking?
-
-	Which ones could change your conclusion?
-
-----------------------------------------------------------------------
 
 TSS Model choice
 
 	Choosing a model after seeing the data is one of the commonest forks
 
-	Callback: decide how many parameters you can afford, and choose them with scientific judgment
+	Decide how many parameters you can afford, and choose them with scientific judgment
 
 	A lot of standard advice points the wrong way
 
@@ -796,19 +731,17 @@ TSS Model choice
 
 Dropping terms
 
-	Stepwise selection and dropping “non-significant” terms
+	Dropping “non-significant” terms
 
-		ANS Accepts the null hypothesis, and then pretends it never happened
+		ANS Accepts the null hypothesis
+
+		ANS Doesn't always account for dropped “comparisons”
 
 	What's left gets CIs that are too narrow and estimates that are too large
 
-		ANS The significance filter, inside your own analysis
-
-	Example: stepwise regression on pure noise
-
 	AIC-based selection is not a way around this for inference
 
-		It has a different goal: prediction
+		ANS It's for prediction
 
 ----------------------------------------------------------------------
 
@@ -826,19 +759,17 @@ Collinearity
 
 	That is the correct answer!
 
-		ANS The model is telling you what you can't see
+		ANS The model is telling you can't see clearly
 
 ----------------------------------------------------------------------
 
 Variance inflation factors
 
-	$\mathrm{VIF}_j = 1/(1-R_j^2)$, where $R_j^2$ comes from regressing predictor $j$ on the other predictors
-
-	How much bigger is the variance of this parameter than it would be with uncorrelated predictors?
+	Ask: how much bigger is the variance of this parameter than it would be with uncorrelated predictors?
 
 	Standard advice: if VIF is more than 5 (or 10), drop a predictor
 
-	What do you think of this advice?
+	What does JD think of this advice?
 
 		ANS It's a bad idea
 
@@ -846,23 +777,13 @@ Variance inflation factors
 
 The trouble with VIF rules
 
-	Cutoffs are arbitrary, and don't depend on your question
-
-	Your CI already includes the inflation
-
-		ANS The VIF isn't telling you about an error in your inference
-
 	Dropping a confounder doesn't remove the problem, it hides it
 
-		ANS CI gets narrower around a biased estimate, with the credit given to the survivor
+		ANS CI gets narrower
+
+		ANS Estimate may not mean what was originally intended
 
 	It's another data-driven fork
-
-	Example: simulate two correlated predictors, drop one, check coverage
-
-	COMMENT Goldberger's “micronumerosity”: collinearity is just a fancy name for not having enough information
-
-	ADD Morrissey and Ruxton 2018
 
 ----------------------------------------------------------------------
 
@@ -872,27 +793,15 @@ What to do instead
 
 	Report the wide CI honestly, and say what the data can't separate
 
-	If you want the combined effect, ask about that
+	If you can't answer your question
 
-		A joint test of both parameters; a composite variable chosen on scientific grounds
+		ANS Get more data
 
-	Controls that are correlated with each other are no problem for the focal parameter
-
-		Callback: you don't have to interpret the control parameters
-
-	Get better data: more of it, or a design that separates the predictors
-
-	VIF has legitimate uses: planning, and understanding why a CI is wide
+		ANS or a better study design
 
 ----------------------------------------------------------------------
 
-TSEC Good practice
-
-	None of this means that analysis has to be joyless
-
-	The goal is to know which of your results you can lean on, and to tell your readers
-
-	Plan what you can, be open about the rest, and report what you see
+SEC Good practice
 
 ----------------------------------------------------------------------
 
@@ -912,6 +821,22 @@ Analysis plans
 
 ----------------------------------------------------------------------
 
+Journalling
+
+	Keep a complete statistical journal:
+
+		Everything you looked at, everything you decided
+
+		Exclusions, variable definitions, scales, model terms, comparisons
+
+	Which of these did you make after looking?
+
+	Which ones could change your conclusion?
+
+	Allows you and others to honestly evaluate your philosophical approach
+
+----------------------------------------------------------------------
+
 Confirmatory and exploratory
 
 	Both are valuable; the problem is mixing them up
@@ -920,7 +845,7 @@ Confirmatory and exploratory
 
 	Report exploratory results as descriptions, and as ideas
 
-	Split your data, or get new data, if you can afford it
+	Use your findings to plan new experiments
 
 ----------------------------------------------------------------------
 
@@ -930,7 +855,7 @@ Sensitivity analysis
 
 	Report the alternatives, not just the favourite
 
-	Callback: outliers
+		We talked about this with outliers
 
 	Multiverse analysis: run all the reasonable forks at once
 
@@ -974,11 +899,11 @@ Clarity language
 
 Significant and not significant
 
-	Still the commonest error in the literature
+	Still a very common error in the literature
 
 		The difference between “significant” and “not significant” is not necessarily significant
 
-	Callback: flu deaths, and the rabbits
+	Example: flu deaths, and the rabbits
 
 	To compare two effects, estimate the difference
 
@@ -1000,19 +925,17 @@ Reproducible work
 
 Reading a paper
 
-	A checklist that pulls the unit together
+	What was the unit, and how many were there?
 
-		What was the unit, and how many were there?
+	Was the analysis planned? How many forks and tests were there?
 
-		Was the analysis planned? How many forks and tests were there?
+	What power did it have for an effect that matters?
 
-		What power did it have for an effect that matters?
+	How plausible was this before the study?
 
-		How plausible was this before the study?
+	Is the estimate likely to be exaggerated?
 
-		Is the estimate likely to be exaggerated?
-
-		What do the CIs say?
+	What do the CIs say?
 
 ----------------------------------------------------------------------
 
