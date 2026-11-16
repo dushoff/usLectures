@@ -4,7 +4,7 @@ UNIT 5: Statistical practice
 
 Overview
 
-	So far: what a statistical test means if you do one planned test, on a good study, and report it whatever happens
+	We have learned a bit about particular statistical tests
 
 	Real science: many possible tests, limited data, choices made along the way, and only some results get seen
 
@@ -12,7 +12,35 @@ Overview
 
 		Statistics still isn't magic
 
-	Running question: what should I believe after I see this result?
+----------------------------------------------------------------------
+
+Prediction vs.~inference
+
+	Recall: “we use statistics to confirm, estimate and predict”
+
+	\emph{Prediction:} will the model give good answers for new observations?
+
+		Parameters only matter as a means to that end
+
+	\emph{Inference:} what can we say about a particular effect, and how sure are we?
+
+		Estimates and CIs need to be honest
+
+	A lot of model-choice advice is built for prediction
+
+		Dropping predictors that don't look important (significance, or “information criteria” like AIC)
+
+		ANS Bad for frequentism, lead to over-confidence
+
+	This course will focus on inference, not prediction
+
+----------------------------------------------------------------------
+
+Example
+
+	If we want to use a small data set to figure out how to estimate lung capacity without measuring it, we might drop age or height from our prediction.
+
+	If we want to understand the effect of height, we can't drop age.
 
 ----------------------------------------------------------------------
 
@@ -20,15 +48,13 @@ TSEC Study design
 
 	The most important statistical decisions are made before there are any data
 
-		Analysis can't fix a study that can't answer the question
+		Analysis can't fix a study that's not designed to answer the research question
 
 	Start with the question: what quantity do I want to estimate, and for what population?
 
-	What would I conclude from each possible result?
+	How small an effect can I afford to miss?
 
-	What would a “too small to matter” effect be?
-
-		Callback: cutoffs must be scientific
+		ANS Such cutoffs are based on scientific understanding, not the study data
 
 ----------------------------------------------------------------------
 
@@ -765,28 +791,6 @@ TSS Model choice
 	Callback: decide how many parameters you can afford, and choose them with scientific judgment
 
 	A lot of standard advice points the wrong way
-
-----------------------------------------------------------------------
-
-Prediction vs.~inference
-
-	Callback: we use statistics to confirm, estimate and predict
-
-	\emph{Prediction:} will the model give good answers for new observations?
-
-		Parameters only matter as a means to that end
-
-	\emph{Inference:} what can we say about a particular effect, and how sure are we?
-
-		Estimates and CIs need to be honest
-
-	A lot of model-choice advice is built for prediction
-
-		ANS Stepwise and AIC selection, the lasso, dropping collinear predictors
-
-		ANS Often fine for prediction; misleading for inference
-
-	Decide which one you're doing before choosing a model
 
 ----------------------------------------------------------------------
 

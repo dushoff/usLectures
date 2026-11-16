@@ -118,7 +118,6 @@ pardirs += statsTalks
 
 ######################################################################
 
-
 ## Prep an interactive slides file
 %.students.txt: | %.txt
 	cat $| | perl -00 -ne 'print unless /ANS/' | cat -s > $@
@@ -190,6 +189,10 @@ Ignore += *.aq.csv
 
 ######################################################################
 
+Sources += $(wildcard *.gv)
+
+## lungCapacity.gv.pdf: lungCapacity.gv
+
 ## Assignments assignments.md
 
 ## install.asn.md
@@ -207,6 +210,10 @@ Ignore += *.aq.csv
 ## groups.asn.md
 ## project.asn.md
 ## topic.asn.md
+
+######################################################################
+
+## Graphviz
 
 ######################################################################
 

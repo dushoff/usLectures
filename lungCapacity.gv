@@ -1,0 +1,17 @@
+// Predictors of lung capacity: age and sex act directly, and also through height
+digraph {
+	rankdir=LR
+	node [shape=plaintext, fontname="Helvetica"]
+
+	Age; Sex
+	Height
+	lungCapacity [label="Lung capacity"]
+
+	{rank=same; Age; Sex}
+
+	Age -> Height
+	Sex -> Height
+	Height -> lungCapacity
+	Age -> lungCapacity
+	Sex -> lungCapacity
+}
