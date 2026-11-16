@@ -1,11 +1,12 @@
 
-Come back to Overview
-
-Inference and prediction
+Callback!
 
 Scale of inference
 
 	Statistical vs.~scientific
+
+
+----------------------------------------------------------------------
 
 Subsections for study design. Get rid of the callbacks. permutation example doesn't really work. The whole thing seems very outline-ish. Okay. What are some good examples of natural experiments? What's a good example of a collider? Okay. Okay. Okay.  Okay.    Okay.  Okay. talk specifically about which estimate not to use for retrospective power.  . Okay.  .  Don't do shrinkage here, I think. Okay. Okay. Add something more like Muesenberg fever. differentiate between Bayesian logic and Bayesian paradigm.
 
