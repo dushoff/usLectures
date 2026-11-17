@@ -54,6 +54,8 @@ TSEC Study design
 
 		Analysis can't fix a study that's not designed to answer the research question
 
+	PENDING Also: scientific question
+
 	Start with the question: what quantity do I want to estimate, and for what population?
 
 	How small an effect can I afford to miss?
@@ -65,6 +67,8 @@ TSEC Study design
 ----------------------------------------------------------------------
 
 TSS Experiments
+
+PENDING Correlation vs causation
 
 	The gold standard for scientific inference
 
@@ -106,6 +110,8 @@ Blinding or masking
 
 	Human subjects should not know what group they're in
 
+		PENDING Not always practical
+
 	Ideally, researchers should know as little as possible about who is in whose group
 
 		Especially important for researchers making measurements, especially qualitative measurements
@@ -124,6 +130,9 @@ Replication
 
 		Nothing in common except the treatment itself
 
+		PENDING Different units:
+		Nothing in common except the treatment itself
+
 		Must be randomized independently
 
 		Avoid treating them together, or assessing them together
@@ -135,6 +144,8 @@ Pseudoreplication
 	I have one radioactive rabbit and one non-radioactive rabbit
 
 		I measure each of them 12 times and do a linear model
+
+		PENDING I measure each of them 12 times and do a linear model on the combined data from each treatment:
 
 	This is a valid test of \blank\, but an invalid test of \blank.
 
@@ -717,7 +728,6 @@ Optional stopping
 		Clinical trials do this with $\alpha$ spending
 
 ----------------------------------------------------------------------
-
 
 TSS Model choice
 
