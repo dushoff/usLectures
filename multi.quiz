@@ -1,0 +1,93 @@
+INTRO The goal here is learning, not testing. Take your time and think about the questions. You can go through as many times as necessary to get the answers right, but you're not learning unless you're learning.
+
+MC You fit `lm(yield ~ variety)`, where `variety` is a categorical variable with four varieties of wheat. R reports an intercept and three other parameters. The three other parameters are:
+
+The mean yield of each of the other three varieties
+
+* The difference in mean yield between each of the other three varieties and the baseline variety
+
+The difference between each variety and the overall mean yield
+
+Slopes that tell us how fast yield changes from one variety to the next
+
+FF R codes each non-baseline category with a “dummy variable” of 0s and 1s. The intercept is the estimate for the baseline category, and each other parameter is a difference from that baseline. This is the same model fit as one with four group means, just parameterized differently.
+
+MC You fit a quadratic model of plant growth as a function of temperature using `poly(temp, 2)`. Your main scientific question is whether growth levels off (curves downward) at high temperatures. Which parameter should you focus on?
+
+The intercept
+
+The linear term
+
+* The quadratic term
+
+All three, using a P value for each
+
+FF The quadratic term tells us about curvature: whether the response curves up or down. If our question were about the average trend in the presence of curvature, we would look at the CI for the linear term instead.
+
+MC Regular exercise may lower blood pressure partly by reducing body weight. If we want to know the _total_ effect of exercise on blood pressure, we should:
+
+* Leave body weight out of the model
+
+Include body weight in the model
+
+Include body weight only if it is significant
+
+Include body weight and its interaction with exercise
+
+FF Body weight is a _mediator_: it lies on the path from exercise to blood pressure. Including it would “control away” part of the effect we are interested in, leaving only the effect of exercise that doesn't go through weight. Whether to include a mediator depends on the scientific question.
+
+MC A study finds that the effect of a fertilizer on plant growth is stronger in wet years than in dry years. This also means that:
+
+The effect of rainfall on growth must be the same with and without the fertilizer
+
+* The effect of rainfall on growth is different with and without the fertilizer
+
+We need a separate study to learn whether the effect of rainfall depends on fertilizer
+
+Nothing; interactions only work in one direction
+
+FF Interactions are symmetric. If the effect of fertilizer depends on rainfall, then the effect of rainfall depends on fertilizer. We can choose whichever way of saying it best matches our scientific question.
+
+MC You model fish length as a function of water temperature (continuous) and lake (four different lakes), _with_ an interaction between them. How many parameters does the interaction add to the model?
+
+1
+
+* 3
+
+4
+
+12
+
+FF Multiply the number of parameters for each variable. Temperature has 1 (a slope), and lake has 3 (differences from a baseline lake), so the interaction adds 1 × 3 = 3 parameters: the difference between each lake's slope and the slope for the baseline lake.
+
+SA You fit `lm(weight ~ height * sex)` to data on adults, with female as the baseline. Why might the `sexmale` parameter be hard to interpret, and what could you do about it?
+
+ANS Good things to mention include:
+
+* In a model with an interaction, `sexmale` is the difference between the sexes when height is zero
+* This doesn't make sense: nobody has height zero!
+* You could center height (subtract a reference value, like the mean); then `sexmale` is the difference between the sexes at that reference height
+
+MC You measure 25 different traits in two groups of mice, and find that 2 of the 25 differences are statistically significant (P < 0.05). What is the best conclusion?
+
+These 2 traits really differ between the groups
+
+* These are possibly interesting differences that could be tested in a new, hypothesis-based study
+
+None of the traits really differ between the groups
+
+You should repeat the analysis with a P value correction until you find the real differences
+
+FF This is an exploratory analysis. With 25 tests, we would expect a little more than one “significant” result even if nothing were going on. Exploratory results can suggest hypotheses, but shouldn't be believed until they are tested with a study designed to answer a small set of specific questions.
+
+MC You have data on 30 independent patients, and you want to estimate the effect of a treatment while controlling for as many as 12 other variables that might matter. What is the main problem?
+
+The model will be invalid because the variables are correlated
+
+* With so many parameters, the linear model will find patterns in noise, and the estimates will be imprecise
+
+R cannot fit a model with more than 10 predictors
+
+There is no problem, since controlling for more variables always helps
+
+FF Statistics isn't magic. A rough rule of thumb is that we want 5–10 solid, continuous data points per parameter. With 30 data points, you should decide on a small number of variables to control for, based on scientific judgment (not based on preliminary analyses of the same data).
