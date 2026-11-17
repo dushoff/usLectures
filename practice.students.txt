@@ -56,9 +56,9 @@ TSEC Study design
 
 ----------------------------------------------------------------------
 
-Correlation vs causation
-
 TSS Experiments
+
+Correlation vs causation
 
 	The gold standard for scientific inference
 
