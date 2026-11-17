@@ -1,10 +1,7 @@
 
-Callback!
+Come back to polynomials and splines
 
-Scale of inference
-
-	Statistical vs.~scientific
-
+Somebody asked if the independent-looking penguin lines were just independent models
 
 ----------------------------------------------------------------------
 
