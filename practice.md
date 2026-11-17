@@ -1,4 +1,5 @@
 
+<<<<<<< HEAD
 Come back to polynomials and splines
 
 Somebody asked if the independent-looking penguin lines were just independent models
@@ -8,17 +9,19 @@ Somebody asked if the independent-looking penguin lines were just independent mo
 Subsections for study design. Get rid of the callbacks. permutation example doesn't really work. The whole thing seems very outline-ish. Okay. What are some good examples of natural experiments? What's a good example of a collider? Okay. Okay. Okay.  Okay.    Okay.  Okay. talk specifically about which estimate not to use for retrospective power.  . Okay.  .  Don't do shrinkage here, I think. Okay. Okay. Add something more like Muesenberg fever. differentiate between Bayesian logic and Bayesian paradigm.
 
 Probably at Monty Hall. Okay. figure out how false discovery rates work for the last time, I hope. So, I am going to do this. Okay.  Ask Claude what it's thinking about the scales of error discussion.  Get rid of Tukey at home.  Sparingly seems unnecessary. Okay. Use the chronological age example.  Bye. Okay. Okay. Statistical journal.  Ask Claude about prediction versus inference.    What is going on with Joyless? Okay.      .
+=======
+What are some good examples of natural experiments? What's a good example of a collider? talk specifically about which estimate not to use for retrospective power.  Add something more like Muesenberg fever. differentiate between Bayesian logic and Bayesian paradigm.
+
+Probably add Monty Hall. Okay. figure out how false discovery rates work for the last time, I hope. 
+
+Causation and correlation
+>>>>>>> 4caf82d5bc545f4f96aac9b5b11fea71e5f8eff4
 
 go back to lung capacity both for various inflation and for planning out a full study and controlling for something in detail, blah blah. 
 
-
 ----------------------------------------------------------------------
 
-Notes for the practice unit (slides are in practice.txt)
-
-----------------------------------------------------------------------
-
-Your earlier notes (all addressed in the slides)
+Earlier notes (all addressed in the slides)
 
 	multiple comparisons, scale of error, fdr
 
