@@ -1,4 +1,10 @@
 
+Need to talk more about exploration:
+
+It's always fine to explore your predictors and response variables _separately_. Bringing them together risks poisoning
+
+----------------------------------------------------------------------
+
 Come back to polynomials and splines
 
 Somebody asked if the independent-looking penguin lines were just independent models

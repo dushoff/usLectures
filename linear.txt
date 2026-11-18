@@ -336,6 +336,8 @@ Effect sizes
 
 			OLDANS Or: (ml CO2/h)/degC!
 
+			CONV Depending on whether we use the categorical model or the continuous model 
+
 		OLDANS inches for the height; L for the volume.
 
 	How should we know if they are large or not?
@@ -462,9 +464,11 @@ Standard error
 
 		Same units as the parameter
 
-		OLDANS The same as the variable for a categorical predictor
+			CONV For a categorical predictor, the parameter has the same using as the response variable
 
-		CONV Units of reponse per units of predictor for a continuous predictor
+			CONV For a continuous predictor, the parameter has 
+
+			CONV Units of reponse per units of predictor for a continuous predictor
 
 	Estimate divided by standard error is a measure of certainty
 
@@ -474,7 +478,7 @@ Standard error
 
 			We won't use it here
 
-			ADD https://xkcd.com/1378/
+			NOTES https://xkcd.com/1378/
 
 ----------------------------------------------------------------------
 
@@ -844,11 +848,9 @@ Scientific question
 
 		ANS People might be taller because they're older
 
-		ANS We might want to exclude it to see direct effects of age
+		CONV We might want to include height it to see direct effects of age
 
-		ANS Or include it to see total effects
-
-		PENDING exclude/include are backwards!!
+		CONV Or exclude it to see total effects
 
 	Age cannot be caused by height
 
@@ -864,7 +866,7 @@ Controlling
 
 		ANS Also the effect of sex, height, ..., maybe
 
-		PENDING Relevant medical conditions if available
+			CONV also, relevant medical conditions if available
 
 	When you control for a variable, you don't necessarily need to interpret the parameters of that variable at all!
 
@@ -908,7 +910,7 @@ How many parameters?
 
 		5--10 solid, continuous data points per parameter
 
-			Independent observations of the response variable
+			CONV Independent observations of the response variable
 
 		When data points are small counts, or yes/no, we need to reduce parameters further
 
@@ -986,9 +988,13 @@ CONT Interactions
 
 		ANS Continuous and two categories: 1
 
+			CONV Assuming the continuous is model with a single slope
+
 		ANS Three categories and four categories: $2 \times 3 = 6$
 
-	Example classPenguins (based on lmAsn)
+		CONV See both classPenguins.R and classPenguins.md
+
+			NOTES HREF https://github.com/dushoff/usCode/blob/main/classPenguins.Rout code repo
 
 ----------------------------------------------------------------------
 
@@ -1007,6 +1013,8 @@ Counting parameters
 	Total: 12 parameters for 12 combinations
 
 
+----------------------------------------------------------------------
+
 Interpreting parameters
 
 	$y = a + b x + c z + d xz$, where $z$ is 0 for baseline, and 1 for the other group
@@ -1019,7 +1027,7 @@ Interpreting parameters
 
 		ANS The \emph{difference} between the slopes
 
-	What does $c$ mean now?
+	What does $c$ mean now (i.e., with interaction)?
 
 		ANS The difference between the groups when $x$ is zero
 
@@ -1030,6 +1038,26 @@ Interpreting parameters
 	Parameters for the other variables are no longer overall effects
 
 ----------------------------------------------------------------------
+
+CONT Interpreting parameters
+
+	CONV $y = a + b x + c z + d xz$
+
+	CONV For the baseline group, $z=0$
+
+		CONV $y = a + b x$
+
+	CONV For the other group, $z=1$
+
+		CONV $y = a + b x + c + d x$
+
+		CONV $= a + c + (b+d) x$
+
+		CONV Intercept is $a+c$, slope is $b+d$
+
+
+----------------------------------------------------------------------
+
 
 Main effects
 

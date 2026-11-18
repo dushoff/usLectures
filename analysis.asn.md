@@ -1,5 +1,5 @@
 
-Please submit one assignment per group. Include your group name.
+Please submit one assignment per group. Include your group name. There is no need to submit a note telling us who submitted for you.
 
 What is your main hypothesis (one or two questions, each with a single main statistical test)?
 

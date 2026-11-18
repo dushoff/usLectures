@@ -30,7 +30,7 @@ Prediction vs.~inference
 
 		Dropping predictors that don't look important (significance, or “information criteria” like AIC)
 
-		ANS Bad for frequentism, lead to over-confidence
+		OLDANS Bad for frequentism, lead to over-confidence
 
 	This course will focus on inference, not prediction
 
@@ -40,11 +40,11 @@ Example
 
 	If we want to use a small data set to figure out how to estimate lung capacity without measuring it, we might drop age or height 
 
-		ANS Prediction
+		OLDANS Prediction
 
 	If we want to understand the effect of height, we can't drop age.
 
-		ANS Inference
+		OLDANS Inference
 
 ----------------------------------------------------------------------
 
@@ -54,21 +54,19 @@ TSEC Study design
 
 		Analysis can't fix a study that's not designed to answer the research question
 
-	PENDING Also: scientific question
+	CONV How do I translate my scientific question into a statistical question?
 
-	Start with the question: what quantity do I want to estimate, and for what population?
+		What quantity do I want to estimate, and for what population?
 
 	How small an effect can I afford to miss?
 
-		ANS How big an effect is “important”?
+		OLDANS How big an effect is “important”?
 
-		ANS Based on scientific understanding, not the study data
+		OLDANS Based on scientific understanding, not the study data
 
 ----------------------------------------------------------------------
 
 TSS Experiments
-
-PENDING Correlation vs causation
 
 	The gold standard for scientific inference
 
@@ -92,17 +90,17 @@ Controlled experiments
 
 		You don't need a “control” group (e.g., radioactive rabbits)
 
-			ANS Chicken feed example, flu mask example
+			OLDANS Chicken feed example, flu mask example
 
 	Groups should be as similar as possible, except for the thing that we want to compare
 
-		ANS We don't keep the two groups of rabbits separate; we only separate them for the trip to the radioactive room
+		OLDANS We don't keep the two groups of rabbits separate; we only separate them for the trip to the radioactive room
 
-		ANS If we are giving village children vitamin A, we give the control group a similar pill without vitamin A
+		OLDANS If we are giving village children vitamin A, we give the control group a similar pill without vitamin A
 
-		ANS We (usually) don't do one treatment in one neighborhood and another treatment in another neighborhood
+		OLDANS We (usually) don't do one treatment in one neighborhood and another treatment in another neighborhood
 
-			ANS If we do, we need a statistical model that doesn't treat children in the same neighborhood as independent
+			OLDANS If we do, we need a statistical model that doesn't treat children in the same neighborhood as independent
 
 ----------------------------------------------------------------------
 
@@ -110,7 +108,7 @@ Blinding or masking
 
 	Human subjects should not know what group they're in
 
-		PENDING Not always practical
+		STUDENTS Not always practical
 
 	Ideally, researchers should know as little as possible about who is in whose group
 
@@ -118,9 +116,9 @@ Blinding or masking
 
 		Also important for statisticians who need to make decisions during the study!
 
-			ANS We can also try to make all of the statistical decisions before the study
+			OLDANS We can also try to make all of the statistical decisions before the study
 
-			ANS And \emph{journal} any decisions we need to make during the study
+			OLDANS And \emph{journal} any decisions we need to make during the study
 
 ----------------------------------------------------------------------
 
@@ -128,14 +126,15 @@ Replication
 
 	Units of replication under the same treatment (\textbf{replicates}) are independent
 
-		Nothing in common except the treatment itself
+		CONV Different units under the same treatment have nothing in common except the treatment itself
 
-		PENDING Different units:
-		Nothing in common except the treatment itself
+			Except what they share with everyonoe
 
 		Must be randomized independently
 
 		Avoid treating them together, or assessing them together
+
+			OLDANS Don't assess all of your irradiated rabbits in the morning and the sham rabbits in the afternoon
 
 ----------------------------------------------------------------------
 
@@ -143,19 +142,17 @@ Pseudoreplication
 
 	I have one radioactive rabbit and one non-radioactive rabbit
 
-		I measure each of them 12 times and do a linear model
-
-		PENDING I measure each of them 12 times and do a linear model on the combined data from each treatment:
+		CONV I measure each of them 12 times and do a linear model on the combined data from each treatment:
 
 	This is a valid test of \blank\, but an invalid test of \blank.
 
-		ANS the difference between these two rabbits; the effects of radioactivity
+		OLDANS the difference between these two rabbits; the effects of radioactivity
 
 	OR I have two radioactive rabbits and two non-radioactive rabbits
 
-		I measure each of them 12 times and do a linear model
+		CONV I measure each rabbit 12 times and do a linear model comparing the 24 irradiated and 24 sham measurements
 
-		ANS invalid
+		OLDANS invalid
 
 	Mixing levels like this is called \textbf{pseudo-replication}
 
@@ -169,13 +166,13 @@ Randomization
 
 	Make as many choices as you can \emph{before} randomizing
 
-		ANS Divide your mice randomly into groups before deciding which group gets which treatment 
+		OLDANS Divide your mice randomly into groups before deciding which group gets which treatment 
 
 	Trying to pick randomly using your brain is called \emph{haphazard} sampling
 
 		catching animals and tagging them for a particular treatment group
 
-		ANS Don't do this
+		OLDANS Don't do this
 
 ----------------------------------------------------------------------
 
@@ -317,7 +314,27 @@ More natural experiments
 
 ----------------------------------------------------------------------
 
-TSEC Simulation
+Correlation vs causation
+
+	Correlation is what we observe directly
+
+		ANS Children who smoke tend to have lower lung capacity
+
+	Causation refers to mechanism
+
+		ANS Smoking lowers the lung capacity of children
+
+	Statistical evidence can directly support causation
+
+		ANS Only in a randomized experiment
+
+	Statistical evidence can indirectly support causation
+
+		ANS When combined with scientific evidence
+
+----------------------------------------------------------------------
+
+TSS Simulation
 
 	We rarely know the truth about real data
 
@@ -326,8 +343,6 @@ TSEC Simulation
 	A few lines of R can replace a lot of formulas
 
 	It also forces us to say what we think our study looks like
-
-	We will use this as our laboratory for the rest of the unit
 
 ----------------------------------------------------------------------
 
@@ -357,7 +372,7 @@ Testing validity
 
 		This is called \textbf{coverage}
 
-	Example: analyze the fish tanks as if each fish were independent
+	Example: fishTanks
 
 		ANS We reject far too often
 
@@ -413,15 +428,15 @@ What determines power?
 
 		ANS Twice the precision takes four times the data
 
-	Design can do as much as sample size
+	Design can be as important as sample size
 
 		Better measurements, blocking, covariates
 
-	Interactions need much more data than main effects
+	Interactions usually need more data than main effects
 
 ----------------------------------------------------------------------
 
-What effect size?
+What effect size to use?
 
 	Power analysis needs an effect size, and statistics can't choose it
 
@@ -435,7 +450,7 @@ What effect size?
 
 	Good choice: scientific information at a different level
 
-		ANS Would this much growth improve the health outcome/
+		ANS Would this much growth improve the health outcome?
 
 ----------------------------------------------------------------------
 
@@ -461,7 +476,7 @@ Power after the fact
 
 	It can't rescue a high P value
 
-	After the study, the CI tells you what the study could and couldn't see
+	After the study, the CI tells you what the study did and didn't see
 
 ----------------------------------------------------------------------
 

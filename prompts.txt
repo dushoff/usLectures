@@ -1,13 +1,17 @@
 
-----------------------------------------------------------------------
-
 Index card
 
 	Your text should be \emph{large} and \emph{legible}
 
 	Put your macid (or just your surname) on the blank side
 
-	\emph{On the other side,} answer
+	\emph{On the other side,} write:
+
+		Anything (academic-themed) you want to say to JD and/or Natassja
+
+----------------------------------------------------------------------
+
+EXTRA
 
 		If you've heard about the Monty Hall problem:
 

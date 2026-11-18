@@ -17,6 +17,9 @@ draft final: ^DEFHEAD {\sl %%}
 ADDED ADDED: %%
 handouts complete: {\errmessage{ADDED}}
 
+ADD %!
+draft: ADD: %%
+
 ## Rule of thumb: \texttt is fine for short inline snippets without % $ # _ & ~ ^ \ { }. 
 
 CODE \texttt{%%}
