@@ -1,4 +1,4 @@
-INTRO The goal here is learning, not testing. Take your time and think about the questions. You can go through as many times as necessary to get the answers right, but you're not learning unless you're learning.
+INTRO The goal here is learning, not testing. Take your time and think about the questions. You can go through as many times as necessary to get the answers right.
 
 MC You fit `lm(yield ~ variety)`, where `variety` is a categorical variable with four varieties of wheat. R reports an intercept and three other parameters. The three other parameters are:
 
