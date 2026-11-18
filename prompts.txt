@@ -9,3 +9,60 @@ Index card
 
 		Anything (academic-themed) you want to say to JD and/or Natassja
 
+
+----------------------------------------------------------------------
+
+EXTRA
+
+		If you've heard about the Monty Hall problem:
+
+			How would you phrase the question?
+
+			What is your answer?
+
+		Otherwise
+
+			What is a mathematical or philosophical paradox that you like?
+
+			Do you have an answer?
+
+	Prompts (Copy, don't delete)
+
+		One question
+
+		One comment
+
+
+		A linear model you would like me to review
+
+		A linear model you would like me to try (based on course data, or not)
+
+
+		were you convinced of anything?
+
+		were you unconvinced by anything?
+
+
+		one thing you learned today
+
+		one thing you would like to review, or learn more about 
+
+
+		one thing you like about the course so far
+
+		one thing you don't like about the course so far
+
+
+		A statistical question that interests you
+
+		A scientific question that interests you
+
+		(Can be the same, if that makes sense)
+
+		You will have a chance to follow this up in your assignment
+
+
+		Something you hope to do for the projects
+
+		Something you hope to avoid for the projects
+
