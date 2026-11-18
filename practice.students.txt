@@ -146,6 +146,8 @@ Covariates
 
 	In a randomized experiment, covariates don't make your experiment \emph{less valid}, but they can make it \emph{less powerful}
 
+		Gold standard: in the counterfactual where nothing 
+
 	Deal with covariates by blocking or statistical modeling
 
 ----------------------------------------------------------------------
