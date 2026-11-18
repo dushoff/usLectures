@@ -178,7 +178,6 @@ Sources += $(wildcard *.quiz)
 ## multi.aq.csv: multi.quiz ## another linear quiz
 ## multi.quiz.html: multi.quiz
 
-
 ## newlin.aq.csv: newlin.quiz  ## Not used yet
 ## newlin.quiz.html: newlin.quiz
 
