@@ -184,6 +184,8 @@ Covariates
 
 		ANS Power: how clearly can I see? e.g., how small are the CIs?
 
+		CONV Gold standard: in the counterfactual where nothing is happening, I should falsely see something clear $<\alpha$ of the time.
+
 	Deal with covariates by blocking or statistical modeling
 
 		ANS If you think they're important

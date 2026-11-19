@@ -98,7 +98,7 @@ pardirs += statsTalks
 ## practice.complete.pdf: practice.txt
 ## practice.handouts.docx: practice.handouts.tex
 
-## practice.merged: practice.txt practice.students.txt
+practice.merged: practice.txt practice.students.txt
 
 ## mv -f practice.merged practice.txt ##
 
