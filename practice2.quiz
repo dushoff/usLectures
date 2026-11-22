@@ -1,0 +1,259 @@
+INTRO More practice on linear models. The goal here is learning, not testing. Take your time and think about the questions. You can go through as many times as necessary to get the answers right.
+
+MC Which of these models does _not_ include an intercept?
+
+`lm(y ~ 1 + x)`
+
+`lm(y ~ x)`
+
+* `lm(y ~ 0 + x)`
+
+`lm(y ~ x + 1)`
+
+FF R includes an intercept unless you tell it not to, and intercepts are usually good.
+
+MC Which of these is _not_ a linear model? ($y$ is the response, $t$ is time, and other letters are parameters.)
+
+$y = a + b t + c t^2$
+
+$\log(y) = a + b t$
+
+* $y = a e^{bt}$
+
+$y = a + b \log(t)$
+
+FF A linear model needs to be linear in its _parameters_, not in its predictors. $y = a e^{bt}$ isn't linear in $b$ as written, but if we take logs we get $\log(y) = \log(a) + b t$, which is a linear model for $\log(y)$.
+
+MC Which of these do the inferences from a linear model (CIs and P values) assume are normally distributed?
+
+The response variable
+
+The predictor variables
+
+* The differences between the observed responses and the model's predictions
+
+The parameter estimates, but only when the sample size is small
+
+FF The assumptions are about the _residuals_ — what's left over after the model has explained what it can. A response variable can look very non-normal (because the predictors vary a lot) while the residuals are fine.
+
+MC You have a very large data set, and a formal test shows that your residuals are significantly non-normal (P < 0.001). What is the best interpretation?
+
+Your linear-model inferences are invalid
+
+You should keep removing outliers until the test is no longer significant
+
+* With lots of data, small departures from normality are easy to detect, but they also matter less; you should look at _how_ non-normal the residuals are
+
+The test is wrong, since large data sets are always normal
+
+FF Normality tests are like other P values: they tell you how clearly you can see a difference, not whether it is important. With more data, the test sees small differences more clearly, but the linear model also becomes less sensitive to non-normality. Diagnostic plots are more useful than tests.
+
+MC You test your residuals for constant variance and get P = 0.4. What can you conclude?
+
+The variance is constant
+
+The variance is close enough to constant
+
+* You don't have clear evidence that the variance changes, but that doesn't mean it doesn't
+
+The model inferences are valid
+
+FF Failing to reject a null hypothesis isn't evidence that the null is true. A small study can easily miss large problems. Look at the diagnostic plots and think about what you know about the system.
+
+MC A colleague wants to _predict_ fish catch in different lakes, and has lots of data. She tries several models and keeps the one that predicts best on new data. A second colleague wants to estimate the _effect_ of water temperature on catch, and uses the same approach to choose which variables to control for. Which colleague is using a reasonable approach?
+
+Both
+
+* Only the first
+
+Only the second
+
+Neither
+
+FF Choosing variables by how well the model fits is a reasonable approach for prediction (especially when we can test on new data). But for inference, choosing variables based on the data makes our CIs and P values too optimistic. Variables to control for should be chosen based on scientific judgment, before looking at the results.
+
+MC A researcher puts one cage of mice on a high-fat diet and one cage on a regular diet, and weighs 15 mice from each cage at the end of the study. What is the main problem with treating this as a comparison of 30 independent observations?
+
+* Mice in the same cage share many things besides diet, so this is really one comparison between two cages
+
+The sample size is too small for a linear model
+
+Mouse weights are not normally distributed
+
+There is no problem, as long as the mice were assigned to cages at random
+
+FF This is _pseudoreplication_. The cage, not the mouse, is the unit that received the treatment. Any difference between the cages (temperature, social dynamics, a sick mouse) could look like a diet effect. The data validly compare _these two cages_, but tell us little about the effect of diet.
+
+MC You measure blood pressure on each of 20 patients before and after a treatment. The table `bp` has one row per patient, with columns `before` and `after`. Which code gives a paired analysis of the change?
+
+`lm(after ~ before, data=bp)`
+
+* `lm(after - before ~ 1, data=bp)`
+
+`lm(after ~ 1, data=bp)`
+
+`lm(before ~ after, data=bp)`
+
+FF A paired analysis looks at the difference within each pair. Once we have the differences, we just want to estimate their mean, which is what a model with only an intercept (`~ 1`) does.
+
+MC You model plant height (cm) as a function of fertilizer dose (g/m²). The fitted slope is 0.8. What are its units?
+
+cm
+
+g/m²
+
+* cm per (g/m²)
+
+It has no units
+
+FF A slope tells us how much the response changes per unit change in the predictor, so its units are (response units)/(predictor units). Paying attention to units is a good way to check that you know what a parameter means.
+
+MC Two models of bird wing length:
+```
+lm(wing ~ sex)       # sex: female (baseline) or male
+lm(wing ~ mass)      # mass in grams
+```
+What do the two intercepts mean?
+
+Both are the average wing length in the data
+
+* The first is the predicted wing length for females; the second is the predicted wing length for a bird with mass 0 g
+
+The first is the predicted wing length for a bird of mass 0 g; the second is the average for females
+
+The first is the average across both sexes; the second is the predicted wing length for an average-sized bird
+
+FF The intercept is the prediction when all the other variables are “zero”. For a categorical variable, that means the baseline category. For a continuous variable, it means the actual value 0, which may not be biologically meaningful (and is often outside the range of the data).
+
+MC Across many plant species, larger seeds are associated with _lower_ germination rates. But within each habitat type, larger seeds are associated with _higher_ germination rates. The most likely explanation is that:
+
+One of the analyses must contain an error
+
+The within-habitat analysis has too many parameters
+
+* Habitat is associated with both seed size and germination rate
+
+Seed size was measured differently in different habitats
+
+FF When a variable (here, habitat) is related to both the predictor and the response, leaving it out can change the size of an estimated effect, or even its sign. This is why we need to think about which variables to control for.
+
+MC To study the effect of _height_ on lung capacity in children, we should probably ______ age. To study the effect of _age_ on lung capacity, we might want to ______ height.
+
+control for; control for
+
+* control for; leave out
+
+leave out; control for
+
+leave out; leave out
+
+FF Age can't be caused by height, so we should control for it. But people might be taller because they're older, so height can be part of how age has its effect. Which variables take us closer to our answer depends on our scientific question.
+
+MC In an observational study of the effect of exercise on cholesterol, which variable is the most important to control for?
+
+A variable that affects exercise but not cholesterol
+
+* A variable that affects both exercise and cholesterol
+
+A variable that is affected by exercise, and that affects cholesterol
+
+A variable that affects neither
+
+FF A variable that affects both the predictor and the response (a _confounder_) can create a misleading association if left out. A variable affected by exercise (a _mediator_) may be part of the effect we want to measure. A variable that affects cholesterol but not exercise can be useful to control for (it reduces noise), but is less important if we can't afford many parameters.
+
+MC To understand how biologically _important_ an effect is, we might compare the estimate to the ______. To understand how _certain_ we are about it, we would compare the estimate to the ______.
+
+standard deviation; standard deviation
+
+* standard deviation; standard error
+
+standard error; standard deviation
+
+standard error; standard error
+
+FF The standard deviation tells us about variation in the population, which is something real. The standard error tells us about our own uncertainty, which is not a good standard for measuring biological importance.
+
+MC Why does this course prefer a table of estimates with confidence intervals to the table produced by R's `summary` function?
+
+The estimates in the `summary` table are less accurate
+
+* Confidence intervals tell us about both the size of an effect and our uncertainty about it, while P values only tell us how clearly we can see the sign
+
+The `summary` table can't be used for categorical variables
+
+Confidence intervals are always narrower than standard errors
+
+FF A P value tells us whether we can be confident about the direction of an effect. A confidence interval tells us that and also gives a range of plausible effect sizes, which helps us decide whether the effect is important.
+
+MC How many parameters will this code print? You should guess first, then check if you need to. wt is treated as continuous, and factor(cyl) has three categories.
+```
+m <- lm(mpg ~ wt * factor(cyl), data=mtcars)
+print(coef(m))
+```
+
+3
+
+4
+
+5
+
+* 6
+
+FF One intercept, one parameter for wt, two for factor(cyl) (three categories, minus one), and 1 × 2 = 2 for the interaction.
+
+MC Consider the model `y = a + b*x + c*z + d*x*z`, where x is continuous and z is 0 for the baseline group and 1 for the other group. What is the slope of y with respect to x in the _other_ group?
+
+b
+
+d
+
+* b + d
+
+c + d
+
+FF The baseline group has intercept a and slope b; the other group has intercept a+c and slope b+d. So d is the _difference_ between the slopes, and c is the difference between the intercepts (the difference between the groups when x is zero).
+
+MC Blood pressure drops significantly in the treatment group (P=0.01), but not in the control group (P=0.3). Can we say that it dropped more in the treatment group?
+
+Yes; the P values show a clear difference between the two groups
+
+Yes, as long as the control group has a reasonable sample size
+
+* Not yet; we should estimate the difference in changes directly, using an interaction
+
+No; the control group result shows that nothing happened there
+
+FF Significant and not significant are not significantly different! And failing to reject for the control group doesn't mean it didn't change. The group × time interaction gives us an estimate and a CI for the difference we actually care about.
+
+MC A treatment increases growth by 10% for both large and small animals. We would expect to see ______ on the linear scale and ______ on the log scale.
+
+an interaction; an interaction
+
+* an interaction; no interaction
+
+no interaction; an interaction
+
+no interaction; no interaction
+
+FF A 10% increase adds more grams to big animals, which looks like an interaction on the linear scale. Multiplying on the linear scale is adding on the log scale. Whether there's an interaction can depend on the scale you choose, so think about what scale makes scientific sense before interpreting.
+
+MC You fit a model with a treatment × sex interaction, and the interaction is not significant (P = 0.25). What should you do?
+
+Drop the interaction, since it's not there
+
+Drop the interaction, and report that the treatment works the same way for both sexes
+
+* Keep the model you planned, and report the interaction estimate and its CI, which may be wide
+
+Collect more data until the interaction becomes significant
+
+FF Dropping a term because it is not significant is treating “not significant” as “zero”, which is accepting the null hypothesis. If the interaction was part of your scientific question, the CI tells you what range of differences between the sexes is plausible.
+
+SA You fit a model with 4 predictors to 25 data points and choose which predictors to keep by looking at which ones are significant. What problems might this cause?
+
+ANS Good things to mention include:
+
+* The rule of thumb is 5–10 solid data points per parameter, so 25 points can support only a few parameters
+* With too many parameters, the model will find patterns in noise
+* Choosing variables by significance uses the same data twice, so the remaining CIs and P values will be too optimistic
+* Which variables to include should be decided by scientific judgment, before looking at the results
