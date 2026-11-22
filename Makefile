@@ -181,6 +181,9 @@ Sources += $(wildcard *.quiz)
 ## newlin.aq.csv: newlin.quiz  ## Not used yet
 ## newlin.quiz.html: newlin.quiz
 
+## practice2.aq.csv: practice2.quiz ## midterm 2 practice
+## practice2.quiz.html: practice2.quiz
+
 ## Code
 Sources += $(wildcard *.py)
 Ignore += *.quiz.html

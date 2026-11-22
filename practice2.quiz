@@ -1,28 +1,4 @@
-INTRO More practice on linear models. The goal here is learning, not testing. Take your time and think about the questions. You can go through as many times as necessary to get the answers right.
-
-MC Which of these models does _not_ include an intercept?
-
-`lm(y ~ 1 + x)`
-
-`lm(y ~ x)`
-
-* `lm(y ~ 0 + x)`
-
-`lm(y ~ x + 1)`
-
-FF R includes an intercept unless you tell it not to, and intercepts are usually good.
-
-MC Which of these is _not_ a linear model? ($y$ is the response, $t$ is time, and other letters are parameters.)
-
-$y = a + b t + c t^2$
-
-$\log(y) = a + b t$
-
-* $y = a e^{bt}$
-
-$y = a + b \log(t)$
-
-FF A linear model needs to be linear in its _parameters_, not in its predictors. $y = a e^{bt}$ isn't linear in $b$ as written, but if we take logs we get $\log(y) = \log(a) + b t$, which is a linear model for $\log(y)$.
+INTRO More practice on linear models. This quiz is optional
 
 MC Which of these do the inferences from a linear model (CIs and P values) assume are normally distributed?
 
@@ -48,15 +24,15 @@ The test is wrong, since large data sets are always normal
 
 FF Normality tests are like other P values: they tell you how clearly you can see a difference, not whether it is important. With more data, the test sees small differences more clearly, but the linear model also becomes less sensitive to non-normality. Diagnostic plots are more useful than tests.
 
-MC You test your residuals for constant variance and get P = 0.4. What can you conclude?
+MC You test your residuals for constant variance and get P = 0.4. This means:
 
 The variance is constant
 
 The variance is close enough to constant
 
-* You don't have clear evidence that the variance changes, but that doesn't mean it doesn't
-
 The model inferences are valid
+
+* None of the above
 
 FF Failing to reject a null hypothesis isn't evidence that the null is true. A small study can easily miss large problems. Look at the diagnostic plots and think about what you know about the system.
 
@@ -137,19 +113,9 @@ Seed size was measured differently in different habitats
 
 FF When a variable (here, habitat) is related to both the predictor and the response, leaving it out can change the size of an estimated effect, or even its sign. This is why we need to think about which variables to control for.
 
-MC To study the effect of _height_ on lung capacity in children, we should probably ______ age. To study the effect of _age_ on lung capacity, we might want to ______ height.
-
-control for; control for
-
-* control for; leave out
-
-leave out; control for
-
-leave out; leave out
-
-FF Age can't be caused by height, so we should control for it. But people might be taller because they're older, so height can be part of how age has its effect. Which variables take us closer to our answer depends on our scientific question.
-
 MC In an observational study of the effect of exercise on cholesterol, which variable is the most important to control for?
+
+A variable that affects cholesterol but not exercise
 
 A variable that affects exercise but not cholesterol
 
@@ -157,21 +123,19 @@ A variable that affects exercise but not cholesterol
 
 A variable that is affected by exercise, and that affects cholesterol
 
-A variable that affects neither
-
 FF A variable that affects both the predictor and the response (a _confounder_) can create a misleading association if left out. A variable affected by exercise (a _mediator_) may be part of the effect we want to measure. A variable that affects cholesterol but not exercise can be useful to control for (it reduces noise), but is less important if we can't afford many parameters.
 
-MC To understand how biologically _important_ an effect is, we might compare the estimate to the ______. To understand how _certain_ we are about it, we would compare the estimate to the ______.
+MC As sample size increases, ______ generally stays about the same and ______ ______ decreases
 
-standard deviation; standard deviation
+standard deviation; standard error; always
 
-* standard deviation; standard error
+standard error; standard deviation; always
 
-standard error; standard deviation
+* standard deviation; standard error; almost always
 
-standard error; standard error
+standard error; standard deviation; almost always
 
-FF The standard deviation tells us about variation in the population, which is something real. The standard error tells us about our own uncertainty, which is not a good standard for measuring biological importance.
+FF The standard deviation is measures variation in the population; the true value doesn't change, but our estimate can. The standard error tells us about our own uncertainty. It will almost always get smaller when sample size increases, but there are no guarantees in random sampling (this last part is too hard for a test 🙂).
 
 MC Why does this course prefer a table of estimates with confidence intervals to the table produced by R's `summary` function?
 
@@ -185,9 +149,9 @@ Confidence intervals are always narrower than standard errors
 
 FF A P value tells us whether we can be confident about the direction of an effect. A confidence interval tells us that and also gives a range of plausible effect sizes, which helps us decide whether the effect is important.
 
-MC How many parameters will this code print? You should guess first, then check if you need to. wt is treated as continuous, and factor(cyl) has three categories.
+MC How many parameters will this code print? `wt` is treated as continuous, and `cyl` has three categories.
 ```
-m <- lm(mpg ~ wt * factor(cyl), data=mtcars)
+m <- lm(mpg ~ wt * cyl, data=mtcars)
 print(coef(m))
 ```
 
