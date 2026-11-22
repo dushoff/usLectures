@@ -1,4 +1,4 @@
-INTRO More practice on linear models. This quiz is optional
+INTRO More practice for midterm 2. This quiz is optional.
 
 MC Which of these do the inferences from a linear model (CIs and P values) assume are normally distributed?
 
@@ -201,23 +201,3 @@ no interaction; no interaction
 
 FF A 10% increase adds more grams to big animals, which looks like an interaction on the linear scale. Multiplying on the linear scale is adding on the log scale. Whether there's an interaction can depend on the scale you choose, so think about what scale makes scientific sense before interpreting.
 
-MC You fit a model with a treatment × sex interaction, and the interaction is not significant (P = 0.25). What should you do?
-
-Drop the interaction, since it's not there
-
-Drop the interaction, and report that the treatment works the same way for both sexes
-
-* Keep the model you planned, and report the interaction estimate and its CI, which may be wide
-
-Collect more data until the interaction becomes significant
-
-FF Dropping a term because it is not significant is treating “not significant” as “zero”, which is accepting the null hypothesis. If the interaction was part of your scientific question, the CI tells you what range of differences between the sexes is plausible.
-
-SA You fit a model with 4 predictors to 25 data points and choose which predictors to keep by looking at which ones are significant. What problems might this cause?
-
-ANS Good things to mention include:
-
-* The rule of thumb is 5–10 solid data points per parameter, so 25 points can support only a few parameters
-* With too many parameters, the model will find patterns in noise
-* Choosing variables by significance uses the same data twice, so the remaining CIs and P values will be too optimistic
-* Which variables to include should be decided by scientific judgment, before looking at the results
