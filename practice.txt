@@ -180,15 +180,15 @@ Covariates
 
 	In a randomized experiment, covariates don't make your experiment \emph{less valid}, but they can make it \emph{less powerful}
 
-		ANS Validity: what is the probability that the CIs will include the true value?
+		OLDANS Validity: what is the probability that the CIs will include the true value?
 
-		ANS Power: how clearly can I see? e.g., how small are the CIs?
+		OLDANS Power: how clearly can I see? e.g., how small are the CIs?
 
 		CONV Gold standard: in the counterfactual where nothing is happening, I should falsely see something clear $<\alpha$ of the time.
 
 	Deal with covariates by blocking or statistical modeling
 
-		ANS If you think they're important
+		OLDANS If you think they're important
 
 ----------------------------------------------------------------------
 
@@ -196,11 +196,11 @@ Blocking
 
 	Structure the experiment to reduce effects of covariates
 
-		ANS Randomize boys and girls separately
+		OLDANS Randomize boys and girls separately
 
-		ANS Randomize inside each school
+		OLDANS Randomize inside each school
 
-		ANS Paired t-tests are an example of blocking (study different fingers from the same children!)
+		OLDANS Paired t-tests are an example of blocking (study different fingers from the same children!)
 
 ----------------------------------------------------------------------
 
@@ -220,17 +220,17 @@ TSS Observational studies
 
 	Why are controlled experiments (as opposed to statistical control) the gold standard?
 
-		ANS Statistical control can never control for everything
+		OLDANS Statistical control can never control for everything
 
 	Why do we do observational studies anyway?
 
-		ANS Practicality – controlled studies may be difficult or impossible
+		OLDANS Practicality – controlled studies may be difficult or impossible
 
-		ANS We can't randomize children to smoke or not
+		OLDANS We can't randomize children to smoke or not
 
 	In some fields, conclusions can only be based on experiments
 
-		ANS Observational studies can still be useful for exploration
+		OLDANS Observational studies can still be useful for exploration
 
 ----------------------------------------------------------------------
 
@@ -238,9 +238,9 @@ Example: HIV control
 
 	Observational studies suggested that male circumcision reduced HIV transmission
 
-		ANS People who are circumcised have different cultural contexts
+		OLDANS People who are circumcised have different cultural contexts
 
-		ANS Being circumcised as a child may affect behaviour
+		OLDANS Being circumcised as a child may affect behaviour
 
 	Only later did people attempt large, randomized experiments
 
@@ -252,15 +252,15 @@ Example: exercise
 
 	Is that because:
 
-		ANS Exercise improves health?
+		OLDANS Exercise improves health?
 
-		ANS People with fewer medical conditions exercise more and have better outcomes?
+		OLDANS People with fewer medical conditions exercise more and have better outcomes?
 
-	ANS This is an example of confounding
+	OLDANS This is an example of confounding
 
 	How might you test?
 
-		ANS Institute education programs for half of the patients in a group
+		OLDANS Institute education programs for half of the patients in a group
 
 ----------------------------------------------------------------------
 
@@ -270,15 +270,15 @@ What to control for
 
 	\emph{Confounder:} causes both predictor and response
 
-		ANS Control for it (age, for smoking)
+		OLDANS Control for it (age, for smoking)
 
 	\emph{Mediator:} lies on the path from predictor to response
 
-		ANS Depends on the question (height, for age)
+		OLDANS Depends on the question (height, for age)
 
 	\emph{Collider:} caused by both predictor and response
 
-		ANS Don't control for it: this creates an association
+		OLDANS Don't control for it: this creates an association
 
 	Draw the arrows before you look at the data
 
@@ -292,15 +292,15 @@ Natural experiments
 
 	One state has high alcohol taxes, and the corresponding community drinks less alcohol
 
-		ANS Only one replicate per treatment
+		OLDANS Only one replicate per treatment
 
-		ANS Still potentially useful for exploration
+		OLDANS Still potentially useful for exploration
 
 	What if you have dozens of states with different alcohol taxes?
 
-		ANS This is a replicated experiment
+		OLDANS This is a replicated experiment
 
-		ANS But you still can't control for everything
+		OLDANS But you still can't control for everything
 
 ----------------------------------------------------------------------
 
@@ -312,7 +312,7 @@ More natural experiments
 
 	Villages where a health intervention has been implemented vs.~those where it is still scheduled for implementation
 
-		ANS Better if this could actually be randomized!
+		OLDANS Better if this could actually be randomized!
 
 ----------------------------------------------------------------------
 
@@ -320,19 +320,19 @@ Correlation vs causation
 
 	Correlation is what we observe directly
 
-		ANS Children who smoke tend to have lower lung capacity
+		OLDANS Children who smoke tend to have lower lung capacity
 
 	Causation refers to mechanism
 
-		ANS Smoking lowers the lung capacity of children
+		OLDANS Smoking lowers the lung capacity of children
 
 	Statistical evidence can directly support causation
 
-		ANS Only in a randomized experiment
+		OLDANS Only in a randomized experiment
 
 	Statistical evidence can indirectly support causation
 
-		ANS When combined with scientific evidence
+		OLDANS When combined with scientific evidence
 
 ----------------------------------------------------------------------
 
@@ -366,7 +366,7 @@ Testing validity
 
 	Set the effect to zero: does the method reject $\leq\alpha$ of the time?
 
-		ANS This is the frequentist definition of validity, tested directly
+		OLDANS This is the frequentist definition of validity, tested directly
 
 	P values under the null should look uniform
 
@@ -376,7 +376,7 @@ Testing validity
 
 	Example: fishTanks
 
-		ANS We reject far too often
+		See upcoming virtual lecture
 
 ----------------------------------------------------------------------
 
@@ -387,6 +387,8 @@ Testing power
 	Count how often you get a clear answer
 
 	Change the sample size, and repeat
+
+	Example: powerTest.R
 
 ----------------------------------------------------------------------
 
@@ -464,8 +466,6 @@ Planning for precision
 
 		Could it separate “small” from “large”?
 
-	Showing an effect is small needs precision, not power to reject zero
-
 		Example: flu masks and non-inferiority
 
 ----------------------------------------------------------------------
@@ -478,7 +478,7 @@ Power after the fact
 
 	It can't rescue a high P value
 
-	After the study, the CI tells you what the study did and didn't see
+	ANS After the study, the CI tells you what the study did and didn't see
 
 ----------------------------------------------------------------------
 
@@ -566,13 +566,11 @@ Simple Bayesian logic
 
 	Posterior odds = prior odds $\times$ likelihood ratio
 
-		Optional: the table of counts may be enough
-
 	Strong evidence can't always overcome a very low prior
 
-	We aren't becoming Bayesians here; we are borrowing a way of thinking
+	This is not the same thing as Bayesian statistics
 
-	ADD https://xkcd.com/1132/
+		We can use Bayesian logic and keep our frequentist paradigm
 
 ----------------------------------------------------------------------
 
@@ -589,8 +587,6 @@ Science as a screening test
 		ANS Power 0.2: 20 true hits and 45 false alarms
 
 	So: a “significant” result in a low-power study of an unlikely idea is weak evidence
-
-	ADD Ioannidis 2005
 
 ----------------------------------------------------------------------
 
@@ -676,7 +672,7 @@ False discovery rate
 
 Fewer questions
 
-	The best correction is to not need one
+	The best multiple-comparisons correction is to not need one
 
 	Focus on a small set of questions, each with a small number of parameters
 

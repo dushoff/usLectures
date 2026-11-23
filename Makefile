@@ -99,7 +99,6 @@ pardirs += statsTalks
 ## practice.handouts.docx: practice.handouts.tex
 
 practice.merged: practice.txt practice.students.txt
-
 ## mv -f practice.merged practice.txt ##
 
 ######################################################################
@@ -215,6 +214,8 @@ Sources += $(wildcard *.gv)
 ## project.asn.md
 ## topic.asn.md
 ## analysis.asn.md
+## report.asn.md
+## presentation.asn.md
 
 ######################################################################
 
