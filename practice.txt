@@ -2,6 +2,12 @@ UNIT 5: Statistical practice
 
 ----------------------------------------------------------------------
 
+EXTRA 
+
+Define covariates
+
+----------------------------------------------------------------------
+
 Overview
 
 	We have learned a bit about particular statistical tests
